@@ -1,7 +1,6 @@
 import Container from "../components/layouts/container";
 import PostsList from "../components/posts/posts-list";
 import HeroPost from "../components/common/hero-post";
-import Intro from "../components/common/intro";
 import Layout from "../components/layouts/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
@@ -22,7 +21,6 @@ const Index = ({ allPosts }: Props) => {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          {/* <Intro /> */}
           {heroPost && (
             <HeroPost
               title={heroPost.title}
