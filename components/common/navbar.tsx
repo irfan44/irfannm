@@ -4,7 +4,7 @@ import NavbarMenu from "./navbar-menu";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full bg-white">
+    <nav className="fixed top-0 w-full bg-white z-10">
       <Container>
         <div className="flex justify-between py-6 items-center">
           <div>

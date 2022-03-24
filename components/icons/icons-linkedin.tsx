@@ -1,7 +1,7 @@
 const IconsLinkedIn = () => {
   return (
     <svg
-      className="fill-black dark:fill-white"
+      className="fill-black"
       width="24"
       height="24"
       viewBox="0 0 24 24"
