@@ -32,19 +32,19 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32 prose max-w-none">
+            <article className="mb-32 prose md:prose-lg max-w-none">
               <Head>
                 <title>{post.title} | inm</title>
                 <meta property="og:image" content={post.ogImage.url} />
                 <meta name="description" content={post.excerpt} />
               </Head>
-              <PostHeader
-                title={post.title}
-                category={post.category}
-                coverImage={post.coverImage}
-                date={post.date}
-              />
               <PostBody>
+                <PostHeader
+                  title={post.title}
+                  category={post.category}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                />
                 <MDXRemote {...post.content} components={components} />
               </PostBody>
             </article>
