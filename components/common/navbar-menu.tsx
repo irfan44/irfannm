@@ -1,14 +1,5 @@
 import Link from "next/link";
-
-type Menu = {
-  name: string;
-  link: string;
-};
-
-const menuList: Menu[] = [
-  { name: "Home", link: "/" },
-  { name: "Posts", link: "/posts" },
-];
+import menuList from "../../data/menu-list";
 
 const NavbarMenu = () => {
   return (

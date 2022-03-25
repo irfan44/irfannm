@@ -8,11 +8,11 @@ const Navbar = () => {
       <Container>
         <div className="flex justify-between py-6 items-center">
           <div>
-            <Link href="/">
-              <a>
-                <h2>inm</h2>
-              </a>
-            </Link>
+            <h2 className="font-bold leading-tight">
+              <Link href="/">
+                <a>inm</a>
+              </Link>
+            </h2>
           </div>
           <div>
             <ul className="flex flex-row items-center space-x-6">
