@@ -6,6 +6,7 @@ import Post from "../types/post";
 import Head from "next/head";
 import Link from "next/link";
 import HeroPost from "../components/posts/hero-post";
+import Section from "../components/layouts/section";
 
 type Props = {
   allPosts: Post[];
@@ -29,32 +30,37 @@ const Posts = ({ allPosts }: Props) => {
           <title>Posts</title>
         </Head>
         <Container>
-          <h2 className="mb-6 text-5xl">Featured</h2>
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-              category={heroPost.category}
-            />
-          )}
-          {generasiGIGIHPosts.length > 0 && (
+          <div className="space-y-12">
             <div>
-              <PostsList title="Generasi GIGIH" posts={generasiGIGIHPosts} />
+              <Section title="Featured">
+                {heroPost && (
+                  <HeroPost
+                    title={heroPost.title}
+                    coverImage={heroPost.coverImage}
+                    date={heroPost.date}
+                    slug={heroPost.slug}
+                    excerpt={heroPost.excerpt}
+                    category={heroPost.category}
+                  />
+                )}
+              </Section>
             </div>
-          )}
-          {techPosts.length > 0 && (
-            <div>
-              <PostsList title="Technology" posts={techPosts} />
-            </div>
-          )}
-          {everyPosts.length > 0 && (
-            <div>
-              <PostsList title="All Post" posts={everyPosts} />
-            </div>
-          )}
+            {generasiGIGIHPosts.length > 0 && (
+              <div>
+                <PostsList title="Generasi Gigih" posts={generasiGIGIHPosts} />
+              </div>
+            )}
+            {techPosts.length > 0 && (
+              <div>
+                <PostsList title="Technology" posts={techPosts} />
+              </div>
+            )}
+            {everyPosts.length > 0 && (
+              <div>
+                <PostsList title="All Post" posts={everyPosts} />
+              </div>
+            )}
+          </div>
         </Container>
       </Layout>
     </>

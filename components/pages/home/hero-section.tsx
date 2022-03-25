@@ -3,7 +3,7 @@ import SocialLink from "../../common/social-link";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center py-6">
+    <div className="flex flex-col md:flex-row items-center py-6 mb-12">
       <div className="md:w-1/2 space-y-6">
         <h1 className="text-4xl md:text-5xl lg:text-6xl">Hi, I'm Irfan!</h1>
         <p>
