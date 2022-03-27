@@ -11,6 +11,7 @@ import PostType from "../../types/post";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
+import IconArrowLeft from "../../components/icons/icons-arrow-left";
 
 type Props = {
   post: PostType;
@@ -39,6 +40,15 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 <meta name="description" content={post.excerpt} />
               </Head>
               <PostBody>
+                <button
+                  className="mb-4"
+                  onClick={() => void router.back() || void router.push("/")}
+                >
+                  <div className="flex items-center">
+                    <IconArrowLeft width="22" height="14" />
+                    <p className="ml-2 font-medium">Back to previous</p>
+                  </div>
+                </button>
                 <PostHeader
                   title={post.title}
                   category={post.category}

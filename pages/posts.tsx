@@ -28,9 +28,21 @@ const Posts = ({ allPosts }: Props) => {
       <Layout>
         <Head>
           <title>Posts</title>
+          <meta
+            name="description"
+            content="Irfan Nurghiffari Muhajir's personal website & blog"
+          />
         </Head>
         <Container>
           <div className="space-y-12">
+            <div>
+              <h1 className="mb-6">Posts</h1>
+              <p>
+                I've been writing online since 2014, mostly about web
+                development and tech careers. In total, I've written 68 articles
+                on my blog. Use the search below to filter by title.
+              </p>
+            </div>
             <div>
               <Section title="Featured">
                 {heroPost && (

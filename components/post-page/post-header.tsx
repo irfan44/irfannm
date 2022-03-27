@@ -13,7 +13,7 @@ const PostHeader = ({ title, category, coverImage, date }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <div className="flex items-center md:mb-16 mb-8">
+      <div className="flex items-center mb-8 justify-center md:justify-start">
         <div className="font-bold">{category}</div>
         <div className="px-2">|</div>
         <div>
