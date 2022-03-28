@@ -15,7 +15,7 @@ const About = () => {
       <Meta data={pageMeta} />
       <Layout>
         <Container>
-          <div className="space-y-12 px-32">
+          <div className="space-y-12 lg:px-32">
             <div>
               <div>
                 <h1 className="mb-6">About me</h1>

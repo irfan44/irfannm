@@ -48,7 +48,9 @@ const Post = ({ post, morePosts, preview }: Props) => {
               >
                 <div className="flex items-center">
                   <IconArrowLeft width="22" height="14" />
-                  <p className="ml-2 font-medium mt-0 mb-0">Back to previous</p>
+                  <p className="ml-0.5 font-medium mt-0 mb-0">
+                    Back to previous
+                  </p>
                 </div>
               </button>
             </div>
