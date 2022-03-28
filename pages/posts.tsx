@@ -3,10 +3,9 @@ import Layout from "../components/layouts/layout";
 import PostsList from "../components/posts/posts-list";
 import { getAllPosts } from "../lib/api";
 import Post from "../types/post";
-import Head from "next/head";
-import Link from "next/link";
 import HeroPost from "../components/posts/hero-post";
 import Section from "../components/layouts/section";
+import Meta from "../components/common/meta";
 
 type Props = {
   allPosts: Post[];
@@ -22,25 +21,23 @@ const Posts = ({ allPosts }: Props) => {
   const generasiGIGIHPosts = allPosts.filter(
     (posts) => posts.category === "Generasi Gigih"
   );
+  const pageMeta = {
+    title: "Posts",
+    description: "Irfan Nurghiffari Muhajir's posts",
+    ogImage: "/assets/images/irfan.jpeg",
+  };
 
   return (
     <>
+      <Meta data={pageMeta} />
       <Layout>
-        <Head>
-          <title>Posts</title>
-          <meta
-            name="description"
-            content="Irfan Nurghiffari Muhajir's personal website & blog"
-          />
-        </Head>
         <Container>
           <div className="space-y-12">
             <div>
               <h1 className="mb-6">Posts</h1>
               <p>
-                I've been writing online since 2014, mostly about web
-                development and tech careers. In total, I've written 68 articles
-                on my blog. Use the search below to filter by title.
+                I mainly write about technology and other stuffs. Most of this
+                post is created for my collage assignment.
               </p>
             </div>
             <div>

@@ -12,6 +12,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import IconArrowLeft from "../../components/icons/icons-arrow-left";
+import Meta from "../../components/common/meta";
 
 type Props = {
   post: PostType;
@@ -26,6 +27,12 @@ const Post = ({ post, morePosts, preview }: Props) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const pageMeta = {
+    title: post.title,
+    description: post.excerpt,
+    ogImage: post.ogImage.url,
+  };
   return (
     <Layout preview={preview}>
       <Container>
@@ -33,22 +40,20 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
+            <Meta data={pageMeta} />
+            <div className="max-w-5xl mx-auto">
+              <button
+                className="mb-4"
+                onClick={() => void router.back() || void router.push("/")}
+              >
+                <div className="flex items-center">
+                  <IconArrowLeft width="22" height="14" />
+                  <p className="ml-2 font-medium mt-0 mb-0">Back to previous</p>
+                </div>
+              </button>
+            </div>
             <article className="mb-32 prose md:prose-lg max-w-none">
-              <Head>
-                <title>{post.title} | inm</title>
-                <meta property="og:image" content={post.ogImage.url} />
-                <meta name="description" content={post.excerpt} />
-              </Head>
               <PostBody>
-                <button
-                  className="mb-4"
-                  onClick={() => void router.back() || void router.push("/")}
-                >
-                  <div className="flex items-center">
-                    <IconArrowLeft width="22" height="14" />
-                    <p className="ml-2 font-medium">Back to previous</p>
-                  </div>
-                </button>
                 <PostHeader
                   title={post.title}
                   category={post.category}
