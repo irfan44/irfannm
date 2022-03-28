@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,17 +7,17 @@
 @layer base {
   h1,
   .h1 {
-    @apply font-sans text-3xl font-bold md:text-5xl;
+    @apply font-sans text-4xl font-bold md:text-5xl tracking-tighter leading-tight;
   }
 
   h2,
   .h2 {
-    @apply font-sans text-2xl font-bold md:text-4xl;
+    @apply font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight;
   }
 
   h3,
   .h3 {
-    @apply font-sans text-xl font-bold md:text-3xl;
+    @apply font-sans text-xl font-bold md:text-3xl tracking-tighter leading-tight;
   }
 
   h4,
@@ -27,7 +27,7 @@
 
   h5,
   .h5 {
-    @apply font-sans text-base font-bold md:text-lg;
+    @apply font-sans text-base font-bold md:text-lg tracking-tighter leading-tight;
   }
 
   body,

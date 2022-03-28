@@ -7,9 +7,12 @@ import Layout from "../../components/layouts/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-page/post-title";
 import Head from "next/head";
-import { CMS_NAME } from "../../lib/constants";
-import markdownToHtml from "../../lib/markdownToHtml";
 import PostType from "../../types/post";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import Image from "next/image";
+import IconArrowLeft from "../../components/icons/icons-arrow-left";
+import Meta from "../../components/common/meta";
 
 type Props = {
   post: PostType;
@@ -17,11 +20,19 @@ type Props = {
   preview?: boolean;
 };
 
+const components = { Image };
+
 const Post = ({ post, morePosts, preview }: Props) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const pageMeta = {
+    title: post.title,
+    description: post.excerpt,
+    ogImage: post.ogImage.url,
+  };
   return (
     <Layout preview={preview}>
       <Container>
@@ -29,20 +40,28 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
+            <Meta data={pageMeta} />
+            <div className="max-w-5xl mx-auto">
+              <button
+                className="mb-4"
+                onClick={() => void router.back() || void router.push("/")}
+              >
+                <div className="flex items-center">
+                  <IconArrowLeft width="22" height="14" />
+                  <p className="ml-2 font-medium mt-0 mb-0">Back to previous</p>
+                </div>
+              </button>
+            </div>
+            <article className="mb-32 prose md:prose-lg max-w-none">
+              <PostBody>
+                <PostHeader
+                  title={post.title}
+                  category={post.category}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                />
+                <MDXRemote {...post.content} components={components} />
+              </PostBody>
             </article>
           </>
         )}
@@ -62,15 +81,15 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
     "title",
+    "category",
     "date",
     "slug",
-    "author",
     "content",
     "ogImage",
     "coverImage",
   ]);
-  const content = await markdownToHtml(post.content || "");
 
+  const content = await serialize(post.content);
   return {
     props: {
       post: {

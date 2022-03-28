@@ -1,7 +1,15 @@
 import Head from "next/head";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "../../lib/constants";
+import { HOME_OG_IMAGE_URL } from "../../lib/constants";
 
-const Meta = () => {
+type Props = {
+  data: {
+    title: string;
+    description: string;
+    ogImage: string;
+  };
+};
+
+const Meta = ({ data }: Props) => {
   return (
     <Head>
       <link
@@ -32,11 +40,11 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
-      />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta charSet="UTF-8" />
+      <title>{data.title} | inm</title>
+      <meta name="description" content={data.description} />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:image" content={data.ogImage} />
     </Head>
   );
 };

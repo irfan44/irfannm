@@ -1,33 +1,27 @@
-import Avatar from "../common/avatar";
 import DateFormatter from "../common/date-formatter";
 import CoverImage from "../common/cover-image";
 import PostTitle from "./post-title";
-import Author from "../../types/author";
 
 type Props = {
   title: string;
+  category: string;
   coverImage: string;
   date: string;
-  author: Author;
 };
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, category, coverImage, date }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar name={author.name} picture={author.picture} />
-      </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          <Avatar name={author.name} picture={author.picture} />
-        </div>
-        <div className="mb-6 text-lg">
+      <div className="flex items-center mb-8 justify-center md:justify-start">
+        <div className="font-bold">{category}</div>
+        <div className="px-2">|</div>
+        <div>
           <DateFormatter dateString={date} />
         </div>
+      </div>
+      <div className="mb-8 md:mb-16 sm:mx-0">
+        <CoverImage title={title} src={coverImage} height={620} width={1240} />
       </div>
     </>
   );

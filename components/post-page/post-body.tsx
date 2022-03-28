@@ -1,18 +1,11 @@
 import markdownStyles from "../../styles/markdown-styles.module.css";
 
 type Props = {
-  content: string;
+  children: React.ReactNode;
 };
 
-const PostBody = ({ content }: Props) => {
-  return (
-    <div className="max-w-2xl mx-auto">
-      <div
-        className={markdownStyles["markdown"]}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </div>
-  );
+const PostBody = ({ children }: Props) => {
+  return <div className="max-w-5xl mx-auto">{children}</div>;
 };
 
 export default PostBody;
