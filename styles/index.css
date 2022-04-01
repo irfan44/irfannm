@@ -32,6 +32,6 @@
 
   body,
   .p {
-    @apply font-sans text-sm md:text-base;
+    @apply font-sans text-base;
   }
 }
