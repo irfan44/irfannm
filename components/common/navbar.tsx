@@ -1,8 +1,12 @@
 import Link from "next/link";
+import { useState } from "react";
+import IconMenu from "../icons/icons-menu";
+import IconClose from "../icons/icons-close";
 import Container from "../layouts/container";
 import NavbarMenu from "./navbar-menu";
 
 const Navbar = () => {
+  const [isActive, setActive] = useState(false);
   return (
     <nav className="fixed top-0 w-full bg-white z-10">
       <Container>
@@ -14,12 +18,29 @@ const Navbar = () => {
               </Link>
             </h2>
           </div>
-          <div>
+          <div className="md:hidden ml-auto py-auto flex items-center">
+            <button
+              className="ml-2"
+              onClick={() => {
+                isActive ? setActive(false) : setActive(true);
+              }}
+            >
+              {isActive ? <IconClose /> : <IconMenu />}
+            </button>
+          </div>
+          <div className="hidden md:block text-left">
             <ul className="flex flex-row items-center space-x-6">
               <NavbarMenu />
             </ul>
           </div>
         </div>
+        {isActive && (
+          <div className="w-full mt-4 md:pl-8 border rounded-lg border-zinc-200 py-2 px-4">
+            <ul className="flex flex-col space-y-2">
+              <NavbarMenu />
+            </ul>
+          </div>
+        )}
       </Container>
     </nav>
   );
