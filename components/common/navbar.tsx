@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-white z-10">
       <Container>
-        <div className="flex justify-between pt-6 pb-4 items-center">
+        <div className="flex justify-between py-4 items-center">
           <div>
             <h2 className="font-bold leading-tight">
               <Link href="/">

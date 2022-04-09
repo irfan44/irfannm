@@ -19,7 +19,7 @@ const Projects = () => {
         <Container>
           <PageHeader
             pageTitle="Projects"
-            pageDescription="My various projects"
+            pageDescription="My various projects that I have worked on."
           />
           <div className="mt-12 space-y-8">
             {ProjectsList.map((project) => {
