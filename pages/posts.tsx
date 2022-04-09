@@ -1,17 +1,14 @@
 import Container from "../components/layouts/container";
 import Layout from "../components/layouts/layout";
 import PostsList from "../components/posts/posts-list";
-import { getAllPosts } from "../lib/api";
-import Post from "../types/post";
 import HeroPost from "../components/posts/hero-post";
 import Section from "../components/layouts/section";
 import Meta from "../components/common/meta";
+import PageHeader from "../components/common/page-header";
+import { getAllPosts } from "../lib/api";
+import AllPosts from "../types/all-posts";
 
-type Props = {
-  allPosts: Post[];
-};
-
-const Posts = ({ allPosts }: Props) => {
+const Posts = ({ allPosts }: AllPosts) => {
   const heroPost = allPosts[0];
   const everyPosts = allPosts.slice(0);
   const techPosts = allPosts.filter((posts) => posts.category === "Tech");
@@ -33,13 +30,11 @@ const Posts = ({ allPosts }: Props) => {
       <Layout>
         <Container>
           <div className="space-y-12">
-            <div>
-              <h1 className="mb-6">Posts</h1>
-              <p>
-                I mainly write about technology and other stuffs. Most of this
-                post is created for my collage assignment.
-              </p>
-            </div>
+            <PageHeader
+              pageTitle="Posts"
+              pageDescription="I mainly write about technology and other stuffs. Most of this
+                post is created for my collage assignment."
+            />
             <div>
               <Section title="Featured">
                 {heroPost && (

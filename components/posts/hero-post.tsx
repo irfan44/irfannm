@@ -1,4 +1,3 @@
-import Avatar from "../common/avatar";
 import DateFormatter from "../common/date-formatter";
 import CoverImage from "../common/cover-image";
 import Link from "next/link";
