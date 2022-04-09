@@ -5,7 +5,7 @@ type Menu = {
 
 const menuList: Menu[] = [
   { name: "Home", link: "/" },
-  // { name: "Projects", link: "/projects" },
+  { name: "Projects", link: "/projects" },
   { name: "Posts", link: "/posts" },
   { name: "About", link: "/about" },
 ];
