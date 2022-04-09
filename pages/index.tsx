@@ -1,12 +1,12 @@
+import Link from "next/link";
 import Container from "../components/layouts/container";
 import PostsList from "../components/posts/posts-list";
 import Layout from "../components/layouts/layout";
-import { getAllPosts } from "../lib/api";
-import AllPosts from "../types/all-posts";
 import HeroSection from "../components/pages/home/hero-section";
-import Link from "next/link";
 import IconArrowRight from "../components/icons/icons-arrow-right";
 import Meta from "../components/common/meta";
+import { getAllPosts } from "../lib/api";
+import AllPosts from "../types/all-posts";
 
 const Index = ({ allPosts }: AllPosts) => {
   const latestPosts = allPosts.slice(0, 3);
@@ -15,7 +15,6 @@ const Index = ({ allPosts }: AllPosts) => {
     description: "Irfan Nurghiffari Muhajir's personal website",
     ogImage: "/assets/images/irfan.jpeg",
   };
-
   return (
     <>
       <Meta data={pageMeta} />

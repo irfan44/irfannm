@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Meta from "../components/common/meta";
 import PageHeader from "../components/common/page-header";
 import Container from "../components/layouts/container";
@@ -19,7 +18,7 @@ const Projects = () => {
         <Container>
           <PageHeader
             pageTitle="Projects"
-            pageDescription="My various projects that I have worked on."
+            pageDescription="Various projects that I have worked on."
           />
           <div className="mt-12 space-y-8">
             {ProjectsList.map((project) => {

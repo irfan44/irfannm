@@ -1,17 +1,12 @@
 import Container from "../components/layouts/container";
 import Layout from "../components/layouts/layout";
 import PostsList from "../components/posts/posts-list";
-import { getAllPosts } from "../lib/api";
-// import Post from "../types/post";
-import AllPosts from "../types/all-posts";
 import HeroPost from "../components/posts/hero-post";
 import Section from "../components/layouts/section";
 import Meta from "../components/common/meta";
 import PageHeader from "../components/common/page-header";
-
-// type Props = {
-//   allPosts: Post[];
-// };
+import { getAllPosts } from "../lib/api";
+import AllPosts from "../types/all-posts";
 
 const Posts = ({ allPosts }: AllPosts) => {
   const heroPost = allPosts[0];
