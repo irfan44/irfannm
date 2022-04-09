@@ -24,6 +24,7 @@ const About = () => {
                 <div className="flex justify-center mb-12">
                   <Image
                     className="rounded-full"
+                    alt="Irfan Nurghiffari Muhajir"
                     src="/assets/images/irfan.jpeg"
                     width="224"
                     height="224"
@@ -31,25 +32,27 @@ const About = () => {
                 </div>
                 <div className="space-y-6">
                   <p>
-                    <strong>Hi everyone!</strong> I'm{" "}
+                    <strong>Hi everyone!</strong> I&apos;m{" "}
                     <strong>Irfan Nurghiffari Muhajir</strong>, you can call me{" "}
                     <strong>Irfan</strong>. I grew up in Tangerang, which is one
-                    of the satellite cities of Jakarta. Currently I'm a Software
-                    Engineering student at Universitas Pendidikan Indonesia. I
-                    started my study in 2019 and I'm currently in my last year.
-                    But, i was an Industrial Engineering student in 2018 before
-                    i decided to move.
+                    of the satellite cities of Jakarta. Currently I&apos;m a
+                    Software Engineering student at Universitas Pendidikan
+                    Indonesia. I started my study in 2019 and I&apos;m currently
+                    in my last year. But, i was an Industrial Engineering
+                    student in 2018 before i decided to move.
                   </p>
                   <p>
                     I focus much of my time in collage to learn about software
-                    engineering. I love exploring stuff about technology. I'm
-                    part of Red Hat's team as a Class Assistant & Help desk in{" "}
+                    engineering. I love exploring stuff about technology.
+                    I&apos;m part of Red Hat&apos;s team as a Class Assistant &
+                    Help desk in{" "}
                     <Link href="https://digitalent.kominfo.go.id/">
                       <a className="font-bold underline">
                         Digital Talent Scholarship
                       </a>
                     </Link>{" "}
-                    held by Kementrian Kominfo for 2 years. I'm also part of{" "}
+                    held by Kementrian Kominfo for 2 years. I&apos;m also part
+                    of{" "}
                     <Link href="https://ramaniya.id/">
                       <a className="font-bold underline">Ramaniya</a>
                     </Link>{" "}
@@ -62,9 +65,9 @@ const About = () => {
                     Engineering Track.
                   </p>
                   <p>
-                    Outside of tech, I learn a lot about finance. I've been part
-                    of several investors community and been investing at mutual
-                    funds & stocks.
+                    Outside of tech, I learn a lot about finance. I&apos;ve been
+                    part of several investors community and been investing at
+                    mutual funds & stocks.
                   </p>
                 </div>
               </div>

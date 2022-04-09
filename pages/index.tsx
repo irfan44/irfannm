@@ -2,18 +2,13 @@ import Container from "../components/layouts/container";
 import PostsList from "../components/posts/posts-list";
 import Layout from "../components/layouts/layout";
 import { getAllPosts } from "../lib/api";
-import Post from "../types/post";
+import AllPosts from "../types/all-posts";
 import HeroSection from "../components/pages/home/hero-section";
 import Link from "next/link";
 import IconArrowRight from "../components/icons/icons-arrow-right";
 import Meta from "../components/common/meta";
 
-type Props = {
-  allPosts: Post[];
-};
-
-const Index = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0];
+const Index = ({ allPosts }: AllPosts) => {
   const latestPosts = allPosts.slice(0, 3);
   const pageMeta = {
     title: "Hi, I'm Irfan!",
@@ -32,7 +27,7 @@ const Index = ({ allPosts }: Props) => {
               <div>
                 <PostsList title="Latest Posts" posts={latestPosts} />
                 <div className="mt-4 font-medium">
-                  <Link href="/posts">
+                  <Link href="/posts" passHref>
                     <div className="flex items-center hover:cursor-pointer hover:underline">
                       <a className="mr-0.5">Read all post</a>
                       <IconArrowRight width="22" height="14" />

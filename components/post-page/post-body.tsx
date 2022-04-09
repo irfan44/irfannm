@@ -1,5 +1,3 @@
-import markdownStyles from "../../styles/markdown-styles.module.css";
-
 type Props = {
   children: React.ReactNode;
 };
