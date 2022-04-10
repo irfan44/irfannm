@@ -41,30 +41,32 @@ const Post = ({ post, morePosts, preview }: Props) => {
         ) : (
           <>
             <Meta data={pageMeta} />
-            <div className="max-w-5xl mx-auto">
-              <button
-                className="mb-4"
-                onClick={() => void router.back() || void router.push("/")}
-              >
-                <div className="flex items-center">
-                  <IconArrowLeft width="22" height="14" />
-                  <p className="ml-0.5 font-medium mt-0 mb-0">
-                    Back to previous
-                  </p>
-                </div>
-              </button>
+            <div className="max-w-3xl mx-auto">
+              <div>
+                <button
+                  className="mb-4"
+                  onClick={() => void router.back() || void router.push("/")}
+                >
+                  <div className="flex items-center">
+                    <IconArrowLeft width="22" height="14" />
+                    <p className="ml-0.5 font-medium mt-0 mb-0">
+                      Back to previous
+                    </p>
+                  </div>
+                </button>
+              </div>
+              <article className="mb-32 prose md:prose-lg max-w-none">
+                <PostBody>
+                  <PostHeader
+                    title={post.title}
+                    category={post.category}
+                    coverImage={post.coverImage}
+                    date={post.date}
+                  />
+                  <MDXRemote {...post.content} components={components} />
+                </PostBody>
+              </article>
             </div>
-            <article className="mb-32 prose md:prose-lg max-w-none">
-              <PostBody>
-                <PostHeader
-                  title={post.title}
-                  category={post.category}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                />
-                <MDXRemote {...post.content} components={components} />
-              </PostBody>
-            </article>
           </>
         )}
       </Container>
