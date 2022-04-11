@@ -35,7 +35,7 @@ const PostPreview = ({
           <a className="hover:underline">{title}</a>
         </Link>
       </h4>
-      <div className="mb-4 flex space-x-2">
+      <div className="mb-4 flex space-x-2 text-sm">
         <div className="text-black font-bold">{category}</div>
         <div>|</div>
         <DateFormatter dateString={date} />
