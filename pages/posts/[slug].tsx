@@ -62,6 +62,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                     category={post.category}
                     coverImage={post.coverImage}
                     date={post.date}
+                    caption={post.caption}
                   />
                   <MDXRemote {...post.content} components={components} />
                 </PostBody>
@@ -90,6 +91,7 @@ export async function getStaticProps({ params }: Params) {
     "slug",
     "content",
     "ogImage",
+    "caption",
     "coverImage",
   ]);
 
