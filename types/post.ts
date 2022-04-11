@@ -6,6 +6,7 @@ type PostType = {
   category: string;
   date: string;
   coverImage: string;
+  caption: string;
   excerpt: string;
   ogImage: {
     url: string;
