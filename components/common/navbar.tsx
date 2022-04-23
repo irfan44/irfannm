@@ -21,6 +21,7 @@ const Navbar = () => {
           <div className="md:hidden ml-auto py-auto flex items-center">
             <button
               className="ml-2"
+              title="Menu"
               onClick={() => {
                 isActive ? setActive(false) : setActive(true);
               }}
