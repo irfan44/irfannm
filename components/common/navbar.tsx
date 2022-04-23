@@ -36,10 +36,14 @@ const Navbar = () => {
           </div>
         </div>
         {isActive && (
-          <div className="w-full md:pl-8 border rounded-lg border-zinc-200 p-4">
-            <ul className="flex flex-col space-y-4 items-center">
-              <NavbarMenu />
-            </ul>
+          <div className="h-screen">
+            <div className="w-full border rounded-lg border-zinc-200 p-4">
+              <div className="grid items-center">
+                <ul className="flex flex-col space-y-4 items-center">
+                  <NavbarMenu />
+                </ul>
+              </div>
+            </div>
           </div>
         )}
       </Container>
