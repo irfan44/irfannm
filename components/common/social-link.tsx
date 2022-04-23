@@ -8,21 +8,21 @@ const SocialLink = () => {
     <>
       <div>
         <Link href="https://github.com/irfan44">
-          <a>
+          <a title="Github">
             <IconsGithub />
           </a>
         </Link>
       </div>
       <div>
         <Link href="https://www.linkedin.com/in/irfannm/">
-          <a>
+          <a title="LinkedIn">
             <IconsLinkedIn />
           </a>
         </Link>
       </div>
       <div>
         <Link href="https://www.instagram.com/irfan_nm44/">
-          <a>
+          <a title="Instagram">
             <IconsInstagram />
           </a>
         </Link>
