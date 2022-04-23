@@ -21,6 +21,7 @@ const Navbar = () => {
           <div className="md:hidden ml-auto py-auto flex items-center">
             <button
               className="ml-2"
+              title="Menu"
               onClick={() => {
                 isActive ? setActive(false) : setActive(true);
               }}
@@ -35,10 +36,14 @@ const Navbar = () => {
           </div>
         </div>
         {isActive && (
-          <div className="w-full mt-4 md:pl-8 border rounded-lg border-zinc-200 py-2 px-4">
-            <ul className="flex flex-col space-y-2">
-              <NavbarMenu />
-            </ul>
+          <div className="h-screen">
+            <div className="w-full border rounded-lg border-zinc-200 p-4">
+              <div className="grid items-center">
+                <ul className="flex flex-col space-y-4 items-center">
+                  <NavbarMenu />
+                </ul>
+              </div>
+            </div>
           </div>
         )}
       </Container>

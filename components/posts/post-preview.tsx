@@ -30,12 +30,14 @@ const PostPreview = ({
           width={556}
         />
       </div>
-      <h4 className="mb-3">
+      <h3 className="mb-3">
         <Link href={`/posts/${slug}`}>
-          <a className="hover:underline">{title}</a>
+          <a className="hover:underline" title={title}>
+            {title}
+          </a>
         </Link>
-      </h4>
-      <div className="mb-4 flex space-x-2">
+      </h3>
+      <div className="mb-4 flex space-x-2 text-sm">
         <div className="text-black font-bold">{category}</div>
         <div>|</div>
         <DateFormatter dateString={date} />

@@ -7,9 +7,10 @@ type Props = {
   category: string;
   coverImage: string;
   date: string;
+  caption: string;
 };
 
-const PostHeader = ({ title, category, coverImage, date }: Props) => {
+const PostHeader = ({ title, category, coverImage, date, caption }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -21,7 +22,15 @@ const PostHeader = ({ title, category, coverImage, date }: Props) => {
         </div>
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} height={620} width={1240} />
+        <figure>
+          <CoverImage
+            title={title}
+            src={coverImage}
+            height={620}
+            width={1240}
+          />
+          <figcaption>{caption}</figcaption>
+        </figure>
       </div>
     </>
   );

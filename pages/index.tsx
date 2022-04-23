@@ -28,7 +28,9 @@ const Index = ({ allPosts }: AllPosts) => {
                 <div className="mt-4 font-medium">
                   <Link href="/posts" passHref>
                     <div className="flex items-center hover:cursor-pointer hover:underline">
-                      <a className="mr-0.5">Read all post</a>
+                      <a className="mr-0.5" title="Read all post">
+                        Read all post
+                      </a>
                       <IconArrowRight width="22" height="14" />
                     </div>
                   </Link>

@@ -15,10 +15,10 @@ const About = () => {
       <Meta data={pageMeta} />
       <Layout>
         <Container>
-          <div className="space-y-12 lg:px-32">
-            <div>
+          <div className="space-y-12 max-w-3xl mx-auto">
+            <div className="space-y-12">
               <div>
-                <h1 className="mb-6">About me</h1>
+                <h1>About me</h1>
               </div>
               <div>
                 <div className="flex justify-center mb-12">
@@ -113,6 +113,20 @@ const About = () => {
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div>
+              <div className="mb-6">
+                <h2>Curriculum Vitae</h2>
+              </div>
+              <div>
+                <p>
+                  You can see and download my latest CV{" "}
+                  <Link href="https://drive.google.com/file/d/14SkpfAltg0GS4qfomrwZH3g8fpGxDulX/view?usp=sharing">
+                    <a className="underline font-bold">here</a>
+                  </Link>{" "}
+                  (last updated: April 2022)
+                </p>
+              </div>
             </div>
           </div>
         </Container>
