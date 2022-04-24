@@ -1,27 +1,25 @@
-import Container from "../components/layouts/container";
-import Layout from "../components/layouts/layout";
-import PostsList from "../components/posts/posts-list";
-import HeroPost from "../components/posts/hero-post";
-import Section from "../components/layouts/section";
-import Meta from "../components/common/meta";
-import PageHeader from "../components/common/page-header";
-import { getAllPosts } from "../lib/api";
-import AllPosts from "../types/all-posts";
+import Meta from 'components/common/Meta';
+import Container from 'components/layouts/Container';
+import Layout from 'components/layouts/Layout';
+import PageHeader from 'components/layouts/Page/PageHeader';
+import Section from 'components/layouts/Section';
+import HeroPost from 'components/templates/Posts/HeroPost';
+import PostsList from 'components/templates/Posts/PostsList';
+import { getAllPosts } from 'lib/api';
+import AllPosts from 'types/all-posts';
 
 const Posts = ({ allPosts }: AllPosts) => {
   const heroPost = allPosts[0];
   const everyPosts = allPosts.slice(0);
-  const techPosts = allPosts.filter((posts) => posts.category === "Tech");
-  const investPosts = allPosts.filter(
-    (posts) => posts.category === "Investment"
-  );
+  const techPosts = allPosts.filter((posts) => posts.category === 'Tech');
   const generasiGIGIHPosts = allPosts.filter(
-    (posts) => posts.category === "Generasi Gigih"
+    (posts) => posts.category === 'Generasi Gigih'
   );
+
   const pageMeta = {
-    title: "Posts",
+    title: 'Posts',
     description: "Irfan Nurghiffari Muhajir's posts",
-    ogImage: "/assets/images/irfan.jpeg",
+    ogImage: '/assets/images/irfan.jpeg',
   };
 
   return (
@@ -74,13 +72,13 @@ export default Posts;
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
-    "title",
-    "category",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
+    'title',
+    'category',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
   ]);
 
   return {

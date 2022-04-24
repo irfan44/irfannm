@@ -1,15 +1,15 @@
-import Meta from "../components/common/meta";
-import PageHeader from "../components/common/page-header";
-import Container from "../components/layouts/container";
-import Layout from "../components/layouts/layout";
-import ProjectCard from "../components/pages/projects/project-card";
-import ProjectsList from "../data/projects-list";
+import Meta from 'components/common/Meta';
+import Container from 'components/layouts/Container';
+import Layout from 'components/layouts/Layout';
+import PageHeader from 'components/layouts/Page/PageHeader';
+import ProjectCard from 'components/templates/Projects/ProjectCard';
+import ProjectsList from 'data/projectsList';
 
 const Projects = () => {
   const pageMeta = {
-    title: "Projects",
+    title: 'Projects',
     description: "Irfan Nurghiffari Muhajir's projects",
-    ogImage: "/assets/images/irfan.jpeg",
+    ogImage: '/assets/images/irfan.jpeg',
   };
   return (
     <>
