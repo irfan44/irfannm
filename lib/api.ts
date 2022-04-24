@@ -1,17 +1,17 @@
-import fs from "fs";
-import { join } from "path";
-import matter from "gray-matter";
+import fs from 'fs';
+import { join } from 'path';
+import matter from 'gray-matter';
 
-const postsDirectory = join(process.cwd(), "data/posts");
+const postsDirectory = join(process.cwd(), 'data/posts');
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.mdx$/, "");
+  const realSlug = slug.replace(/\.mdx$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   type Items = {
@@ -22,14 +22,14 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
-    if (field === "slug") {
+    if (field === 'slug') {
       items[field] = realSlug;
     }
-    if (field === "content") {
+    if (field === 'content') {
       items[field] = content;
     }
 
-    if (typeof data[field] !== "undefined") {
+    if (typeof data[field] !== 'undefined') {
       items[field] = data[field];
     }
   });
