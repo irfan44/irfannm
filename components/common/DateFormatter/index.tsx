@@ -1,13 +1,12 @@
-import format from 'date-fns/format';
-import parseISO from 'date-fns/parseISO';
+import dayjs from 'dayjs';
 
 type Props = {
   dateString: string;
 };
 
 const DateFormatter = ({ dateString }: Props) => {
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>;
+  const date = dayjs(dateString).format('MMM D, YYYY');
+  return <time dateTime={dateString}>{date}</time>;
 };
 
 export default DateFormatter;
