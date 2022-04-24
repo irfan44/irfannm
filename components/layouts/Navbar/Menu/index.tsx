@@ -9,12 +9,7 @@ const Menu = () => {
     <>
       {menuList.map(({ name, link }) => {
         return (
-          <li
-            key={name}
-            className={`hover:underline ${
-              router.asPath == link ? 'underline' : ''
-            }`}
-          >
+          <li key={name}>
             <Link href={link}>
               <a>{name}</a>
             </Link>

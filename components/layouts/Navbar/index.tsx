@@ -7,7 +7,7 @@ import IconMenu from 'components/icons/Menu/IconsMenu';
 import IconsMoon from 'components/icons/Themes/IconsMoon';
 import IconsSun from 'components/icons/Themes/IconsSun';
 import Container from 'components/layouts/Container';
-import Menu from 'components/layouts/Header/Menu';
+import Menu from 'components/layouts/Navbar/Menu';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
@@ -49,7 +49,7 @@ const Navbar = () => {
           </div>
           <div className="md:hidden ml-auto py-auto flex items-center">
             <ul className="flex space-x-2 items-center">
-              <li>{renderThemeChanger()}</li>
+              <li className="flex items-center">{renderThemeChanger()}</li>
               <li>
                 <button
                   className="ml-2"
@@ -65,7 +65,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block text-left">
             <ul className="flex flex-row items-center space-x-6">
-              <li className="p-2">{renderThemeChanger()}</li>
+              <li className="flex items-center">{renderThemeChanger()}</li>
               <Menu />
             </ul>
           </div>

@@ -1,5 +1,5 @@
 import Footer from 'components/layouts/Footer';
-import Navbar from 'components/layouts/Header';
+import Navbar from 'components/layouts/Navbar';
 
 type Props = {
   preview?: boolean;
