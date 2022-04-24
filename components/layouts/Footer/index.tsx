@@ -4,7 +4,7 @@ import Container from 'components/layouts/Container';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-neutral-200 mt-32">
+    <footer className="border-t border-neutral-200 dark:border-zinc-900 mt-32">
       <Container>
         <div className="flex py-12">
           <div className="mx-auto text-center md:mx-0 md:text-left">

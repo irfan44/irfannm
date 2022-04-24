@@ -1,32 +1,14 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
+  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Public Sans", ...fontFamily.sans],
+        sans: ['Public Sans', ...fontFamily.sans],
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            color: "#000",
-            "h1, h2, h3, h4, h5, h6": {
-              color: "#000",
-            },
-            "ol > li::marker": {
-              color: "#000",
-            },
-            "ul > li::marker": {
-              color: "#000",
-            },
-            blockquote: {
-              borderLeftColor: "#000",
-            },
-          },
-        },
-      }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require('@tailwindcss/typography')],
 };

@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen mt-32">
+      <div className="min-h-screen mt-32 transition-all">
         <main>{children}</main>
       </div>
       <Footer />

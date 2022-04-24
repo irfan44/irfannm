@@ -1,9 +1,9 @@
 const IconMenu = () => {
   return (
     <svg
-      className="fill-black"
-      width="22"
-      height="12"
+      className="fill-black dark:fill-white"
+      width="1.18em"
+      height="1.18em"
       viewBox="0 0 18 12"
       xmlns="http://www.w3.org/2000/svg"
     >

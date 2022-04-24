@@ -1,11 +1,11 @@
 const IconClose = () => {
   return (
     <svg
-      className="fill-black"
+      className="fill-black dark:fill-white"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      width="24"
-      height="24"
+      width="1.18em"
+      height="1.18em"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
     >

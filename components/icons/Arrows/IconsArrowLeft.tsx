@@ -6,7 +6,7 @@ type Props = {
 const IconArrowLeft = ({ width, height }: Props) => {
   return (
     <svg
-      className="fill-black"
+      className="fill-black dark:fill-white"
       width={width}
       height={height}
       viewBox="0 0 15 24"

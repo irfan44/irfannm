@@ -54,7 +54,7 @@ const Post = ({ post, preview }: Props) => {
                   </div>
                 </button>
               </div>
-              <article className="mb-32 prose md:prose-lg max-w-none">
+              <article className="mb-32 prose md:prose-lg max-w-none dark:prose-invert dark:text-white">
                 <PostBody>
                   <PostHeader
                     title={post.title}

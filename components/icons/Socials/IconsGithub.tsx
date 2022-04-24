@@ -1,7 +1,7 @@
 const IconsGithub = () => {
   return (
     <svg
-      className="fill-black"
+      className="fill-black dark:fill-white"
       width="24"
       height="24"
       viewBox="0 0 24 24"
