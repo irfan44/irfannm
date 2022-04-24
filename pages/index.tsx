@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Button from 'components/common/Button';
 import Meta from 'components/common/Meta';
 import IconArrowRight from 'components/icons/Arrows/IconsArrowRight';
 import Container from 'components/layouts/Container';
@@ -9,12 +10,20 @@ import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 
 const Index = ({ allPosts }: AllPosts) => {
+  const router = useRouter();
+
   const latestPosts = allPosts.slice(0, 3);
+
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
     ogImage: '/assets/images/irfan.jpeg',
   };
+
+  const handleReadAllPost = () => {
+    router.push('/posts');
+  };
+
   return (
     <>
       <Meta data={pageMeta} />
@@ -26,14 +35,12 @@ const Index = ({ allPosts }: AllPosts) => {
               <div>
                 <PostsList title="Latest Posts" posts={latestPosts} />
                 <div className="mt-4 font-medium">
-                  <Link href="/posts" passHref>
+                  <Button onClick={handleReadAllPost}>
                     <div className="flex items-center hover:cursor-pointer hover:underline">
-                      <a className="mr-0.5" title="Read all post">
-                        Read all post
-                      </a>
+                      <p>Read all post</p>
                       <IconArrowRight width="22" height="14" />
                     </div>
-                  </Link>
+                  </Button>
                 </div>
               </div>
             )}
