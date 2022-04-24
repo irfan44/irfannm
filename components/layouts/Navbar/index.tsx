@@ -19,13 +19,13 @@ const Navbar = () => {
 
     if (currentTheme === 'dark') {
       return (
-        <Button onClick={() => setTheme('light')}>
+        <Button title="Change to light theme" onClick={() => setTheme('light')}>
           <IconsSun />
         </Button>
       );
     } else {
       return (
-        <Button onClick={() => setTheme('dark')}>
+        <Button title="Change to dark theme" onClick={() => setTheme('dark')}>
           <IconsMoon />
         </Button>
       );

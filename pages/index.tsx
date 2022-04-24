@@ -20,7 +20,7 @@ const Index = ({ allPosts }: AllPosts) => {
     ogImage: '/assets/images/irfan.jpeg',
   };
 
-  const handleReadAllPost = () => {
+  const handleReadAllPosts = () => {
     router.push('/posts');
   };
 
@@ -35,9 +35,9 @@ const Index = ({ allPosts }: AllPosts) => {
               <div>
                 <PostsList title="Latest Posts" posts={latestPosts} />
                 <div className="mt-4 font-medium">
-                  <Button onClick={handleReadAllPost}>
+                  <Button title="Read all posts" onClick={handleReadAllPosts}>
                     <div className="flex items-center hover:cursor-pointer hover:underline">
-                      <p>Read all post</p>
+                      <p>Read all posts</p>
                       <IconArrowRight width="22" height="14" />
                     </div>
                   </Button>
