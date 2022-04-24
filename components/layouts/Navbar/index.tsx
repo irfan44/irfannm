@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="md:hidden ml-auto py-auto flex items-center">
             <ul className="flex space-x-2 items-center">
               <li className="flex items-center">{renderThemeChanger()}</li>
-              <li>
+              <li className="flex items-center">
                 <button
                   className="ml-2"
                   title="Menu"
