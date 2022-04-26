@@ -6,7 +6,7 @@ import Layout from 'components/layouts/Layout';
 
 const About = () => {
   const pageMeta = {
-    title: 'About me',
+    title: 'About',
     description: 'About Irfan Nurghiffari Muhajir',
     ogImage: '/assets/images/irfan.jpeg',
   };
