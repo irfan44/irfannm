@@ -34,7 +34,9 @@ const Navbar = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, [mounted]);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <nav className="fixed top-0 w-full bg-neutral-50 dark:bg-dark z-10">

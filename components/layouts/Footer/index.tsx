@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import SocialLink from 'components/common/SocialLinks';
+import IconsGithub from 'components/icons/Socials/IconsGithub';
 import Container from 'components/layouts/Container';
+import Menu from '../Navbar/Menu';
 
 const Footer = () => {
   return (
     <footer className="border-t border-neutral-200 dark:border-zinc-900 mt-32">
       <Container>
         <div className="flex py-12">
-          <div className="mx-auto text-center md:mx-0 md:text-left">
+          <div className="flex-1 mx-auto text-center md:mx-0 md:text-left">
             <h2 className="font-bold leading-tight md:pr-8 mb-4 text-center md:text-left">
               <Link href="/">
                 <a>inm</a>
@@ -19,6 +21,23 @@ const Footer = () => {
             <p className="text-sm">MIT License</p>
             <p className="text-sm">© 2022 Irfan Nurghiffari Muhajir</p>
             <p className="text-sm mt-2">With 😻 using NextJS & Tailwind CSS</p>
+          </div>
+          <div className="md:flex flex-col justify-between hidden">
+            <ul className="flex flex-col ">
+              <Menu />
+            </ul>
+            <div>
+              <div className="">
+                <Link href="https://github.com/irfan44/inm-typescript">
+                  <a className="flex text-sm items-center">
+                    <span className="mr-2">
+                      <IconsGithub />
+                    </span>
+                    Source code
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

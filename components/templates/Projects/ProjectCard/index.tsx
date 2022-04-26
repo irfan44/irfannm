@@ -9,7 +9,7 @@ type Props = {
 };
 const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
   return (
-    <div className="space-y-3 border border-gray-500 dark:border-gray-200 rounded-2xl p-5">
+    <div className="space-y-3 border border-dark dark:border-neutral-50 rounded-2xl p-5 hover:shadow">
       <h4>{name}</h4>
       <p>{description}</p>
       <div className="flex space-x-2">
@@ -17,7 +17,7 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
           return (
             <div
               key={stack}
-              className="bg-black text-white dark:bg-zinc-900 px-2 py-1 rounded-lg text-sm"
+              className="bg-dark text-white dark:bg-transparent dark:border dark:border-neutral-50 px-2 py-1 rounded-lg text-sm"
             >
               <p>{stack}</p>
             </div>
