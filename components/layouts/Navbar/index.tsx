@@ -37,7 +37,7 @@ const Navbar = () => {
   }, [mounted]);
 
   return (
-    <nav className="fixed top-0 w-full bg-white dark:bg-dark z-10">
+    <nav className="fixed top-0 w-full bg-neutral-50 dark:bg-dark z-10">
       <Container>
         <div className="flex justify-between py-4 items-center">
           <div>
