@@ -6,7 +6,7 @@ import Layout from 'components/layouts/Layout';
 
 const About = () => {
   const pageMeta = {
-    title: 'About me',
+    title: 'About',
     description: 'About Irfan Nurghiffari Muhajir',
     ogImage: '/assets/images/irfan.jpeg',
   };
@@ -18,7 +18,7 @@ const About = () => {
           <div className="space-y-12 max-w-3xl mx-auto">
             <div className="space-y-12">
               <div>
-                <h1>About me</h1>
+                <h1>About</h1>
               </div>
               <div>
                 <div className="flex justify-center mb-12">

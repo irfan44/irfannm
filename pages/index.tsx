@@ -4,6 +4,7 @@ import Meta from 'components/common/Meta';
 import IconArrowRight from 'components/icons/Arrows/IconsArrowRight';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
+import Section from 'components/layouts/Section';
 import HeroSection from 'components/templates/Home/HeroSection';
 import PostsList from 'components/templates/Posts/PostsList';
 import { getAllPosts } from 'lib/api';
@@ -33,7 +34,9 @@ const Index = ({ allPosts }: AllPosts) => {
             <HeroSection />
             {latestPosts.length > 0 && (
               <div>
-                <PostsList title="Latest Posts" posts={latestPosts} />
+                <Section title="Latest Posts">
+                  <PostsList posts={latestPosts} />
+                </Section>
                 <div className="mt-4 font-medium">
                   <Button title="Read all posts" onClick={handleReadAllPosts}>
                     <div className="flex items-center hover:cursor-pointer hover:underline">

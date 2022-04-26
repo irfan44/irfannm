@@ -6,23 +6,26 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Public Sans', ...fontFamily.sans],
+        sans: ['Inter', ...fontFamily.sans],
+      },
+      colors: {
+        dark: '#161616',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: '#000',
+            color: '#161616',
             'h1, h2, h3, h4, h5, h6': {
-              color: '#000',
+              color: '#161616',
             },
             'ol > li::marker': {
-              color: '#000',
+              color: '#161616',
             },
             'ul > li::marker': {
-              color: '#000',
+              color: '#161616',
             },
             blockquote: {
-              borderLeftColor: '#000',
+              borderLeftColor: '#161616',
             },
           },
         },

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
@@ -9,6 +10,8 @@ import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 
 const Posts = ({ allPosts }: AllPosts) => {
+  const [isActive, setIsActive] = useState('all');
+
   const heroPost = allPosts[0];
   const everyPosts = allPosts.slice(0);
   const techPosts = allPosts.filter((posts) => posts.category === 'Tech');
@@ -47,7 +50,48 @@ const Posts = ({ allPosts }: AllPosts) => {
                 )}
               </Section>
             </div>
-            {generasiGIGIHPosts.length > 0 && (
+            <div>
+              <Section title="Posts">
+                <div className="space-x-2">
+                  <button
+                    className={isActive === 'all' ? 'font-bold' : 'font-base'}
+                    onClick={() => setIsActive('all')}
+                  >
+                    All
+                  </button>
+                  <button
+                    className={isActive === 'tech' ? 'font-bold' : 'font-base'}
+                    onClick={() => setIsActive('tech')}
+                  >
+                    Tech
+                  </button>
+                  <button
+                    className={isActive === 'gg' ? 'font-bold' : 'font-base'}
+                    onClick={() => setIsActive('gg')}
+                  >
+                    Generasi Gigih
+                  </button>
+                </div>
+                <div>
+                  {isActive === 'all' && everyPosts.length > 0 && (
+                    <div className="mt-6">
+                      <PostsList posts={everyPosts} />
+                    </div>
+                  )}
+                  {isActive === 'tech' && techPosts.length > 0 && (
+                    <div className="mt-6">
+                      <PostsList posts={techPosts} />
+                    </div>
+                  )}
+                  {isActive === 'gg' && generasiGIGIHPosts.length > 0 && (
+                    <div className="mt-6">
+                      <PostsList posts={generasiGIGIHPosts} />
+                    </div>
+                  )}
+                </div>
+              </Section>
+            </div>
+            {/* {generasiGIGIHPosts.length > 0 && (
               <div>
                 <PostsList title="Generasi Gigih" posts={generasiGIGIHPosts} />
               </div>
@@ -61,7 +105,7 @@ const Posts = ({ allPosts }: AllPosts) => {
               <div>
                 <PostsList title="All Post" posts={everyPosts} />
               </div>
-            )}
+            )} */}
           </div>
         </Container>
       </Layout>
