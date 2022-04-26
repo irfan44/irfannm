@@ -18,7 +18,7 @@ const About = () => {
           <div className="space-y-12 max-w-3xl mx-auto">
             <div className="space-y-12">
               <div>
-                <h1>About me</h1>
+                <h1>About</h1>
               </div>
               <div>
                 <div className="flex justify-center mb-12">

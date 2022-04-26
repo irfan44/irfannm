@@ -7,35 +7,35 @@
 @layer base {
   h1,
   .h1 {
-    @apply font-sans text-4xl font-bold md:text-5xl tracking-tighter leading-tight text-dark dark:text-white;
+    @apply font-sans text-4xl font-bold md:text-5xl tracking-tighter leading-tight text-black dark:text-white;
   }
 
   h2,
   .h2 {
-    @apply font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-dark dark:text-white;
+    @apply font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white;
   }
 
   h3,
   .h3 {
-    @apply font-sans text-xl font-bold md:text-3xl tracking-tighter leading-tight text-dark dark:text-white;
+    @apply font-sans text-xl font-bold md:text-3xl tracking-tighter leading-tight text-black dark:text-white;
   }
 
   h4,
   .h4 {
-    @apply font-sans text-lg font-bold md:text-2xl text-dark dark:text-white;
+    @apply font-sans text-lg font-bold md:text-2xl text-black dark:text-white;
   }
 
   h5,
   .h5 {
-    @apply font-sans text-base font-bold md:text-lg tracking-tighter leading-tight text-dark dark:text-white;
+    @apply font-sans text-base font-bold md:text-lg tracking-tighter leading-tight text-black dark:text-white;
   }
 
   body,
   .p {
-    @apply font-sans text-base text-dark dark:text-white;
+    @apply font-sans text-base text-dark dark:text-gray-200;
   }
 
   body {
-    @apply bg-white text-dark dark:bg-dark dark:text-white;
+    @apply bg-white dark:bg-dark;
   }
 }

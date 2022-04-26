@@ -1,10 +1,11 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import Button from 'components/common/Button';
 import IconClose from 'components/icons/Menu/IconsClose';
 import IconMenu from 'components/icons/Menu/IconsMenu';
+import IconsMoon from 'components/icons/Themes/IconsMoon';
+import IconsSun from 'components/icons/Themes/IconsSun';
 import Container from 'components/layouts/Container';
 import Menu from 'components/layouts/Navbar/Menu';
 
@@ -19,13 +20,13 @@ const Navbar = () => {
     if (currentTheme === 'dark') {
       return (
         <Button title="Change to light theme" onClick={() => setTheme('light')}>
-          <IoMdSunny />
+          <IconsSun />
         </Button>
       );
     } else {
       return (
         <Button title="Change to dark theme" onClick={() => setTheme('dark')}>
-          <IoMdMoon />
+          <IconsMoon />
         </Button>
       );
     }
@@ -51,7 +52,7 @@ const Navbar = () => {
               <li className="flex items-center">{renderThemeChanger()}</li>
               <li>
                 <button
-                  className="ml-2"
+                  className="ml-2 flex items-center"
                   title="Menu"
                   onClick={() => {
                     isActive ? setActive(false) : setActive(true);
