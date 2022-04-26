@@ -1,18 +1,17 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import Container from "../../components/layouts/container";
-import PostBody from "../../components/post-page/post-body";
-import PostHeader from "../../components/post-page/post-header";
-import Layout from "../../components/layouts/layout";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/post-page/post-title";
-import Head from "next/head";
-import PostType from "../../types/post";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
-import Image from "next/image";
-import IconArrowLeft from "../../components/icons/icons-arrow-left";
-import Meta from "../../components/common/meta";
+import { MDXRemote } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import ErrorPage from 'next/error';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import Meta from 'components/common/Meta';
+import IconArrowLeft from 'components/icons/Arrows/IconsArrowLeft';
+import Container from 'components/layouts/Container';
+import Layout from 'components/layouts/Layout';
+import PostBody from 'components/templates/PostContent/PostBody';
+import PostHeader from 'components/templates/PostContent/PostHeader';
+import PostTitle from 'components/templates/PostContent/PostHeader/PostTitle';
+import { getPostBySlug, getAllPosts } from 'lib/api';
+import PostType from 'types/post';
 
 type Props = {
   post: PostType;
@@ -22,7 +21,7 @@ type Props = {
 
 const components = { Image };
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ post, preview }: Props) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -45,7 +44,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
               <div>
                 <button
                   className="mb-4"
-                  onClick={() => void router.back() || void router.push("/")}
+                  onClick={() => void router.back() || void router.push('/')}
                 >
                   <div className="flex items-center">
                     <IconArrowLeft width="22" height="14" />
@@ -55,7 +54,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                   </div>
                 </button>
               </div>
-              <article className="mb-32 prose md:prose-lg max-w-none">
+              <article className="mb-32 prose md:prose-lg max-w-none dark:prose-invert dark:text-white">
                 <PostBody>
                   <PostHeader
                     title={post.title}
@@ -85,14 +84,14 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
-    "title",
-    "category",
-    "date",
-    "slug",
-    "content",
-    "ogImage",
-    "caption",
-    "coverImage",
+    'title',
+    'category',
+    'date',
+    'slug',
+    'content',
+    'ogImage',
+    'caption',
+    'coverImage',
   ]);
 
   const content = await serialize(post.content);
@@ -107,7 +106,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllPosts(['slug']);
 
   return {
     paths: posts.map((post) => {

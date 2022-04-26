@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
-import Meta from "../components/common/meta";
-import Container from "../components/layouts/container";
-import Layout from "../components/layouts/layout";
+import Image from 'next/image';
+import Link from 'next/link';
+import Meta from 'components/common/Meta';
+import Container from 'components/layouts/Container';
+import Layout from 'components/layouts/Layout';
 
 const About = () => {
   const pageMeta = {
-    title: "About me",
-    description: "About Irfan Nurghiffari Muhajir",
-    ogImage: "/assets/images/irfan.jpeg",
+    title: 'About',
+    description: 'About Irfan Nurghiffari Muhajir',
+    ogImage: '/assets/images/irfan.jpeg',
   };
   return (
     <>
@@ -18,7 +18,7 @@ const About = () => {
           <div className="space-y-12 max-w-3xl mx-auto">
             <div className="space-y-12">
               <div>
-                <h1>About me</h1>
+                <h1>About</h1>
               </div>
               <div>
                 <div className="flex justify-center mb-12">
@@ -32,8 +32,8 @@ const About = () => {
                 </div>
                 <div className="space-y-6">
                   <p>
-                    <strong>Hi everyone!</strong> I&apos;m{" "}
-                    <strong>Irfan Nurghiffari Muhajir</strong>, you can call me{" "}
+                    <strong>Hi everyone!</strong> I&apos;m{' '}
+                    <strong>Irfan Nurghiffari Muhajir</strong>, you can call me{' '}
                     <strong>Irfan</strong>. I grew up in Tangerang, which is one
                     of the satellite cities of Jakarta. Currently I&apos;m a
                     Software Engineering student at Universitas Pendidikan
@@ -45,22 +45,22 @@ const About = () => {
                     I focus much of my time in collage to learn about software
                     engineering. I love exploring stuff about technology.
                     I&apos;m part of Red Hat&apos;s team as a Class Assistant &
-                    Help desk in{" "}
+                    Help desk in{' '}
                     <Link href="https://digitalent.kominfo.go.id/">
                       <a className="font-bold underline">
                         Digital Talent Scholarship
                       </a>
-                    </Link>{" "}
+                    </Link>{' '}
                     held by Kementrian Kominfo for 2 years. I&apos;m also part
-                    of{" "}
+                    of{' '}
                     <Link href="https://ramaniya.id/">
                       <a className="font-bold underline">Ramaniya</a>
-                    </Link>{" "}
+                    </Link>{' '}
                     as a freelance Information Technology Staff in 2021. I also
-                    took part in{" "}
+                    took part in{' '}
                     <Link href="https://www.anakbangsabisa.org/generasi-gigih/">
                       <a className="font-bold underline">Generasi Gigih</a>
-                    </Link>{" "}
+                    </Link>{' '}
                     held by Yayasan Anak Bangsa Bisa & GoTo Group at Front-end
                     Engineering Track.
                   </p>
@@ -79,25 +79,25 @@ const About = () => {
               <p className="mb-2">You can contact me here :</p>
               <ul className="list-disc ml-4 space-y-1">
                 <li>
-                  Mail :{" "}
+                  Mail :{' '}
                   <Link href="mailto:irfannmuhajir@gmail.com">
                     <a className="underline">irfannmuhajir@gmail.com</a>
                   </Link>
                 </li>
                 <li>
-                  Github :{" "}
+                  Github :{' '}
                   <Link href="https://github.com/irfan44">
                     <a className="underline">https://github.com/irfan44</a>
                   </Link>
                 </li>
                 <li>
-                  Gitlab :{" "}
+                  Gitlab :{' '}
                   <Link href="https://gitlab.com/irfannm">
                     <a className="underline">https://gitlab.com/irfannm</a>
-                  </Link>{" "}
+                  </Link>{' '}
                 </li>
                 <li>
-                  LinkedIn :{" "}
+                  LinkedIn :{' '}
                   <Link href="https://www.linkedin.com/in/irfannm/">
                     <a className="underline">
                       https://linkedin.com/in/irfannm/
@@ -105,7 +105,7 @@ const About = () => {
                   </Link>
                 </li>
                 <li>
-                  Instagram :{" "}
+                  Instagram :{' '}
                   <Link href="https://www.instagram.com/irfan_nm44/">
                     <a className="underline">
                       https://instagram.com/irfan_nm44/
@@ -120,10 +120,10 @@ const About = () => {
               </div>
               <div>
                 <p>
-                  You can see and download my latest CV{" "}
+                  You can see and download my latest CV{' '}
                   <Link href="https://drive.google.com/file/d/14SkpfAltg0GS4qfomrwZH3g8fpGxDulX/view?usp=sharing">
                     <a className="underline font-bold">here</a>
-                  </Link>{" "}
+                  </Link>{' '}
                   (last updated: April 2022)
                 </p>
               </div>
