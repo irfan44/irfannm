@@ -54,19 +54,31 @@ const Posts = ({ allPosts }: AllPosts) => {
               <Section title="Posts">
                 <div className="space-x-2">
                   <button
-                    className={isActive === 'all' ? 'font-bold' : 'font-base'}
+                    className={
+                      isActive === 'all'
+                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        : 'font-base'
+                    }
                     onClick={() => setIsActive('all')}
                   >
                     All
                   </button>
                   <button
-                    className={isActive === 'tech' ? 'font-bold' : 'font-base'}
+                    className={
+                      isActive === 'tech'
+                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        : 'font-base'
+                    }
                     onClick={() => setIsActive('tech')}
                   >
                     Tech
                   </button>
                   <button
-                    className={isActive === 'gg' ? 'font-bold' : 'font-base'}
+                    className={
+                      isActive === 'gg'
+                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        : 'font-base'
+                    }
                     onClick={() => setIsActive('gg')}
                   >
                     Generasi Gigih

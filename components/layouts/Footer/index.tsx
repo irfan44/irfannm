@@ -6,7 +6,7 @@ import Menu from '../Navbar/Menu';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-neutral-200 dark:border-zinc-900 mt-32">
+    <footer className="border-t border-neutral-200 dark:border-neutral-700 mt-32">
       <Container>
         <div className="flex py-12">
           <div className="flex-1 mx-auto text-center md:mx-0 md:text-left">
