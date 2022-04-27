@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/Inter-VariableFont.ttf') format('truetype');
+  }
+
   h1,
   .h1 {
     @apply font-sans text-4xl font-bold md:text-5xl tracking-tighter leading-tight text-black dark:text-white;
