@@ -34,10 +34,12 @@ const Navbar = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, [mounted]);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
-    <nav className="fixed top-0 w-full bg-white dark:bg-dark z-10">
+    <nav className="fixed top-0 w-full bg-neutral-50 dark:bg-dark z-10">
       <Container>
         <div className="flex justify-between py-4 items-center">
           <div>
@@ -65,8 +67,8 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block text-left">
             <ul className="flex flex-row items-center space-x-6">
-              <li className="flex items-center">{renderThemeChanger()}</li>
               <Menu />
+              <li className="flex items-center">{renderThemeChanger()}</li>
             </ul>
           </div>
         </div>

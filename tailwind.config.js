@@ -9,7 +9,9 @@ module.exports = {
         sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
+        light: '#f5f5f5',
         dark: '#161616',
+        accent: '#0f4c81',
       },
       typography: (theme) => ({
         DEFAULT: {

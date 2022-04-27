@@ -8,7 +8,7 @@ const Menu = () => {
         return (
           <li key={name}>
             <Link href={link}>
-              <a>{name}</a>
+              <a className="hover:text-black dark:hover:text-white">{name}</a>
             </Link>
           </li>
         );
