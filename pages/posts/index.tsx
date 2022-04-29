@@ -103,21 +103,6 @@ const Posts = ({ allPosts }: AllPosts) => {
                 </div>
               </Section>
             </div>
-            {/* {generasiGIGIHPosts.length > 0 && (
-              <div>
-                <PostsList title="Generasi Gigih" posts={generasiGIGIHPosts} />
-              </div>
-            )}
-            {techPosts.length > 0 && (
-              <div>
-                <PostsList title="Technology" posts={techPosts} />
-              </div>
-            )}
-            {everyPosts.length > 0 && (
-              <div>
-                <PostsList title="All Post" posts={everyPosts} />
-              </div>
-            )} */}
           </div>
         </Container>
       </Layout>
