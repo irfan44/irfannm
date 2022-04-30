@@ -106,9 +106,9 @@ const About = () => {
                 </li>
                 <li>
                   Instagram :{' '}
-                  <Link href="https://www.instagram.com/irfan_nm44/">
+                  <Link href="https://www.instagram.com/irfannm44/">
                     <a target="_blank" rel="noopener noreferrer" className="underline">
-                      https://instagram.com/irfan_nm44/
+                      https://instagram.com/irfannm44/
                     </a>
                   </Link>
                 </li>
