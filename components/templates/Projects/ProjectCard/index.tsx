@@ -34,7 +34,7 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
           <div className="flex space-x-2 items-center hover:underline">
             <IconsGithub />
             <Link href={sourceCode}>
-              <a>Source code</a>
+              <a target="_blank" rel="noopener noreferrer">Source code</a>
             </Link>
           </div>
         )}
