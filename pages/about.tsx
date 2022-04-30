@@ -47,19 +47,19 @@ const About = () => {
                     I&apos;m part of Red Hat&apos;s team as a Class Assistant &
                     Help desk in{' '}
                     <Link href="https://digitalent.kominfo.go.id/">
-                      <a className="font-bold underline">
+                      <a target="_blank" rel="noopener noreferrer" className="font-bold underline">
                         Digital Talent Scholarship
                       </a>
                     </Link>{' '}
                     held by Kementrian Kominfo for 2 years. I&apos;m also part
                     of{' '}
                     <Link href="https://ramaniya.id/">
-                      <a className="font-bold underline">Ramaniya</a>
+                      <a target="_blank" rel="noopener noreferrer" className="font-bold underline">Ramaniya</a>
                     </Link>{' '}
                     as a freelance Information Technology Staff in 2021. I also
                     took part in{' '}
                     <Link href="https://www.anakbangsabisa.org/generasi-gigih/">
-                      <a className="font-bold underline">Generasi Gigih</a>
+                      <a target="_blank" rel="noopener noreferrer" className="font-bold underline">Generasi Gigih</a>
                     </Link>{' '}
                     held by Yayasan Anak Bangsa Bisa & GoTo Group at Front-end
                     Engineering Track.
@@ -81,25 +81,25 @@ const About = () => {
                 <li>
                   Mail :{' '}
                   <Link href="mailto:irfannmuhajir@gmail.com">
-                    <a className="underline">irfannmuhajir@gmail.com</a>
+                    <a target="_blank" rel="noopener noreferrer" className="underline">irfannmuhajir@gmail.com</a>
                   </Link>
                 </li>
                 <li>
                   Github :{' '}
                   <Link href="https://github.com/irfan44">
-                    <a className="underline">https://github.com/irfan44</a>
+                    <a target="_blank" rel="noopener noreferrer" className="underline">https://github.com/irfan44</a>
                   </Link>
                 </li>
                 <li>
                   Gitlab :{' '}
                   <Link href="https://gitlab.com/irfannm">
-                    <a className="underline">https://gitlab.com/irfannm</a>
+                    <a target="_blank" rel="noopener noreferrer" className="underline">https://gitlab.com/irfannm</a>
                   </Link>{' '}
                 </li>
                 <li>
                   LinkedIn :{' '}
                   <Link href="https://www.linkedin.com/in/irfannm/">
-                    <a className="underline">
+                    <a target="_blank" rel="noopener noreferrer" className="underline">
                       https://linkedin.com/in/irfannm/
                     </a>
                   </Link>
@@ -107,7 +107,7 @@ const About = () => {
                 <li>
                   Instagram :{' '}
                   <Link href="https://www.instagram.com/irfan_nm44/">
-                    <a className="underline">
+                    <a target="_blank" rel="noopener noreferrer" className="underline">
                       https://instagram.com/irfan_nm44/
                     </a>
                   </Link>
@@ -122,7 +122,7 @@ const About = () => {
                 <p>
                   You can see and download my latest CV{' '}
                   <Link href="https://drive.google.com/file/d/14SkpfAltg0GS4qfomrwZH3g8fpGxDulX/view?usp=sharing">
-                    <a className="underline font-bold">here</a>
+                    <a target="_blank" rel="noopener noreferrer" className="underline font-bold">here</a>
                   </Link>{' '}
                   (last updated: April 2022)
                 </p>
