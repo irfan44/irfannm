@@ -28,8 +28,13 @@ const Footer = () => {
             </ul>
             <div>
               <div className="">
-                <Link href="https://github.com/irfan44/inm-typescript">
-                  <a className="flex text-sm items-center">
+                <Link href="https://github.com/irfan44/irfannm">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex text-sm items-center"
+                    title="Source code"
+                  >
                     <span className="mr-2">
                       <IconsGithub />
                     </span>
