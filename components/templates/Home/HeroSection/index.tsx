@@ -8,11 +8,7 @@ const HeroSection = () => {
         <h1>Hi, I&apos;m Irfan!</h1>
         <p>
           A software engineering student who have a lot of passion in technology
-          and web development. I mainly learn about frontend development using
-          React & NextJS. I also regularly use cloud platform such as AWS, Azure
-          & GCP and have experience in using Kubernetes & Red Hat Openshift.
-          Other than technology, i have a lot of interest in economics and
-          investing.
+          and frontend web development.
         </p>
         <div className="flex space-x-4 py-4">
           <SocialLink />

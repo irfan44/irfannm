@@ -43,7 +43,12 @@ const About = () => {
                   </p>
                   <p>
                     I focus much of my time in collage to learn about software
-                    engineering. I love exploring stuff about technology.
+                    engineering & frontend web development using React & NextJS.
+                    I also regularly use cloud platform such as AWS, Azure & GCP
+                    and have experience in using Kubernetes & Red Hat Openshift.
+                    I love exploring stuff about technology.
+                  </p>
+                  <p>
                     I&apos;m part of Red Hat&apos;s team as a Class Assistant &
                     Help desk in{' '}
                     <Link href="https://digitalent.kominfo.go.id/">
