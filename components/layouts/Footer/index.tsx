@@ -12,7 +12,9 @@ const Footer = () => {
           <div className="flex py-12">
             <div className="flex-1 mx-auto md:mx-0 md:text-left">
               <div className="flex flex-col list-none space-y-1 md:hidden">
-                <Menu />
+                <ul>
+                  <Menu />
+                </ul>
               </div>
               <div className="text-center md:text-left">
                 <h2 className="font-bold leading-tight md:pr-8 my-4 md:mb-4">
