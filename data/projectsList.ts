@@ -9,15 +9,15 @@ type Projects = {
 const ProjectsList: Projects[] = [
   {
     id: '1',
-    name: 'inm',
+    name: 'irfannm',
     description: 'My personal website and blog',
     techStack: ['NextJS', 'Tailwind CSS', 'TypeScript'],
-    sourceCode: 'https://github.com/irfan44/inm-typescript',
+    sourceCode: 'https://github.com/irfan44/irfannm',
   },
   {
     id: '2',
     name: 'SocialTree',
-    description: 'Linktree like social media links sharing',
+    description: 'Linktree like web for my social media link sharing',
     techStack: ['React', 'Vite', 'TypeScript'],
     sourceCode: 'https://github.com/irfan44/socialtree',
   },
@@ -27,7 +27,7 @@ const ProjectsList: Projects[] = [
     description:
       'Spotify playlist creator using Spotify API for Generasi Gigih final project',
     techStack: ['React', 'Redux', 'TypeScript'],
-    sourceCode: 'https://github.com/irfan44/spotifie',
+    sourceCode: 'https://github.com/irfan44/generasi-gigih-homework',
   },
   {
     id: '4',
@@ -58,7 +58,7 @@ const ProjectsList: Projects[] = [
     name: 'YukJahit',
     description: 'A web application for online dressmaking service',
     techStack: ['PHP', 'MySQL', 'HTML', 'CSS'],
-    sourceCode: 'https://githu\b.com/irfan44/UAS-Pemrograman-Web',
+    sourceCode: 'https://github.com/irfan44/UAS-Pemrograman-Web',
   },
 ];
 

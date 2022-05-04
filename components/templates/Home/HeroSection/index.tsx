@@ -7,11 +7,8 @@ const HeroSection = () => {
       <div className="md:w-1/2 space-y-6">
         <h1>Hi, I&apos;m Irfan!</h1>
         <p>
-          A software engineering student who have a lot of passion in
-          technology. I mainly learn about cloud computing and system
-          administration using Linux. I also do a lot of software development
-          myself, especially web and mobile apps development. Other than
-          technology, i have a lot of interest in economics and investing
+          A software engineering student who have a lot of passion in technology
+          and frontend web development.
         </p>
         <div className="flex space-x-4 py-4">
           <SocialLink />
