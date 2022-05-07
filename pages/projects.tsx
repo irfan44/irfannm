@@ -20,7 +20,7 @@ const Projects = () => {
             pageTitle="Projects"
             pageDescription="Various projects that I have worked on."
           />
-          <div className="mt-12 space-y-8">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
             {ProjectsList.map((project) => {
               return (
                 <ProjectCard

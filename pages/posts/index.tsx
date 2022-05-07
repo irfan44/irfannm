@@ -54,19 +54,31 @@ const Posts = ({ allPosts }: AllPosts) => {
               <Section title="Posts">
                 <div className="space-x-2">
                   <button
-                    className={isActive === 'all' ? 'font-bold' : 'font-base'}
+                    className={
+                      isActive === 'all'
+                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        : 'font-base'
+                    }
                     onClick={() => setIsActive('all')}
                   >
                     All
                   </button>
                   <button
-                    className={isActive === 'tech' ? 'font-bold' : 'font-base'}
+                    className={
+                      isActive === 'tech'
+                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        : 'font-base'
+                    }
                     onClick={() => setIsActive('tech')}
                   >
                     Tech
                   </button>
                   <button
-                    className={isActive === 'gg' ? 'font-bold' : 'font-base'}
+                    className={
+                      isActive === 'gg'
+                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        : 'font-base'
+                    }
                     onClick={() => setIsActive('gg')}
                   >
                     Generasi Gigih
@@ -91,21 +103,6 @@ const Posts = ({ allPosts }: AllPosts) => {
                 </div>
               </Section>
             </div>
-            {/* {generasiGIGIHPosts.length > 0 && (
-              <div>
-                <PostsList title="Generasi Gigih" posts={generasiGIGIHPosts} />
-              </div>
-            )}
-            {techPosts.length > 0 && (
-              <div>
-                <PostsList title="Technology" posts={techPosts} />
-              </div>
-            )}
-            {everyPosts.length > 0 && (
-              <div>
-                <PostsList title="All Post" posts={everyPosts} />
-              </div>
-            )} */}
           </div>
         </Container>
       </Layout>

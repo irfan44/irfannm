@@ -34,10 +34,12 @@ const Navbar = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, [mounted]);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
-    <nav className="fixed top-0 w-full bg-white dark:bg-dark z-10">
+    <nav className="fixed top-0 w-full bg-neutral-50 dark:bg-neutral-900 z-10">
       <Container>
         <div className="flex justify-between py-4 items-center">
           <div>
@@ -50,7 +52,7 @@ const Navbar = () => {
           <div className="md:hidden ml-auto py-auto flex items-center">
             <ul className="flex space-x-2 items-center">
               <li className="flex items-center">{renderThemeChanger()}</li>
-              <li>
+              <li className="flex items-center">
                 <button
                   className="ml-2 flex items-center"
                   title="Menu"
@@ -65,8 +67,8 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block text-left">
             <ul className="flex flex-row items-center space-x-6">
-              <li className="flex items-center">{renderThemeChanger()}</li>
               <Menu />
+              <li className="flex items-center">{renderThemeChanger()}</li>
             </ul>
           </div>
         </div>
