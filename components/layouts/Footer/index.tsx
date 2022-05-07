@@ -35,7 +35,7 @@ const Footer = () => {
               </ul>
               <div>
                 <div>
-                  <Link href="https://github.com/irfan44/irfannm">
+                  <Link href="https://github.com/irfan44/irfannm.xyz">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
