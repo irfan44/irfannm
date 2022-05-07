@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import IconsEmail from 'components/icons/Socials/IconsEmail';
 import IconsGithub from 'components/icons/Socials/IconsGithub';
 import IconsInstagram from 'components/icons/Socials/IconsInstagram';
 import IconsLinkedIn from 'components/icons/Socials/IconsLinkedin';
@@ -24,6 +25,13 @@ const SocialLinks = () => {
         <Link href="https://www.instagram.com/irfan_nm44/">
           <a target="_blank" rel="noopener noreferrer" title="Instagram">
             <IconsInstagram />
+          </a>
+        </Link>
+      </div>
+      <div>
+        <Link href="mailto:irfannmuhajir@gmail.com">
+          <a target="_blank" rel="noopener noreferrer" title="Email">
+            <IconsEmail />
           </a>
         </Link>
       </div>
