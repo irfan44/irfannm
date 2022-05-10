@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import SocialLink from 'components/common/SocialLinks';
+import SocialLinks from 'components/common/SocialLinks';
 import IconsGithub from 'components/icons/Socials/IconsGithub';
 import Container from 'components/layouts/Container';
 import Menu from '../Navbar/Menu';
 
 const Footer = () => {
   return (
-    <footer className="mt-32">
+    <footer className="mt-32 mb-5">
       <Container>
-        <div className="border-t border-neutral-200 dark:border-neutral-700">
+        <div>
           <div className="flex py-12">
             <div className="flex-1 mx-auto md:mx-0 md:text-left">
               <div className="flex flex-col list-none space-y-1 md:hidden">
@@ -23,14 +23,14 @@ const Footer = () => {
                   </Link>
                 </h2>
                 <div className="flex space-x-4 mb-8 justify-center md:justify-start">
-                  <SocialLink />
+                  <SocialLinks />
                 </div>
                 <p className="text-sm">© 2022 Irfan Nurghiffari Muhajir</p>
                 <p className="text-sm">With 😻 using NextJS & Tailwind CSS</p>
               </div>
             </div>
             <div className="md:flex flex-col justify-between hidden">
-              <ul className="flex flex-col ">
+              <ul className="flex flex-col w-fit">
                 <Menu />
               </ul>
               <div>
