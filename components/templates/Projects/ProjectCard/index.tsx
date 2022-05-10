@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import IconsGithub from 'components/icons/Socials/IconsGithub';
+import { FaGithub } from 'react-icons/fa';
 
 type Props = {
   name: string;
@@ -32,9 +32,13 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
         </div>
         {sourceCode.length !== 0 && (
           <div className="flex space-x-2 items-center hover:underline">
-            <IconsGithub />
+            <span className="text-xl text-black dark:text-white">
+              <FaGithub />
+            </span>
             <Link href={sourceCode}>
-              <a target="_blank" rel="noopener noreferrer">Source code</a>
+              <a target="_blank" rel="noopener noreferrer">
+                Source code
+              </a>
             </Link>
           </div>
         )}
