@@ -22,7 +22,7 @@ const Navbar = () => {
     if (currentTheme === 'dark') {
       return (
         <Button title="Change to light theme" onClick={() => setTheme('light')}>
-          <p className="text-xl">
+          <p className="text-xl text-black dark:text-white">
             <RiSunFill />
           </p>
         </Button>
@@ -30,7 +30,7 @@ const Navbar = () => {
     } else {
       return (
         <Button title="Change to dark theme" onClick={() => setTheme('dark')}>
-          <p className="text-xl">
+          <p className="text-xl text-black dark:text-white">
             <RiMoonClearFill />
           </p>
         </Button>
