@@ -33,7 +33,7 @@ const HeroPost = ({
       <div className="lg:w-1/2 lg:px-8 mt-8 lg:mt-0">
         <div className="mb-4">
           <h3 className="mb-4 text-2xl lg:text-4xl font-bold">
-            <Link href={`/posts/${slug}`}>
+            <Link href={`/blog/${slug}`}>
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>

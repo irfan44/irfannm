@@ -31,7 +31,7 @@ const PostCard = ({
         />
       </div>
       <h3 className="mb-3">
-        <Link href={`/posts/${slug}`}>
+        <Link href={`/blog/${slug}`}>
           <a className="hover:underline" title={title}>
             {title}
           </a>

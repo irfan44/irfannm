@@ -3,8 +3,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { HiArrowNarrowLeft } from 'react-icons/hi';
 import Meta from 'components/common/Meta';
-import IconArrowLeft from 'components/icons/Arrows/IconsArrowLeft';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PostBody from 'components/templates/PostContent/PostBody';
@@ -46,8 +46,10 @@ const Post = ({ post, preview }: Props) => {
                   className="mb-4"
                   onClick={() => void router.back() || void router.push('/')}
                 >
-                  <div className="flex items-center">
-                    <IconArrowLeft width="22" height="14" />
+                  <div className="flex items-center space-x-1 font-medium hover:cursor-pointer text-black dark:text-white">
+                    <p>
+                      <HiArrowNarrowLeft />
+                    </p>
                     <p className="ml-0.5 font-medium mt-0 mb-0">
                       Back to previous
                     </p>

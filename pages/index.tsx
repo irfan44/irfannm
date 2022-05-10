@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 import Button from 'components/common/Button';
 import Meta from 'components/common/Meta';
-import IconArrowRight from 'components/icons/Arrows/IconsArrowRight';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import Section from 'components/layouts/Section';
@@ -39,9 +39,11 @@ const Index = ({ allPosts }: AllPosts) => {
                 </Section>
                 <div className="mt-4 font-medium">
                   <Button title="Read all posts" onClick={handleReadAllPosts}>
-                    <div className="flex items-center hover:cursor-pointer hover:underline">
+                    <div className="flex items-center space-x-1 font-medium hover:cursor-pointer text-black dark:text-white">
                       <p>Read all posts</p>
-                      <IconArrowRight width="22" height="14" />
+                      <p className="text-xl">
+                        <HiArrowNarrowRight />
+                      </p>
                     </div>
                   </Button>
                 </div>

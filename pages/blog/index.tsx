@@ -20,7 +20,7 @@ const Posts = ({ allPosts }: AllPosts) => {
   );
 
   const pageMeta = {
-    title: 'Posts',
+    title: 'Blog',
     description: "Irfan Nurghiffari Muhajir's posts",
     ogImage: '/assets/images/irfan.jpeg',
   };
@@ -32,7 +32,7 @@ const Posts = ({ allPosts }: AllPosts) => {
         <Container>
           <div className="space-y-12">
             <PageHeader
-              pageTitle="Posts"
+              pageTitle="Blog"
               pageDescription="I mainly write about technology and other stuffs. Most of this
                 post is created for my collage assignment."
             />
