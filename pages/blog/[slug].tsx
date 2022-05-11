@@ -43,7 +43,7 @@ const Post = ({ post, preview }: Props) => {
             <Meta data={pageMeta} />
             <div className="max-w-3xl mx-auto">
               <div>
-                <div className="flex items-center hover:cursor-pointer text-neutral-900">
+                <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
                   <Link href="/">
                     <a>Home</a>
                   </Link>
