@@ -22,7 +22,7 @@ const Index = ({ allPosts }: AllPosts) => {
   };
 
   const handleReadAllPosts = () => {
-    router.push('/posts');
+    router.push('/blog');
   };
 
   return (
