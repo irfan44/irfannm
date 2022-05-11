@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className="flex space-x-4 mb-8 justify-center md:justify-start">
                   <SocialLinks />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 flex justify-center md:justify-start">
                   <div className="w-fit text-black dark:text-white">
                     <Link href="mailto:irfannmuhajir@gmail.com">
                       <a target="_blank" rel="noopener noreferrer">

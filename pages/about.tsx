@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { RiExternalLinkLine } from 'react-icons/ri';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
@@ -97,65 +98,78 @@ const About = () => {
               <div className="mb-6">
                 <h2>Contact</h2>
               </div>
-              <p className="mb-2">You can contact me here :</p>
+              <p className="mb-2">
+                Here are several of my socials for you to look at. Feel free to
+                follow and check out for my things i do :
+              </p>
               <ul className="list-disc ml-4 space-y-1">
                 <li>
-                  Mail :{' '}
                   <Link href="mailto:irfannmuhajir@gmail.com">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline"
+                      className="flex items-center"
                     >
-                      irfannmuhajir@gmail.com
+                      Email{' '}
+                      <span className="ml-1">
+                        <RiExternalLinkLine />
+                      </span>
                     </a>
                   </Link>
                 </li>
                 <li>
-                  Github :{' '}
                   <Link href="https://github.com/irfan44">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline"
+                      className="flex items-center"
                     >
-                      https://github.com/irfan44
+                      Github
+                      <span className="ml-1">
+                        <RiExternalLinkLine />
+                      </span>
                     </a>
                   </Link>
                 </li>
                 <li>
-                  Gitlab :{' '}
                   <Link href="https://gitlab.com/irfannm">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline"
+                      className="flex items-center"
                     >
-                      https://gitlab.com/irfannm
+                      Gitlab
+                      <span className="ml-1">
+                        <RiExternalLinkLine />
+                      </span>
                     </a>
                   </Link>{' '}
                 </li>
                 <li>
-                  LinkedIn :{' '}
                   <Link href="https://www.linkedin.com/in/irfannm/">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline"
+                      className="flex items-center"
                     >
-                      https://linkedin.com/in/irfannm/
+                      LinkedIn
+                      <span className="ml-1">
+                        <RiExternalLinkLine />
+                      </span>
                     </a>
                   </Link>
                 </li>
                 <li>
-                  Instagram :{' '}
                   <Link href="https://www.instagram.com/irfannm44/">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline"
+                      className="flex items-center"
                     >
-                      https://instagram.com/irfannm44/
+                      Instagram
+                      <span className="ml-1">
+                        <RiExternalLinkLine />
+                      </span>
                     </a>
                   </Link>
                 </li>
