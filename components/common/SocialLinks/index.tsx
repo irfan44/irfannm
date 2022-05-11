@@ -1,33 +1,31 @@
 import Link from 'next/link';
-import IconsGithub from 'components/icons/Socials/IconsGithub';
-import IconsInstagram from 'components/icons/Socials/IconsInstagram';
-import IconsLinkedIn from 'components/icons/Socials/IconsLinkedin';
+import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const SocialLinks = () => {
   return (
-    <>
+    <div className="flex space-x-4 text-2xl text-black dark:text-white">
       <div>
-        <Link href="https://github.com/irfan44">
+        <Link href="https://github.com/irfan44" passHref>
           <a target="_blank" rel="noopener noreferrer" title="Github">
-            <IconsGithub />
+            <FaGithub />
           </a>
         </Link>
       </div>
       <div>
-        <Link href="https://www.linkedin.com/in/irfannm/">
+        <Link href="https://www.linkedin.com/in/irfannm/" passHref>
           <a target="_blank" rel="noopener noreferrer" title="LinkedIn">
-            <IconsLinkedIn />
+            <FaLinkedinIn />
           </a>
         </Link>
       </div>
       <div>
-        <Link href="https://www.instagram.com/irfan_nm44/">
+        <Link href="https://www.instagram.com/irfan_nm44/" passHref>
           <a target="_blank" rel="noopener noreferrer" title="Instagram">
-            <IconsInstagram />
+            <FaInstagram />
           </a>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

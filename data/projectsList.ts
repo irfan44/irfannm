@@ -9,10 +9,10 @@ type Projects = {
 const ProjectsList: Projects[] = [
   {
     id: '1',
-    name: 'irfannm',
+    name: 'irfannm.xyz',
     description: 'My personal website and blog',
     techStack: ['NextJS', 'Tailwind CSS', 'TypeScript'],
-    sourceCode: 'https://github.com/irfan44/irfannm',
+    sourceCode: 'https://github.com/irfan44/irfannm.xyz',
   },
   {
     id: '2',

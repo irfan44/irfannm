@@ -2,9 +2,10 @@ import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import ErrorPage from 'next/error';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { RiArrowRightSLine } from 'react-icons/ri';
 import Meta from 'components/common/Meta';
-import IconArrowLeft from 'components/icons/Arrows/IconsArrowLeft';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PostBody from 'components/templates/PostContent/PostBody';
@@ -42,19 +43,19 @@ const Post = ({ post, preview }: Props) => {
             <Meta data={pageMeta} />
             <div className="max-w-3xl mx-auto">
               <div>
-                <button
-                  className="mb-4"
-                  onClick={() => void router.back() || void router.push('/')}
-                >
-                  <div className="flex items-center">
-                    <IconArrowLeft width="22" height="14" />
-                    <p className="ml-0.5 font-medium mt-0 mb-0">
-                      Back to previous
-                    </p>
-                  </div>
-                </button>
+                <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                  <p className="text-2xl">
+                    <RiArrowRightSLine />
+                  </p>
+                  <Link href="/blog">
+                    <a>Blog</a>
+                  </Link>
+                </div>
               </div>
-              <article className="mb-32 prose md:prose-lg max-w-none dark:prose-invert dark:text-white">
+              <article className="mb-32 text-neutral-800 prose md:prose-lg max-w-none dark:prose-invert dark:text-gray-200">
                 <PostBody>
                   <PostHeader
                     title={post.title}
