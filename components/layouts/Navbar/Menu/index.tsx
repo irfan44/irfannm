@@ -12,7 +12,7 @@ const Menu = () => {
             key={name}
             className={
               route.pathname == link
-                ? 'w-fit text-neutral-900 border-b-2 border-neutral-900 font-medium dark:text-white dark:border-white'
+                ? 'w-fit text-neutral-900 border-b-2 border-neutral-900 font-bold dark:text-white dark:border-white'
                 : ''
             }
           >

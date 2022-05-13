@@ -52,11 +52,11 @@ const Posts = ({ allPosts }: AllPosts) => {
             </div>
             <div>
               <Section title="Posts">
-                <div className="space-x-2">
+                <div className="flex justify-center space-x-4">
                   <button
                     className={
                       isActive === 'all'
-                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        ? 'font-bold border-b-2 text-black border-black dark:border-white dark:text-white'
                         : 'font-base'
                     }
                     onClick={() => setIsActive('all')}
@@ -66,7 +66,7 @@ const Posts = ({ allPosts }: AllPosts) => {
                   <button
                     className={
                       isActive === 'tech'
-                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        ? 'font-bold border-b-2 text-black border-black dark:border-white dark:text-white'
                         : 'font-base'
                     }
                     onClick={() => setIsActive('tech')}
@@ -76,7 +76,7 @@ const Posts = ({ allPosts }: AllPosts) => {
                   <button
                     className={
                       isActive === 'gg'
-                        ? 'font-bold border-b border-dark dark:border-gray-200'
+                        ? 'font-bold border-b-2 text-black border-black dark:border-white dark:text-white'
                         : 'font-base'
                     }
                     onClick={() => setIsActive('gg')}
