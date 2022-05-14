@@ -9,7 +9,7 @@ const Menus = () => {
   const { pathname } = useRouter();
 
   return (
-    <div className="h-10 text-sm bg-gray-200 dark:bg-neutral-800 rounded-full px-1 flex items-center">
+    <div className="h-9 text-sm bg-gray-200 dark:bg-neutral-800 rounded-full px-1 flex items-center">
       <Tab.Group>
         <Tab.List className="space-x-1">
           {menuList.map(({ name, link }) => {
