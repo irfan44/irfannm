@@ -21,7 +21,7 @@ const Menus = () => {
                       className={
                         route.pathname == link ||
                         (pathname.startsWith(link) && link != '/')
-                          ? 'relative z-[1] font-bold text-white'
+                          ? 'relative z-[1] font-bold text-white dark:text-black'
                           : 'relative z-[1] font-normal'
                       }
                     >
