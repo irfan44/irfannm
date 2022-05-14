@@ -8,8 +8,9 @@ import {
   RiSunFill,
 } from 'react-icons/ri';
 import Button from 'components/common/Button';
+import ThemeSwitcher from 'components/common/ThemeSwitcher';
 import Container from 'components/layouts/Container';
-import Menu from 'components/layouts/Navbar/Menu';
+import Menus from 'components/layouts/Navbar/Menus';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
@@ -81,12 +82,15 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block text-left">
             <ul className="flex flex-row items-center space-x-6">
-              <Menu />
+              <Menus />
             </ul>
           </div>
           <div className="hidden md:block text-left">
             <ul className="flex flex-row items-center space-x-6">
-              <li className="flex items-center">{renderThemeChanger()}</li>
+              {/* <li className="flex items-center">{renderThemeChanger()}</li> */}
+              <li className="flex items-center">
+                <ThemeSwitcher />
+              </li>
             </ul>
           </div>
         </div>
@@ -95,7 +99,7 @@ const Navbar = () => {
             <div className="w-full border rounded-lg border-zinc-200 p-4">
               <div className="grid items-center">
                 <ul className="flex flex-col space-y-4 items-center">
-                  <Menu />
+                  <Menus />
                 </ul>
               </div>
             </div>

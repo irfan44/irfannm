@@ -4,6 +4,7 @@ import menuList from 'data/menuList';
 
 const Menu = () => {
   const route = useRouter();
+  const { pathname } = useRouter();
   return (
     <>
       {menuList.map(({ name, link }) => {
@@ -11,7 +12,8 @@ const Menu = () => {
           <li
             key={name}
             className={
-              route.pathname == link
+              route.pathname == link ||
+              (pathname.startsWith(link) && link != '/')
                 ? 'w-fit text-neutral-900 border-b-2 border-neutral-900 font-bold dark:text-white dark:border-white'
                 : ''
             }
