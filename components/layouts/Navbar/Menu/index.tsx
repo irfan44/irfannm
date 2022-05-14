@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import menuList from 'data/menuList';
+import ThemeSwitcher from 'components/common/ThemeSwitcher';
 
 const Menu = () => {
   const route = useRouter();
@@ -14,7 +15,7 @@ const Menu = () => {
             className={
               route.pathname == link ||
               (pathname.startsWith(link) && link != '/')
-                ? 'w-fit text-neutral-900 border-b-2 border-neutral-900 font-bold dark:text-white dark:border-white'
+                ? 'w-fit text-neutral-900 font-bold dark:text-white
                 : ''
             }
           >
