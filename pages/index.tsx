@@ -5,8 +5,8 @@ import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import Section from 'components/layouts/Section';
-import HeroSection from 'components/templates/Home/HeroSection';
-import PostsList from 'components/templates/Posts/PostsList';
+import HeroSection from 'components/home/HeroSection';
+import PostsList from 'components/posts/PostsList';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 

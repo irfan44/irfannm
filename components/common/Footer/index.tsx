@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { FaGithub, FaRegPaperPlane } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import SocialLinks from 'components/common/SocialLinks';
 import Container from 'components/layouts/Container';
-import Menu from '../Navbar/Menu';
+import ContactButton from '../ContactButton';
+import Menu from '../Menu';
 
 const Footer = () => {
   return (
@@ -26,21 +27,7 @@ const Footer = () => {
                   <SocialLinks />
                 </div>
                 <div className="mb-4 flex justify-center md:justify-start">
-                  <div className="w-fit text-black dark:text-white">
-                    <Link href="mailto:irfannmuhajir@gmail.com">
-                      <a target="_blank" rel="noopener noreferrer">
-                        <div className="flex items-center space-x-2">
-                          <p>Feel free to </p>
-                          <p className="font-medium border-b-2 border-neutral-900 dark:border-gray-200">
-                            Contact me!
-                          </p>
-                          <p className="text-xl">
-                            <FaRegPaperPlane />
-                          </p>
-                        </div>
-                      </a>
-                    </Link>
-                  </div>
+                  <ContactButton />
                 </div>
                 <div>
                   <p className="text-sm">© 2022 Irfan Nurghiffari Muhajir</p>

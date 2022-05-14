@@ -2,7 +2,7 @@ import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PageHeader from 'components/layouts/Page/PageHeader';
-import ProjectCard from 'components/templates/Projects/ProjectCard';
+import ProjectCard from 'components/projects/ProjectCard';
 import ProjectsList from 'data/projectsList';
 
 const Projects = () => {

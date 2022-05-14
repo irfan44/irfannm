@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
+import Menu from 'components/common/Menu';
+import Menus from 'components/common/Navbar/Menus';
 import ThemeSwitcher from 'components/common/ThemeSwitcher';
 import Container from 'components/layouts/Container';
-import Menu from 'components/layouts/Navbar/Menu';
-import Menus from 'components/layouts/Navbar/Menus';
+import ContactButton from '../ContactButton';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
@@ -63,7 +64,12 @@ const Navbar = () => {
               <div className="grid items-center">
                 <ul className="flex flex-col space-y-4 items-center">
                   <Menu />
-		  <li><ThemeSwitcher /></li>
+                  <li>
+                    <ContactButton />
+                  </li>
+                  <li>
+                    <ThemeSwitcher />
+                  </li>
                 </ul>
               </div>
             </div>

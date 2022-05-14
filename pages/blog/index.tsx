@@ -4,8 +4,8 @@ import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PageHeader from 'components/layouts/Page/PageHeader';
 import Section from 'components/layouts/Section';
-import HeroPost from 'components/templates/Posts/HeroPost';
-import PostsList from 'components/templates/Posts/PostsList';
+import HeroPost from 'components/posts/HeroPost';
+import PostsList from 'components/posts/PostsList';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 

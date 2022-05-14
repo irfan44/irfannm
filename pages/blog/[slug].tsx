@@ -8,9 +8,9 @@ import { RiArrowRightSLine } from 'react-icons/ri';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
-import PostBody from 'components/templates/PostContent/PostBody';
-import PostHeader from 'components/templates/PostContent/PostHeader';
-import PostTitle from 'components/templates/PostContent/PostHeader/PostTitle';
+import PostBody from 'components/postContent/PostBody';
+import PostHeader from 'components/postContent/PostHeader';
+import PostTitle from 'components/postContent/PostHeader/PostTitle';
 import { getPostBySlug, getAllPosts } from 'lib/api';
 import PostType from 'types/post';
 
