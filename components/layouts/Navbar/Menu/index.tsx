@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import menuList from 'data/menuList';
-import ThemeSwitcher from 'components/common/ThemeSwitcher';
 
 const Menu = () => {
   const route = useRouter();
