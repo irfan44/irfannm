@@ -1,4 +1,5 @@
 import { Tab } from '@headlessui/react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import menuList from 'data/menuList';
@@ -15,15 +16,34 @@ const Menus = () => {
             return (
               <Tab
                 key={name}
-                className={`${
-                  route.pathname == link ||
-                  (pathname.startsWith(link) && link != '/')
-                    ? 'bg-neutral-900 font-bold'
-                    : ''
-                } inline-flex h-8 px-2.5 items-center rounded-full`}
+                // className={`${
+                //   route.pathname == link ||
+                //   (pathname.startsWith(link) && link != '/')
+                //     ? 'bg-neutral-900 font-bold'
+                //     : ''
+                // } inline-flex h-8 px-2.5 items-center rounded-full`}
               >
                 <Link href={link}>
-                  <a>{name}</a>
+                  <a>
+                    {route.pathname == link ||
+                    (pathname.startsWith(link) && link != '/') ? (
+                      <motion.div
+                        className="bg-neutral-900 font-bold h-8 px-2.5 rounded-full inline-flex items-center"
+                        layoutId="active"
+                        transition={{
+                          type: 'spring',
+                          stiffness: 270,
+                          damping: 30,
+                        }}
+                      >
+                        {name}
+                      </motion.div>
+                    ) : (
+                      <div className="inline-flex h-8 px-2.5 items-center rounded-full">
+                        {name}
+                      </div>
+                    )}
+                  </a>
                 </Link>
               </Tab>
             );

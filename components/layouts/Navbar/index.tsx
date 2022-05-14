@@ -1,49 +1,12 @@
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import {
-  RiCloseLine,
-  RiMenuLine,
-  RiMoonClearFill,
-  RiSunFill,
-} from 'react-icons/ri';
-import Button from 'components/common/Button';
+import { useState } from 'react';
+import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import ThemeSwitcher from 'components/common/ThemeSwitcher';
 import Container from 'components/layouts/Container';
 import Menus from 'components/layouts/Navbar/Menus';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme, setTheme } = useTheme();
-
-  const renderThemeChanger = () => {
-    const currentTheme = theme === 'system' ? systemTheme : theme;
-
-    if (currentTheme === 'dark') {
-      return (
-        <Button title="Change to light theme" onClick={() => setTheme('light')}>
-          <p className="text-xl text-black dark:text-white">
-            <RiSunFill />
-          </p>
-        </Button>
-      );
-    } else {
-      return (
-        <Button title="Change to dark theme" onClick={() => setTheme('dark')}>
-          <p className="text-xl text-black dark:text-white">
-            <RiMoonClearFill />
-          </p>
-        </Button>
-      );
-    }
-  };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <nav className="mt-4 w-full bg-neutral-50 dark:bg-neutral-900 z-10">
@@ -58,7 +21,9 @@ const Navbar = () => {
           </div>
           <div className="md:hidden ml-auto py-auto flex items-center">
             <ul className="flex space-x-2 items-center">
-              <li className="flex items-center">{renderThemeChanger()}</li>
+              <li className="flex items-center">
+                <ThemeSwitcher />
+              </li>
               <li className="flex items-center">
                 <button
                   className="ml-2 flex items-center"
