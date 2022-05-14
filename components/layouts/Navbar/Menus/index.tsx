@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import menuList from 'data/menuList';
 
 const Menus = () => {
-  const selected = false;
   const route = useRouter();
   const { pathname } = useRouter();
 
