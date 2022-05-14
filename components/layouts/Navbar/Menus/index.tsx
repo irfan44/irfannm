@@ -9,42 +9,38 @@ const Menus = () => {
   const { pathname } = useRouter();
 
   return (
-    <div className="h-10 bg-neutral-800 rounded-full px-1 flex items-center">
+    <div className="h-10 text-sm bg-gray-200 dark:bg-neutral-800 rounded-full px-1 flex items-center">
       <Tab.Group>
-        <Tab.List className="space-x-2">
+        <Tab.List className="space-x-1">
           {menuList.map(({ name, link }) => {
             return (
-              <Tab
-                key={name}
-                // className={`${
-                //   route.pathname == link ||
-                //   (pathname.startsWith(link) && link != '/')
-                //     ? 'bg-neutral-900 font-bold'
-                //     : ''
-                // } inline-flex h-8 px-2.5 items-center rounded-full`}
-              >
-                <Link href={link}>
-                  <a>
-                    {route.pathname == link ||
-                    (pathname.startsWith(link) && link != '/') ? (
-                      <motion.div
-                        className="bg-neutral-900 font-bold h-8 px-2.5 rounded-full inline-flex items-center"
-                        layoutId="active"
-                        transition={{
-                          type: 'spring',
-                          stiffness: 270,
-                          damping: 30,
-                        }}
-                      >
-                        {name}
-                      </motion.div>
-                    ) : (
-                      <div className="inline-flex h-8 px-2.5 items-center rounded-full">
-                        {name}
-                      </div>
-                    )}
-                  </a>
-                </Link>
+              <Tab key={name}>
+                <div className="relative px-3 py-1">
+                  <Link href={link}>
+                    <a
+                      className={
+                        route.pathname == link ||
+                        (pathname.startsWith(link) && link != '/')
+                          ? 'relative z-[1] font-bold text-white'
+                          : 'relative z-[1] font-normal'
+                      }
+                    >
+                      {name}
+                    </a>
+                  </Link>
+                  {route.pathname == link ||
+                  (pathname.startsWith(link) && link != '/') ? (
+                    <motion.div
+                      className="dark:bg-neutral-900 bg-white rounded-full absolute top-0 h-full right-0 left-0 z-[0]"
+                      layoutId="active"
+                      transition={{
+                        type: 'spring',
+                        stiffness: 270,
+                        damping: 30,
+                      }}
+                    />
+                  ) : null}
+                </div>
               </Tab>
             );
           })}
