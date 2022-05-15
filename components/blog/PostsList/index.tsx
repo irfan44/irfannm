@@ -1,4 +1,4 @@
-import PostCard from 'components/blog/PostsList/PostCard';
+import PostCard from 'components/blog/PostCard';
 import Post from 'types/post';
 
 type Props = {
