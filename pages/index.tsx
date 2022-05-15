@@ -13,7 +13,7 @@ import AllPosts from 'types/all-posts';
 const Index = ({ allPosts }: AllPosts) => {
   const router = useRouter();
 
-  const latestPosts = allPosts.slice(0, 3);
+  const latestPosts = allPosts.slice(0, 4);
 
   const pageMeta = {
     title: "Hi, I'm Irfan!",

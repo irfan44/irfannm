@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 type Props = {
   title: string;
@@ -9,7 +8,7 @@ type Props = {
   slug?: string;
 };
 
-const CoverImage = ({ title, src, width, height, slug }: Props) => {
+const CoverImage = ({ title, src, width, height }: Props) => {
   const image = (
     <Image
       src={src}
@@ -19,17 +18,7 @@ const CoverImage = ({ title, src, width, height, slug }: Props) => {
       className="rounded-2xl"
     />
   );
-  return (
-    <div className="sm:mx-0">
-      {slug ? (
-        <Link as={`/posts/${slug}`} href="/blog/[slug]" passHref>
-          <a aria-label={title}>{image}</a>
-        </Link>
-      ) : (
-        image
-      )}
-    </div>
-  );
+  return <div className="sm:mx-0">{image}</div>;
 };
 
 export default CoverImage;

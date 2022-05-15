@@ -20,30 +20,41 @@ const PostCard = ({
   slug,
 }: Props) => {
   return (
-    <div>
-      <div className="mb-5">
-        <CoverImage
-          slug={slug}
-          title={title}
-          src={coverImage}
-          height={278}
-          width={556}
-        />
-      </div>
-      <h3 className="mb-3">
-        <Link href={`/blog/${slug}`}>
-          <a className="hover:underline" title={title}>
-            {title}
-          </a>
-        </Link>
-      </h3>
-      <div className="mb-4 flex space-x-2 text-sm">
-        <div className="font-bold">{category}</div>
-        <div>|</div>
-        <DateFormatter dateString={date} />
-      </div>
-      <p className="leading-relaxed mb-4 text-base">{excerpt}</p>
-    </div>
+    // <div>
+    //   <p className="leading-relaxed mb-4 text-base">{excerpt}</p>
+    // </div>
+    <Link href={`/blog/${slug}`}>
+      <a className="m-0">
+        <div className="flex flex-col shadow-sm h-full rounded-2xl bg-white dark:bg-neutral-800 hover:rounded-lg">
+          <div className="flex-1 px-4">
+            <div className="flex space-x-2 text-sm my-4">
+              <div className="font-bold">{category}</div>
+              <div>|</div>
+              <DateFormatter dateString={date} />
+            </div>
+            <div className="mb-4">
+              <h3>{title}</h3>
+            </div>
+            <div className="mb-4">
+              <p className="leading-relaxed text-base line-clamp-3">
+                {excerpt}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-end">
+            <div className="px-4 pb-3">
+              <CoverImage
+                slug={slug}
+                title={title}
+                src={coverImage}
+                height={278}
+                width={556}
+              />
+            </div>
+          </div>
+        </div>
+      </a>
+    </Link>
   );
 };
 

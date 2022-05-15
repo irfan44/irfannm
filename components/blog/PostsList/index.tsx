@@ -7,7 +7,7 @@ type Props = {
 
 const PostsList = ({ posts }: Props) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 lg:gap-x-8 gap-y-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 gap-y-8">
       {posts.map((post) => (
         <PostCard
           key={post.slug}
