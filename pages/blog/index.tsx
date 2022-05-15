@@ -1,17 +1,15 @@
-import { useState } from 'react';
+import { Tab } from '@headlessui/react';
+import HeroPost from 'components/blog/HeroPost';
+import PostsList from 'components/blog/PostsList';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PageHeader from 'components/layouts/Page/PageHeader';
 import Section from 'components/layouts/Section';
-import HeroPost from 'components/posts/HeroPost';
-import PostsList from 'components/posts/PostsList';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 
 const Posts = ({ allPosts }: AllPosts) => {
-  const [isActive, setIsActive] = useState('all');
-
   const heroPost = allPosts[0];
   const everyPosts = allPosts.slice(0);
   const techPosts = allPosts.filter((posts) => posts.category === 'Tech');
@@ -24,6 +22,12 @@ const Posts = ({ allPosts }: AllPosts) => {
     description: "Irfan Nurghiffari Muhajir's posts",
     ogImage: '/assets/images/irfan.jpeg',
   };
+
+  const categoryList = [
+    { category: 'All', posts: everyPosts },
+    { category: 'Tech', posts: techPosts },
+    { category: 'Generasi Gigih', posts: generasiGIGIHPosts },
+  ];
 
   return (
     <>
@@ -52,55 +56,37 @@ const Posts = ({ allPosts }: AllPosts) => {
             </div>
             <div>
               <Section title="Posts">
-                <div className="flex justify-center space-x-4">
-                  <button
-                    className={
-                      isActive === 'all'
-                        ? 'font-bold border-b-2 text-black border-black dark:border-white dark:text-white'
-                        : 'font-base'
-                    }
-                    onClick={() => setIsActive('all')}
-                  >
-                    All
-                  </button>
-                  <button
-                    className={
-                      isActive === 'tech'
-                        ? 'font-bold border-b-2 text-black border-black dark:border-white dark:text-white'
-                        : 'font-base'
-                    }
-                    onClick={() => setIsActive('tech')}
-                  >
-                    Tech
-                  </button>
-                  <button
-                    className={
-                      isActive === 'gg'
-                        ? 'font-bold border-b-2 text-black border-black dark:border-white dark:text-white'
-                        : 'font-base'
-                    }
-                    onClick={() => setIsActive('gg')}
-                  >
-                    Generasi Gigih
-                  </button>
-                </div>
-                <div>
-                  {isActive === 'all' && everyPosts.length > 0 && (
-                    <div className="mt-6">
-                      <PostsList posts={everyPosts} />
-                    </div>
-                  )}
-                  {isActive === 'tech' && techPosts.length > 0 && (
-                    <div className="mt-6">
-                      <PostsList posts={techPosts} />
-                    </div>
-                  )}
-                  {isActive === 'gg' && generasiGIGIHPosts.length > 0 && (
-                    <div className="mt-6">
-                      <PostsList posts={generasiGIGIHPosts} />
-                    </div>
-                  )}
-                </div>
+                <Tab.Group>
+                  <div className="flex justify-center h-9 items-center">
+                    <Tab.List className="space-x-2 bg-neutral-200 dark:bg-neutral-800 rounded-full px-2 py-1">
+                      {categoryList.map((items) => {
+                        return (
+                          <Tab
+                            key={items.category}
+                            className={({ selected }) =>
+                              selected
+                                ? 'dark:bg-neutral-900 bg-white rounded-full px-2 font-bold text-black dark:text-white'
+                                : 'px-2'
+                            }
+                          >
+                            {items.category}
+                          </Tab>
+                        );
+                      })}
+                    </Tab.List>
+                  </div>
+                  <Tab.Panels>
+                    {categoryList.map((items) => {
+                      return (
+                        <Tab.Panel key={items.category}>
+                          <div className="mt-6">
+                            <PostsList posts={items.posts} />
+                          </div>
+                        </Tab.Panel>
+                      );
+                    })}
+                  </Tab.Panels>
+                </Tab.Group>
               </Section>
             </div>
           </div>

@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+import PostsList from 'components/blog/PostsList';
 import Button from 'components/common/Button';
 import Meta from 'components/common/Meta';
 import HeroSection from 'components/home/HeroSection';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import Section from 'components/layouts/Section';
-import PostsList from 'components/posts/PostsList';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 
