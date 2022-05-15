@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const ContactButton = () => {
   return (
-    <div className="w-fit bg-gray-200 p-2 rounded-2xl text-black dark:bg-neutral-800 dark:text-white">
+    <div className="w-fit bg-neutral-200 py-2 px-3 rounded-2xl text-black dark:bg-neutral-800 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700">
       <Link href="mailto:irfannmuhajir@gmail.com">
         <a target="_blank" rel="noopener noreferrer">
           <div className="flex items-center space-x-2">
