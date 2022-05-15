@@ -57,7 +57,7 @@ const Posts = ({ allPosts }: AllPosts) => {
             <div>
               <Section title="Posts">
                 <Tab.Group>
-                  <div className="flex justify-center h-9 items-center">
+                  <div className="flex justify-center items-center">
                     <Tab.List className="space-x-2 bg-neutral-200 dark:bg-neutral-800 rounded-full px-2 py-1">
                       {categoryList.map((items) => {
                         return (
