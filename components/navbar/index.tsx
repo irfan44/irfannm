@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import Menu from 'components/common/Menu';
-import Menus from 'components/common/Navbar/Menus';
 import ThemeSwitcher from 'components/common/ThemeSwitcher';
 import Container from 'components/layouts/Container';
-import ContactButton from '../ContactButton';
+import Menus from 'components/navbar/Menus';
+import ContactButton from '../common/ContactButton';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
