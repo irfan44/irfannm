@@ -10,7 +10,7 @@ type Props = {
 
 const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
   return (
-    <div className="shadow-sm flex flex-col justify-between space-y-3 bg-white dark:bg-neutral-800 dark:border-neutral-50 rounded-2xl p-5 hover:shadow">
+    <div className="shadow-sm flex flex-col justify-between space-y-3 bg-white dark:bg-neutral-800 rounded-2xl p-5 hover:shadow">
       <div>
         <h4>{name}</h4>
       </div>
