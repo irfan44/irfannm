@@ -57,29 +57,31 @@ const Posts = ({ allPosts }: AllPosts) => {
             <div>
               <Section title="Posts">
                 <Tab.Group>
-                  <div className="flex justify-center items-center">
-                    <Tab.List className="space-x-2 bg-neutral-200 dark:bg-neutral-800 rounded-full px-2 py-1">
-                      {categoryList.map((items) => {
-                        return (
-                          <Tab
-                            key={items.category}
-                            className={({ selected }) =>
-                              selected
-                                ? 'dark:bg-neutral-900 bg-white rounded-full px-2 font-bold text-black dark:text-white'
-                                : 'px-2'
-                            }
-                          >
-                            {items.category}
-                          </Tab>
-                        );
-                      })}
-                    </Tab.List>
+                  <div className="flex justify-center">
+                    <div className="h-9 flex items-center text-sm bg-neutral-200 dark:bg-neutral-800 rounded-full w-fit">
+                      <Tab.List className="space-x-2 px-1 py-1">
+                        {categoryList.map((items) => {
+                          return (
+                            <Tab
+                              key={items.category}
+                              className={({ selected }) =>
+                                selected
+                                  ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
+                                  : 'px-3 py-1'
+                              }
+                            >
+                              {items.category}
+                            </Tab>
+                          );
+                        })}
+                      </Tab.List>
+                    </div>
                   </div>
                   <Tab.Panels>
                     {categoryList.map((items) => {
                       return (
                         <Tab.Panel key={items.category}>
-                          <div className="mt-6">
+                          <div className="mt-8">
                             <PostsList posts={items.posts} />
                           </div>
                         </Tab.Panel>
