@@ -1,5 +1,5 @@
-import Footer from 'components/layouts/Footer';
-import Navbar from 'components/layouts/Navbar';
+import Footer from 'components/footer';
+import Navbar from 'components/navbar';
 
 type Props = {
   preview?: boolean;
@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen mt-32 transition-all">
+      <div className="min-h-screen mt-16 transition-all">
         <main>{children}</main>
       </div>
       <Footer />

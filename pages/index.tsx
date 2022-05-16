@@ -1,19 +1,19 @@
 import { useRouter } from 'next/router';
+import { HiArrowNarrowRight } from 'react-icons/hi';
+import PostsList from 'components/blog/PostsList';
 import Button from 'components/common/Button';
 import Meta from 'components/common/Meta';
-import IconArrowRight from 'components/icons/Arrows/IconsArrowRight';
+import HeroSection from 'components/home/HeroSection';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import Section from 'components/layouts/Section';
-import HeroSection from 'components/templates/Home/HeroSection';
-import PostsList from 'components/templates/Posts/PostsList';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
 
 const Index = ({ allPosts }: AllPosts) => {
   const router = useRouter();
 
-  const latestPosts = allPosts.slice(0, 3);
+  const latestPosts = allPosts.slice(0, 4);
 
   const pageMeta = {
     title: "Hi, I'm Irfan!",
@@ -22,7 +22,7 @@ const Index = ({ allPosts }: AllPosts) => {
   };
 
   const handleReadAllPosts = () => {
-    router.push('/posts');
+    router.push('/blog');
   };
 
   return (
@@ -39,9 +39,11 @@ const Index = ({ allPosts }: AllPosts) => {
                 </Section>
                 <div className="mt-4 font-medium">
                   <Button title="Read all posts" onClick={handleReadAllPosts}>
-                    <div className="flex items-center hover:cursor-pointer hover:underline">
+                    <div className="flex items-center space-x-1 font-medium hover:cursor-pointer text-black dark:text-white">
                       <p>Read all posts</p>
-                      <IconArrowRight width="22" height="14" />
+                      <p className="text-xl">
+                        <HiArrowNarrowRight />
+                      </p>
                     </div>
                   </Button>
                 </div>

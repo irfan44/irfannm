@@ -8,7 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.1",
     "dayjs": "^1.11.1",
+    "framer-motion": "^6.3.3",
     "gray-matter": "4.0.3",
     "next": "12",
     "next-mdx-remote": "4.0.1",
@@ -16,10 +18,12 @@
     "next-themes": "^0.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
     "typescript": "^4.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
