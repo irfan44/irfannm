@@ -20,9 +20,6 @@ const PostCard = ({
   slug,
 }: Props) => {
   return (
-    // <div>
-    //   <p className="leading-relaxed mb-4 text-base">{excerpt}</p>
-    // </div>
     <Link href={`/blog/${slug}`}>
       <a className="m-0">
         <div className="flex flex-col h-full rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:rounded-xl">
