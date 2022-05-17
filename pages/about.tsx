@@ -1,6 +1,7 @@
 import AboutMe from 'components/about/AboutMe';
 import CurriculumVitae from 'components/about/CurriculumVitae';
 import SocialContact from 'components/about/SocialContact';
+import WorkExperience from 'components/about/WorkExperience';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
@@ -18,8 +19,9 @@ const About = () => {
         <Container>
           <div className="space-y-12 max-w-3xl mx-auto">
             <AboutMe />
-            <SocialContact />
+            <WorkExperience />
             <CurriculumVitae />
+            <SocialContact />
           </div>
         </Container>
       </Layout>
