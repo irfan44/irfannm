@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 
@@ -11,6 +12,13 @@ type Props = {
 const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
   return (
     <div className="flex flex-col justify-between space-y-3 bg-white border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 rounded-2xl p-5 hover:rounded-xl">
+      <Image
+        className="rounded-2xl"
+        alt={name}
+        src="/assets/projects/project-default.png"
+        height={278}
+        width={556}
+      />
       <div>
         <h4>{name}</h4>
       </div>
