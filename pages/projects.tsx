@@ -3,7 +3,7 @@ import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PageHeader from 'components/layouts/Page/PageHeader';
 import ProjectCard from 'components/projects/ProjectCard';
-import ProjectsList from 'data/projectsList';
+import projectsList from 'data/projectsList';
 
 const Projects = () => {
   const pageMeta = {
@@ -21,7 +21,7 @@ const Projects = () => {
             pageDescription="Various projects that I have worked on."
           />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-            {ProjectsList.map((project) => {
+            {projectsList.map((project) => {
               return (
                 <ProjectCard
                   key={project.id + project.name}

@@ -6,7 +6,7 @@ type Projects = {
   sourceCode: string;
 };
 
-const ProjectsList: Projects[] = [
+const projectsList: Projects[] = [
   {
     id: '1',
     name: 'irfannm.xyz',
@@ -62,4 +62,4 @@ const ProjectsList: Projects[] = [
   },
 ];
 
-export default ProjectsList;
+export default projectsList;
