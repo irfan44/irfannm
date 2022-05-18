@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="mt-32 mb-6">
       <Container>
-        <div className="rounded-3xl px-6">
+        <div className="rounded-3xl">
           <div className="flex py-12">
             <div className="flex-1 mx-auto md:mx-0 md:text-left">
               <div className="flex flex-col list-none space-y-1 md:hidden">

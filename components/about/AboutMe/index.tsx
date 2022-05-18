@@ -46,7 +46,7 @@ const AboutMe = () => {
                 Digital Talent Scholarship
               </a>
             </Link>{' '}
-            held by Kementrian Kominfo for 2 years. I&apos;m also part of{' '}
+            held by Kementrian Kominfo for 3 years. I&apos;m also part of{' '}
             <Link href="https://ramaniya.id/">
               <a
                 target="_blank"
@@ -67,7 +67,7 @@ const AboutMe = () => {
                 Generasi Gigih
               </a>
             </Link>{' '}
-            held by Yayasan Anak Bangsa Bisa & GoTo Group at Front-end
+            held by Yayasan Anak Bangsa Bisa & GoTo Group at Frontend
             Engineering Track.
           </p>
           <p>
