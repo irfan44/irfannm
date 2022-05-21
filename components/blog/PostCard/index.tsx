@@ -41,7 +41,6 @@ const PostCard = ({
           <div className="flex items-end">
             <div className="px-4 pb-3">
               <CoverImage
-                slug={slug}
                 title={title}
                 src={coverImage}
                 height={278}
