@@ -2,7 +2,6 @@ import Footer from 'components/footer';
 import Navbar from 'components/navbar';
 
 type Props = {
-  preview?: boolean;
   children: React.ReactNode;
 };
 

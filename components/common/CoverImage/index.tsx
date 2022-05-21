@@ -5,7 +5,6 @@ type Props = {
   src: string;
   width: number;
   height: number;
-  slug?: string;
 };
 
 const CoverImage = ({ title, src, width, height }: Props) => {
