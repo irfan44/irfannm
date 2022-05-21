@@ -14,9 +14,9 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   useScrollRestoration(router);
-  
+
   return (
-    <ThemeProvider enableSystem={true} attribute="class">
+    <ThemeProvider enableSystem attribute="class">
       <Component {...pageProps} />
     </ThemeProvider>
   );
