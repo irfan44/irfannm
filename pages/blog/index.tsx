@@ -4,7 +4,7 @@ import PostsList from 'components/blog/PostsList';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
-import PageHeader from 'components/layouts/Page/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';

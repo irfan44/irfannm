@@ -1,7 +1,7 @@
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
-import PageHeader from 'components/layouts/Page/PageHeader';
+import PageHeader from 'components/common/PageHeader';
 import ProjectCard from 'components/projects/ProjectCard';
 import projectsList from 'data/projectsList';
 
