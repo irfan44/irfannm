@@ -10,19 +10,18 @@ import Container from 'components/layouts/Container';
 import Layout from 'components/layouts/Layout';
 import PostBody from 'components/post/PostBody';
 import PostHeader from 'components/post/PostHeader';
-import PostTitle from 'components/post/PostHeader/PostTitle';
+import PostTitle from 'components/post/PostTitle';
 import { getPostBySlug, getAllPosts } from 'lib/api';
 import PostType from 'types/post';
 
 type Props = {
   post: PostType;
   morePosts: PostType[];
-  preview?: boolean;
 };
 
 const components = { Image };
 
-const Post = ({ post, preview }: Props) => {
+const Post = ({ post }: Props) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -34,7 +33,7 @@ const Post = ({ post, preview }: Props) => {
     ogImage: post.ogImage.url,
   };
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>

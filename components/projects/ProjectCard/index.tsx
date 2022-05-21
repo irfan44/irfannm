@@ -17,7 +17,7 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
         alt={name}
         src="/assets/projects/project-default.png"
         height={278}
-        width={556}
+        width={590}
       />
       <div>
         <h4>{name}</h4>

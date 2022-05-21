@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
+import ContactButton from 'components/common/ContactButton';
 import Menu from 'components/common/Menu';
 import ThemeSwitcher from 'components/common/ThemeSwitcher';
 import Container from 'components/layouts/Container';
 import Menus from 'components/navbar/Menus';
-import ContactButton from '../common/ContactButton';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
@@ -26,6 +26,7 @@ const Navbar = () => {
               <li className="flex items-center">
                 <button
                   className="ml-2 flex items-center"
+                  type="button"
                   title="Menu"
                   onClick={() => {
                     isActive ? setActive(false) : setActive(true);

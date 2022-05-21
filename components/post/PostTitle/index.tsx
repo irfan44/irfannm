@@ -1,5 +1,5 @@
 type Props = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
 };
 
 const PostTitle = ({ children }: Props) => {
