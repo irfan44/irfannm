@@ -27,7 +27,6 @@ const HeroPost = ({
             <CoverImage
               title={title}
               src={coverImage}
-              slug={slug}
               height={620}
               width={1240}
             />
