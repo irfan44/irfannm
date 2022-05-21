@@ -26,6 +26,7 @@ const Navbar = () => {
               <li className="flex items-center">
                 <button
                   className="ml-2 flex items-center"
+                  type="button"
                   title="Menu"
                   onClick={() => {
                     isActive ? setActive(false) : setActive(true);
