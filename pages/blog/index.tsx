@@ -4,7 +4,6 @@ import PostsList from 'components/blog/PostsList';
 import Meta from 'components/common/Meta';
 import PageHeader from 'components/common/PageHeader';
 import Container from 'components/layouts/Container';
-import Layout from 'components/layouts/Layout';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
@@ -30,71 +29,67 @@ const Posts = ({ allPosts }: AllPosts) => {
   ];
 
   return (
-    <>
+    <Container>
       <Meta data={pageMeta} />
-      <Layout>
-        <Container>
-          <div className="space-y-12">
-            <PageHeader
-              pageTitle="Blog"
-              pageDescription="I mainly write about technology and other stuffs. Most of this
+      <div className="space-y-12">
+        <PageHeader
+          pageTitle="Blog"
+          pageDescription="I mainly write about technology and other stuffs. Most of this
                 post is created for my collage assignment."
-            />
-            <div>
-              <Section title="Featured">
-                {heroPost && (
-                  <HeroPost
-                    title={heroPost.title}
-                    coverImage={heroPost.coverImage}
-                    date={heroPost.date}
-                    slug={heroPost.slug}
-                    excerpt={heroPost.excerpt}
-                    category={heroPost.category}
-                  />
-                )}
-              </Section>
-            </div>
-            <div>
-              <Section title="Posts">
-                <Tab.Group>
-                  <div className="flex justify-center">
-                    <div className="h-9 flex items-center text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full w-fit">
-                      <Tab.List className="space-x-2 px-1 py-1">
-                        {categoryList.map((items) => {
-                          return (
-                            <Tab
-                              key={items.category}
-                              className={({ selected }) =>
-                                selected
-                                  ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
-                                  : 'px-3 py-1'
-                              }
-                            >
-                              {items.category}
-                            </Tab>
-                          );
-                        })}
-                      </Tab.List>
-                    </div>
-                  </div>
-                  <Tab.Panels>
+        />
+        <div>
+          <Section title="Featured">
+            {heroPost && (
+              <HeroPost
+                title={heroPost.title}
+                coverImage={heroPost.coverImage}
+                date={heroPost.date}
+                slug={heroPost.slug}
+                excerpt={heroPost.excerpt}
+                category={heroPost.category}
+              />
+            )}
+          </Section>
+        </div>
+        <div>
+          <Section title="Posts">
+            <Tab.Group>
+              <div className="flex justify-center">
+                <div className="h-9 flex items-center text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full w-fit">
+                  <Tab.List className="space-x-2 px-1 py-1">
                     {categoryList.map((items) => {
                       return (
-                        <Tab.Panel key={items.category}>
-                          <div className="mt-8">
-                            <PostsList posts={items.posts} />
-                          </div>
-                        </Tab.Panel>
+                        <Tab
+                          key={items.category}
+                          className={({ selected }) =>
+                            selected
+                              ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
+                              : 'px-3 py-1'
+                          }
+                        >
+                          {items.category}
+                        </Tab>
                       );
                     })}
-                  </Tab.Panels>
-                </Tab.Group>
-              </Section>
-            </div>
-          </div>
-        </Container>
-      </Layout>
-    </>
+                  </Tab.List>
+                </div>
+              </div>
+              <Tab.Panels>
+                {categoryList.map((items) => {
+                  return (
+                    <Tab.Panel key={items.category}>
+                      <div className="mt-8">
+                        <PostsList posts={items.posts} />
+                      </div>
+                    </Tab.Panel>
+                  );
+                })}
+              </Tab.Panels>
+            </Tab.Group>
+          </Section>
+        </div>
+      </div>
+    </Container>
   );
 };
 export default Posts;

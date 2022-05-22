@@ -2,9 +2,10 @@ import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import 'styles/index.css';
 import Router from 'next/router';
-
 import NProgress from 'nprogress'; //nprogress module
 import 'styles/nprogress.css'; //styles of nprogress\
+import Footer from 'components/footer';
+import Navbar from 'components/navbar';
 import { useScrollRestoration } from 'utils/useScrollRestoration';
 
 NProgress.configure({ showSpinner: false });
@@ -17,7 +18,11 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <ThemeProvider enableSystem attribute="class">
-      <Component {...pageProps} />
+      <Navbar />
+      <main className="min-h-screen mt-16 transition-all">
+        <Component {...pageProps} />
+      </main>
+      <Footer />
     </ThemeProvider>
   );
 }

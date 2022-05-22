@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
-import Layout from 'components/layouts/Layout';
 import PostBody from 'components/post/PostBody';
 import PostHeader from 'components/post/PostHeader';
 import PostTitle from 'components/post/PostTitle';
@@ -33,44 +32,42 @@ const Post = ({ post }: Props) => {
     ogImage: post.ogImage.url,
   };
   return (
-    <Layout>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <Meta data={pageMeta} />
-            <div className="max-w-3xl mx-auto">
-              <div>
-                <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
-                  <Link href="/">
-                    <a>Home</a>
-                  </Link>
-                  <p className="text-2xl">
-                    <RiArrowRightSLine />
-                  </p>
-                  <Link href="/blog">
-                    <a>Blog</a>
-                  </Link>
-                </div>
+    <Container>
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <Meta data={pageMeta} />
+          <div className="max-w-3xl mx-auto">
+            <div>
+              <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+                <p className="text-2xl">
+                  <RiArrowRightSLine />
+                </p>
+                <Link href="/blog">
+                  <a>Blog</a>
+                </Link>
               </div>
-              <article className="mb-32 text-neutral-800 prose md:prose-lg max-w-none dark:prose-invert dark:text-gray-200">
-                <PostBody>
-                  <PostHeader
-                    title={post.title}
-                    category={post.category}
-                    coverImage={post.coverImage}
-                    date={post.date}
-                    caption={post.caption}
-                  />
-                  <MDXRemote {...post.content} components={components} />
-                </PostBody>
-              </article>
             </div>
-          </>
-        )}
-      </Container>
-    </Layout>
+            <article className="mb-32 text-neutral-800 prose md:prose-lg max-w-none dark:prose-invert dark:text-gray-200">
+              <PostBody>
+                <PostHeader
+                  title={post.title}
+                  category={post.category}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  caption={post.caption}
+                />
+                <MDXRemote {...post.content} components={components} />
+              </PostBody>
+            </article>
+          </div>
+        </>
+      )}
+    </Container>
   );
 };
 

@@ -3,7 +3,6 @@ import Meta from 'components/common/Meta';
 import HeroSection from 'components/home/HeroSection';
 import ReadMore from 'components/home/ReadMore';
 import Container from 'components/layouts/Container';
-import Layout from 'components/layouts/Layout';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/api';
 import AllPosts from 'types/all-posts';
@@ -17,24 +16,20 @@ const Index = ({ allPosts }: AllPosts) => {
     ogImage: '/assets/images/irfan.jpeg',
   };
   return (
-    <>
+    <Container>
       <Meta data={pageMeta} />
-      <Layout>
-        <Container>
-          <div className="space-y-16">
-            <HeroSection />
-            {latestPosts.length > 0 && (
-              <div>
-                <Section title="Latest Posts">
-                  <PostsList posts={latestPosts} />
-                </Section>
-                <ReadMore />
-              </div>
-            )}
+      <div className="space-y-16">
+        <HeroSection />
+        {latestPosts.length > 0 && (
+          <div>
+            <Section title="Latest Posts">
+              <PostsList posts={latestPosts} />
+            </Section>
+            <ReadMore />
           </div>
-        </Container>
-      </Layout>
-    </>
+        )}
+      </div>
+    </Container>
   );
 };
 
