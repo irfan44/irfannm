@@ -6,8 +6,8 @@ const ContactButton = () => {
       <Link href="mailto:irfannmuhajir@gmail.com">
         <a target="_blank" rel="noopener noreferrer">
           <div className="flex items-center space-x-2">
-            <p className="font-semibold">Contact me</p>
             <p className="text-xl">📧</p>
+            <p className="font-semibold">Contact me!</p>
           </div>
         </a>
       </Link>
