@@ -35,7 +35,7 @@ const Index = ({ allPosts }: AllPosts) => {
 
 export default Index;
 
-export const getStaticProps = async () => {
+export const getStaticProps = () => {
   const allPosts = getAllPosts([
     'title',
     'category',

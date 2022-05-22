@@ -94,7 +94,7 @@ const Posts = ({ allPosts }: AllPosts) => {
 };
 export default Posts;
 
-export const getStaticProps = async () => {
+export const getStaticProps = () => {
   const allPosts = getAllPosts([
     'title',
     'category',
