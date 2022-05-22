@@ -2,21 +2,21 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
+type Items = {
+  [key: string]: string;
+};
+
 const postsDirectory = join(process.cwd(), 'data/posts');
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getPostBySlug(slug: string, fields: string[] = []): Items {
   const realSlug = slug.replace(/\.mdx$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
-
-  type Items = {
-    [key: string]: string;
-  };
 
   const items: Items = {};
 
