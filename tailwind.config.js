@@ -29,6 +29,9 @@ module.exports = {
             blockquote: {
               borderLeftColor: '#161616',
             },
+            pre: {
+              backgroundColor: '#000000',
+            },
           },
         },
         invert: {
@@ -43,7 +46,7 @@ module.exports = {
               borderLeftColor: '#ffffff',
             },
             pre: {
-              backgroundColor: '#18181b',
+              backgroundColor: '#000000',
             },
           },
         },
