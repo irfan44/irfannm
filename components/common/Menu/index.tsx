@@ -13,7 +13,9 @@ const Menu = () => {
             key={name}
             className={
               route.pathname == link ||
-              (pathname.startsWith(link) && link != '/') ? 'w-fit text-neutral-900 font-bold dark:text-white' : ''
+              (pathname.startsWith(link) && link != '/')
+                ? 'w-text-neutral-900 font-bold dark:text-white'
+                : ''
             }
           >
             <Link href={link}>

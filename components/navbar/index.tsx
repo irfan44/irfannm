@@ -47,8 +47,8 @@ const Navbar = () => {
           </div>
         </div>
         {isActive && (
-          <div className="h-screen w-full border rounded-lg border-zinc-200 p-4">
-            <div className="grid items-center">
+          <div className="h-screen w-full">
+            <div className="grid items-center border rounded-lg border-zinc-200 p-4">
               <ul className="flex flex-col space-y-4 items-center">
                 <Menu />
                 <li>
