@@ -37,57 +37,49 @@ const Posts = ({ allPosts }: AllPosts) => {
           pageDescription="I mainly write about technology and other stuffs. Most of this
                 post is created for my collage assignment."
         />
-        <div>
-          <Section title="Featured">
-            {heroPost && (
-              <HeroPost
-                title={heroPost.title}
-                coverImage={heroPost.coverImage}
-                date={heroPost.date}
-                slug={heroPost.slug}
-                excerpt={heroPost.excerpt}
-                category={heroPost.category}
-              />
-            )}
-          </Section>
-        </div>
-        <div>
-          <Section title="Posts">
-            <Tab.Group>
-              <div className="flex justify-center">
-                <div className="h-9 flex items-center text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full w-fit">
-                  <Tab.List className="space-x-2 px-1 py-1">
-                    {categoryList.map((items) => {
-                      return (
-                        <Tab
-                          key={items.category}
-                          className={({ selected }) =>
-                            selected
-                              ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
-                              : 'px-3 py-1'
-                          }
-                        >
-                          {items.category}
-                        </Tab>
-                      );
-                    })}
-                  </Tab.List>
-                </div>
-              </div>
-              <Tab.Panels>
-                {categoryList.map((items) => {
-                  return (
-                    <Tab.Panel key={items.category}>
-                      <div className="mt-8">
-                        <PostsList posts={items.posts} />
-                      </div>
-                    </Tab.Panel>
-                  );
-                })}
-              </Tab.Panels>
-            </Tab.Group>
-          </Section>
-        </div>
+        <Section title="Featured">
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
+              date={heroPost.date}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+              category={heroPost.category}
+            />
+          )}
+        </Section>
+        <Section title="Posts">
+          <Tab.Group>
+            <Tab.List className="space-x-2 mx-auto px-1 py-1 h-9 flex text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full w-fit">
+              {categoryList.map((items) => {
+                return (
+                  <Tab
+                    key={items.category}
+                    className={({ selected }) =>
+                      selected
+                        ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
+                        : 'px-3 py-1'
+                    }
+                  >
+                    {items.category}
+                  </Tab>
+                );
+              })}
+            </Tab.List>
+            <Tab.Panels>
+              {categoryList.map((items) => {
+                return (
+                  <Tab.Panel key={items.category}>
+                    <div className="mt-8">
+                      <PostsList posts={items.posts} />
+                    </div>
+                  </Tab.Panel>
+                );
+              })}
+            </Tab.Panels>
+          </Tab.Group>
+        </Section>
       </div>
     </Container>
   );

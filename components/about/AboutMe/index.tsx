@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 const AboutMe = () => {
   return (
@@ -37,36 +36,33 @@ const AboutMe = () => {
           <p>
             I&apos;m part of Red Hat&apos;s team as a Class Assistant & Help
             desk in{' '}
-            <Link href="https://digitalent.kominfo.go.id/">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold underline"
-              >
-                Digital Talent Scholarship
-              </a>
-            </Link>{' '}
+            <a
+              href="https://digitalent.kominfo.go.id/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold underline"
+            >
+              Digital Talent Scholarship
+            </a>{' '}
             held by Kementrian Kominfo for 3 years. I&apos;m also part of{' '}
-            <Link href="https://ramaniya.id/">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold underline"
-              >
-                Ramaniya
-              </a>
-            </Link>{' '}
+            <a
+              href="https://ramaniya.id/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold underline"
+            >
+              Ramaniya
+            </a>{' '}
             as a freelance Information Technology Staff in 2021. I also took
             part in{' '}
-            <Link href="https://www.anakbangsabisa.org/generasi-gigih/">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold underline"
-              >
-                Generasi Gigih
-              </a>
-            </Link>{' '}
+            <a
+              href="https://www.anakbangsabisa.org/generasi-gigih/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold underline"
+            >
+              Generasi Gigih
+            </a>{' '}
             held by Yayasan Anak Bangsa Bisa & GoTo Group at Frontend
             Engineering Track.
           </p>

@@ -8,9 +8,7 @@ const ReadMore = () => {
         <a>
           <div className="flex items-center space-x-1 font-medium hover:cursor-pointer text-black dark:text-white">
             <p>Read all posts</p>
-            <p className="text-xl">
-              <HiArrowNarrowRight />
-            </p>
+            <HiArrowNarrowRight className="text-xl" />
           </div>
         </a>
       </Link>

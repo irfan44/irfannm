@@ -21,29 +21,23 @@ const HeroPost = ({
 }: Props) => {
   return (
     <Link href={`/blog/${slug}`}>
-      <a>
-        <div className="flex flex-col lg:flex-row lg:items-center">
-          <div className="lg:w-3/5">
-            <CoverImage
-              title={title}
-              src={coverImage}
-              height={620}
-              width={1240}
-            />
+      <a className="flex flex-col lg:flex-row lg:items-center">
+        <div className="lg:w-3/5">
+          <CoverImage
+            title={title}
+            src={coverImage}
+            height={620}
+            width={1240}
+          />
+        </div>
+        <div className="lg:w-1/2 lg:px-8 mt-8 lg:mt-0 space-y-4">
+          <h3 className="text-2xl lg:text-4xl font-bold">{title}</h3>
+          <div className="flex space-x-2">
+            <div className="font-bold">{category}</div>
+            <div>|</div>
+            <DateFormatter dateString={date} />
           </div>
-          <div className="lg:w-1/2 lg:px-8 mt-8 lg:mt-0">
-            <div className="mb-4">
-              <h3 className="mb-4 text-2xl lg:text-4xl font-bold">{title}</h3>
-              <div className="mb-4 flex space-x-2">
-                <div className="font-bold">{category}</div>
-                <div>|</div>
-                <DateFormatter dateString={date} />
-              </div>
-            </div>
-            <div>
-              <p className="leading-relaxed mb-4">{excerpt}</p>
-            </div>
-          </div>
+          <p className="leading-relaxed">{excerpt}</p>
         </div>
       </a>
     </Link>
