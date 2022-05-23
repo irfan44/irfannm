@@ -12,5 +12,6 @@ module.exports = {
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
+    'react/jsx-max-depth': [2, { max: 4 }],
   },
 };

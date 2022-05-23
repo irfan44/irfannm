@@ -39,18 +39,14 @@ const Post = ({ post }: Props) => {
         <>
           <Meta data={pageMeta} />
           <div className="max-w-3xl mx-auto">
-            <div>
-              <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
-                <Link href="/">
-                  <a>Home</a>
-                </Link>
-                <p className="text-2xl">
-                  <RiArrowRightSLine />
-                </p>
-                <Link href="/blog">
-                  <a>Blog</a>
-                </Link>
-              </div>
+            <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+              <RiArrowRightSLine className="text-2xl" />
+              <Link href="/blog">
+                <a>Blog</a>
+              </Link>
             </div>
             <article className="mb-32 text-neutral-800 prose md:prose-lg max-w-none dark:prose-invert dark:text-gray-200">
               <PostBody>
