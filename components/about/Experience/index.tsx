@@ -1,13 +1,11 @@
-import workExperience from 'data/constants/workExperience';
+import experience from 'data/constants/experience';
 
-const WorkExperience = () => {
+const Experience = () => {
   return (
     <div>
-      <div className="mb-6">
-        <h2>Work Experience</h2>
-      </div>
+      <h2 className="mb-6">Experience</h2>
       <div className="flex flex-col">
-        {workExperience.map((work) => {
+        {experience.map((work) => {
           return (
             <div key={work.title}>
               <div className="py-2 text-left">
@@ -34,4 +32,4 @@ const WorkExperience = () => {
   );
 };
 
-export default WorkExperience;
+export default Experience;

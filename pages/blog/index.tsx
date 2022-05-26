@@ -5,7 +5,7 @@ import Container from 'components/layouts/Container';
 import PageHeader from 'components/layouts/PageHeader';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/api';
-import AllPosts from 'types/all-posts';
+import AllPosts from 'types/allPosts';
 
 const Blog = ({ allPosts }: AllPosts) => {
   const heroPost = allPosts[0];

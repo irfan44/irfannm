@@ -1,11 +1,6 @@
-type Experience = {
-  title: string;
-  company: string;
-  year: string;
-  responsibility: string[];
-};
+import Experience from 'types/experience';
 
-const workExperience: Experience[] = [
+const experience: Experience[] = [
   {
     title: 'Red Hat Help Desk & Class Assistant',
     company: 'Digital Talent Scholarship',
@@ -29,4 +24,4 @@ const workExperience: Experience[] = [
   },
 ];
 
-export default workExperience;
+export default experience;

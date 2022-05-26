@@ -5,7 +5,7 @@ import ReadMore from 'components/home/ReadMore';
 import Container from 'components/layouts/Container';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/api';
-import AllPosts from 'types/all-posts';
+import AllPosts from 'types/allPosts';
 
 const Index = ({ allPosts }: AllPosts) => {
   const latestPosts = allPosts.slice(0, 4);
@@ -15,18 +15,19 @@ const Index = ({ allPosts }: AllPosts) => {
     description: "Irfan Nurghiffari Muhajir's personal website",
     ogImage: '/assets/images/irfan.jpeg',
   };
+
   return (
     <Container>
       <Meta data={pageMeta} />
       <div className="space-y-16">
         <HeroSection />
         {latestPosts.length > 0 && (
-          <div>
+          <>
             <Section title="Latest Posts">
               <PostsList posts={latestPosts} />
             </Section>
             <ReadMore />
-          </div>
+          </>
         )}
       </div>
     </Container>

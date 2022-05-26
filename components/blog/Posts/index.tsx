@@ -1,6 +1,6 @@
 import { Tab } from '@headlessui/react';
 import PostList from 'components/blog/PostList';
-import AllPosts from 'types/all-posts';
+import AllPosts from 'types/allPosts';
 
 const Posts = ({ allPosts }: AllPosts) => {
   const everyPosts = allPosts.slice(0);

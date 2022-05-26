@@ -1,7 +1,7 @@
 import AboutMe from 'components/about/AboutMe';
 import CurriculumVitae from 'components/about/CurriculumVitae';
+import Experience from 'components/about/Experience';
 import SocialContact from 'components/about/SocialContact';
-import WorkExperience from 'components/about/WorkExperience';
 import Meta from 'components/common/Meta';
 import Container from 'components/layouts/Container';
 
@@ -16,7 +16,7 @@ const About = () => {
       <Meta data={pageMeta} />
       <div className="space-y-12 max-w-3xl mx-auto">
         <AboutMe />
-        <WorkExperience />
+        <Experience />
         <CurriculumVitae />
         <SocialContact />
       </div>

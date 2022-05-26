@@ -1,15 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
+import Projects from 'types/projects';
 
-type Props = {
-  name: string;
-  description: string;
-  techStack: string[];
-  sourceCode: string;
-};
-
-const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
+const ProjectCard = ({ name, description, techStack, sourceCode }: Projects) => {
   return (
     <div className="flex flex-col justify-between space-y-3 bg-white border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 rounded-2xl p-5 hover:rounded-xl">
       <Image
@@ -19,12 +13,8 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
         height={278}
         width={590}
       />
-      <div>
-        <h4>{name}</h4>
-      </div>
-      <div>
-        <p>{description}</p>
-      </div>
+      <h4>{name}</h4>
+      <p>{description}</p>
       <div className="space-y-4">
         <div className="flex space-x-2">
           {techStack.map((stack) => {
@@ -40,9 +30,7 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Props) => {
         </div>
         {sourceCode.length !== 0 && (
           <div className="flex space-x-2 items-center hover:underline">
-            <span className="text-xl text-black dark:text-white">
-              <FaGithub />
-            </span>
+            <FaGithub className="text-xl text-black dark:text-white" />
             <Link href={sourceCode}>
               <a target="_blank" rel="noopener noreferrer">
                 Source code
