@@ -1,4 +1,4 @@
-import workExperience from 'data/workExperience';
+import workExperience from 'data/constants/workExperience';
 
 const WorkExperience = () => {
   return (

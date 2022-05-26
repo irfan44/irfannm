@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import menuList from 'data/menuList';
+import navMenu from 'data/constants/navMenu';
 
-const Menu = () => {
+const ListMenu = () => {
   const route = useRouter();
   const { pathname } = useRouter();
   return (
     <>
-      {menuList.map(({ name, link }) => {
+      {navMenu.map(({ name, link }) => {
         return (
           <li
             key={name}
@@ -28,4 +28,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default ListMenu;

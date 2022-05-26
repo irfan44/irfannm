@@ -1,5 +1,5 @@
-import CoverImage from 'components/common/CoverImage';
 import DateFormatter from 'components/common/DateFormatter';
+import CoverImage from 'components/common/Images';
 import PostTitle from 'components/post/PostTitle';
 
 type Props = {

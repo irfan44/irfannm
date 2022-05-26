@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ContactButton from 'components/common/ContactButton';
-import SocialLink from 'components/common/SocialLinks';
+import SocialLink from 'components/common/SocialMedia';
 
 const HeroSection = () => {
   return (

@@ -6,7 +6,7 @@ const transition = {
   damping: 10,
 };
 
-const MoonIcon = () => {
+const Moon = () => {
   const variants = {
     initial: { scale: 0.6, rotate: 90 },
     animate: {
@@ -35,4 +35,4 @@ const MoonIcon = () => {
   );
 };
 
-export default MoonIcon;
+export default Moon;

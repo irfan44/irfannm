@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { RiExternalLinkLine } from 'react-icons/ri';
-import socialList from 'data/socialList';
+import socials from 'data/constants/socials';
 
 const SocialContact = () => {
   return (
@@ -13,7 +13,7 @@ const SocialContact = () => {
         and check out for my things i do :
       </p>
       <ul className="list-disc ml-4 space-y-1">
-        {socialList.map((social) => {
+        {socials.map((social) => {
           return (
             <li key={social.name}>
               <Link href={social.link}>

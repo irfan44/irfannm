@@ -6,7 +6,7 @@ const transition = {
   damping: 10,
 };
 
-const SunIcon = () => {
+const Sun = () => {
   const whileTap = { scale: 0.95, rotate: 15 };
 
   const raysVariants = {
@@ -72,4 +72,4 @@ const SunIcon = () => {
   );
 };
 
-export default SunIcon;
+export default Sun;

@@ -5,7 +5,7 @@ type Props = {
   posts: Post[];
 };
 
-const PostsList = ({ posts }: Props) => {
+const PostList = ({ posts }: Props) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 gap-y-8">
       {posts.map((post) => (
@@ -23,4 +23,4 @@ const PostsList = ({ posts }: Props) => {
   );
 };
 
-export default PostsList;
+export default PostList;

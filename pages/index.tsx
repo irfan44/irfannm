@@ -1,4 +1,4 @@
-import PostsList from 'components/blog/PostsList';
+import PostsList from 'components/blog/PostList';
 import Meta from 'components/common/Meta';
 import HeroSection from 'components/home/HeroSection';
 import ReadMore from 'components/home/ReadMore';

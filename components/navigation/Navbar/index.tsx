@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import ContactButton from 'components/common/ContactButton';
-import Menu from 'components/common/Menu';
 import ThemeSwitcher from 'components/common/ThemeSwitcher';
 import Container from 'components/layouts/Container';
-import Menus from 'components/navbar/Menus';
+import Menu from 'components/navigation/ListMenu';
+import TabMenu from 'components/navigation/TabMenu';
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
       <Container>
         <div className="flex justify-between py-4 items-center">
           <Link href="/">
-            <a className="font-bold leading-tightfont-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white block">
+            <a className="leading-tightfont-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white block">
               inm
             </a>
           </Link>
@@ -40,9 +40,9 @@ const Navbar = () => {
             </button>
           </div>
           <div className="hidden md:block text-left">
-            <Menus />
+            <TabMenu />
           </div>
-          <div className="hidden md:block text-left flex flex-row items-center space-x-6">
+          <div className="hidden md:block text-left">
             <ThemeSwitcher />
           </div>
         </div>

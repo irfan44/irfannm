@@ -7,7 +7,7 @@ type Props = {
   height: number;
 };
 
-const CoverImage = ({ title, src, width, height }: Props) => {
+const Images = ({ title, src, width, height }: Props) => {
   const image = (
     <Image
       src={src}
@@ -20,4 +20,4 @@ const CoverImage = ({ title, src, width, height }: Props) => {
   return <div className="sm:mx-0">{image}</div>;
 };
 
-export default CoverImage;
+export default Images;

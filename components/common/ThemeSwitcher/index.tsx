@@ -1,8 +1,8 @@
 import { Switch } from '@headlessui/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import MoonIcon from 'components/common/ThemeSwitcher/MoonIcon';
-import SunIcon from 'components/common/ThemeSwitcher/SunIcon';
+import Moon from 'components/icons/Moon';
+import Sun from 'components/icons/Sun';
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -41,7 +41,7 @@ const ThemeSwitcher = () => {
             : 'translate-x-1 bg-white'
         } inline-block h-6 w-6 transform rounded-full p-1`}
       >
-        {currentTheme === 'dark' ? <MoonIcon /> : <SunIcon />}
+        {currentTheme === 'dark' ? <Moon /> : <Sun />}
       </span>
     </Switch>
   );
