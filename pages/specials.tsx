@@ -14,7 +14,7 @@ const Specials = () => {
     <Container>
       <Meta data={pageMeta} />
       <div className="flex flex-col md:flex-row items-center py-6 mb-12">
-        <div className="md:w-1/2 space-y-6">
+        <div className="md:w-1/2 space-y-6 mb-12 md:mb-0">
           <p className="font-bold text-xl text-black dark:text-white">
             Happy Birtday,
           </p>
@@ -48,7 +48,7 @@ const Specials = () => {
       <div>
         <h2>Kejutan Spesial!</h2>
         <p className="mb-6">Coba klik tombolnya by wkwk</p>
-        <div className="w-fit bg-black py-2 px-3 rounded-2xl text-white dark:bg-neutral-800 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 shadow-sm">
+        <div className="w-fit bg-black py-2 px-5 rounded-2xl text-white dark:bg-neutral-800 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 shadow-sm">
           <Link href="https://bit.ly/3oprlgx">
             <a
               target="_blank"
