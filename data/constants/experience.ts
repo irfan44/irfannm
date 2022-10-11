@@ -2,6 +2,12 @@ import Experience from 'types/experience';
 
 const experience: Experience[] = [
   {
+    title: 'Digital Talent Program',
+    company: 'PT Bank Mandiri (Persero) Tbk',
+    year: 'Aug - Sep 2022',
+    responsibility: ['Building a portal for request ticket management'],
+  },
+  {
     title: 'Red Hat Help Desk & Class Assistant',
     company: 'Digital Talent Scholarship',
     year: '2020 - 2022',
