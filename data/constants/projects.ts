@@ -10,13 +10,20 @@ const projects: Projects[] = [
   },
   {
     id: '2',
+    name: 'Literanian',
+    description: 'Literanian is a digital literacy website aimed to improve reading interest among users in Indonesia',
+    techStack: ['React', 'Firebase', 'Chakra UI', 'TypeScript'],
+    sourceCode: 'https://github.com/irfan44/literanian'
+  },
+  {
+    id: '3',
     name: 'SocialTree',
     description: 'Linktree like web for my social media link sharing',
     techStack: ['React', 'Vite', 'TypeScript'],
     sourceCode: 'https://github.com/irfan44/socialtree',
   },
   {
-    id: '3',
+    id: '4',
     name: 'Spotifie',
     description:
       'Spotify playlist creator using Spotify API for Generasi Gigih final project',
@@ -24,7 +31,7 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/generasi-gigih-homework',
   },
   {
-    id: '4',
+    id: '5',
     name: 'Ramaniya.id',
     description:
       "Ramaniya's company website that i manage. Built using Wordpress and Divi theme.",
@@ -32,7 +39,7 @@ const projects: Projects[] = [
     sourceCode: '',
   },
   {
-    id: '5',
+    id: '6',
     name: 'Aksara Sunda',
     description:
       'Sundanese writing (aksara) learning app for android implemented using firebase to store questions data',
@@ -40,7 +47,7 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/Aksara_sundaV2',
   },
   {
-    id: '6',
+    id: '7',
     name: 'Optimasi Barang Bawaan',
     description:
       'Implementation of genetic algrothim (GA) for optimizing the items to carry in a bag for travel',
@@ -48,7 +55,7 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/GA-Optimasi-Barang-Bawaan',
   },
   {
-    id: '7',
+    id: '8',
     name: 'YukJahit',
     description: 'A web application for online dressmaking service',
     techStack: ['PHP', 'MySQL', 'HTML', 'CSS'],
