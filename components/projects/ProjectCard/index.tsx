@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 import Projects from 'types/projects';
 
-const ProjectCard = ({ name, description, techStack, sourceCode }: Projects) => {
+const ProjectCard = ({
+  name,
+  description,
+  techStack,
+  sourceCode,
+  url,
+}: Projects) => {
   return (
     <div className="flex flex-col justify-between space-y-3 bg-white border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 rounded-2xl p-5 hover:rounded-xl">
       <Image
@@ -28,16 +35,28 @@ const ProjectCard = ({ name, description, techStack, sourceCode }: Projects) => 
             );
           })}
         </div>
-        {sourceCode.length !== 0 && (
-          <div className="flex space-x-2 items-center hover:underline">
-            <FaGithub className="text-xl text-black dark:text-white" />
-            <Link href={sourceCode}>
-              <a target="_blank" rel="noopener noreferrer">
-                Source code
-              </a>
-            </Link>
-          </div>
-        )}
+        <div className="flex space-x-4">
+          {url.length !== 0 && (
+            <div className="flex space-x-2 items-center hover:underline">
+              <FiExternalLink className="text-xl text-black dark:text-white" />
+              <Link href={url}>
+                <a target="_blank" rel="noopener noreferrer">
+                  Visit
+                </a>
+              </Link>
+            </div>
+          )}
+          {sourceCode.length !== 0 && (
+            <div className="flex space-x-2 items-center hover:underline">
+              <FaGithub className="text-xl text-black dark:text-white" />
+              <Link href={sourceCode}>
+                <a target="_blank" rel="noopener noreferrer">
+                  Source code
+                </a>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

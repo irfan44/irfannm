@@ -11,6 +11,7 @@ const ProjectList = () => {
             name={project.name}
             description={project.description}
             techStack={project.techStack}
+            url={project.url}
             sourceCode={project.sourceCode}
           />
         );
