@@ -32,7 +32,7 @@ const projects: Projects[] = [
     description:
       'Spotify playlist creator using Spotify API for Generasi Gigih final project',
     techStack: ['React', 'Redux', 'TypeScript'],
-    url: '',
+    url: 'https://spotifie.irfannm.xyz',
     sourceCode: 'https://github.com/irfan44/generasi-gigih-homework',
   },
   {
