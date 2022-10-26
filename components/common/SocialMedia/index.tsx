@@ -7,10 +7,15 @@ const SocialMedia = () => {
       {socials.map((social) => {
         return (
           <li key={social.name} className="text-2xl text-black dark:text-white">
-            <Link key={social.name} href={social.link} passHref>
-              <a target="_blank" rel="noopener noreferrer" title={social.name}>
-                <social.icon />
-              </a>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              title={social.name}
+              key={social.name}
+              href={social.link}
+              passHref
+            >
+              <social.icon />
             </Link>
           </li>
         );

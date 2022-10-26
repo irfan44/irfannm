@@ -9,6 +9,7 @@ type Props = {
 };
 
 const Meta = ({ data }: Props) => {
+  let title = `${data.title} - Irfan Nurghiffari Muhajir`;
   return (
     <Head>
       <link
@@ -40,7 +41,7 @@ const Meta = ({ data }: Props) => {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta charSet="UTF-8" />
-      <title>{data.title} - Irfan Nurghiffari Muhajir</title>
+      <title>{title}</title>
       <meta name="description" content={data.description} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:image" content={data.ogImage} />

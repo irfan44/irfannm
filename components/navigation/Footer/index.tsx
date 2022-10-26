@@ -13,10 +13,11 @@ const Footer = () => {
           <ul className="flex flex-col list-none space-y-1 md:hidden">
             <Menu />
           </ul>
-          <Link href="/">
-            <a className="font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black block dark:text-white md:pr-8 my-4">
-              inm
-            </a>
+          <Link
+            href="/"
+            className="font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black block dark:text-white md:pr-8 my-4"
+          >
+            inm
           </Link>
           <div className="flex space-x-4 mb-8 justify-center md:justify-start">
             <SocialLinks />

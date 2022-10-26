@@ -39,20 +39,16 @@ const ProjectCard = ({
           {url.length !== 0 && (
             <div className="flex space-x-2 items-center hover:underline">
               <FiExternalLink className="text-xl text-black dark:text-white" />
-              <Link href={url}>
-                <a target="_blank" rel="noopener noreferrer">
-                  Visit
-                </a>
+              <Link href={url} target="_blank" rel="noopener noreferrer">
+                Visit
               </Link>
             </div>
           )}
           {sourceCode.length !== 0 && (
             <div className="flex space-x-2 items-center hover:underline">
               <FaGithub className="text-xl text-black dark:text-white" />
-              <Link href={sourceCode}>
-                <a target="_blank" rel="noopener noreferrer">
-                  Source code
-                </a>
+              <Link href={sourceCode} target="_blank" rel="noopener noreferrer">
+                Source code
               </Link>
             </div>
           )}

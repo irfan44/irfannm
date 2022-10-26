@@ -16,17 +16,17 @@ const SocialContact = () => {
         {socials.map((social) => {
           return (
             <li key={social.name}>
-              <Link href={social.link}>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  {social.name}{' '}
-                  <span className="ml-1">
-                    <RiExternalLinkLine />
-                  </span>
-                </a>
+              <Link
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+                passHref
+              >
+                {social.name}{' '}
+                <span className="ml-1">
+                  <RiExternalLinkLine />
+                </span>
               </Link>
             </li>
           );

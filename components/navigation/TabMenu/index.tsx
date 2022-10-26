@@ -16,17 +16,16 @@ const TabMenu = () => {
             return (
               <Tab key={name}>
                 <div className="relative px-3 py-1">
-                  <Link href={link}>
-                    <a
-                      className={
-                        route.pathname == link ||
-                        (pathname.startsWith(link) && link != '/')
-                          ? 'relative z-[1] font-bold dark:text-white text-black'
-                          : 'relative z-[1] font-normal'
-                      }
-                    >
-                      {name}
-                    </a>
+                  <Link
+                    className={
+                      route.pathname == link ||
+                      (pathname.startsWith(link) && link != '/')
+                        ? 'relative z-[1] font-bold dark:text-white text-black'
+                        : 'relative z-[1] font-normal'
+                    }
+                    href={link}
+                  >
+                    {name}
                   </Link>
                   {route.pathname == link ||
                   (pathname.startsWith(link) && link != '/') ? (

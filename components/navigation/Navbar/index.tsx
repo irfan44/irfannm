@@ -14,10 +14,11 @@ const Navbar = () => {
     <nav className="mt-4 w-full bg-neutral-50 dark:bg-neutral-900 z-10">
       <Container>
         <div className="flex justify-between py-4 items-center">
-          <Link href="/">
-            <a className="leading-tightfont-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white block">
-              inm
-            </a>
+          <Link
+            className="leading-tightfont-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white block"
+            href="/"
+          >
+            inm
           </Link>
           <div className="flex space-x-2 items-center md:hidden ml-auto py-auto">
             <button

@@ -18,8 +18,11 @@ const ListMenu = () => {
                 : ''
             }
           >
-            <Link href={link}>
-              <a className="hover:text-black dark:hover:text-white">{name}</a>
+            <Link
+              className="hover:text-black dark:hover:text-white"
+              href={link}
+            >
+              {name}
             </Link>
           </li>
         );
