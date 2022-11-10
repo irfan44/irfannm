@@ -17,11 +17,9 @@ const PageServerError = () => {
         <h1>500</h1>
         <p>Internal Server Error</p>
         <div className="w-fit bg-black py-2 px-3 rounded-2xl text-white dark:bg-neutral-800 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 shadow-sm mx-auto">
-          <Link href="/">
-            <a>Return to Home</a>
-          </Link>
+          <Link href="/">Return to Home</Link>
         </div>
-        <div>
+        <div className="flex justify-center">
           <Image
             src="/assets/images/Sad.svg"
             alt="Hero"
