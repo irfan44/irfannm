@@ -1,4 +1,4 @@
-import SectionTitle from 'components/layouts/Section/Title';
+import SectionTitle from 'components/layouts/SectionTitle';
 
 type Props = {
   title: string;

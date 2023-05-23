@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { RiExternalLinkLine } from 'react-icons/ri';
-import socials from 'data/constants/socials';
+import socials from 'data/socials';
 
 const SocialContact = () => {
   return (

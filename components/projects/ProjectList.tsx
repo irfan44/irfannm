@@ -1,5 +1,5 @@
 import ProjectCard from 'components/projects/ProjectCard';
-import projects from 'data/constants/projects';
+import projects from 'data/projects';
 
 const ProjectList = () => {
   return (

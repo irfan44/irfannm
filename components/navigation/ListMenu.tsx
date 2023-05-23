@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import navMenu from 'data/constants/navMenu';
+import navMenu from 'data/navMenu';
 
 type Props = {
   setActive?: any;

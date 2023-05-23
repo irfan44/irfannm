@@ -4,9 +4,6 @@ const AboutMe = () => {
   return (
     <div className="space-y-12">
       <div>
-        <h1>About</h1>
-      </div>
-      <div>
         <div className="flex justify-center mb-12">
           <Image
             className="rounded-full"

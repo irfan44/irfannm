@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import socials from 'data/constants/socials';
+import socials from 'data/socials';
 
 const SocialMedia = () => {
   return (

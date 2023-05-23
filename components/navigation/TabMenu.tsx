@@ -2,7 +2,7 @@ import { Tab } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import navMenu from 'data/constants/navMenu';
+import navMenu from 'data/navMenu';
 
 const TabMenu = () => {
   const route = useRouter();
