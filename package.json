@@ -1,6 +1,6 @@
 {
   "name": "irfannm",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "author": {
     "name": "Irfan Nurghiffari Muhajir",
     "email": "irfannmuhajir@gmail.com"
@@ -16,7 +16,7 @@
     "test": "npm run typecheck && npm run lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.14",    
+    "@headlessui/react": "^1.7.14",
     "framer-motion": "^10.12.12",
     "gray-matter": "^4.0.3",
     "next": "^13.4.3",
