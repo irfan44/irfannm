@@ -13,12 +13,14 @@ const Footer = () => {
           <ul className="flex flex-col list-none space-y-1 md:hidden">
             <Menu />
           </ul>
-          <Link
-            href="/"
-            className="font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black block dark:text-white md:pr-8 my-4"
-          >
-            inm
-          </Link>
+          <div className="md:pr-8 my-4">
+            <Link
+              href="/"
+              className="font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white"
+            >
+              inm
+            </Link>
+          </div>
           <div className="flex space-x-4 mb-8 justify-center md:justify-start">
             <SocialLinks />
           </div>
@@ -26,8 +28,22 @@ const Footer = () => {
             <ContactButton />
           </div>
           <div>
-            <p className="text-sm">© 2022 Irfan Nurghiffari Muhajir</p>
+            <p className="text-sm">
+              © {new Date().getFullYear()} Irfan Nurghiffari Muhajir
+            </p>
             <p className="text-sm">With 😻 using NextJS & Tailwind CSS</p>
+          </div>
+          <div className="md:hidden mt-6 flex justify-center">
+            <a
+              href="https://github.com/irfan44/irfannm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex text-sm items-center"
+              title="Source code"
+            >
+              <FaGithub className="mr-2 text-xl text-black dark:text-white" />
+              Source code
+            </a>
           </div>
         </div>
         <div className="md:flex flex-col justify-between hidden">
@@ -35,7 +51,7 @@ const Footer = () => {
             <Menu />
           </ul>
           <a
-            href="https://github.com/irfan44/irfannm.xyz"
+            href="https://github.com/irfan44/irfannm"
             target="_blank"
             rel="noopener noreferrer"
             className="flex text-sm items-center"

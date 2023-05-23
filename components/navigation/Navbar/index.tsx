@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="h-screen w-full">
             <div className="grid items-center border rounded-lg border-zinc-200 p-4">
               <ul className="flex flex-col space-y-4 items-center">
-                <Menu />
+                <Menu setActive={setActive} />
                 <li>
                   <ContactButton />
                 </li>

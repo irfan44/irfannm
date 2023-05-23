@@ -40,3 +40,12 @@ yarn-error.log*
 **/public/sw.js.map
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
+
+# IDE files
+.vscode
+.idea
+
+# Lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml

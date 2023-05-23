@@ -25,7 +25,6 @@ const ThemeSwitcher = () => {
 
   return (
     <Switch
-      checked={currentTheme}
       onChange={setCurrentTheme}
       className={`${
         currentTheme === 'dark'

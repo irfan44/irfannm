@@ -2,9 +2,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import navMenu from 'data/constants/navMenu';
 
-const ListMenu = () => {
+type Props = {
+  setActive?: any;
+};
+
+const ListMenu = ({ setActive }: Props) => {
   const route = useRouter();
   const { pathname } = useRouter();
+
   return (
     <>
       {navMenu.map(({ name, link }) => {
@@ -21,6 +26,7 @@ const ListMenu = () => {
             <Link
               className="hover:text-black dark:hover:text-white"
               href={link}
+              onClick={() => setActive && setActive(false)}
             >
               {name}
             </Link>
