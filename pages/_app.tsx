@@ -7,6 +7,7 @@ import 'styles/nprogress.css'; //styles of nprogress\
 import Footer from 'components/navigation/Footer';
 import Navbar from 'components/navigation/Navbar';
 import { useScrollRestoration } from 'utils/useScrollRestoration';
+import Container from 'components/layouts/Container';
 
 NProgress.configure({ showSpinner: false });
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -20,7 +21,9 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     <ThemeProvider enableSystem attribute="class">
       <Navbar />
       <main className="min-h-screen mt-16 transition-all">
-        <Component {...pageProps} />
+        <Container>
+          <Component {...pageProps} />
+        </Container>
       </main>
       <Footer />
     </ThemeProvider>

@@ -1,7 +1,6 @@
 import HeroPost from 'components/blog/HeroPost';
 import Posts from 'components/blog/Posts';
 import Meta from 'components/common/Meta';
-import Container from 'components/layouts/Container';
 import PageHeader from 'components/layouts/PageHeader';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/api';
@@ -17,7 +16,7 @@ const Blog = ({ allPosts }: AllPosts) => {
   };
 
   return (
-    <Container>
+    <>
       <Meta data={pageMeta} />
       <div className="space-y-12">
         <PageHeader
@@ -41,7 +40,7 @@ const Blog = ({ allPosts }: AllPosts) => {
           <Posts allPosts={allPosts} />
         </Section>
       </div>
-    </Container>
+    </>
   );
 };
 export default Blog;

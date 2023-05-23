@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Meta from 'components/common/Meta';
-import Container from 'components/layouts/Container';
 
 const PageNotFound = () => {
   const pageMeta = {
@@ -11,7 +10,7 @@ const PageNotFound = () => {
   };
 
   return (
-    <Container>
+    <>
       <Meta data={pageMeta} />
       <div className="flex flex-col justify-center py-16 text-center space-y-2">
         <h1>404</h1>
@@ -28,7 +27,7 @@ const PageNotFound = () => {
           />
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 

@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import Meta from 'components/common/Meta';
-import Container from 'components/layouts/Container';
 import PostBody from 'components/post/PostBody';
 import PostHeader from 'components/post/PostHeader';
 import PostTitle from 'components/post/PostTitle';
@@ -32,7 +31,7 @@ const Post = ({ post }: Props) => {
     ogImage: post.ogImage.url,
   };
   return (
-    <Container>
+    <>
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
       ) : (
@@ -59,7 +58,7 @@ const Post = ({ post }: Props) => {
           </div>
         </>
       )}
-    </Container>
+    </>
   );
 };
 

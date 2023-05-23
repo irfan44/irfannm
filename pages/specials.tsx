@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Meta from 'components/common/Meta';
-import Container from 'components/layouts/Container';
 
 const Specials = () => {
   const pageMeta = {
@@ -11,7 +10,7 @@ const Specials = () => {
   };
 
   return (
-    <Container>
+    <>
       <Meta data={pageMeta} />
       <div className="flex flex-col md:flex-row items-center py-6 mb-12">
         <div className="md:w-1/2 space-y-6 mb-12 md:mb-0">
@@ -60,7 +59,7 @@ const Specials = () => {
           </Link>
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 
