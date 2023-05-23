@@ -11,6 +11,16 @@
     src: url('/fonts/LexendDeca-VariableFont.ttf') format('truetype');
   }
 
+  h1,
+  .h1 {
+    @apply font-sans text-4xl font-bold md:text-5xl tracking-tighter leading-tight text-black dark:text-white;
+  }
+
+  h2,
+  .h2 {
+    @apply font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white;
+  }
+
   h3,
   .h3 {
     @apply font-sans text-xl font-bold md:text-3xl tracking-tighter leading-tight text-black dark:text-white;
