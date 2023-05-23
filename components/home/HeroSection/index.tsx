@@ -27,8 +27,8 @@ const HeroSection = () => {
         </div>
         <p>
           A software engineering student who have a lot of passion in technology
-          and web development, especially frontend development using React &
-          NextJS
+          and web development, especially frontend development using React,
+          NextJS, and Angular
         </p>
         <ContactButton />
         <div className="flex space-x-4 py-4">
