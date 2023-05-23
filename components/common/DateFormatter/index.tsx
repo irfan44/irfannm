@@ -1,11 +1,14 @@
-import dayjs from 'dayjs';
-
 type Props = {
   dateString: string;
 };
 
 const DateFormatter = ({ dateString }: Props) => {
-  const date = dayjs(dateString).format('MMM D, YYYY');
+  const convertedDate = new Date(dateString);
+  const date = convertedDate.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
   return <time dateTime={dateString}>{date}</time>;
 };
 

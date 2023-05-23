@@ -16,8 +16,7 @@
     "test": "npm run typecheck && npm run lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.14",
-    "dayjs": "^1.11.7",
+    "@headlessui/react": "^1.7.14",    
     "framer-motion": "^10.12.12",
     "gray-matter": "^4.0.3",
     "next": "^13.4.3",
