@@ -6,7 +6,7 @@ type Items = {
   [key: string]: string;
 };
 
-const postsDirectory = join(process.cwd(), 'data/posts');
+const postsDirectory = join(process.cwd(), 'contents');
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
