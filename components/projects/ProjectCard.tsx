@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 import Projects from 'types/projects';
+import ExternalLink from 'lib/ui/ExternalLink';
 
 const ProjectCard = ({
   name,
@@ -37,19 +37,31 @@ const ProjectCard = ({
         </div>
         <div className="flex space-x-4">
           {url.length !== 0 && (
-            <div className="flex space-x-2 items-center hover:underline">
-              <FiExternalLink className="text-xl text-black dark:text-white" />
-              <Link href={url} target="_blank" rel="noopener noreferrer">
-                Visit
-              </Link>
+            <div className="hover:underline">
+              <ExternalLink
+                type="text"
+                title="Visit website"
+                href={url}
+                iconLeft={
+                  <FiExternalLink className="text-xl text-black dark:text-white" />
+                }
+              >
+                <span>Visit</span>
+              </ExternalLink>
             </div>
           )}
           {sourceCode.length !== 0 && (
-            <div className="flex space-x-2 items-center hover:underline">
-              <FaGithub className="text-xl text-black dark:text-white" />
-              <Link href={sourceCode} target="_blank" rel="noopener noreferrer">
-                Source code
-              </Link>
+            <div className="hover:underline">
+              <ExternalLink
+                type="text"
+                title="View source code"
+                href={sourceCode}
+                iconLeft={
+                  <FaGithub className="text-xl text-black dark:text-white" />
+                }
+              >
+                <span>Source code</span>
+              </ExternalLink>
             </div>
           )}
         </div>

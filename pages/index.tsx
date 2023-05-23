@@ -3,7 +3,7 @@ import Meta from 'components/common/Meta';
 import HeroSection from 'components/home/HeroSection';
 import ReadMore from 'components/home/ReadMore';
 import Section from 'components/layouts/Section';
-import { getAllPosts } from 'lib/api';
+import { getAllPosts } from 'lib/postsHandler';
 import AllPosts from 'types/allPosts';
 
 const Index = ({ allPosts }: AllPosts) => {

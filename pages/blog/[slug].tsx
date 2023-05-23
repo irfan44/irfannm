@@ -9,7 +9,7 @@ import Meta from 'components/common/Meta';
 import PostBody from 'components/post/PostBody';
 import PostHeader from 'components/post/PostHeader';
 import PostTitle from 'components/post/PostTitle';
-import { getPostBySlug, getAllPosts } from 'lib/api';
+import { getPostBySlug, getAllPosts } from 'lib/postsHandler';
 import PostType from 'types/post';
 
 type Props = {

@@ -1,3 +1,5 @@
+import Text from 'lib/ui/Text';
+
 type Props = {
   pageTitle: string;
   pageDescription?: string;
@@ -6,7 +8,9 @@ type Props = {
 const PageHeader = ({ pageTitle, pageDescription = '' }: Props) => {
   return (
     <div>
-      <h1 className="mb-6">{pageTitle}</h1>
+      <Text type="pageTitle" className="mb-6">
+        {pageTitle}
+      </Text>
       {pageDescription.length !== 0 && <p>{pageDescription}</p>}
     </div>
   );

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ContactButton from 'components/common/ContactButton';
 import SocialLink from 'components/common/SocialMedia';
+import Text from 'lib/ui/Text';
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,7 @@ const HeroSection = () => {
       <div className="md:w-1/2 space-y-6">
         <div>
           <p className="font-bold text-xl text-black dark:text-white">Hi,</p>
-          <h1>
+          <Text type="pageTitle">
             I&apos;m Irfan!{' '}
             <motion.div
               className="inline-block"
@@ -23,7 +24,7 @@ const HeroSection = () => {
             >
               👋
             </motion.div>
-          </h1>
+          </Text>
         </div>
         <p>
           A software engineering student who have a lot of passion in technology

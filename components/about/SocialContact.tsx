@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { RiExternalLinkLine } from 'react-icons/ri';
 import socials from 'data/socials';
+import ExternalLink from 'lib/ui/ExternalLink';
 
 const SocialContact = () => {
   return (
@@ -16,18 +16,16 @@ const SocialContact = () => {
         {socials.map((social) => {
           return (
             <li key={social.name}>
-              <Link
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center"
-                passHref
-              >
-                {social.name}{' '}
-                <span className="ml-1">
-                  <RiExternalLinkLine />
-                </span>
-              </Link>
+              <div className="hover:underline">
+                <ExternalLink
+                  type="text"
+                  title={social.name}
+                  href={social.link}
+                  iconRight={<RiExternalLinkLine />}
+                >
+                  <span>{social.name}</span>
+                </ExternalLink>
+              </div>
             </li>
           );
         })}

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import socials from 'data/socials';
+import ExternalLink from 'lib/ui/ExternalLink';
 
 const SocialMedia = () => {
   return (
@@ -7,16 +7,11 @@ const SocialMedia = () => {
       {socials.map((social) => {
         return (
           <li key={social.name} className="text-2xl text-black dark:text-white">
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              title={social.name}
-              key={social.name}
-              href={social.link}
-              passHref
-            >
-              <social.icon />
-            </Link>
+            <ExternalLink type="text" title={social.name} href={social.link}>
+              <span>
+                <social.icon />
+              </span>
+            </ExternalLink>
           </li>
         );
       })}
