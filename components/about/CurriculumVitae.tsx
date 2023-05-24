@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ExternalLink from 'lib/ui/ExternalLink';
 
 const CurriculumVitae = () => {
   return (
@@ -9,15 +9,15 @@ const CurriculumVitae = () => {
       <div>
         <p>
           You can see and download my latest CV{' '}
-          <Link
+          <ExternalLink
+            type="text"
+            title="Download here"
             href="https://drive.google.com/file/d/14SkpfAltg0GS4qfomrwZH3g8fpGxDulX/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline font-bold"
+            className="font-bold underline"
           >
             here
-          </Link>{' '}
-          (last updated: April 2022)
+          </ExternalLink>{' '}
+          <span>(last updated: April 2022)</span>
         </p>
       </div>
     </div>

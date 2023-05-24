@@ -5,6 +5,7 @@ const ExternalLink: FC<ExternalLinkProps> = ({
   type,
   title,
   href,
+  className,
   children,
   iconLeft,
   iconRight,
@@ -17,7 +18,11 @@ const ExternalLink: FC<ExternalLinkProps> = ({
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center font-semibold space-x-2"
+            className={
+              className
+                ? className
+                : `flex items-center font-semibold space-x-2`
+            }
             title={title}
             href={href}
             {...props}
@@ -33,7 +38,11 @@ const ExternalLink: FC<ExternalLinkProps> = ({
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="w-fit flex items-center font-semibold space-x-2"
+          className={
+            className
+              ? className
+              : `w-fit flex items-center font-semibold space-x-2`
+          }
           title={title}
           href={href}
           {...props}
