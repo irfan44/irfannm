@@ -1,3 +1,4 @@
+import ExternalLink from 'lib/ui/ExternalLink';
 import Image from 'next/image';
 
 const AboutMe = () => {
@@ -33,33 +34,33 @@ const AboutMe = () => {
           <p>
             I&apos;m part of Red Hat&apos;s team as a Class Assistant & Help
             desk in{' '}
-            <a
+            <ExternalLink
+              type="text"
+              title="Digital Talent Scholarship"
               href="https://digitalent.kominfo.go.id/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="font-bold underline"
             >
               Digital Talent Scholarship
-            </a>{' '}
+            </ExternalLink>{' '}
             held by Kementrian Kominfo for 3 years. I&apos;m also part of{' '}
-            <a
+            <ExternalLink
+              type="text"
+              title="Ramaniya"
               href="https://ramaniya.id/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="font-bold underline"
             >
               Ramaniya
-            </a>{' '}
+            </ExternalLink>{' '}
             as a freelance Information Technology Staff in 2021. I also took
             part in{' '}
-            <a
+            <ExternalLink
+              type="text"
+              title="Generasi Gigih"
               href="https://www.anakbangsabisa.org/generasi-gigih/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="font-bold underline"
             >
               Generasi Gigih
-            </a>{' '}
+            </ExternalLink>{' '}
             held by Yayasan Anak Bangsa Bisa & GoTo Group at Frontend
             Engineering Track.
           </p>
