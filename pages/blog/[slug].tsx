@@ -11,6 +11,8 @@ import PostHeader from 'components/post/PostHeader';
 import PostTitle from 'components/post/PostTitle';
 import { getPostBySlug, getAllPosts } from 'lib/postsHandler';
 import PostType from 'types/post';
+import { NextSeo } from 'next-seo';
+import { BASE_URL, SITE_NAME } from 'data/constants';
 
 type Props = {
   post: PostType;
@@ -36,6 +38,22 @@ const Post = ({ post }: Props) => {
         <PostTitle>Loading…</PostTitle>
       ) : (
         <>
+          <NextSeo
+            title={post.title}
+            description={post.excerpt}
+            canonical={`${BASE_URL}/${post.slug}`}
+            openGraph={{
+              type: 'article',
+              article: {
+                publishedTime: '2022-06-21T23:04:13Z',
+                modifiedTime: '2022-01-21T18:04:43Z',
+                authors: ['Irfan Nurghiffari Muhajir'],
+                tags: [`${post.category}`],
+              },
+              url: `${BASE_URL}/${post.slug}`,
+              site_name: `${SITE_NAME}`,
+            }}
+          />
           <Meta data={pageMeta} />
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
