@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "typecheck": "tsc",
     "lint": "next lint",
@@ -22,6 +23,7 @@
     "next": "^13.4.3",
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^6.0.0",
+    "next-sitemap": "^4.1.3",
     "next-themes": "^0.2.1",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
