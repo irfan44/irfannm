@@ -1,7 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import ErrorPage from 'next/error';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { RiArrowRightSLine } from 'react-icons/ri';
@@ -18,8 +17,6 @@ type Props = {
   post: PostType;
   morePosts: PostType[];
 };
-
-const components = { Image };
 
 const Post = ({ post }: Props) => {
   const router = useRouter();
@@ -70,7 +67,7 @@ const Post = ({ post }: Props) => {
                   date={post.date}
                   caption={post.caption}
                 />
-                <MDXRemote {...post.content} components={components} />
+                <MDXRemote {...post.content} />
               </PostBody>
             </article>
           </div>
