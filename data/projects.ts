@@ -2,7 +2,6 @@ import Projects from 'types/projects';
 
 const projects: Projects[] = [
   {
-    id: '1',
     name: 'irfannm.dev',
     description: 'My personal blog & website',
     techStack: ['NextJS', 'TailwindCSS', 'TypeScript'],
@@ -10,7 +9,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/irfannm',
   },
   {
-    id: '2',
     name: 'FRFA Request Portal',
     description:
       'Web portal for FRFA request as business innovation for internal team use at PT Bank Mandiri (Persero) Tbk',
@@ -19,7 +17,6 @@ const projects: Projects[] = [
     sourceCode: '',
   },
   {
-    id: '2',
     name: 'Emoview for Teachers',
     description:
       'Desktop & web based emotion recognition dashboard to show students emotion to teacher when synchronous learning',
@@ -28,7 +25,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/emoview',
   },
   {
-    id: '3',
     name: 'Literanian',
     description:
       'Literanian is a digital literacy website aimed to improve reading interest among users in Indonesia',
@@ -37,7 +33,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/literanian',
   },
   {
-    id: '4',
     name: 'SocialTree',
     description: 'Linktree like web for my social media link sharing',
     techStack: ['React', 'Vite', 'TypeScript'],
@@ -45,7 +40,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/socialtree',
   },
   {
-    id: '5',
     name: 'Spotifie',
     description:
       'Spotify playlist creator using Spotify API for Generasi Gigih final project',
@@ -54,7 +48,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/spotifie',
   },
   {
-    id: '6',
     name: 'Ramaniya.id',
     description:
       "Ramaniya's company website that i manage. Built using Wordpress and Divi theme.",
@@ -63,7 +56,6 @@ const projects: Projects[] = [
     sourceCode: '',
   },
   {
-    id: '7',
     name: 'Aksara Sunda',
     description:
       'Sundanese writing (aksara) learning app for android implemented using firebase to store questions data',
@@ -72,7 +64,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/Aksara_sundaV2',
   },
   {
-    id: '8',
     name: 'Optimasi Barang Bawaan',
     description:
       'Implementation of genetic algrothim (GA) for optimizing the items to carry in a bag for travel',
@@ -81,7 +72,6 @@ const projects: Projects[] = [
     sourceCode: 'https://github.com/irfan44/GA-Optimasi-Barang-Bawaan',
   },
   {
-    id: '8',
     name: 'YukJahit',
     description: 'A web application for online dressmaking service',
     techStack: ['PHP', 'MySQL', 'HTML', 'CSS'],

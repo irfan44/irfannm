@@ -52,7 +52,7 @@ const AboutMe = () => {
               Ramaniya
             </ExternalLink>{' '}
             as a freelance Information Technology Staff in 2021. I&apos;m one of
-            the alumni from{' '}
+            the alumni of{' '}
             <ExternalLink
               type="text"
               title="Generasi Gigih"
