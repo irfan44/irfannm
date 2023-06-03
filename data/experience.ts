@@ -5,6 +5,7 @@ const experience: Experience[] = [
     title: 'Application Developer Intern',
     company: 'PT Bank Central Asia Tbk',
     year: 'Feb 2023 - Present',
+    employmentType: 'Internship',
     responsibility: [
       'Migrating existing microfrontend from Angular Material components to in-house UI Library',
       'Integrating backend services to microfrontend',
@@ -16,6 +17,7 @@ const experience: Experience[] = [
     title: 'Digital Talent Program',
     company: 'PT Bank Mandiri (Persero) Tbk',
     year: 'Aug - Dec 2022',
+    employmentType: 'Internship',
     responsibility: [
       'Building a web portal for request ticket management based on React JS for internal company use',
       'Developing a dashboard using Grafana',
@@ -26,6 +28,7 @@ const experience: Experience[] = [
     title: 'Frontend Engineer Specialist',
     company: 'Sagara Technology',
     year: 'Jun - Sep 2022',
+    employmentType: 'Internship',
     responsibility: [
       'Building a web application frontend together with Sagara team',
       'Collaborating with other team member',
@@ -36,6 +39,7 @@ const experience: Experience[] = [
     title: 'Information Technology Staff',
     company: 'Ramaniya',
     year: 'Sep - Dec 2021',
+    employmentType: 'Freelance',
     responsibility: [
       'Managing and maintaining in-house IT infrastructure',
       'Managing and maintaining company website',
@@ -46,6 +50,7 @@ const experience: Experience[] = [
     title: 'Red Hat Help Desk & Class Assistant',
     company: 'Digital Talent Scholarship',
     year: '2020 - 2023',
+    employmentType: 'Freelance',
     responsibility: [
       'Helping in managing Red Hat training LMS',
       'Preparing & managing live sessions at every weekdays',
