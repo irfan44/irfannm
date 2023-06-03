@@ -2,6 +2,17 @@ import Experience from 'types/experience';
 
 const experience: Experience[] = [
   {
+    title: 'Application Developer Intern',
+    company: 'PT Bank Central Asia Tbk',
+    year: 'Feb 2023 - Present',
+    responsibility: [
+      'Migrating existing microfrontend from Angular Material components to in-house UI Library',
+      'Integrating backend services to microfrontend',
+      'Fixing issues related to frontend after UAT testing',
+      'Creating a mock services for stress testing',
+    ],
+  },
+  {
     title: 'Digital Talent Program',
     company: 'PT Bank Mandiri (Persero) Tbk',
     year: 'Aug - Dec 2022',
@@ -34,7 +45,7 @@ const experience: Experience[] = [
   {
     title: 'Red Hat Help Desk & Class Assistant',
     company: 'Digital Talent Scholarship',
-    year: '2020 - 2022',
+    year: '2020 - 2023',
     responsibility: [
       'Helping in managing Red Hat training LMS',
       'Preparing & managing live sessions at every weekdays',

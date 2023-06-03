@@ -51,8 +51,8 @@ const AboutMe = () => {
             >
               Ramaniya
             </ExternalLink>{' '}
-            as a freelance Information Technology Staff in 2021. I also took
-            part in{' '}
+            as a freelance Information Technology Staff in 2021. I&apos;m one of
+            the alumni from{' '}
             <ExternalLink
               type="text"
               title="Generasi Gigih"
@@ -65,9 +65,34 @@ const AboutMe = () => {
             Engineering Track.
           </p>
           <p>
-            Outside of tech, I learn a lot about finance. I&apos;ve been part of
-            several investors community and been investing at mutual funds &
-            stocks.
+            Lately I have been doing internships to further enhance my knowledge
+            about having a career in the professional tech industry. My first
+            internship is with Sagara Technology, which is a software
+            development house based in Jakarta & Bandung. After that, I&apos;m
+            taking part as one of the interns at{' '}
+            <ExternalLink
+              type="text"
+              title="PT Bank Mandiri (Persero) Tbk"
+              href="https://bankmandiri.co.id"
+              className="font-bold underline"
+            >
+              PT Bank Mandiri (Persero) Tbk
+            </ExternalLink>{' '}
+            in Digital Talent Program held by the company in collaboration with
+            Ministry of Education&apos;s Kampus Merdeka program. Which leads me
+            to learn more about IT & tech in the banking industry, which is one
+            of my interest outside of tech. At the start of 2023, after quite a
+            long recruitment process, I finally get an offer from{' '}
+            <ExternalLink
+              type="text"
+              title="PT Bank Central Asia Tbk"
+              href="https://bca.co.id"
+              className="font-bold underline"
+            >
+              PT Bank Central Asia Tbk
+            </ExternalLink>{' '}
+            , or more widely known as BCA, to join #ITBCA&apos;s Modernization
+            team as Application Developer intern.
           </p>
         </div>
       </div>
