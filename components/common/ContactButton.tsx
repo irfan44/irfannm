@@ -8,7 +8,7 @@ const ContactButton = () => {
         title="Contact me!"
         href="mailto:irfannmuhajir@gmail.com"
       >
-        <span className="text-xl mb-1">📧</span>
+        <span className="text-xl">📧</span>
         <span>Contact me!</span>
       </ExternalLink>
     </>
