@@ -20,9 +20,9 @@ const AboutMe = () => {
             <strong>Irfan Nurghiffari Muhajir</strong>, you can call me{' '}
             <strong>Irfan</strong>. I grew up in Tangerang, which is one of the
             satellite cities of Jakarta. Currently I&apos;m a Software
-            Engineering student at Universitas Pendidikan Indonesia. I started
-            my study in 2019 and I&apos;m currently in my last year. But, i was
-            an Industrial Engineering student in 2018 before i decided to move.
+            Engineering graduate from Universitas Pendidikan Indonesia. I
+            started my study in 2019 and graduated in 2023. But, i was an
+            Industrial Engineering student in 2018 before i decided to move.
           </p>
           <p>
             I focus much of my time in collage to learn about software

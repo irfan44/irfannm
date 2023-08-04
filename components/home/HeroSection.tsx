@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ContactButton from 'components/common/ContactButton';
 import SocialLink from 'components/common/SocialMedia';
 import Text from 'lib/ui/Text';
+import CVButton from '../common/CVButton';
 
 const HeroSection = () => {
   return (
@@ -27,11 +28,16 @@ const HeroSection = () => {
           </Text>
         </div>
         <p>
-          A software engineering student who have a lot of passion in technology
-          and web development, especially frontend development using React,
-          NextJS, and Angular
+          A software engineering graduate who have a lot of passion in web
+          development, especially frontend development using React, NextJS, and
+          Angular, with special interest in the banking or finance related
+          industry
         </p>
-        <ContactButton />
+        <div className="flex items-center space-x-2">
+          <ContactButton />
+          <span>or</span>
+          <CVButton />
+        </div>
         <div className="flex space-x-4 py-4">
           <SocialLink />
         </div>

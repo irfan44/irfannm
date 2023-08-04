@@ -7,10 +7,11 @@ const experience: Experience[] = [
     year: 'Feb 2023 - Present',
     employmentType: 'Internship',
     responsibility: [
-      'Migrating existing microfrontend from Angular Material components to in-house UI Library',
-      'Integrating backend services to microfrontend',
+      'Managing & developing in-house Angular based UI component library',
+      'Migrating existing micro-frontend from Angular Material components to in-house UI component library',
+      'Developing an internal website using Angular',
+      'Integrating backend services to micro-frontend',
       'Fixing issues related to frontend after UAT testing',
-      'Creating a mock services for stress testing',
     ],
   },
   {
@@ -50,7 +51,7 @@ const experience: Experience[] = [
     title: 'Red Hat Help Desk & Class Assistant',
     company: 'Digital Talent Scholarship',
     year: '2020 - 2023',
-    employmentType: 'Freelance',
+    employmentType: 'Freelance (Project)',
     responsibility: [
       'Helping in managing Red Hat training LMS',
       'Preparing & managing live sessions at every weekdays',

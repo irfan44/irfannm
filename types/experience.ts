@@ -7,7 +7,8 @@ type Experience = {
     | 'Part-time'
     | 'Contract'
     | 'Internship'
-    | 'Freelance';
+    | 'Freelance'
+    | 'Freelance (Project)';
   responsibility: string[];
 };
 

@@ -12,12 +12,12 @@ const CurriculumVitae = () => {
           <ExternalLink
             type="text"
             title="Download here"
-            href="https://drive.google.com/file/d/14SkpfAltg0GS4qfomrwZH3g8fpGxDulX/view?usp=sharing"
+            href="https://irfannm.dev/cv"
             className="font-bold underline"
           >
             here
           </ExternalLink>{' '}
-          <span>(last updated: April 2022)</span>
+          <span>(last updated: August 2023)</span>
         </p>
       </div>
     </div>
