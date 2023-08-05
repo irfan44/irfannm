@@ -1,18 +1,19 @@
 import ExternalLink from 'lib/ui/ExternalLink';
+import { resumeURL } from 'data/resume';
 
-const CurriculumVitae = () => {
+const Resume = () => {
   return (
     <div>
       <div className="mb-6">
-        <h2>Curriculum Vitae</h2>
+        <h2>Resume</h2>
       </div>
       <div>
         <p>
-          You can see and download my latest CV{' '}
+          You can see and download my latest resume{' '}
           <ExternalLink
             type="text"
             title="Download here"
-            href="https://irfannm.dev/cv"
+            href={resumeURL}
             className="font-bold underline"
           >
             here
@@ -24,4 +25,4 @@ const CurriculumVitae = () => {
   );
 };
 
-export default CurriculumVitae;
+export default Resume;
