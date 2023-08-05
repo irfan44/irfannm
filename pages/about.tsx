@@ -1,5 +1,5 @@
 import AboutMe from 'components/about/AboutMe';
-import CurriculumVitae from 'components/about/CurriculumVitae';
+import Resume from 'components/about/Resume';
 import Experience from 'components/about/Experience';
 import SocialContact from 'components/about/SocialContact';
 import Meta from 'components/common/Meta';
@@ -18,7 +18,7 @@ const About = () => {
         <PageHeader pageTitle="About" />
         <AboutMe />
         <Experience />
-        <CurriculumVitae />
+        <Resume />
         <SocialContact />
       </div>
     </>

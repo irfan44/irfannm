@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ContactButton from 'components/common/ContactButton';
 import SocialLink from 'components/common/SocialMedia';
 import Text from 'lib/ui/Text';
-import CVButton from '../common/CVButton';
+import ResumeButton from 'components/common/ResumeButton';
 
 const HeroSection = () => {
   return (
@@ -36,7 +36,7 @@ const HeroSection = () => {
         <div className="flex items-center space-x-2">
           <ContactButton />
           <span>or</span>
-          <CVButton />
+          <ResumeButton />
         </div>
         <div className="flex space-x-4 py-4">
           <SocialLink />
