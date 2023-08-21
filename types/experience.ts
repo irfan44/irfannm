@@ -12,4 +12,9 @@ type Experience = {
   responsibility: string[];
 };
 
-export default Experience;
+type WorkExperience = {
+  year: number;
+  experience: Experience[];
+};
+
+export type { Experience, WorkExperience };

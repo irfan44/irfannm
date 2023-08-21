@@ -1,44 +1,44 @@
-import { Disclosure } from '@headlessui/react';
 import experience from 'data/experience';
-import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 
 const Experience = () => {
   return (
     <div>
       <h2 className="mb-6">Experience</h2>
-      <div className="flex flex-col space-y-4">
-        {experience.map((work, index) => {
+      <div className="flex flex-col space-y-8">
+        {experience.map((value) => {
           return (
-            <Disclosure key={work.title} defaultOpen={index === 0}>
-              {({ open }) => (
-                <>
-                  <Disclosure.Button>
-                    <div className="flex justify-between items-center bg-white py-2 px-4 rounded-2xl dark:bg-neutral-800 hover:rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-700">
-                      <div className="text-left">
-                        <p className="font-bold">{work.title}</p>
+            <>
+              <hr className="border border-neutral-300 dark:border-neutral-500" />
+              <div className="grid gap-4 grid-cols-1 lg:grid-cols-[100px_minmax(0,1fr)]">
+                <div>
+                  <h3>{value.year}</h3>
+                </div>
+                <div className="space-y-4">
+                  {value.experience.map((work) => {
+                    return (
+                      <div key={work.year}>
+                        <h4>{work.title}</h4>
                         <p>
-                          {work.company}, {work.employmentType}
+                          <span className="font-bold">{work.company}</span>,{' '}
+                          {work.employmentType}
                         </p>
                         <p>{work.year}</p>
+                        <div className="mt-2">
+                          <p>Responsible for :</p>
+                          <ul className="list-disc ml-5">
+                            {work.responsibility.map((responsibility) => {
+                              return (
+                                <li key={responsibility}>{responsibility}</li>
+                              );
+                            })}
+                          </ul>
+                        </div>
                       </div>
-                      <div>
-                        {open ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
-                      </div>
-                    </div>
-                  </Disclosure.Button>
-                  <Disclosure.Panel>
-                    <div className="py-3 bg-white px-4 rounded-2xl dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
-                      <p>Responsible for :</p>
-                      <ul className="list-disc ml-5">
-                        {work.responsibility.map((responsibility) => {
-                          return <li key={responsibility}>{responsibility}</li>;
-                        })}
-                      </ul>
-                    </div>
-                  </Disclosure.Panel>
-                </>
-              )}
-            </Disclosure>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
           );
         })}
       </div>
