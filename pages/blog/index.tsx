@@ -1,5 +1,5 @@
-import HeroPost from 'components/blog/HeroPost';
-import Posts from 'components/blog/Posts';
+import HeroPost from 'components/pages/blog/HeroPost';
+import Posts from 'components/pages/blog/Posts';
 import Meta from 'components/common/Meta';
 import PageHeader from 'components/layouts/PageHeader';
 import Section from 'components/layouts/Section';

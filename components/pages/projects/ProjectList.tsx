@@ -1,4 +1,4 @@
-import ProjectCard from 'components/projects/ProjectCard';
+import ProjectCard from 'components/pages/projects/ProjectCard';
 import projects from 'data/projects';
 
 const ProjectList = () => {

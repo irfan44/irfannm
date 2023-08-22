@@ -1,6 +1,6 @@
 import Meta from 'components/common/Meta';
 import PageHeader from 'components/layouts/PageHeader';
-import ProjectList from 'components/projects/ProjectList';
+import ProjectList from 'components/pages/projects/ProjectList';
 
 const Projects = () => {
   const pageMeta = {
