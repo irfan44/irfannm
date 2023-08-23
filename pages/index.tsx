@@ -31,7 +31,7 @@ const Index = ({ allPosts }: AllPosts) => {
             <Section title="Latest Posts">
               <PostsList posts={latestPosts} />
             </Section>
-            <ReadMore />
+            <ReadMore url="blog">Read more post</ReadMore>
           </>
         )}
       </div>

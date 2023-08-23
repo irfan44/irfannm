@@ -18,6 +18,7 @@ const ProjectCard = ({
   overview,
   date,
   role,
+  type,
 }: Projects) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,8 +56,8 @@ const ProjectCard = ({
         className="relative z-50"
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="space-y-4 mx-auto w-2/3 rounded-3xl bg-white p-6 dark:bg-neutral-800">
+        <div className="fixed inset-0 flex items-center justify-center p-4 overflow-scroll md:overflow-hidden">
+          <Dialog.Panel className="space-y-4 mx-auto w-full lg:w-2/3 rounded-3xl bg-white p-6 my-4  dark:bg-neutral-800">
             {images && (
               <Image
                 src={`/assets/projects/${images[0]}`}
@@ -107,26 +108,39 @@ const ProjectCard = ({
                   )}
                 </div>
               </div>
-              <div>
-                <p className="break-words">{overview}</p>
-              </div>
+              {type === 'Work' && (
+                <div>
+                  <p className="break-words">{overview}</p>
+                </div>
+              )}
             </div>
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-              <div className="space-y-2">
+              {type === 'Personal' && (
                 <div>
-                  <h5>Role</h5>
-                  <p>{role}</p>
+                  <p className="break-words">{overview}</p>
                 </div>
-                <div>
-                  <h5>What I do</h5>
-                  <ul className="list-disc ml-5">
-                    {whatIDo &&
-                      whatIDo.map((value) => {
-                        return <li key={value}>{value}</li>;
-                      })}
-                  </ul>
+              )}
+              {type === 'Work' && (
+                <div className="space-y-2">
+                  <div>
+                    <h5>Role</h5>
+                    <p>{role}</p>
+                  </div>
+                  <div>
+                    <h5>What I do</h5>
+                    <ul className="list-disc ml-5">
+                      {whatIDo &&
+                        whatIDo.map((value) => {
+                          return (
+                            <li key={value} className="break-words">
+                              {value}
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  </div>
                 </div>
-              </div>
+              )}
               <div>
                 <h5>Tech Stack</h5>
                 <ul className="list-disc ml-5">

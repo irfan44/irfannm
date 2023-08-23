@@ -1,5 +1,6 @@
 import Section from '../../layouts/Section';
 import experience from '../../../data/experience';
+import ReadMore from './ReadMore';
 
 const ExperienceSummary = () => {
   return (
@@ -33,6 +34,7 @@ const ExperienceSummary = () => {
             );
           })}
         </div>
+        <ReadMore url="about">View more</ReadMore>
       </Section>
     </>
   );

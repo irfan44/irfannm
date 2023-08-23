@@ -23,6 +23,7 @@ const ProjectList = (props: Props) => {
             overview={project.overview}
             date={project.date}
             role={project.role}
+            type={project.type}
           />
         );
       })}

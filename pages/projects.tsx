@@ -33,7 +33,7 @@ const Projects = () => {
                   : 'px-3 py-1'
               }
             >
-              Work Projects
+              Work 💼
             </Tab>
             <Tab
               className={({ selected }) =>
@@ -42,7 +42,7 @@ const Projects = () => {
                   : 'px-3 py-1'
               }
             >
-              Personal Projects
+              Personal 🧑‍💻
             </Tab>
           </Tab.List>
           <Tab.Panels>
