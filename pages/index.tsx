@@ -1,13 +1,15 @@
-import PostsList from 'components/blog/PostList';
+import PostsList from 'components/pages/blog/PostList';
 import Meta from 'components/common/Meta';
-import HeroSection from 'components/home/HeroSection';
-import ReadMore from 'components/home/ReadMore';
+import HeroSection from 'components/pages/home/HeroSection';
+import ReadMore from 'components/pages/home/ReadMore';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/postsHandler';
 import AllPosts from 'types/allPosts';
+import ExperienceSummary from '../components/pages/home/ExperienceSummary';
+import FeaturedProject from '../components/pages/home/FeaturedProject';
 
 const Index = ({ allPosts }: AllPosts) => {
-  const latestPosts = allPosts.slice(0, 4);
+  const latestPosts = allPosts.slice(0, 2);
 
   const pageMeta = {
     title: "Hi, I'm Irfan!",
@@ -20,12 +22,16 @@ const Index = ({ allPosts }: AllPosts) => {
       <Meta data={pageMeta} />
       <div className="space-y-16">
         <HeroSection />
+        <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
+          <ExperienceSummary />
+          <FeaturedProject />
+        </div>
         {latestPosts.length > 0 && (
           <>
             <Section title="Latest Posts">
               <PostsList posts={latestPosts} />
             </Section>
-            <ReadMore />
+            <ReadMore url="blog">Read more post</ReadMore>
           </>
         )}
       </div>

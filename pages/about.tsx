@@ -1,7 +1,7 @@
-import AboutMe from 'components/about/AboutMe';
-import Resume from 'components/about/Resume';
-import Experience from 'components/about/Experience';
-import SocialContact from 'components/about/SocialContact';
+import AboutMe from 'components/pages/about/AboutMe';
+import Resume from 'components/pages/about/Resume';
+import Experience from 'components/pages/about/Experience';
+import SocialContact from 'components/pages/about/SocialContact';
 import Meta from 'components/common/Meta';
 import PageHeader from 'components/layouts/PageHeader';
 

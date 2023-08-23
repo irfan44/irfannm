@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import ContactButton from 'components/common/ContactButton';
 import SocialLink from 'components/common/SocialMedia';
 import Text from 'lib/ui/Text';
 import ResumeButton from 'components/common/ResumeButton';
@@ -33,9 +32,7 @@ const HeroSection = () => {
           Angular, with special interest in the banking or finance related
           industry
         </p>
-        <div className="flex items-center space-x-2">
-          <ContactButton />
-          <span>or</span>
+        <div>
           <ResumeButton />
         </div>
         <div className="flex space-x-4 py-4">
