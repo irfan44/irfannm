@@ -2,6 +2,32 @@ import Projects from 'types/projects';
 
 const projects: Projects[] = [
   {
+    name: 'Confidential Banking App',
+    description:
+      'A modern banking solution for wholesale customer of PT Bank Central Asia Tbk (BCA)',
+    isFeatured: true,
+    type: 'Work',
+    company: 'PT Bank Central Asia Tbk (BCA)',
+    techStack: ['Angular', 'Microfrontend', 'UI Components'],
+    url: 'asdasdas',
+    sourceCode: 'sdasdasd',
+    overview:
+      'sadsdasdassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss',
+    date: 'Feb - Aug 2023',
+    role: 'Frontend Engineer',
+    whatIDo: ['sasdasda', 'sadsadsd'],
+  },
+  {
+    name: 'MyBatch',
+    description:
+      'An Angular based application for batch management & update data using stored procedure',
+    type: 'Work',
+    company: 'PT Bank Central Asia Tbk (BCA)',
+    techStack: ['Angular', 'Ant Design', 'Spring Boot', 'Oracle DB'],
+    url: '',
+    sourceCode: '',
+  },
+  {
     name: 'irfannm.dev',
     description: 'My personal blog & website',
     techStack: ['NextJS', 'TailwindCSS', 'TypeScript'],
@@ -12,14 +38,19 @@ const projects: Projects[] = [
     name: 'FRFA Request Portal',
     description:
       'Web portal for FRFA request as business innovation for internal team use at PT Bank Mandiri (Persero) Tbk',
-    techStack: ['React', 'Ant Design'],
+    isFeatured: true,
+    type: 'Work',
+    company: 'PT Bank Mandiri (Persero) Tbk',
+    techStack: ['React', 'Ant Design', 'Express', 'MySQL'],
     url: '',
     sourceCode: '',
   },
   {
-    name: 'Emoview for Teachers',
+    name: 'EmoSync Dashboard',
     description:
       'Desktop & web based emotion recognition dashboard to show students emotion to teacher when synchronous learning',
+    isFeatured: true,
+    type: 'Personal',
     techStack: ['React', 'ElectronJS', 'Face-api.js'],
     url: 'https://emoview-v2.vercel.app',
     sourceCode: 'https://github.com/irfan44/emoview',
@@ -29,6 +60,8 @@ const projects: Projects[] = [
     description:
       'Literanian is a digital literacy website aimed to improve reading interest among users in Indonesia',
     techStack: ['React', 'Firebase', 'TypeScript'],
+    isFeatured: true,
+    type: 'Personal',
     url: 'https://literanian.vercel.app',
     sourceCode: 'https://github.com/irfan44/literanian',
   },
@@ -62,14 +95,6 @@ const projects: Projects[] = [
     techStack: ['Java', 'Firebase'],
     url: '',
     sourceCode: 'https://github.com/irfan44/Aksara_sundaV2',
-  },
-  {
-    name: 'Optimasi Barang Bawaan',
-    description:
-      'Implementation of genetic algrothim (GA) for optimizing the items to carry in a bag for travel',
-    techStack: ['Python', 'Jupyter Notebook'],
-    url: '',
-    sourceCode: 'https://github.com/irfan44/GA-Optimasi-Barang-Bawaan',
   },
   {
     name: 'YukJahit',

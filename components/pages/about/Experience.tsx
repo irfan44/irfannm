@@ -7,8 +7,8 @@ const Experience = () => {
       <div className="flex flex-col space-y-8">
         {experience.map((value) => {
           return (
-            <>
-              <hr className="border border-neutral-300 dark:border-neutral-500" />
+            <div key={value.year}>
+              <hr className="border border-neutral-300 dark:border-neutral-500 mb-8" />
               <div className="grid gap-4 grid-cols-1 lg:grid-cols-[100px_minmax(0,1fr)]">
                 <div>
                   <h3>{value.year}</h3>
@@ -38,7 +38,7 @@ const Experience = () => {
                   })}
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

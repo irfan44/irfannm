@@ -1,22 +1,32 @@
 import ProjectCard from 'components/pages/projects/ProjectCard';
-import projects from 'data/projects';
+import Projects from '../../../types/projects';
 
-const ProjectList = () => {
+type Props = {
+  projects: Projects[];
+};
+
+const ProjectList = (props: Props) => {
   return (
-    <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-      {projects.map((project) => {
+    <>
+      {props.projects.map((project) => {
         return (
           <ProjectCard
             key={project.name}
             name={project.name}
             description={project.description}
             techStack={project.techStack}
-            url={project.url}
             sourceCode={project.sourceCode}
+            url={project.url}
+            whatIDo={project.whatIDo}
+            images={project.images}
+            company={project.company}
+            overview={project.overview}
+            date={project.date}
+            role={project.role}
           />
         );
       })}
-    </div>
+    </>
   );
 };
 
