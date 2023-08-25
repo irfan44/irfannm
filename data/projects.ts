@@ -12,7 +12,7 @@ const projects: Projects[] = [
     url: '',
     sourceCode: '',
     overview:
-      'A modern banking solution to fulfill the digital banking needs of wholesale customer of PT Bank Central Asia Tbk (BCA). The largest project I have involved, with tens of separate teams both in business and in IT',
+      'A modern banking solution to fulfill the digital banking needs of wholesale customers of PT Bank Central Asia Tbk (BCA). The largest project I have been involved in, with tens of separate teams both in business and IT',
     date: 'Feb - Aug 2023',
     role: 'Frontend Engineer',
     whatIDo: [
@@ -71,7 +71,7 @@ const projects: Projects[] = [
     url: '',
     sourceCode: '',
     overview:
-      'A request ticket management portal website developed to manage FRFA request to NST team at CISO group. Part of my teams business innovation on my internship at PT Bank Mandiri (Persero) Tbk',
+      "A request ticket management portal website was developed to manage FRFA requests to the NST team at the CISO group. Part of my team's business innovation during my internship at PT Bank Mandiri (Persero) Tbk",
     date: 'Sep - Dec 2022',
     role: 'Fullstack Engineer (React & Express)',
     whatIDo: [
@@ -99,10 +99,11 @@ const projects: Projects[] = [
     url: 'https://emoview-v2.vercel.app',
     sourceCode: 'https://github.com/irfan44/emoview',
     overview:
-      "An emotion recognition dashboard to enable teachers to monitor students' emotion when synchronous learning. EmoSync is a continuation of previous prototype called EmoView. This app is developed as part of my bachelor degree thesis with focus on implementing User-Centered Design (UCD) design method to develop a better User Experience (UX) of the dashboard",
+      "An emotion recognition dashboard to enable teachers to monitor students' emotion when synchronous learning. EmoSync is a continuation of previous prototype called EmoView. This app developed as part of my bachelor degree thesis with focus on implementing User-Centered Design (UCD) design method to develop a better User Experience (UX) of the dashboard",
     date: 'Jan - Jul 2023',
     role: 'Frontend Engineer',
     whatIDo: ['sasdasda', 'sadsadsd'],
+    images: 'emosync.png',
   },
   {
     name: 'Literanian',
@@ -115,10 +116,11 @@ const projects: Projects[] = [
     url: 'https://literanian.vercel.app',
     sourceCode: 'https://github.com/irfan44/literanian',
     overview:
-      "Literanian is a digital literacy website aimed at improving users interest in reading by providing various articles and accompanied with a simple quiz to keep user engaged. Our study showed that with a total of 50 users, almost 90% of them felt an increase in interest in reading. Highly praised for it's clean & attractive UI by mentors from Tokopedia",
+      "Literanian is a digital literacy website aimed at improving users interest in reading by providing various articles and accompanied with a simple quiz to keep user engaged. Our study showed that with 50 users, almost 90% felt an increase in interest in reading. Highly praised for it's clean & attractive UI by mentors from Tokopedia",
     date: 'May - Jul 2022',
     role: 'Frontend Engineer',
     whatIDo: ['sasdasda', 'sadsadsd'],
+    images: 'literanian.png',
   },
   {
     name: 'SocialTree',
@@ -132,6 +134,7 @@ const projects: Projects[] = [
     date: '',
     role: 'Frontend Engineer',
     whatIDo: ['sasdasda', 'sadsadsd'],
+    images: 'socialtree.png',
   },
   {
     name: 'Spotifie',
@@ -147,6 +150,7 @@ const projects: Projects[] = [
     date: 'April 2022',
     role: 'Frontend Engineer',
     whatIDo: ['sasdasda', 'sadsadsd'],
+    images: 'spotifie.png',
   },
   {
     name: 'Ramaniya.id',
