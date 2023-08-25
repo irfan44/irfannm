@@ -58,14 +58,6 @@ const ProjectCard = ({
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4 overflow-scroll md:overflow-hidden">
           <Dialog.Panel className="space-y-4 mx-auto w-full lg:w-2/3 rounded-3xl bg-white p-6 my-4  dark:bg-neutral-800">
-            {images && (
-              <Image
-                src={`/assets/projects/${images[0]}`}
-                alt={name}
-                width={300}
-                height={100}
-              />
-            )}
             <div className="flex items-center justify-between">
               <p>Project Details</p>
               <button onClick={() => setIsOpen(false)}>X</button>
@@ -111,6 +103,17 @@ const ProjectCard = ({
               {type === 'Work' && (
                 <div>
                   <p className="break-words">{overview}</p>
+                </div>
+              )}
+              {type === 'Personal' && (
+                <div className="py-2">
+                  <Image
+                    className="rounded-xl"
+                    src={`/assets/projects/${images}`}
+                    alt={name}
+                    width={500}
+                    height={300}
+                  />
                 </div>
               )}
             </div>

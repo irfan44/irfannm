@@ -9,7 +9,7 @@ type Projects = {
   sourceCode: string;
   url: string;
   whatIDo?: string[];
-  images?: string[];
+  images?: string;
   overview?: string;
   date?: string;
   role?: string;
