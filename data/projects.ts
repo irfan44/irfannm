@@ -53,6 +53,7 @@ const projects: Projects[] = [
     date: '',
     role: 'Frontend Engineer',
     whatIDo: ['sasdasda', 'sadsadsd'],
+    images: 'irfannm.png',
   },
   {
     name: 'FRFA Request Portal',

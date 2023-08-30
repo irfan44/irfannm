@@ -106,7 +106,7 @@ const ProjectCard = ({
                 </div>
               )}
               {type === 'Personal' && (
-                <div className="py-2">
+                <div className="py-2 flex justify-center">
                   <Image
                     className="rounded-xl"
                     src={`/assets/projects/${images}`}
