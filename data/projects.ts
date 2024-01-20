@@ -2,6 +2,27 @@ import Projects from 'types/projects';
 
 const projects: Projects[] = [
   {
+    name: 'Sayakaya.id',
+    description: 'Company website of PT SayaKaya Lahir Batin',
+    isFeatured: true,
+    type: 'Work',
+    company: 'PT SayaKaya Lahir Batin',
+    techStack: ['SvelteKit', 'TailwindCSS', 'Strapi'],
+    url: 'https://sayakaya.id',
+    sourceCode: '',
+    overview:
+      "SayaKaya is an investment apps for beginner investor with easy to use apps. SayaKaya enables investor to easily invest in various assets, such as mutual funds, SBN, and many more coming soon. This website act as SayaKaya's company website",
+    date: 'Oct 2023 - Present',
+    role: 'Frontend Engineer',
+    whatIDo: [
+      'Handled development of several new pages such as Kamus Investasi, Karir, and Blog',
+      'Handled improvement of the home page by implementing fixes from Lighthouse',
+      'Handled integration to Strapi as CMS for blog and job listing',
+      'Maintained previous codebase to a new updated design system',
+      'Fix issues related to frontend after testing from QA team',
+    ],
+  },
+  {
     name: 'Confidential Banking App',
     description:
       'A modern banking solution for wholesale customer of PT Bank Central Asia Tbk (BCA)',
