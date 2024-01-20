@@ -5,6 +5,17 @@ export const experience: WorkExperience[] = [
     year: 2023,
     experience: [
       {
+        title: 'Frontend Engineer',
+        company: 'PT SayaKaya Lahir Batin (SayaKaya)',
+        year: 'Oct 2023 - Present',
+        employmentType: 'Full-time',
+        responsibility: [
+          'Handling development of SayaKaya company website',
+          'Handling performance improvement of sayakaya.id using test from Lighthouse',
+          'Managing & developing SayaKaya Sales Dashboard',
+        ],
+      },
+      {
         title: 'Application Developer Intern',
         company: 'PT Bank Central Asia Tbk',
         year: 'Feb 2023 - Aug 2023',
