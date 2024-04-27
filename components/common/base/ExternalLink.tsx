@@ -1,7 +1,17 @@
-import { FC } from 'react';
-import { ExternalLinkProps } from './index.types';
+import { ReactNode } from 'react';
 
-const ExternalLink: FC<ExternalLinkProps> = ({
+export interface Props {
+  type: 'button' | 'text';
+  title: string;
+  href: string;
+  className?: string;
+  children: ReactNode;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
+}
+
+
+const ExternalLink = ({
   type,
   title,
   href,
@@ -10,7 +20,7 @@ const ExternalLink: FC<ExternalLinkProps> = ({
   iconLeft,
   iconRight,
   ...props
-}) => {
+}: Props) => {
   switch (type) {
     case 'button':
       return (

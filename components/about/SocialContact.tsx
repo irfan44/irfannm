@@ -1,6 +1,6 @@
 import { RiExternalLinkLine } from 'react-icons/ri';
 import socials from 'data/socials';
-import ExternalLink from 'lib/ui/ExternalLink';
+import ExternalLink from 'components/common/base/ExternalLink';
 
 const SocialContact = () => {
   return (

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FaChevronRight, FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 import Projects from 'types/projects';
-import ExternalLink from 'lib/ui/ExternalLink';
+import ExternalLink from 'components/common/base/ExternalLink';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 

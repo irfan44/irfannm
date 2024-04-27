@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SocialLink from 'components/common/SocialMedia';
-import Text from 'lib/ui/Text';
+import Text from 'components/common/base/Title';
 import ResumeButton from 'components/common/ResumeButton';
 
 const HeroSection = () => {

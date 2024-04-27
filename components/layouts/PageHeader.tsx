@@ -1,4 +1,4 @@
-import Text from 'lib/ui/Text';
+import Text from 'components/common/base/Title';
 
 type Props = {
   pageTitle: string;

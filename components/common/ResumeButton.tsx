@@ -1,4 +1,4 @@
-import ExternalLink from '../../lib/ui/ExternalLink';
+import ExternalLink from './base/ExternalLink';
 import { resumeURL } from 'data/resume';
 
 const ResumeButton = () => {

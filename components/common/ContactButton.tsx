@@ -1,4 +1,4 @@
-import ExternalLink from 'lib/ui/ExternalLink';
+import ExternalLink from 'components/common/base/ExternalLink';
 
 const ContactButton = () => {
   return (

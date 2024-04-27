@@ -1,7 +1,12 @@
-import { FC } from 'react';
-import { TextProps } from 'lib/ui/Text/index.types';
+import { ReactNode } from 'react';
 
-const Text: FC<TextProps> = ({ type, className, children }) => {
+interface Props {
+  type: 'pageTitle' | 'sectionTitle';
+  className?: string;
+  children: ReactNode;
+}
+
+const Text = ({ type, className, children }: Props) => {
   switch (type) {
     case 'pageTitle':
       return (
