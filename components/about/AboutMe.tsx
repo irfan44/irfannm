@@ -1,5 +1,5 @@
-import ExternalLink from 'components/common/base/ExternalLink';
-import Image from 'next/image';
+import ExternalLink from 'components/common/base/ExternalLink'
+import Image from 'next/image'
 
 const AboutMe = () => {
   return (
@@ -97,7 +97,7 @@ const AboutMe = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutMe;
+export default AboutMe

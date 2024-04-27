@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { ReactNode } from 'react';
+import Link from 'next/link'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { ReactNode } from 'react'
 
 type Props = {
-  children: ReactNode;
-  url: string;
-};
+  children: ReactNode
+  url: string
+}
 
 const ReadMore = (props: Props) => {
   return (
@@ -15,6 +15,6 @@ const ReadMore = (props: Props) => {
         <HiArrowNarrowRight className="text-xl ml-1" />
       </p>
     </Link>
-  );
-};
-export default ReadMore;
+  )
+}
+export default ReadMore

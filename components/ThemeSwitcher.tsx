@@ -1,27 +1,27 @@
-import { Switch } from '@headlessui/react';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import Moon from 'components/icons/Moon';
-import Sun from 'components/icons/Sun';
+import { Switch } from '@headlessui/react'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+import Moon from 'components/icons/Moon'
+import Sun from 'components/icons/Sun'
 
 const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { systemTheme, theme, setTheme } = useTheme()
 
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const currentTheme = theme === 'system' ? systemTheme : theme
   const setCurrentTheme = () => {
     if (currentTheme === 'dark') {
-      setTheme('light');
+      setTheme('light')
     } else {
-      setTheme('dark');
+      setTheme('dark')
     }
-  };
+  }
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
-  if (!mounted) return null;
+  if (!mounted) return null
 
   return (
     <Switch
@@ -43,7 +43,7 @@ const ThemeSwitcher = () => {
         {currentTheme === 'dark' ? <Moon /> : <Sun />}
       </span>
     </Switch>
-  );
-};
+  )
+}
 
-export default ThemeSwitcher;
+export default ThemeSwitcher

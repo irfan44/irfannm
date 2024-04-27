@@ -1,15 +1,15 @@
 type Props = {
-  dateString: string;
-};
+  dateString: string
+}
 
 const DateTime = ({ dateString }: Props) => {
-  const convertedDate = new Date(dateString);
+  const convertedDate = new Date(dateString)
   const date = convertedDate.toLocaleDateString('en-us', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
-  });
-  return <time dateTime={dateString}>{date}</time>;
-};
+  })
+  return <time dateTime={dateString}>{date}</time>
+}
 
-export default DateTime;
+export default DateTime

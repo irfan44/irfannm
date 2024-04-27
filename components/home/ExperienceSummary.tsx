@@ -1,6 +1,6 @@
-import Section from '../layouts/Section';
-import { experiences } from 'datas/experience';
-import ReadMore from './ReadMore';
+import Section from '../layouts/Section'
+import { experiences } from 'datas/experience'
+import ReadMore from './ReadMore'
 
 const ExperienceSummary = () => {
   return (
@@ -26,18 +26,18 @@ const ExperienceSummary = () => {
                           </p>
                           <p>{work.year}</p>
                         </div>
-                      );
+                      )
                     })}
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
         <ReadMore url="about">View more</ReadMore>
       </Section>
     </>
-  );
-};
+  )
+}
 
-export default ExperienceSummary;
+export default ExperienceSummary

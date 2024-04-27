@@ -1,15 +1,15 @@
-import Head from 'next/head';
+import Head from 'next/head'
 
 type Props = {
   data: {
-    title: string;
-    description: string;
-    ogImage: string;
-  };
-};
+    title: string
+    description: string
+    ogImage: string
+  }
+}
 
 const Meta = ({ data }: Props) => {
-  let title = `${data.title} - Irfan Nurghiffari Muhajir`;
+  let title = `${data.title} - Irfan Nurghiffari Muhajir`
   return (
     <Head>
       <link
@@ -46,7 +46,7 @@ const Meta = ({ data }: Props) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:image" content={data.ogImage} />
     </Head>
-  );
-};
+  )
+}
 
-export default Meta;
+export default Meta

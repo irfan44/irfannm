@@ -1,5 +1,5 @@
-import ExternalLink from './base/ExternalLink';
-import { resumeURL } from 'datas/resume';
+import ExternalLink from './base/ExternalLink'
+import { resumeURL } from 'datas/resume'
 
 const ResumeButton = () => {
   return (
@@ -7,7 +7,7 @@ const ResumeButton = () => {
       <span className="text-xl">📄</span>
       <span>View Resume!</span>
     </ExternalLink>
-  );
-};
+  )
+}
 
-export default ResumeButton;
+export default ResumeButton

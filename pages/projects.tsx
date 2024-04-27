@@ -1,20 +1,18 @@
-import Meta from 'components/Meta';
-import PageHeader from 'components/layouts/PageHeader';
-import ProjectList from 'components/projects/ProjectList';
-import projects from '../datas/projects';
-import { Tab } from '@headlessui/react';
+import Meta from 'components/Meta'
+import PageHeader from 'components/layouts/PageHeader'
+import ProjectList from 'components/projects/ProjectList'
+import projects from '../datas/projects'
+import { Tab } from '@headlessui/react'
 
 const Projects = () => {
   const pageMeta = {
     title: 'Projects',
     description: "Irfan Nurghiffari Muhajir's projects",
     ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
 
-  const workProjects = projects.filter((value) => value.type === 'Work');
-  const personalProjects = projects.filter(
-    (value) => value.type === 'Personal'
-  );
+  const workProjects = projects.filter((value) => value.type === 'Work')
+  const personalProjects = projects.filter((value) => value.type === 'Personal')
 
   return (
     <>
@@ -60,6 +58,6 @@ const Projects = () => {
         </Tab.Group>
       </div>
     </>
-  );
-};
-export default Projects;
+  )
+}
+export default Projects

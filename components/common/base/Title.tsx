@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 interface Props {
-  type: 'pageTitle' | 'sectionTitle';
-  className?: string;
-  children: ReactNode;
+  type: 'pageTitle' | 'sectionTitle'
+  className?: string
+  children: ReactNode
 }
 
 const Text = ({ type, className, children }: Props) => {
@@ -17,7 +17,7 @@ const Text = ({ type, className, children }: Props) => {
         >
           {children}
         </h1>
-      );
+      )
     case 'sectionTitle':
       return (
         <h2
@@ -27,10 +27,10 @@ const Text = ({ type, className, children }: Props) => {
         >
           {children}
         </h2>
-      );
+      )
     default:
-      return <h1></h1>;
+      return <h1></h1>
   }
-};
+}
 
-export default Text;
+export default Text

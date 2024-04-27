@@ -1,4 +1,4 @@
-import { ExperiencesModel } from 'lib/models/experience';
+import { ExperiencesModel } from 'lib/models/experience'
 
 export const experiences: ExperiencesModel = [
   {
@@ -90,4 +90,4 @@ export const experiences: ExperiencesModel = [
       },
     ],
   },
-];
+]

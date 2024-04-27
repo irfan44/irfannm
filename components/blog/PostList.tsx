@@ -1,9 +1,9 @@
-import PostCard from 'components/blog/PostCard';
-import { PostsModel } from 'lib/models/post';
+import PostCard from 'components/blog/PostCard'
+import { PostsModel } from 'lib/models/post'
 
 type Props = {
-  posts: PostsModel;
-};
+  posts: PostsModel
+}
 
 const PostList = ({ posts }: Props) => {
   return (
@@ -20,7 +20,7 @@ const PostList = ({ posts }: Props) => {
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default PostList;
+export default PostList

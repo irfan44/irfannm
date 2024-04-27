@@ -1,21 +1,21 @@
-import PostsList from 'components/blog/PostList';
-import Meta from 'components/Meta';
-import ExperienceSummary from '../components/home/ExperienceSummary';
-import FeaturedProject from '../components/home/FeaturedProject';
-import HeroSection from 'components/home/HeroSection';
-import ReadMore from 'components/home/ReadMore';
-import Section from 'components/layouts/Section';
-import { PostHandler } from 'lib/handlers/Post';
-import type { AllPostsModel } from 'lib/models/post';
+import PostsList from 'components/blog/PostList'
+import Meta from 'components/Meta'
+import ExperienceSummary from '../components/home/ExperienceSummary'
+import FeaturedProject from '../components/home/FeaturedProject'
+import HeroSection from 'components/home/HeroSection'
+import ReadMore from 'components/home/ReadMore'
+import Section from 'components/layouts/Section'
+import { PostHandler } from 'lib/handlers/Post'
+import type { AllPostsModel } from 'lib/models/post'
 
 const Index = ({ allPosts }: AllPostsModel) => {
-  const latestPosts = allPosts.slice(0, 2);
+  const latestPosts = allPosts.slice(0, 2)
 
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
     ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
 
   return (
     <>
@@ -36,10 +36,10 @@ const Index = ({ allPosts }: AllPostsModel) => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
 
 export const getStaticProps = () => {
   const allPosts = PostHandler.getAllPosts([
@@ -50,9 +50,9 @@ export const getStaticProps = () => {
     'author',
     'coverImage',
     'excerpt',
-  ]);
+  ])
 
   return {
     props: { allPosts },
-  };
-};
+  }
+}

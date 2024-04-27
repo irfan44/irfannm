@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 type Props = {
-  title: string;
-  src: string;
-  width: number;
-  height: number;
-};
+  title: string
+  src: string
+  width: number
+  height: number
+}
 
 const Images = ({ title, src, width, height }: Props) => {
   const image = (
@@ -16,8 +16,8 @@ const Images = ({ title, src, width, height }: Props) => {
       height={height}
       className="rounded-2xl"
     />
-  );
-  return <div className="sm:mx-0">{image}</div>;
-};
+  )
+  return <div className="sm:mx-0">{image}</div>
+}
 
-export default Images;
+export default Images

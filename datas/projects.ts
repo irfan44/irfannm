@@ -1,4 +1,4 @@
-import { ProjectsModel } from 'lib/models/projects';
+import { ProjectsModel } from 'lib/models/projects'
 
 const projects: ProjectsModel = [
   {
@@ -218,6 +218,6 @@ const projects: ProjectsModel = [
   //   role: 'Frontend Engineer',
   //   whatIDo: ['sasdasda', 'sadsadsd'],
   // },
-];
+]
 
-export default projects;
+export default projects

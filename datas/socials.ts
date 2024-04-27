@@ -1,11 +1,11 @@
-import { IconType } from "react-icons";
-import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { IconType } from 'react-icons'
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 type SocialList = {
-  name: string;
-  link: string;
-  icon: IconType;
-};
+  name: string
+  link: string
+  icon: IconType
+}
 
 const socialList: SocialList[] = [
   {
@@ -16,18 +16,18 @@ const socialList: SocialList[] = [
   {
     name: 'Github',
     link: 'https://github.com/irfan44',
-    icon: FaGithub
+    icon: FaGithub,
   },
   {
     name: 'Linkedin',
     link: 'https://www.linkedin.com/in/irfannm',
-    icon: FaLinkedinIn
+    icon: FaLinkedinIn,
   },
   {
     name: 'Instagram',
     link: 'https://www.instagram.com/irfannm44',
-    icon: FaInstagram
+    icon: FaInstagram,
   },
-];
+]
 
-export default socialList;
+export default socialList

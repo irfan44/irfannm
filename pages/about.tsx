@@ -1,16 +1,16 @@
-import AboutMe from 'components/about/AboutMe';
-import Resume from 'components/about/Resume';
-import Experience from 'components/about/Experience';
-import SocialContact from 'components/about/SocialContact';
-import Meta from 'components/Meta';
-import PageHeader from 'components/layouts/PageHeader';
+import AboutMe from 'components/about/AboutMe'
+import Resume from 'components/about/Resume'
+import Experience from 'components/about/Experience'
+import SocialContact from 'components/about/SocialContact'
+import Meta from 'components/Meta'
+import PageHeader from 'components/layouts/PageHeader'
 
 const About = () => {
   const pageMeta = {
     title: 'About',
     description: 'About Irfan Nurghiffari Muhajir',
     ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
   return (
     <>
       <Meta data={pageMeta} />
@@ -22,6 +22,6 @@ const About = () => {
         <SocialContact />
       </div>
     </>
-  );
-};
-export default About;
+  )
+}
+export default About

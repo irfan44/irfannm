@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Meta from 'components/Meta';
+import Image from 'next/image'
+import Link from 'next/link'
+import Meta from 'components/Meta'
 
 const PageServerError = () => {
   const pageMeta = {
     title: 'Internal Server Error',
     description: 'Internal Server Error',
     ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
 
   return (
     <>
@@ -28,7 +28,7 @@ const PageServerError = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PageServerError;
+export default PageServerError

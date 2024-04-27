@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import { Dialog } from '@headlessui/react';
-import { FaChevronRight, FaGithub } from 'react-icons/fa';
-import { FiExternalLink } from 'react-icons/fi';
-import ExternalLink from 'components/common/base/ExternalLink';
-import type { ProjectModel } from 'lib/models/projects';
+import { useState } from 'react'
+import Image from 'next/image'
+import { Dialog } from '@headlessui/react'
+import { FaChevronRight, FaGithub } from 'react-icons/fa'
+import { FiExternalLink } from 'react-icons/fi'
+import ExternalLink from 'components/common/base/ExternalLink'
+import type { ProjectModel } from 'lib/models/projects'
 
 const ProjectCard = ({
   name,
@@ -20,7 +20,7 @@ const ProjectCard = ({
   role,
   type,
 }: ProjectModel) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -45,7 +45,7 @@ const ProjectCard = ({
                 >
                   <p>{stack}</p>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
@@ -138,7 +138,7 @@ const ProjectCard = ({
                             <li key={value} className="break-words">
                               {value}
                             </li>
-                          );
+                          )
                         })}
                     </ul>
                   </div>
@@ -148,7 +148,7 @@ const ProjectCard = ({
                 <h5>Tech Stack</h5>
                 <ul className="list-disc ml-5">
                   {techStack.map((stack) => {
-                    return <li key={stack}>{stack}</li>;
+                    return <li key={stack}>{stack}</li>
                   })}
                 </ul>
               </div>
@@ -157,7 +157,7 @@ const ProjectCard = ({
         </div>
       </Dialog>
     </>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

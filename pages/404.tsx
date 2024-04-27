@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Meta from 'components/Meta';
+import Image from 'next/image'
+import Link from 'next/link'
+import Meta from 'components/Meta'
 
 const PageNotFound = () => {
   const pageMeta = {
     title: 'Not Found',
     description: 'Page not found',
     ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
 
   return (
     <>
@@ -28,7 +28,7 @@ const PageNotFound = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PageNotFound;
+export default PageNotFound

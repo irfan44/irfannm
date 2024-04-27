@@ -1,15 +1,15 @@
-import Link from 'next/link';
-import DateTime from 'components/common/base/DateTime';
-import CoverImage from 'components/common/base/Images';
+import Link from 'next/link'
+import DateTime from 'components/common/base/DateTime'
+import CoverImage from 'components/common/base/Images'
 
 type Props = {
-  title: string;
-  category: string;
-  coverImage: string;
-  date: string;
-  excerpt: string;
-  slug: string;
-};
+  title: string
+  category: string
+  coverImage: string
+  date: string
+  excerpt: string
+  slug: string
+}
 
 const PostCard = ({
   title,
@@ -40,7 +40,7 @@ const PostCard = ({
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default PostCard;
+export default PostCard

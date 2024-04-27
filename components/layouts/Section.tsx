@@ -1,9 +1,9 @@
-import SectionTitle from 'components/layouts/SectionTitle';
+import SectionTitle from 'components/layouts/SectionTitle'
 
 type Props = {
-  title: string;
-  children: React.ReactNode;
-};
+  title: string
+  children: React.ReactNode
+}
 
 const Section = ({ title, children }: Props) => {
   return (
@@ -11,7 +11,7 @@ const Section = ({ title, children }: Props) => {
       <SectionTitle title={title} />
       {children}
     </section>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

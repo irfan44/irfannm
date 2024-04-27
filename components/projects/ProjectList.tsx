@@ -1,9 +1,9 @@
-import ProjectCard from 'components/projects/ProjectCard';
-import type { ProjectsModel } from 'lib/models/projects';
+import ProjectCard from 'components/projects/ProjectCard'
+import type { ProjectsModel } from 'lib/models/projects'
 
 type Props = {
-  projects: ProjectsModel;
-};
+  projects: ProjectsModel
+}
 
 const ProjectList = (props: Props) => {
   return (
@@ -25,10 +25,10 @@ const ProjectList = (props: Props) => {
             role={project.role}
             type={project.type}
           />
-        );
+        )
       })}
     </>
-  );
-};
+  )
+}
 
-export default ProjectList;
+export default ProjectList

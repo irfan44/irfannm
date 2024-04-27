@@ -1,6 +1,6 @@
-import { RiExternalLinkLine } from 'react-icons/ri';
-import socials from 'datas/socials';
-import ExternalLink from 'components/common/base/ExternalLink';
+import { RiExternalLinkLine } from 'react-icons/ri'
+import socials from 'datas/socials'
+import ExternalLink from 'components/common/base/ExternalLink'
 
 const SocialContact = () => {
   return (
@@ -27,11 +27,11 @@ const SocialContact = () => {
                 </ExternalLink>
               </div>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default SocialContact;
+export default SocialContact

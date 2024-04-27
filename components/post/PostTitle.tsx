@@ -1,8 +1,8 @@
-import Text from 'components/common/base/Title';
+import Text from 'components/common/base/Title'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 const PostTitle = ({ children }: Props) => {
   return (
@@ -12,7 +12,7 @@ const PostTitle = ({ children }: Props) => {
     >
       {children}
     </Text>
-  );
-};
+  )
+}
 
-export default PostTitle;
+export default PostTitle

@@ -1,9 +1,9 @@
-import Text from 'components/common/base/Title';
+import Text from 'components/common/base/Title'
 
 type Props = {
-  pageTitle: string;
-  pageDescription?: string;
-};
+  pageTitle: string
+  pageDescription?: string
+}
 
 const PageHeader = ({ pageTitle, pageDescription = '' }: Props) => {
   return (
@@ -13,7 +13,7 @@ const PageHeader = ({ pageTitle, pageDescription = '' }: Props) => {
       </Text>
       {pageDescription.length !== 0 && <p>{pageDescription}</p>}
     </div>
-  );
-};
+  )
+}
 
-export default PageHeader;
+export default PageHeader

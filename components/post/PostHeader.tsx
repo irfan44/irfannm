@@ -1,14 +1,14 @@
-import DateTime from 'components/common/base/DateTime';
-import CoverImage from 'components/common/base/Images';
-import PostTitle from 'components/post/PostTitle';
+import DateTime from 'components/common/base/DateTime'
+import CoverImage from 'components/common/base/Images'
+import PostTitle from 'components/post/PostTitle'
 
 type Props = {
-  title: string;
-  category: string;
-  coverImage: string;
-  date: string;
-  caption: string;
-};
+  title: string
+  category: string
+  coverImage: string
+  date: string
+  caption: string
+}
 
 const PostHeader = ({ title, category, coverImage, date, caption }: Props) => {
   return (
@@ -33,7 +33,7 @@ const PostHeader = ({ title, category, coverImage, date, caption }: Props) => {
         </figure>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PostHeader;
+export default PostHeader

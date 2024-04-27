@@ -1,21 +1,21 @@
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 export interface AllPostsModel {
-  allPosts: PostsModel;
+  allPosts: PostsModel
 }
 
-export type PostsModel = PostModel[];
+export type PostsModel = PostModel[]
 
 export interface PostModel {
-  slug: string;
-  title: string;
-  category: string;
-  date: string;
-  coverImage: string;
-  caption: string;
-  excerpt: string;
+  slug: string
+  title: string
+  category: string
+  date: string
+  coverImage: string
+  caption: string
+  excerpt: string
   ogImage: {
-    url: string;
-  };
-  content: MDXRemoteSerializeResult;
+    url: string
+  }
+  content: MDXRemoteSerializeResult
 }

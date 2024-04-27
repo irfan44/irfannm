@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import navMenu from 'datas/navMenu';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import navMenu from 'datas/navMenu'
 
 type Props = {
-  setActive?: any;
-};
+  setActive?: any
+}
 
 const ListMenu = ({ setActive }: Props) => {
-  const route = useRouter();
-  const { pathname } = useRouter();
+  const route = useRouter()
+  const { pathname } = useRouter()
 
   return (
     <>
@@ -31,10 +31,10 @@ const ListMenu = ({ setActive }: Props) => {
               {name}
             </Link>
           </li>
-        );
+        )
       })}
     </>
-  );
-};
+  )
+}
 
-export default ListMenu;
+export default ListMenu

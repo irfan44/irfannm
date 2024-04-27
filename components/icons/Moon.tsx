@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 const transition = {
   type: 'spring',
   stiffness: 200,
   damping: 10,
-};
+}
 
 const Moon = () => {
   const variants = {
@@ -15,7 +15,7 @@ const Moon = () => {
       transition,
     },
     whileTap: { scale: 0.95, rotate: 15 },
-  };
+  }
 
   return (
     <motion.svg
@@ -32,7 +32,7 @@ const Moon = () => {
         variants={variants}
       />
     </motion.svg>
-  );
-};
+  )
+}
 
-export default Moon;
+export default Moon

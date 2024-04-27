@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import { useState } from 'react';
-import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
-import ContactButton from 'components/common/ContactButton';
-import ThemeSwitcher from 'components/ThemeSwitcher';
-import Container from 'components/layouts/Container';
-import Menu from 'components/navigation/ListMenu';
-import TabMenu from 'components/navigation/TabMenu';
+import Link from 'next/link'
+import { useState } from 'react'
+import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
+import ContactButton from 'components/common/ContactButton'
+import ThemeSwitcher from 'components/ThemeSwitcher'
+import Container from 'components/layouts/Container'
+import Menu from 'components/navigation/ListMenu'
+import TabMenu from 'components/navigation/TabMenu'
 
 const Navbar = () => {
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(false)
 
   return (
     <nav className="mt-4 w-full bg-neutral-50 dark:bg-neutral-900 z-10">
@@ -26,7 +26,7 @@ const Navbar = () => {
               type="button"
               title="Menu"
               onClick={() => {
-                isActive ? setActive(false) : setActive(true);
+                isActive ? setActive(false) : setActive(true)
               }}
             >
               {isActive ? (
@@ -64,7 +64,7 @@ const Navbar = () => {
         )}
       </Container>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

@@ -1,15 +1,14 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 export interface Props {
-  type: 'button' | 'text';
-  title: string;
-  href: string;
-  className?: string;
-  children: ReactNode;
-  iconLeft?: ReactNode;
-  iconRight?: ReactNode;
+  type: 'button' | 'text'
+  title: string
+  href: string
+  className?: string
+  children: ReactNode
+  iconLeft?: ReactNode
+  iconRight?: ReactNode
 }
-
 
 const ExternalLink = ({
   type,
@@ -42,7 +41,7 @@ const ExternalLink = ({
             {iconRight && <span>{iconRight}</span>}
           </a>
         </div>
-      );
+      )
     case 'text':
       return (
         <a
@@ -61,10 +60,10 @@ const ExternalLink = ({
           {children}
           {iconRight && <span>{iconRight}</span>}
         </a>
-      );
+      )
     default:
-      return <a {...props}>{children}</a>;
+      return <a {...props}>{children}</a>
   }
-};
+}
 
-export default ExternalLink;
+export default ExternalLink

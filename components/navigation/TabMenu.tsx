@@ -1,12 +1,12 @@
-import { Tab } from '@headlessui/react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import navMenu from 'datas/navMenu';
+import { Tab } from '@headlessui/react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import navMenu from 'datas/navMenu'
 
 const TabMenu = () => {
-  const route = useRouter();
-  const { pathname } = useRouter();
+  const route = useRouter()
+  const { pathname } = useRouter()
 
   return (
     <div className="h-9 text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full px-1 flex items-center">
@@ -41,12 +41,12 @@ const TabMenu = () => {
                   ) : null}
                 </div>
               </Tab>
-            );
+            )
           })}
         </Tab.List>
       </Tab.Group>
     </div>
-  );
-};
+  )
+}
 
-export default TabMenu;
+export default TabMenu

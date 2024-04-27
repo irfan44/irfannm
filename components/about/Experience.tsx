@@ -1,4 +1,4 @@
-import { experiences } from 'datas/experience';
+import { experiences } from 'datas/experience'
 
 const Experience = () => {
   return (
@@ -29,21 +29,21 @@ const Experience = () => {
                             {work.responsibility.map((responsibility) => {
                               return (
                                 <li key={responsibility}>{responsibility}</li>
-                              );
+                              )
                             })}
                           </ul>
                         </div>
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

@@ -1,5 +1,5 @@
-import ExternalLink from 'components/common/base/ExternalLink';
-import { resumeURL } from 'datas/resume';
+import ExternalLink from 'components/common/base/ExternalLink'
+import { resumeURL } from 'datas/resume'
 
 const Resume = () => {
   return (
@@ -22,7 +22,7 @@ const Resume = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Resume;
+export default Resume

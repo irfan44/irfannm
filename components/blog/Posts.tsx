@@ -1,19 +1,19 @@
-import { Tab } from '@headlessui/react';
-import PostList from 'components/blog/PostList';
-import { AllPostsModel } from 'lib/models/post';
+import { Tab } from '@headlessui/react'
+import PostList from 'components/blog/PostList'
+import { AllPostsModel } from 'lib/models/post'
 
 const Posts = ({ allPosts }: AllPostsModel) => {
-  const everyPosts = allPosts.slice(0);
-  const techPosts = allPosts.filter((posts) => posts.category === 'Tech');
+  const everyPosts = allPosts.slice(0)
+  const techPosts = allPosts.filter((posts) => posts.category === 'Tech')
   const generasiGIGIHPosts = allPosts.filter(
     (posts) => posts.category === 'Generasi Gigih'
-  );
+  )
 
   const categoryList = [
     { category: 'All', posts: everyPosts },
     { category: 'Tech', posts: techPosts },
     { category: 'Generasi Gigih', posts: generasiGIGIHPosts },
-  ];
+  ]
 
   return (
     <Tab.Group>
@@ -30,7 +30,7 @@ const Posts = ({ allPosts }: AllPostsModel) => {
             >
               {items.category}
             </Tab>
-          );
+          )
         })}
       </Tab.List>
       <Tab.Panels>
@@ -41,11 +41,11 @@ const Posts = ({ allPosts }: AllPostsModel) => {
                 <PostList posts={items.posts} />
               </div>
             </Tab.Panel>
-          );
+          )
         })}
       </Tab.Panels>
     </Tab.Group>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts
