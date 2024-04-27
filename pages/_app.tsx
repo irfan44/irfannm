@@ -4,8 +4,8 @@ import 'styles/index.css';
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'styles/nprogress.css'; //styles of nprogress\
-import Footer from 'components/navigation/Footer';
-import Navbar from 'components/navigation/Navbar';
+import Footer from 'components/Footer';
+import Navbar from 'components/Navbar';
 import { useScrollRestoration } from 'utils/useScrollRestoration';
 import Container from 'components/layouts/Container';
 import { DefaultSeo } from 'next-seo';

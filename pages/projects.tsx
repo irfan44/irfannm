@@ -1,6 +1,6 @@
-import Meta from 'components/common/Meta';
+import Meta from 'components/Meta';
 import PageHeader from 'components/layouts/PageHeader';
-import ProjectList from 'components/pages/projects/ProjectList';
+import ProjectList from 'components/projects/ProjectList';
 import projects from '../data/projects';
 import { Tab } from '@headlessui/react';
 

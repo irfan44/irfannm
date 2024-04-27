@@ -1,5 +1,5 @@
-import ProjectCard from 'components/pages/projects/ProjectCard';
-import Projects from '../../../types/projects';
+import ProjectCard from 'components/projects/ProjectCard';
+import Projects from '../../types/projects';
 
 type Props = {
   projects: Projects[];

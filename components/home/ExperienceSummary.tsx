@@ -1,5 +1,5 @@
-import Section from '../../layouts/Section';
-import experience from '../../../data/experience';
+import Section from '../layouts/Section';
+import experience from '../../data/experience';
 import ReadMore from './ReadMore';
 
 const ExperienceSummary = () => {

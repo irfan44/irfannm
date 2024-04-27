@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import DateFormatter from 'components/common/DateFormatter';
-import CoverImage from 'components/common/Images';
+import DateTime from 'components/DateTime';
+import CoverImage from 'components/Images';
 
 type Props = {
   title: string;
@@ -33,7 +33,7 @@ const HeroPost = ({
         <div className="flex space-x-2">
           <div className="font-bold">{category}</div>
           <div>|</div>
-          <DateFormatter dateString={date} />
+          <DateTime dateString={date} />
         </div>
         <p className="leading-relaxed">{excerpt}</p>
       </div>

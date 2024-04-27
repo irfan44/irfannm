@@ -2,7 +2,7 @@ type Props = {
   dateString: string;
 };
 
-const DateFormatter = ({ dateString }: Props) => {
+const DateTime = ({ dateString }: Props) => {
   const convertedDate = new Date(dateString);
   const date = convertedDate.toLocaleDateString('en-us', {
     year: 'numeric',
@@ -12,4 +12,4 @@ const DateFormatter = ({ dateString }: Props) => {
   return <time dateTime={dateString}>{date}</time>;
 };
 
-export default DateFormatter;
+export default DateTime;

@@ -1,6 +1,6 @@
-import DateFormatter from 'components/common/DateFormatter';
-import CoverImage from 'components/common/Images';
-import PostTitle from 'components/pages/post/PostTitle';
+import DateTime from 'components/DateTime';
+import CoverImage from 'components/Images';
+import PostTitle from 'components/post/PostTitle';
 
 type Props = {
   title: string;
@@ -18,7 +18,7 @@ const PostHeader = ({ title, category, coverImage, date, caption }: Props) => {
         <div className="font-bold">{category}</div>
         <div className="px-2">|</div>
         <div>
-          <DateFormatter dateString={date} />
+          <DateTime dateString={date} />
         </div>
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">

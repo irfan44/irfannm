@@ -1,12 +1,12 @@
-import PostsList from 'components/pages/blog/PostList';
-import Meta from 'components/common/Meta';
-import HeroSection from 'components/pages/home/HeroSection';
-import ReadMore from 'components/pages/home/ReadMore';
+import PostsList from 'components/blog/PostList';
+import Meta from 'components/Meta';
+import HeroSection from 'components/home/HeroSection';
+import ReadMore from 'components/home/ReadMore';
 import Section from 'components/layouts/Section';
 import { getAllPosts } from 'lib/postsHandler';
 import AllPosts from 'types/allPosts';
-import ExperienceSummary from '../components/pages/home/ExperienceSummary';
-import FeaturedProject from '../components/pages/home/FeaturedProject';
+import ExperienceSummary from '../components/home/ExperienceSummary';
+import FeaturedProject from '../components/home/FeaturedProject';
 
 const Index = ({ allPosts }: AllPosts) => {
   const latestPosts = allPosts.slice(0, 2);

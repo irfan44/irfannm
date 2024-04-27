@@ -1,5 +1,5 @@
-import Section from '../../layouts/Section';
-import projects from '../../../data/projects';
+import Section from '../layouts/Section';
+import projects from '../../data/projects';
 import ProjectList from '../projects/ProjectList';
 import ReadMore from './ReadMore';
 

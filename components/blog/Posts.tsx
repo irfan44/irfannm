@@ -1,5 +1,5 @@
 import { Tab } from '@headlessui/react';
-import PostList from 'components/pages/blog/PostList';
+import PostList from 'components/blog/PostList';
 import AllPosts from 'types/allPosts';
 
 const Posts = ({ allPosts }: AllPosts) => {

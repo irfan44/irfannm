@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import DateFormatter from 'components/common/DateFormatter';
-import CoverImage from 'components/common/Images';
+import DateTime from 'components/DateTime';
+import CoverImage from 'components/Images';
 
 type Props = {
   title: string;
@@ -29,7 +29,7 @@ const PostCard = ({
         <div className="flex space-x-2 text-sm mt-4">
           <div className="font-bold">{category}</div>
           <div>|</div>
-          <DateFormatter dateString={date} />
+          <DateTime dateString={date} />
         </div>
         <h3>{title}</h3>
         <p className="leading-relaxed text-base line-clamp-3">{excerpt}</p>
