@@ -3,7 +3,7 @@ import Posts from 'components/blog/Posts';
 import Meta from 'components/Meta';
 import PageHeader from 'components/layouts/PageHeader';
 import Section from 'components/layouts/Section';
-import { getAllPosts } from 'lib/postsHandler';
+import { PostHandler } from 'lib/handler/Post';
 import AllPosts from 'types/allPosts';
 
 const Blog = ({ allPosts }: AllPosts) => {
@@ -46,7 +46,7 @@ const Blog = ({ allPosts }: AllPosts) => {
 export default Blog;
 
 export const getStaticProps = () => {
-  const allPosts = getAllPosts([
+  const allPosts = PostHandler.getAllPosts([
     'title',
     'category',
     'date',

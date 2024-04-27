@@ -3,7 +3,7 @@ import Meta from 'components/Meta';
 import HeroSection from 'components/home/HeroSection';
 import ReadMore from 'components/home/ReadMore';
 import Section from 'components/layouts/Section';
-import { getAllPosts } from 'lib/postsHandler';
+import { PostHandler } from 'lib/handler/Post';
 import AllPosts from 'types/allPosts';
 import ExperienceSummary from '../components/home/ExperienceSummary';
 import FeaturedProject from '../components/home/FeaturedProject';
@@ -42,7 +42,7 @@ const Index = ({ allPosts }: AllPosts) => {
 export default Index;
 
 export const getStaticProps = () => {
-  const allPosts = getAllPosts([
+  const allPosts = PostHandler.getAllPosts([
     'title',
     'category',
     'date',

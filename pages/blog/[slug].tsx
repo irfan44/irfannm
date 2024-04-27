@@ -8,7 +8,7 @@ import Meta from 'components/Meta';
 import PostBody from 'components/post/PostBody';
 import PostHeader from 'components/post/PostHeader';
 import PostTitle from 'components/post/PostTitle';
-import { getPostBySlug, getAllPosts } from 'lib/postsHandler';
+import { PostHandler } from 'lib/handler/Post';
 import PostType from 'types/post';
 import { NextSeo } from 'next-seo';
 import { BASE_URL, SITE_NAME } from 'data/constants';
@@ -86,7 +86,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+  const post = PostHandler.getPostBySlug(params.slug, [
     'title',
     'category',
     'date',
@@ -109,7 +109,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export function getStaticPaths() {
-  const posts = getAllPosts(['slug']);
+  const posts = PostHandler.getAllPosts(['slug']);
 
   return {
     paths: posts.map((post) => {
