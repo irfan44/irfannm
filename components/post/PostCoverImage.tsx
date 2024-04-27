@@ -15,7 +15,6 @@ const PostCoverImage = ({ title, src, width, height }: Props) => {
       width={width}
       height={height}
       className="rounded-2xl"
-      fetchPriority="auto"
     />
   )
 }

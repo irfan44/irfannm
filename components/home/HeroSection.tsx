@@ -41,7 +41,6 @@ const HeroSection = () => {
       </div>
       <div className="md:w-1/2 justify-center flex">
         <Image
-          fetchPriority="auto"
           src="/assets/images/Person.svg"
           alt="Hero"
           width="320"
