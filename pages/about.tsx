@@ -1,3 +1,4 @@
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import AboutMe from 'components/about/AboutMe'
 import Resume from 'components/about/Resume'
@@ -7,7 +8,12 @@ import Meta from 'components/Meta'
 import PageHeader from 'components/layouts/PageHeader'
 import { aboutMe } from 'datas/about'
 
-const About = ({ aboutMeSource }: any) => {
+interface Props {
+  aboutMeSource: MDXRemoteSerializeResult
+}
+
+const About = ({ aboutMeSource }: Props) => {
+  console.log(aboutMeSource)
   const pageMeta = {
     title: 'About',
     description: 'About Irfan Nurghiffari Muhajir',

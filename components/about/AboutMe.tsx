@@ -1,7 +1,11 @@
 import Image from 'next/image'
-import { MDXRemote } from 'next-mdx-remote'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
-const AboutMe = ({ aboutMeSource }: any) => {
+interface Props {
+  aboutMeSource: MDXRemoteSerializeResult
+}
+
+const AboutMe = ({ aboutMeSource }: Props) => {
   return (
     <>
       <div className="flex justify-center mb-12">
