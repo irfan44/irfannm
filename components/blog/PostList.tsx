@@ -1,5 +1,5 @@
 import PostCard from 'components/blog/PostCard'
-import { PostsModel } from 'lib/models/post'
+import type { PostsModel } from 'lib/models/post'
 
 type Props = {
   posts: PostsModel

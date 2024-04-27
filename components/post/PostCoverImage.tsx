@@ -7,17 +7,17 @@ type Props = {
   height: number
 }
 
-const Images = ({ title, src, width, height }: Props) => {
-  const image = (
+const PostCoverImage = ({ title, src, width, height }: Props) => {
+  return (
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
       width={width}
       height={height}
       className="rounded-2xl"
+      fetchPriority="auto"
     />
   )
-  return <div className="sm:mx-0">{image}</div>
 }
 
-export default Images
+export default PostCoverImage

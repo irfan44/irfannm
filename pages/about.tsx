@@ -11,11 +11,16 @@ const About = () => {
     description: 'About Irfan Nurghiffari Muhajir',
     ogImage: '/assets/images/irfan.jpeg',
   }
+
+  const pageHeader = {
+    title: 'About',
+  }
+
   return (
     <>
       <Meta data={pageMeta} />
       <div className="space-y-12 max-w-3xl mx-auto">
-        <PageHeader pageTitle="About" />
+        <PageHeader title={pageHeader.title} />
         <AboutMe />
         <Experience />
         <Resume />

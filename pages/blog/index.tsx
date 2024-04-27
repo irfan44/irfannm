@@ -15,14 +15,19 @@ const Blog = ({ allPosts }: AllPostsModel) => {
     ogImage: '/assets/images/irfan.jpeg',
   }
 
+  const pageHeader = {
+    title: 'Blog',
+    description:
+      'I mainly write about technology and other stuffs. Most of this post is created for my collage assignment.',
+  }
+
   return (
     <>
       <Meta data={pageMeta} />
       <div className="space-y-12">
         <PageHeader
-          pageTitle="Blog"
-          pageDescription="I mainly write about technology and other stuffs. Most of this
-                post is created for my collage assignment."
+          title={pageHeader.title}
+          description={pageHeader.description}
         />
         <Section title="Featured">
           {heroPost && (

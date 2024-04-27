@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode
 }
 
-const Text = ({ type, className, children }: Props) => {
+const Title = ({ type, className, children }: Props) => {
   switch (type) {
     case 'pageTitle':
       return (
@@ -33,4 +33,4 @@ const Text = ({ type, className, children }: Props) => {
   }
 }
 
-export default Text
+export default Title

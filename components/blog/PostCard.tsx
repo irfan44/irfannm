@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import DateTime from 'components/common/base/DateTime'
-import CoverImage from 'components/common/base/Images'
+import PostCoverImage from 'components/post/PostCoverImage'
 
 type Props = {
   title: string
@@ -36,7 +36,12 @@ const PostCard = ({
       </div>
       <div className="flex items-end">
         <div className="px-4 pb-3">
-          <CoverImage title={title} src={coverImage} height={278} width={556} />
+          <PostCoverImage
+            title={title}
+            src={coverImage}
+            height={278}
+            width={556}
+          />
         </div>
       </div>
     </Link>

@@ -1,14 +1,19 @@
+import { Tab } from '@headlessui/react'
 import Meta from 'components/Meta'
 import PageHeader from 'components/layouts/PageHeader'
 import ProjectList from 'components/projects/ProjectList'
-import projects from '../datas/projects'
-import { Tab } from '@headlessui/react'
+import projects from 'datas/projects'
 
 const Projects = () => {
   const pageMeta = {
     title: 'Projects',
     description: "Irfan Nurghiffari Muhajir's projects",
     ogImage: '/assets/images/irfan.jpeg',
+  }
+
+  const pageHeader = {
+    title: 'Projects',
+    description: 'Various projects that I have worked on.',
   }
 
   const workProjects = projects.filter((value) => value.type === 'Work')
@@ -18,8 +23,8 @@ const Projects = () => {
     <>
       <Meta data={pageMeta} />
       <PageHeader
-        pageTitle="Projects"
-        pageDescription="Various projects that I have worked on."
+        title={pageHeader.title}
+        description={pageHeader.description}
       />
       <div className="mt-6">
         <Tab.Group>

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import SocialLink from 'components/common/SocialMedia'
-import Text from 'components/common/base/Title'
+import Title from 'components/common/base/Title'
 import ResumeButton from 'components/common/ResumeButton'
+import Image from 'next/image'
 
 const HeroSection = () => {
   return (
@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="md:w-1/2 space-y-6">
         <div>
           <p className="font-bold text-xl text-black dark:text-white">Hi,</p>
-          <Text type="pageTitle">
+          <Title type="pageTitle">
             I&apos;m Irfan!{' '}
             <motion.div
               className="inline-block"
@@ -24,7 +24,7 @@ const HeroSection = () => {
             >
               👋
             </motion.div>
-          </Text>
+          </Title>
         </div>
         <p>
           A software engineering graduate who have a lot of passion in web

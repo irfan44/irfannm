@@ -1,4 +1,4 @@
-import { ProjectsModel } from 'lib/models/projects'
+import type { ProjectsModel } from 'lib/models/projects'
 
 const projects: ProjectsModel = [
   {

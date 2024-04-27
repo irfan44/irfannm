@@ -1,4 +1,4 @@
-import { ExperiencesModel } from 'lib/models/experience'
+import type { ExperiencesModel } from 'lib/models/experience'
 
 export const experiences: ExperiencesModel = [
   {
