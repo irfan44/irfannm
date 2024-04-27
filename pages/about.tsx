@@ -13,7 +13,6 @@ interface Props {
 }
 
 const About = ({ aboutMeSource }: Props) => {
-  console.log(aboutMeSource)
   const pageMeta = {
     title: 'About',
     description: 'About Irfan Nurghiffari Muhajir',
