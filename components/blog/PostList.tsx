@@ -1,8 +1,8 @@
 import PostCard from 'components/blog/PostCard';
-import Post from 'types/post';
+import { PostsModel } from 'lib/models/post';
 
 type Props = {
-  posts: Post[];
+  posts: PostsModel;
 };
 
 const PostList = ({ posts }: Props) => {

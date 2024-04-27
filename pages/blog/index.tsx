@@ -4,9 +4,9 @@ import Meta from 'components/Meta';
 import PageHeader from 'components/layouts/PageHeader';
 import Section from 'components/layouts/Section';
 import { PostHandler } from 'lib/handlers/Post';
-import AllPosts from 'types/allPosts';
+import type { AllPostsModel } from 'lib/models/post';
 
-const Blog = ({ allPosts }: AllPosts) => {
+const Blog = ({ allPosts }: AllPostsModel) => {
   const heroPost = allPosts[0];
 
   const pageMeta = {

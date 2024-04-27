@@ -1,8 +1,8 @@
 import { Tab } from '@headlessui/react';
 import PostList from 'components/blog/PostList';
-import AllPosts from 'types/allPosts';
+import { AllPostsModel } from 'lib/models/post';
 
-const Posts = ({ allPosts }: AllPosts) => {
+const Posts = ({ allPosts }: AllPostsModel) => {
   const everyPosts = allPosts.slice(0);
   const techPosts = allPosts.filter((posts) => posts.category === 'Tech');
   const generasiGIGIHPosts = allPosts.filter(

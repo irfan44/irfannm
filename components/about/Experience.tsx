@@ -1,11 +1,11 @@
-import experience from 'datas/experience';
+import { experiences } from 'datas/experience';
 
 const Experience = () => {
   return (
     <div>
       <h2 className="mb-6">Experience</h2>
       <div className="flex flex-col space-y-8">
-        {experience.map((value) => {
+        {experiences.map((value) => {
           return (
             <div key={value.year}>
               <hr className="border border-neutral-300 dark:border-neutral-500 mb-8" />

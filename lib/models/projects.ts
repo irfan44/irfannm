@@ -1,4 +1,6 @@
-type Projects = {
+export type ProjectsModel = ProjectModel[];
+
+export interface ProjectModel {
   id?: string;
   isFeatured?: boolean;
   name: string;
@@ -13,6 +15,4 @@ type Projects = {
   overview?: string;
   date?: string;
   role?: string;
-};
-
-export default Projects;
+}

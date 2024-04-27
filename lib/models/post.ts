@@ -1,6 +1,12 @@
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-type PostType = {
+export interface AllPostsModel {
+  allPosts: PostsModel;
+}
+
+export type PostsModel = PostModel[];
+
+export interface PostModel {
   slug: string;
   title: string;
   category: string;
@@ -12,6 +18,4 @@ type PostType = {
     url: string;
   };
   content: MDXRemoteSerializeResult;
-};
-
-export default PostType;
+}

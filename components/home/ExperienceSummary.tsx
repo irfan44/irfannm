@@ -1,5 +1,5 @@
 import Section from '../layouts/Section';
-import experience from '../../datas/experience';
+import { experiences } from 'datas/experience';
 import ReadMore from './ReadMore';
 
 const ExperienceSummary = () => {
@@ -7,7 +7,7 @@ const ExperienceSummary = () => {
     <>
       <Section title="Experience">
         <div className="flex flex-col space-y-6">
-          {experience.map((value) => {
+          {experiences.map((value) => {
             return (
               <div key={value.year}>
                 <hr className="border border-neutral-300 dark:border-neutral-500 mb-6" />

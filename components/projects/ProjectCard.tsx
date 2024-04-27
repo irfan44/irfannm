@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import Image from 'next/image';
+import { Dialog } from '@headlessui/react';
 import { FaChevronRight, FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
-import Projects from 'types/projects';
 import ExternalLink from 'components/common/base/ExternalLink';
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
+import type { ProjectModel } from 'lib/models/projects';
 
 const ProjectCard = ({
   name,
@@ -19,7 +19,7 @@ const ProjectCard = ({
   date,
   role,
   type,
-}: Projects) => {
+}: ProjectModel) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

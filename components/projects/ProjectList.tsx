@@ -1,8 +1,8 @@
 import ProjectCard from 'components/projects/ProjectCard';
-import Projects from '../../types/projects';
+import type { ProjectsModel } from 'lib/models/projects';
 
 type Props = {
-  projects: Projects[];
+  projects: ProjectsModel;
 };
 
 const ProjectList = (props: Props) => {

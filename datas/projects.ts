@@ -1,6 +1,6 @@
-import Projects from 'types/projects';
+import { ProjectsModel } from 'lib/models/projects';
 
-const projects: Projects[] = [
+const projects: ProjectsModel = [
   {
     name: 'Sayakaya.id',
     description: 'Company website of PT SayaKaya Lahir Batin',

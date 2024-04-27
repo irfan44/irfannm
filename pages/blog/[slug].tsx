@@ -1,34 +1,34 @@
-import { MDXRemote } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import ErrorPage from 'next/error';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { RiArrowRightSLine } from 'react-icons/ri';
-import Meta from 'components/Meta';
-import PostBody from 'components/post/PostBody';
-import PostHeader from 'components/post/PostHeader';
-import PostTitle from 'components/post/PostTitle';
-import { PostHandler } from 'lib/handlers/Post';
-import PostType from 'types/post';
-import { NextSeo } from 'next-seo';
-import { BASE_URL, SITE_NAME } from 'datas/constants';
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import ErrorPage from 'next/error'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { RiArrowRightSLine } from 'react-icons/ri'
+import Meta from 'components/Meta'
+import PostBody from 'components/post/PostBody'
+import PostHeader from 'components/post/PostHeader'
+import PostTitle from 'components/post/PostTitle'
+import { PostHandler } from 'lib/handlers/Post'
+import { PostModel, PostsModel } from 'lib/models/post'
+import { NextSeo } from 'next-seo'
+import { BASE_URL, SITE_NAME } from 'datas/constants'
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
-};
+  post: PostModel
+  morePosts: PostsModel
+}
 
 const Post = ({ post }: Props) => {
-  const router = useRouter();
+  const router = useRouter()
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
+    return <ErrorPage statusCode={404} />
   }
 
   const pageMeta = {
     title: post.title,
     description: post.excerpt,
     ogImage: post.ogImage.url,
-  };
+  }
   return (
     <>
       {router.isFallback ? (
@@ -74,16 +74,16 @@ const Post = ({ post }: Props) => {
         </>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post
 
 type Params = {
   params: {
-    slug: string;
-  };
-};
+    slug: string
+  }
+}
 
 export async function getStaticProps({ params }: Params) {
   const post = PostHandler.getPostBySlug(params.slug, [
@@ -95,9 +95,9 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'caption',
     'coverImage',
-  ]);
+  ])
 
-  const content = await serialize(post.content);
+  const content = await serialize(post.content)
   return {
     props: {
       post: {
@@ -105,11 +105,11 @@ export async function getStaticProps({ params }: Params) {
         content,
       },
     },
-  };
+  }
 }
 
 export function getStaticPaths() {
-  const posts = PostHandler.getAllPosts(['slug']);
+  const posts = PostHandler.getAllPosts(['slug'])
 
   return {
     paths: posts.map((post) => {
@@ -117,8 +117,8 @@ export function getStaticPaths() {
         params: {
           slug: post.slug,
         },
-      };
+      }
     }),
     fallback: false,
-  };
+  }
 }

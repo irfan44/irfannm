@@ -1,6 +1,6 @@
-import { WorkExperience } from 'types/experience';
+import { ExperiencesModel } from 'lib/models/experience';
 
-export const experience: WorkExperience[] = [
+export const experiences: ExperiencesModel = [
   {
     year: 2023,
     experience: [
@@ -91,5 +91,3 @@ export const experience: WorkExperience[] = [
     ],
   },
 ];
-
-export default experience;
