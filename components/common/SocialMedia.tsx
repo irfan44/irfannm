@@ -1,4 +1,4 @@
-import socials from 'data/socials';
+import socials from 'datas/socials';
 import ExternalLink from 'components/common/base/ExternalLink';
 
 const SocialMedia = () => {

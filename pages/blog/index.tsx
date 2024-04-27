@@ -3,7 +3,7 @@ import Posts from 'components/blog/Posts';
 import Meta from 'components/Meta';
 import PageHeader from 'components/layouts/PageHeader';
 import Section from 'components/layouts/Section';
-import { PostHandler } from 'lib/handler/Post';
+import { PostHandler } from 'lib/handlers/Post';
 import AllPosts from 'types/allPosts';
 
 const Blog = ({ allPosts }: AllPosts) => {

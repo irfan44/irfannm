@@ -1,5 +1,5 @@
 import ExternalLink from 'components/common/base/ExternalLink';
-import { resumeURL } from 'data/resume';
+import { resumeURL } from 'datas/resume';
 
 const Resume = () => {
   return (

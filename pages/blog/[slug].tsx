@@ -8,10 +8,10 @@ import Meta from 'components/Meta';
 import PostBody from 'components/post/PostBody';
 import PostHeader from 'components/post/PostHeader';
 import PostTitle from 'components/post/PostTitle';
-import { PostHandler } from 'lib/handler/Post';
+import { PostHandler } from 'lib/handlers/Post';
 import PostType from 'types/post';
 import { NextSeo } from 'next-seo';
-import { BASE_URL, SITE_NAME } from 'data/constants';
+import { BASE_URL, SITE_NAME } from 'datas/constants';
 
 type Props = {
   post: PostType;

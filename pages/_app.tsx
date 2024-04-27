@@ -5,7 +5,7 @@ import NProgress from 'nprogress';
 import Footer from 'components/Footer';
 import Navbar from 'components/Navbar';
 import Container from 'components/layouts/Container';
-import { useScrollRestoration } from 'utils/useScrollRestoration';
+import { useScrollRestoration } from 'lib/hooks/useScrollRestoration';
 import 'styles/index.css';
 import 'styles/nprogress.css';
 
