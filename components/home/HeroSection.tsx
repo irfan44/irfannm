@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 import Title from 'components/common/base/Title'
 import ResumeButton from 'components/common/ResumeButton'
 import SocialLink from 'components/common/SocialMedia'
@@ -15,21 +13,7 @@ const HeroSection = ({ description, resumeUrl }: Props) => {
       <div className="md:w-1/2 space-y-6">
         <div>
           <p className="font-bold text-xl text-black dark:text-white">Hi,</p>
-          <Title type="pageTitle">
-            I&apos;m Irfan!{' '}
-            <motion.div
-              className="inline-block"
-              animate={{ rotate: 20 }}
-              transition={{
-                ease: 'easeInOut',
-                type: 'tween',
-                repeatType: 'reverse',
-                repeat: 19,
-              }}
-            >
-              👋
-            </motion.div>
-          </Title>
+          <Title type="pageTitle">I&apos;m Irfan! 👋</Title>
         </div>
         <p>{description}</p>
         <div>
