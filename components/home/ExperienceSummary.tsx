@@ -1,4 +1,4 @@
-import Section from '../layouts/Section'
+import Section from 'components/layouts/Section'
 import { experiences } from 'datas/experience'
 import ReadMore from './ReadMore'
 

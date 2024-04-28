@@ -1,6 +1,6 @@
-import Section from '../layouts/Section'
-import projects from '../../datas/projects'
-import ProjectList from '../projects/ProjectList'
+import Section from 'components/layouts/Section'
+import projects from 'datas/projects'
+import ProjectList from 'components/projects/ProjectList'
 import ReadMore from './ReadMore'
 
 const FeaturedProject = () => {
