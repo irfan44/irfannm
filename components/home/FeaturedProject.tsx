@@ -1,16 +1,17 @@
+import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
 import ProjectList from 'components/project/ProjectList'
-import projects from 'datas/projects'
+import type { ProjectsModel } from 'lib/models/project'
 
-import ReadMore from './ReadMore'
+interface Props {
+  featuredProjects: ProjectsModel
+}
 
-const FeaturedProject = () => {
-  const featuredProject = projects.filter((value) => value.isFeatured === true)
-
+const FeaturedProject = ({ featuredProjects }: Props) => {
   return (
     <Section title="Featured Project">
       <div className="space-y-4">
-        <ProjectList projects={featuredProject} />
+        <ProjectList projects={featuredProjects} />
       </div>
       <ReadMore url="/projects">View all projects</ReadMore>
     </Section>

@@ -3,9 +3,15 @@ import { Tab } from '@headlessui/react'
 import PageHeader from 'components/layouts/PageHeader'
 import Meta from 'components/Meta'
 import ProjectList from 'components/project/ProjectList'
-import projects from 'datas/projects'
+import { ProjectController } from 'lib/controllers/project'
+import type { ProjectsModel } from 'lib/models/project'
 
-const Projects = () => {
+interface Props {
+  workProjects: ProjectsModel
+  personalProjects: ProjectsModel
+}
+
+const Projects = ({ workProjects, personalProjects }: Props) => {
   const pageMeta = {
     title: 'Projects',
     description: "Irfan Nurghiffari Muhajir's projects",
@@ -16,9 +22,6 @@ const Projects = () => {
     title: 'Projects',
     description: 'Various projects that I have worked on.',
   }
-
-  const workProjects = projects.filter((value) => value.type === 'Work')
-  const personalProjects = projects.filter((value) => value.type === 'Personal')
 
   return (
     <>
@@ -70,4 +73,13 @@ const Projects = () => {
     </>
   )
 }
+
+export const getServerSideProps = async () => {
+  const projects = await ProjectController.getProjects()
+  const workProjects = projects.filter((value) => value.type === 'Work')
+  const personalProjects = projects.filter((value) => value.type === 'Personal')
+
+  return { props: { workProjects, personalProjects } }
+}
+
 export default Projects
