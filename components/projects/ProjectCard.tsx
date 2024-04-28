@@ -4,7 +4,7 @@ import { Dialog } from '@headlessui/react'
 import { FaChevronRight, FaGithub } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
 import ExternalLink from 'components/common/base/ExternalLink'
-import type { ProjectModel } from 'lib/models/projects'
+import type { ProjectModel } from 'lib/models/project'
 
 const ProjectCard = ({
   name,

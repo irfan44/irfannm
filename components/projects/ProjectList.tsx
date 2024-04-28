@@ -1,5 +1,5 @@
 import ProjectCard from 'components/projects/ProjectCard'
-import type { ProjectsModel } from 'lib/models/projects'
+import type { ProjectsModel } from 'lib/models/project'
 
 type Props = {
   projects: ProjectsModel
