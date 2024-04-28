@@ -7,11 +7,11 @@ type Props = {
   url: string
 }
 
-const ReadMore = (props: Props) => {
+const ReadMore = ({ url, children }: Props) => {
   return (
-    <Link href={props.url} passHref>
+    <Link href={url} passHref>
       <p className="mt-4 font-medium flex items-center hover:cursor-pointer hover:underline text-black dark:text-white">
-        {props.children}
+        {children}
         <HiArrowNarrowRight className="text-xl ml-1" />
       </p>
     </Link>

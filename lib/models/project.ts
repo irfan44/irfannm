@@ -8,10 +8,10 @@ export interface ProjectModel {
   company?: string
   description: string
   techStack: string[]
-  sourceCode: string
-  url: string
-  whatIDo?: string[]
-  images?: string
+  sourceCode?: string
+  url?: string
+  responsibility?: string[]
+  image?: string
   overview?: string
   date?: string
   role?: string

@@ -14,11 +14,9 @@ const ExternalLink = ({
   type,
   title,
   href,
-  className,
   children,
   iconLeft,
   iconRight,
-  ...props
 }: Props) => {
   switch (type) {
     case 'button':
@@ -27,14 +25,9 @@ const ExternalLink = ({
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className={
-              className
-                ? className
-                : `flex items-center font-semibold space-x-2`
-            }
+            className="flex items-center font-semibold space-x-2"
             title={title}
             href={href}
-            {...props}
           >
             {iconLeft && <span>{iconLeft}</span>}
             {children}
@@ -47,14 +40,9 @@ const ExternalLink = ({
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className={
-            className
-              ? className
-              : `w-fit flex items-center font-semibold space-x-2`
-          }
+          className="w-fit flex items-center font-semibold space-x-2 hover:underline"
           title={title}
           href={href}
-          {...props}
         >
           {iconLeft && <span>{iconLeft}</span>}
           {children}
@@ -62,7 +50,7 @@ const ExternalLink = ({
         </a>
       )
     default:
-      return <a {...props}>{children}</a>
+      return <a>{children}</a>
   }
 }
 
