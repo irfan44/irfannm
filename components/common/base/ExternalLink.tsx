@@ -11,6 +11,7 @@ export interface Props {
 }
 
 const ExternalLink = ({
+  className,
   type,
   title,
   href,
@@ -40,7 +41,7 @@ const ExternalLink = ({
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="w-fit flex items-center font-semibold space-x-2 hover:underline"
+          className={`w-fit flex items-center font-semibold space-x-2 hover:underline ${className}`}
           title={title}
           href={href}
         >

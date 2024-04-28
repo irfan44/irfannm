@@ -17,16 +17,15 @@ const SocialContact = () => {
         {socials.map((social) => {
           return (
             <li key={social.name}>
-              <div className="hover:underline">
-                <ExternalLink
-                  type="text"
-                  title={social.name}
-                  href={social.link}
-                  iconRight={<RiExternalLinkLine />}
-                >
-                  <span>{social.name}</span>
-                </ExternalLink>
-              </div>
+              <ExternalLink
+                className="w-fit underline"
+                type="text"
+                title={social.name}
+                href={social.link}
+                iconRight={<RiExternalLinkLine />}
+              >
+                <span>{social.name}</span>
+              </ExternalLink>
             </li>
           )
         })}

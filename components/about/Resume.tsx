@@ -17,19 +17,17 @@ const Resume = ({ resumeUrl, updatedAt }: Props) => {
       <div className="mb-6">
         <h2>Resume</h2>
       </div>
-      <div>
-        <p>
-          You can see and download my latest resume{' '}
-          <ExternalLink
-            type="text"
-            title="Download here"
-            href={resumeUrl}
-            className="font-bold underline"
-          >
-            here
-          </ExternalLink>{' '}
-          <span>(last updated: {updateDate})</span>
-        </p>
+      <div className="flex space-x-1">
+        <span>You can see and download my latest resume</span>
+        <ExternalLink
+          className="font-bold underline"
+          type="text"
+          title="Download here"
+          href={resumeUrl}
+        >
+          here
+        </ExternalLink>
+        <span>(last updated: {updateDate})</span>
       </div>
     </div>
   )
