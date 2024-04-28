@@ -11,7 +11,7 @@ const FeaturedProject = () => {
       <div className="space-y-4">
         <ProjectList projects={featuredProject} />
       </div>
-      <ReadMore url="projects">View all projects</ReadMore>
+      <ReadMore url="/projects">View all projects</ReadMore>
     </Section>
   )
 }

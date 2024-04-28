@@ -1,18 +1,20 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import Meta from 'components/Meta'
 import AboutMe from 'components/about/AboutMe'
 import Resume from 'components/about/Resume'
 import Experience from 'components/about/Experience'
 import SocialContact from 'components/about/SocialContact'
-import Meta from 'components/Meta'
 import PageHeader from 'components/layouts/PageHeader'
-import { aboutMe } from 'datas/about'
+import { ConstantController } from 'lib/controllers/constant'
+import type { ConstantModel } from 'lib/models/constant'
 
 interface Props {
   aboutMeSource: MDXRemoteSerializeResult
+  resumeUrl: ConstantModel
 }
 
-const About = ({ aboutMeSource }: Props) => {
+const About = ({ aboutMeSource, resumeUrl }: Props) => {
   const pageMeta = {
     title: 'About',
     description: 'About Irfan Nurghiffari Muhajir',
@@ -30,16 +32,33 @@ const About = ({ aboutMeSource }: Props) => {
         <PageHeader title={pageHeader.title} />
         <AboutMe aboutMeSource={aboutMeSource} />
         <Experience />
-        <Resume />
+        <Resume
+          resumeUrl={resumeUrl.stringValue}
+          updatedAt={resumeUrl.updatedAt}
+        />
         <SocialContact />
       </div>
     </>
   )
 }
 
-export async function getStaticProps() {
+export const getServerSideProps = async () => {
+  const constants = await ConstantController.getConstants()
+
+  const aboutMeValue = constants.filter(
+    (constant) => constant.slug === 'about-me'
+  )
+  const aboutMe = aboutMeValue[0].markdownValue
   const aboutMeSource = await serialize(aboutMe)
-  return { props: { aboutMeSource } }
+
+  const resumeUrlValue = constants.filter(
+    (constant) => constant.slug === 'resume-url'
+  )
+  const resumeUrl = resumeUrlValue[0]
+
+  return {
+    props: { aboutMeSource, resumeUrl },
+  }
 }
 
 export default About

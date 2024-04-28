@@ -1,7 +1,17 @@
 import ExternalLink from 'components/common/base/ExternalLink'
-import { resumeURL } from 'datas/resume'
 
-const Resume = () => {
+interface Props {
+  resumeUrl: string
+  updatedAt: string
+}
+
+const Resume = ({ resumeUrl, updatedAt }: Props) => {
+  const updateDate = new Date(updatedAt).toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+
   return (
     <div>
       <div className="mb-6">
@@ -13,12 +23,12 @@ const Resume = () => {
           <ExternalLink
             type="text"
             title="Download here"
-            href={resumeURL}
+            href={resumeUrl}
             className="font-bold underline"
           >
             here
           </ExternalLink>{' '}
-          <span>(last updated: August 2023)</span>
+          <span>(last updated: {updateDate})</span>
         </p>
       </div>
     </div>

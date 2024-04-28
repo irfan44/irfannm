@@ -5,14 +5,17 @@ import FeaturedProject from 'components/home/FeaturedProject'
 import HeroSection from 'components/home/HeroSection'
 import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
+import { ConstantController } from 'lib/controllers/constant'
 import { PostController } from 'lib/controllers/post'
 import type { PostsModel } from 'lib/models/post'
 
 interface Props {
+  description: string
+  resumeUrl: string
   posts: PostsModel
 }
 
-const Index = ({ posts }: Props) => {
+const Home = ({ description, resumeUrl, posts }: Props) => {
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
@@ -23,7 +26,7 @@ const Index = ({ posts }: Props) => {
     <>
       <Meta data={pageMeta} />
       <div className="space-y-16">
-        <HeroSection />
+        <HeroSection description={description} resumeUrl={resumeUrl} />
         <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
           <ExperienceSummary />
           <FeaturedProject />
@@ -33,7 +36,7 @@ const Index = ({ posts }: Props) => {
             <Section title="Latest Posts">
               <PostsList posts={posts} />
             </Section>
-            <ReadMore url="blog">Read more post</ReadMore>
+            <ReadMore url="/blog">Read more post</ReadMore>
           </>
         )}
       </div>
@@ -41,12 +44,23 @@ const Index = ({ posts }: Props) => {
   )
 }
 
-export default Index
-
 export const getServerSideProps = async () => {
+  const constants = await ConstantController.getConstants()
   const posts = await PostController.getHighlightedPosts()
 
+  const resumeUrlValue = constants.filter(
+    (constant) => constant.slug === 'resume-url'
+  )
+  const resumeUrl = resumeUrlValue[0].stringValue
+
+  const descriptionValue = constants.filter(
+    (constant) => constant.slug === 'description'
+  )
+  const description = descriptionValue[0].stringValue
+
   return {
-    props: { posts },
+    props: { description, resumeUrl, posts },
   }
 }
+
+export default Home

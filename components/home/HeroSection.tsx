@@ -2,9 +2,13 @@ import { motion } from 'framer-motion'
 import SocialLink from 'components/common/SocialMedia'
 import Title from 'components/common/base/Title'
 import ResumeButton from 'components/common/ResumeButton'
-import Image from 'next/image'
 
-const HeroSection = () => {
+interface Props {
+  description: string
+  resumeUrl: string
+}
+
+const HeroSection = ({ description, resumeUrl }: Props) => {
   return (
     <div className="flex flex-col md:flex-row items-center py-6 mb-12">
       <div className="md:w-1/2 space-y-6">
@@ -26,21 +30,17 @@ const HeroSection = () => {
             </motion.div>
           </Title>
         </div>
-        <p>
-          A software engineering graduate who have a lot of passion in web
-          development, especially frontend development using React, NextJS, and
-          Angular, with special interest in the banking or finance related
-          industry
-        </p>
+        <p>{description}</p>
         <div>
-          <ResumeButton />
+          <ResumeButton resumeUrl={resumeUrl} />
         </div>
         <div className="flex space-x-4 py-4">
           <SocialLink />
         </div>
       </div>
       <div className="md:w-1/2 justify-center flex">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/assets/images/Person.svg"
           alt="Hero"
           width="320"

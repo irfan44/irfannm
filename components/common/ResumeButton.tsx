@@ -1,9 +1,12 @@
 import ExternalLink from './base/ExternalLink'
-import { resumeURL } from 'datas/resume'
 
-const ResumeButton = () => {
+interface Props {
+  resumeUrl: string
+}
+
+const ResumeButton = ({ resumeUrl }: Props) => {
   return (
-    <ExternalLink type="button" title="View my resume!" href={resumeURL}>
+    <ExternalLink type="button" title="View my resume!" href={resumeUrl}>
       <span className="text-xl">📄</span>
       <span>View Resume!</span>
     </ExternalLink>

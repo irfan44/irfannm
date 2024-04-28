@@ -52,7 +52,6 @@ const Blog = ({ posts }: Props) => {
     </>
   )
 }
-export default Blog
 
 export const getServerSideProps = async () => {
   const posts = await PostController.getPosts()
@@ -61,3 +60,5 @@ export const getServerSideProps = async () => {
     props: { posts },
   }
 }
+
+export default Blog

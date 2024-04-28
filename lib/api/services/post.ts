@@ -1,5 +1,5 @@
 import { contentClient } from 'lib/api/graphql/content'
-import { GET_POST, GET_POSTS } from 'lib/api/graphql/query/post'
+import { GET_POST, GET_POSTS } from 'lib/api/graphql/queries/post'
 import type { PostResponse, PostsResponse } from 'lib/api/types/post'
 
 export class PostService {
