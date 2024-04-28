@@ -1,7 +1,8 @@
-import { Tab } from '@headlessui/react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
+import { Tab } from '@headlessui/react'
+
 import navMenu from 'datas/navMenu'
 
 const TabMenu = () => {

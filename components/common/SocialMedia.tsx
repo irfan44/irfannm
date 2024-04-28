@@ -1,5 +1,5 @@
-import socials from 'datas/socials'
 import ExternalLink from 'components/common/base/ExternalLink'
+import socials from 'datas/socials'
 
 const SocialMedia = () => {
   return (

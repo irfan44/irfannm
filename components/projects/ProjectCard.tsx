@@ -1,4 +1,5 @@
 import { FaChevronRight } from 'react-icons/fa'
+
 import type { ProjectModel } from 'lib/models/project'
 
 interface Props {

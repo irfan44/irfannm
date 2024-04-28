@@ -1,11 +1,12 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import Meta from 'components/Meta'
+
 import AboutMe from 'components/about/AboutMe'
-import Resume from 'components/about/Resume'
 import Experience from 'components/about/Experience'
+import Resume from 'components/about/Resume'
 import SocialContact from 'components/about/SocialContact'
 import PageHeader from 'components/layouts/PageHeader'
+import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
 import type { ConstantModel } from 'lib/models/constant'
 

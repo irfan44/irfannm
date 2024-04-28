@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
-import SocialLink from 'components/common/SocialMedia'
+
 import Title from 'components/common/base/Title'
 import ResumeButton from 'components/common/ResumeButton'
+import SocialLink from 'components/common/SocialMedia'
 
 interface Props {
   description: string

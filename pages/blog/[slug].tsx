@@ -1,8 +1,9 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+
 import Meta from 'components/Meta'
-import PostBreadcrumb from 'components/post/PostBreadcrumb'
 import PostBody from 'components/post/PostBody'
+import PostBreadcrumb from 'components/post/PostBreadcrumb'
 import PostHeader from 'components/post/PostHeader'
 import { PostController } from 'lib/controllers/post'
 import type { PostModel } from 'lib/models/post'

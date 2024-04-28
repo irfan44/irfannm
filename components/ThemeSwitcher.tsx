@@ -1,6 +1,7 @@
-import { Switch } from '@headlessui/react'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { Switch } from '@headlessui/react'
+
 import Moon from 'components/icons/Moon'
 import Sun from 'components/icons/Sun'
 

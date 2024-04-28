@@ -1,11 +1,13 @@
-import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'
 import Router from 'next/router'
+import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
+
 import Footer from 'components/Footer'
-import Navbar from 'components/Navbar'
 import Container from 'components/layouts/Container'
+import Navbar from 'components/Navbar'
 import { useScrollRestoration } from 'lib/hooks/useScrollRestoration'
+
 import 'styles/index.css'
 import 'styles/nprogress.css'
 

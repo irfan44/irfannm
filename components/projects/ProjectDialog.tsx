@@ -1,7 +1,8 @@
-import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
+import { Dialog } from '@headlessui/react'
+
 import ExternalLink from 'components/common/base/ExternalLink'
 import type { ProjectModel } from 'lib/models/project'
 

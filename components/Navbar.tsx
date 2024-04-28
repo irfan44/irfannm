@@ -1,11 +1,12 @@
-import Link from 'next/link'
 import { useState } from 'react'
+import Link from 'next/link'
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
+
 import ContactButton from 'components/common/ContactButton'
-import ThemeSwitcher from 'components/ThemeSwitcher'
 import Container from 'components/layouts/Container'
 import Menu from 'components/navigation/ListMenu'
 import TabMenu from 'components/navigation/TabMenu'
+import ThemeSwitcher from 'components/ThemeSwitcher'
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false)

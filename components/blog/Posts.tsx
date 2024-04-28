@@ -1,4 +1,5 @@
 import { Tab } from '@headlessui/react'
+
 import PostList from 'components/blog/PostList'
 import type { PostsModel } from 'lib/models/post'
 

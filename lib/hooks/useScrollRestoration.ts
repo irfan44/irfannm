@@ -1,5 +1,5 @@
-import Router, { NextRouter } from 'next/router'
 import { useEffect } from 'react'
+import Router, { NextRouter } from 'next/router'
 
 function saveScrollPos(asPath: string) {
   sessionStorage.setItem(

@@ -1,8 +1,8 @@
 import HeroPost from 'components/blog/HeroPost'
 import Posts from 'components/blog/Posts'
-import Meta from 'components/Meta'
 import PageHeader from 'components/layouts/PageHeader'
 import Section from 'components/layouts/Section'
+import Meta from 'components/Meta'
 import { PostController } from 'lib/controllers/post'
 import type { PostsModel } from 'lib/models/post'
 

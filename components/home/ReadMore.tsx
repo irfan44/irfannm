@@ -1,6 +1,6 @@
+import { ReactNode } from 'react'
 import Link from 'next/link'
 import { HiArrowNarrowRight } from 'react-icons/hi'
-import { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
