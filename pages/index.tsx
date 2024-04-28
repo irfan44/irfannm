@@ -6,16 +6,19 @@ import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
 import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
+import { ExperienceController } from 'lib/controllers/experience'
 import { PostController } from 'lib/controllers/post'
+import type { ExperiencesModel } from 'lib/models/experience'
 import type { PostsModel } from 'lib/models/post'
 
 interface Props {
   description: string
   resumeUrl: string
+  experiences: ExperiencesModel
   posts: PostsModel
 }
 
-const Home = ({ description, resumeUrl, posts }: Props) => {
+const Home = ({ description, resumeUrl, experiences, posts }: Props) => {
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
@@ -27,7 +30,7 @@ const Home = ({ description, resumeUrl, posts }: Props) => {
       <div className="space-y-16">
         <HeroSection description={description} resumeUrl={resumeUrl} />
         <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
-          <ExperienceSummary />
+          <ExperienceSummary experiences={experiences} />
           <FeaturedProject />
         </div>
         {posts && (
@@ -45,6 +48,7 @@ const Home = ({ description, resumeUrl, posts }: Props) => {
 
 export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
+  const experiences = await ExperienceController.getExperiences()
   const posts = await PostController.getHighlightedPosts()
 
   const resumeUrlValue = constants.filter(
@@ -58,7 +62,7 @@ export const getServerSideProps = async () => {
   const description = descriptionValue[0].stringValue
 
   return {
-    props: { description, resumeUrl, posts },
+    props: { description, resumeUrl, experiences, posts },
   }
 }
 

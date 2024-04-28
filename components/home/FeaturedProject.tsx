@@ -1,5 +1,5 @@
 import Section from 'components/layouts/Section'
-import ProjectList from 'components/projects/ProjectList'
+import ProjectList from 'components/project/ProjectList'
 import projects from 'datas/projects'
 
 import ReadMore from './ReadMore'

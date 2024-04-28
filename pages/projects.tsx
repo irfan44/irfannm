@@ -2,7 +2,7 @@ import { Tab } from '@headlessui/react'
 
 import PageHeader from 'components/layouts/PageHeader'
 import Meta from 'components/Meta'
-import ProjectList from 'components/projects/ProjectList'
+import ProjectList from 'components/project/ProjectList'
 import projects from 'datas/projects'
 
 const Projects = () => {

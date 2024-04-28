@@ -2,20 +2,21 @@ export type ExperiencesModel = ExperienceModel[]
 
 export interface ExperienceModel {
   year: number
-  experience: ExperienceDetailModel[]
+  experiences: ExperienceDetailModel[]
 }
 
 export interface ExperienceDetailModel {
   title: string
   company: string
-  year: string
+  period: string
+  startingYear: string
   employmentType: EmploymentType
   responsibility: string[]
 }
 
 export type EmploymentType =
-  | 'Full-time'
-  | 'Part-time'
+  | 'Full Time'
+  | 'Part Time'
   | 'Contract'
   | 'Internship'
   | 'Freelance'
