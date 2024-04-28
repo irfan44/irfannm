@@ -19,6 +19,14 @@ const PostCard = ({
   excerpt,
   slug,
 }: Props) => {
+  const handleCategory = (category: string) => {
+    if (category === 'GenerasiGigih') {
+      return 'Generasi Gigih'
+    }
+
+    return category
+  }
+
   return (
     <Link
       className="m-0 flex flex-col h-full space-y-4 rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:rounded-xl"
@@ -27,7 +35,7 @@ const PostCard = ({
     >
       <div className="flex-1 px-4 space-y-4">
         <div className="flex space-x-2 text-sm mt-4">
-          <div className="font-bold">{category}</div>
+          <div className="font-bold">{handleCategory(category)}</div>
           <div>|</div>
           <DateTime dateString={date} />
         </div>

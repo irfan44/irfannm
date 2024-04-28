@@ -1,18 +1,22 @@
 import { Tab } from '@headlessui/react'
 import PostList from 'components/blog/PostList'
-import type { AllPostsModel } from 'lib/models/post'
+import type { PostsModel } from 'lib/models/post'
 
-const Posts = ({ allPosts }: AllPostsModel) => {
-  const everyPosts = allPosts.slice(0)
-  const techPosts = allPosts.filter((posts) => posts.category === 'Tech')
-  const generasiGIGIHPosts = allPosts.filter(
-    (posts) => posts.category === 'Generasi Gigih'
+interface Props {
+  posts: PostsModel
+}
+
+const Posts = ({ posts }: Props) => {
+  const allPosts = posts
+  const techPosts = posts.filter((posts) => posts.category === 'Tech')
+  const generasiGigihPosts = posts.filter(
+    (posts) => posts.category === 'GenerasiGigih'
   )
 
   const categoryList = [
-    { category: 'All', posts: everyPosts },
+    { category: 'All', posts: allPosts },
     { category: 'Tech', posts: techPosts },
-    { category: 'Generasi Gigih', posts: generasiGIGIHPosts },
+    { category: 'Generasi Gigih', posts: generasiGigihPosts },
   ]
 
   return (

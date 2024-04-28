@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 type Props = {
   title: string
   src: string
@@ -9,7 +7,8 @@ type Props = {
 
 const PostCoverImage = ({ title, src, width, height }: Props) => {
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={src}
       alt={`Cover Image for ${title}`}
       width={width}

@@ -11,11 +11,10 @@ export interface PostModel {
   title: string
   category: string
   date: string
-  coverImage: string
-  caption: string
-  excerpt: string
-  ogImage: {
+  coverImage: {
     url: string
   }
+  caption: string
+  excerpt: string
   content: MDXRemoteSerializeResult
 }

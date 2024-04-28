@@ -19,6 +19,14 @@ const HeroPost = ({
   excerpt,
   slug,
 }: Props) => {
+  const handleCategory = (category: string) => {
+    if (category === 'GenerasiGigih') {
+      return 'Generasi Gigih'
+    }
+
+    return category
+  }
+
   return (
     <Link
       className="flex flex-col lg:flex-row lg:items-center"
@@ -36,7 +44,7 @@ const HeroPost = ({
       <div className="lg:w-1/2 lg:px-8 mt-8 lg:mt-0 space-y-4">
         <h3 className="text-2xl lg:text-4xl font-bold">{title}</h3>
         <div className="flex space-x-2">
-          <div className="font-bold">{category}</div>
+          <div className="font-bold">{handleCategory(category)}</div>
           <div>|</div>
           <DateTime dateString={date} />
         </div>

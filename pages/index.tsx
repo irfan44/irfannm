@@ -1,16 +1,18 @@
 import PostsList from 'components/blog/PostList'
 import Meta from 'components/Meta'
-import ExperienceSummary from '../components/home/ExperienceSummary'
-import FeaturedProject from '../components/home/FeaturedProject'
+import ExperienceSummary from 'components/home/ExperienceSummary'
+import FeaturedProject from 'components/home/FeaturedProject'
 import HeroSection from 'components/home/HeroSection'
 import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
-import { PostHandler } from 'lib/handlers/Post'
-import type { AllPostsModel } from 'lib/models/post'
+import { PostController } from 'lib/controllers/post'
+import type { PostsModel } from 'lib/models/post'
 
-const Index = ({ allPosts }: AllPostsModel) => {
-  const latestPosts = allPosts.slice(0, 2)
+interface Props {
+  posts: PostsModel
+}
 
+const Index = ({ posts }: Props) => {
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
@@ -26,10 +28,10 @@ const Index = ({ allPosts }: AllPostsModel) => {
           <ExperienceSummary />
           <FeaturedProject />
         </div>
-        {latestPosts.length > 0 && (
+        {posts && (
           <>
             <Section title="Latest Posts">
-              <PostsList posts={latestPosts} />
+              <PostsList posts={posts} />
             </Section>
             <ReadMore url="blog">Read more post</ReadMore>
           </>
@@ -41,18 +43,10 @@ const Index = ({ allPosts }: AllPostsModel) => {
 
 export default Index
 
-export const getStaticProps = () => {
-  const allPosts = PostHandler.getAllPosts([
-    'title',
-    'category',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+export const getServerSideProps = async () => {
+  const posts = await PostController.getHighlightedPosts()
 
   return {
-    props: { allPosts },
+    props: { posts },
   }
 }

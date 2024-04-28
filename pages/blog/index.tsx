@@ -3,11 +3,15 @@ import Posts from 'components/blog/Posts'
 import Meta from 'components/Meta'
 import PageHeader from 'components/layouts/PageHeader'
 import Section from 'components/layouts/Section'
-import { PostHandler } from 'lib/handlers/Post'
-import type { AllPostsModel } from 'lib/models/post'
+import { PostController } from 'lib/controllers/post'
+import type { PostsModel } from 'lib/models/post'
 
-const Blog = ({ allPosts }: AllPostsModel) => {
-  const heroPost = allPosts[0]
+interface Props {
+  posts: PostsModel
+}
+
+const Blog = ({ posts }: Props) => {
+  const heroPost = posts[0]
 
   const pageMeta = {
     title: 'Blog',
@@ -33,7 +37,7 @@ const Blog = ({ allPosts }: AllPostsModel) => {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage}
+              coverImage={heroPost.coverImage.url}
               date={heroPost.date}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
@@ -42,7 +46,7 @@ const Blog = ({ allPosts }: AllPostsModel) => {
           )}
         </Section>
         <Section title="Posts">
-          <Posts allPosts={allPosts} />
+          <Posts posts={posts} />
         </Section>
       </div>
     </>
@@ -50,18 +54,10 @@ const Blog = ({ allPosts }: AllPostsModel) => {
 }
 export default Blog
 
-export const getStaticProps = () => {
-  const allPosts = PostHandler.getAllPosts([
-    'title',
-    'category',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+export const getServerSideProps = async () => {
+  const posts = await PostController.getPosts()
 
   return {
-    props: { allPosts },
+    props: { posts },
   }
 }
