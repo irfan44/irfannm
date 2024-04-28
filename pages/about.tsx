@@ -1,27 +1,69 @@
-import AboutMe from 'components/pages/about/AboutMe';
-import Resume from 'components/pages/about/Resume';
-import Experience from 'components/pages/about/Experience';
-import SocialContact from 'components/pages/about/SocialContact';
-import Meta from 'components/common/Meta';
-import PageHeader from 'components/layouts/PageHeader';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 
-const About = () => {
+import AboutMe from 'components/about/AboutMe'
+import Experience from 'components/about/Experience'
+import Resume from 'components/about/Resume'
+import SocialContact from 'components/about/SocialContact'
+import PageHeader from 'components/layouts/PageHeader'
+import Meta from 'components/Meta'
+import { ConstantController } from 'lib/controllers/constant'
+import type { ConstantModel } from 'lib/models/constant'
+
+interface Props {
+  aboutMeSource: MDXRemoteSerializeResult
+  resumeUrl: ConstantModel
+}
+
+const About = ({ aboutMeSource, resumeUrl }: Props) => {
   const pageMeta = {
     title: 'About',
-    description: 'About Irfan Nurghiffari Muhajir',
-    ogImage: '/assets/images/irfan.jpeg',
-  };
+    description: 'About me',
+    currentPath: '/about',
+  }
+
+  const pageHeader = {
+    title: 'About',
+  }
+
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta
+        title={pageMeta.title}
+        description={pageMeta.description}
+        currentPath={pageMeta.currentPath}
+      />
       <div className="space-y-12 max-w-3xl mx-auto">
-        <PageHeader pageTitle="About" />
-        <AboutMe />
+        <PageHeader title={pageHeader.title} />
+        <AboutMe aboutMeSource={aboutMeSource} />
         <Experience />
-        <Resume />
+        <Resume
+          resumeUrl={resumeUrl.stringValue}
+          updatedAt={resumeUrl.updatedAt}
+        />
         <SocialContact />
       </div>
     </>
-  );
-};
-export default About;
+  )
+}
+
+export const getServerSideProps = async () => {
+  const constants = await ConstantController.getConstants()
+
+  const aboutMeValue = constants.filter(
+    (constant) => constant.slug === 'about-me'
+  )
+  const aboutMe = aboutMeValue[0].markdownValue
+  const aboutMeSource = await serialize(aboutMe)
+
+  const resumeUrlValue = constants.filter(
+    (constant) => constant.slug === 'resume-url'
+  )
+  const resumeUrl = resumeUrlValue[0]
+
+  return {
+    props: { aboutMeSource, resumeUrl },
+  }
+}
+
+export default About

@@ -1,19 +1,19 @@
-import Text from 'lib/ui/Text';
+import Title from 'components/common/base/Title'
 
 type Props = {
-  pageTitle: string;
-  pageDescription?: string;
-};
+  title: string
+  description?: string
+}
 
-const PageHeader = ({ pageTitle, pageDescription = '' }: Props) => {
+const PageHeader = ({ title, description }: Props) => {
   return (
     <div>
-      <Text type="pageTitle" className="mb-6">
-        {pageTitle}
-      </Text>
-      {pageDescription.length !== 0 && <p>{pageDescription}</p>}
+      <Title type="pageTitle" className="mb-6">
+        {title}
+      </Title>
+      {description && <p>{description}</p>}
     </div>
-  );
-};
+  )
+}
 
-export default PageHeader;
+export default PageHeader

@@ -1,17 +1,19 @@
-import SectionTitle from 'components/layouts/SectionTitle';
+import Title from 'components/common/base/Title'
 
 type Props = {
-  title: string;
-  children: React.ReactNode;
-};
+  title: string
+  children: React.ReactNode
+}
 
 const Section = ({ title, children }: Props) => {
   return (
     <section>
-      <SectionTitle title={title} />
+      <Title type="sectionTitle" className="mb-6">
+        {title}
+      </Title>
       {children}
     </section>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

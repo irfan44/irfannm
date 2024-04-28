@@ -1,5 +1,5 @@
-import socials from 'data/socials';
-import ExternalLink from 'lib/ui/ExternalLink';
+import ExternalLink from 'components/common/base/ExternalLink'
+import socials from 'datas/socials'
 
 const SocialMedia = () => {
   return (
@@ -13,10 +13,10 @@ const SocialMedia = () => {
               </span>
             </ExternalLink>
           </li>
-        );
+        )
       })}
     </ul>
-  );
-};
+  )
+}
 
-export default SocialMedia;
+export default SocialMedia

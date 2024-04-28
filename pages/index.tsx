@@ -1,58 +1,65 @@
-import PostsList from 'components/pages/blog/PostList';
-import Meta from 'components/common/Meta';
-import HeroSection from 'components/pages/home/HeroSection';
-import ReadMore from 'components/pages/home/ReadMore';
-import Section from 'components/layouts/Section';
-import { getAllPosts } from 'lib/postsHandler';
-import AllPosts from 'types/allPosts';
-import ExperienceSummary from '../components/pages/home/ExperienceSummary';
-import FeaturedProject from '../components/pages/home/FeaturedProject';
+import PostsList from 'components/blog/PostList'
+import ExperienceSummary from 'components/home/ExperienceSummary'
+import FeaturedProject from 'components/home/FeaturedProject'
+import HeroSection from 'components/home/HeroSection'
+import ReadMore from 'components/home/ReadMore'
+import Section from 'components/layouts/Section'
+import Meta from 'components/Meta'
+import { ConstantController } from 'lib/controllers/constant'
+import { PostController } from 'lib/controllers/post'
+import type { PostsModel } from 'lib/models/post'
 
-const Index = ({ allPosts }: AllPosts) => {
-  const latestPosts = allPosts.slice(0, 2);
+interface Props {
+  description: string
+  resumeUrl: string
+  posts: PostsModel
+}
 
+const Home = ({ description, resumeUrl, posts }: Props) => {
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
-    ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta title={pageMeta.title} description={pageMeta.description} />
       <div className="space-y-16">
-        <HeroSection />
+        <HeroSection description={description} resumeUrl={resumeUrl} />
         <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
           <ExperienceSummary />
           <FeaturedProject />
         </div>
-        {latestPosts.length > 0 && (
+        {posts && (
           <>
             <Section title="Latest Posts">
-              <PostsList posts={latestPosts} />
+              <PostsList posts={posts} />
             </Section>
-            <ReadMore url="blog">Read more post</ReadMore>
+            <ReadMore url="/blog">Read more post</ReadMore>
           </>
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export const getServerSideProps = async () => {
+  const constants = await ConstantController.getConstants()
+  const posts = await PostController.getHighlightedPosts()
 
-export const getStaticProps = () => {
-  const allPosts = getAllPosts([
-    'title',
-    'category',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ]);
+  const resumeUrlValue = constants.filter(
+    (constant) => constant.slug === 'resume-url'
+  )
+  const resumeUrl = resumeUrlValue[0].stringValue
+
+  const descriptionValue = constants.filter(
+    (constant) => constant.slug === 'description'
+  )
+  const description = descriptionValue[0].stringValue
 
   return {
-    props: { allPosts },
-  };
-};
+    props: { description, resumeUrl, posts },
+  }
+}
+
+export default Home
