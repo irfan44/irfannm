@@ -16,7 +16,7 @@ const Blog = ({ posts }: Props) => {
   const pageMeta = {
     title: 'Blog',
     description: "Irfan Nurghiffari Muhajir's posts",
-    ogImage: '/assets/images/irfan.jpeg',
+    currentPath: '/blog',
   }
 
   const pageHeader = {
@@ -27,7 +27,11 @@ const Blog = ({ posts }: Props) => {
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta
+        title={pageMeta.title}
+        description={pageMeta.description}
+        currentPath={pageMeta.currentPath}
+      />
       <div className="space-y-12">
         <PageHeader
           title={pageHeader.title}

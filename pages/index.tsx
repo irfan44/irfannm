@@ -19,12 +19,11 @@ const Home = ({ description, resumeUrl, posts }: Props) => {
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
-    ogImage: '/assets/images/irfan.jpeg',
   }
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta title={pageMeta.title} description={pageMeta.description} />
       <div className="space-y-16">
         <HeroSection description={description} resumeUrl={resumeUrl} />
         <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">

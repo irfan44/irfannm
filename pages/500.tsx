@@ -6,12 +6,11 @@ const PageServerError = () => {
   const pageMeta = {
     title: 'Internal Server Error',
     description: 'Internal Server Error',
-    ogImage: '/assets/images/irfan.jpeg',
   }
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta title={pageMeta.title} description={pageMeta.description} />
       <div className="flex flex-col justify-center py-16 text-center space-y-2">
         <h1>500</h1>
         <p>Internal Server Error</p>

@@ -18,8 +18,8 @@ interface Props {
 const About = ({ aboutMeSource, resumeUrl }: Props) => {
   const pageMeta = {
     title: 'About',
-    description: 'About Irfan Nurghiffari Muhajir',
-    ogImage: '/assets/images/irfan.jpeg',
+    description: 'About me',
+    currentPath: '/about',
   }
 
   const pageHeader = {
@@ -28,7 +28,11 @@ const About = ({ aboutMeSource, resumeUrl }: Props) => {
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta
+        title={pageMeta.title}
+        description={pageMeta.description}
+        currentPath={pageMeta.currentPath}
+      />
       <div className="space-y-12 max-w-3xl mx-auto">
         <PageHeader title={pageHeader.title} />
         <AboutMe aboutMeSource={aboutMeSource} />

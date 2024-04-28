@@ -9,7 +9,7 @@ const Projects = () => {
   const pageMeta = {
     title: 'Projects',
     description: "Irfan Nurghiffari Muhajir's projects",
-    ogImage: '/assets/images/irfan.jpeg',
+    currentPath: '/about',
   }
 
   const pageHeader = {
@@ -22,7 +22,11 @@ const Projects = () => {
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta
+        title={pageMeta.title}
+        description={pageMeta.description}
+        currentPath={pageMeta.currentPath}
+      />
       <PageHeader
         title={pageHeader.title}
         description={pageHeader.description}

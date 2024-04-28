@@ -10,18 +10,25 @@ import type { PostModel } from 'lib/models/post'
 
 type Props = {
   post: PostModel
+  slug: string
 }
 
-const Post = ({ post }: Props) => {
+const Post = ({ post, slug }: Props) => {
   const pageMeta = {
     title: post.title,
     description: post.excerpt,
     ogImage: post.coverImage.url,
+    currentPath: `/blog/${slug}`,
   }
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta
+        title={pageMeta.title}
+        description={pageMeta.description}
+        ogImage={pageMeta.ogImage}
+        currentPath={pageMeta.currentPath}
+      />
       <div className="max-w-3xl mx-auto">
         <PostBreadcrumb />
         <PostBody>
@@ -58,6 +65,7 @@ export async function getServerSideProps({ params }: Params) {
         ...post,
         content,
       },
+      slug,
     },
   }
 }

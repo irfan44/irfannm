@@ -6,12 +6,11 @@ const PageNotFound = () => {
   const pageMeta = {
     title: 'Not Found',
     description: 'Page not found',
-    ogImage: '/assets/images/irfan.jpeg',
   }
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta title={pageMeta.title} description={pageMeta.description} />
       <div className="flex flex-col justify-center py-16 text-center space-y-2">
         <h1>404</h1>
         <p>Page not found</p>
