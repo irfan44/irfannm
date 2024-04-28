@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
 import { Dialog } from '@headlessui/react'
@@ -65,7 +64,7 @@ const ProjectDialog = ({ isOpen, handleOnClose, project }: Props) => {
                   )
                 : project.image && (
                     <div className="py-2 flex justify-center">
-                      <Image
+                      <img
                         className="rounded-xl"
                         src={project.image}
                         alt={project.name}

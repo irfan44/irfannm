@@ -24,7 +24,6 @@ const HeroSection = ({ description, resumeUrl }: Props) => {
         </div>
       </div>
       <div className="md:w-1/2 justify-center flex">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/images/Person.svg"
           alt="Hero"

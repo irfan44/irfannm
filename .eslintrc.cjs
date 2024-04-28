@@ -8,6 +8,7 @@ module.exports = {
     {
       files: ['**/*.js', '**/*.ts', '**/*.tsx'],
       rules: {
+        '@next/next/no-img-element': 'off',
         'simple-import-sort/imports': [
           'error',
           {

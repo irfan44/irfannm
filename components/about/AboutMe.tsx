@@ -8,7 +8,6 @@ const AboutMe = ({ aboutMeSource }: Props) => {
   return (
     <>
       <div className="flex justify-center mb-12">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="rounded-full"
           alt="Irfan Nurghiffari Muhajir"

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import Meta from 'components/Meta'
@@ -20,7 +19,7 @@ const PageServerError = () => {
           <Link href="/">Return to Home</Link>
         </div>
         <div className="flex justify-center">
-          <Image
+          <img
             src="/assets/images/Sad.svg"
             alt="Hero"
             width="320"
