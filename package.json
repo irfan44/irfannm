@@ -3,9 +3,16 @@
   "version": "1.1.4",
   "author": {
     "name": "Irfan Nurghiffari Muhajir",
-    "email": "irfannmuhajir@gmail.com"
+    "email": "irfannmuhajir@gmail.com",
+    "url": "https://irfannm.dev"
   },
+  "homepage": "https://irfannm.dev",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/irfan44/irfannm"
+  },
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
