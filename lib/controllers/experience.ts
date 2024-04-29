@@ -1,6 +1,5 @@
-import { ExperienceService } from '../api/services/experience'
-import { ExperiencesModel } from '../models/experience'
-// import { ExperienceModel } from '../models/experience'
+import { ExperienceService } from 'lib/api/services/experience'
+import type { ExperiencesModel } from 'lib/models/experience'
 
 export class ExperienceController {
   static async getExperiences(): Promise<ExperiencesModel> {
