@@ -1,17 +1,16 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Meta from 'components/common/Meta';
+import Link from 'next/link'
+
+import Meta from 'components/Meta'
 
 const PageServerError = () => {
   const pageMeta = {
     title: 'Internal Server Error',
     description: 'Internal Server Error',
-    ogImage: '/assets/images/irfan.jpeg',
-  };
+  }
 
   return (
     <>
-      <Meta data={pageMeta} />
+      <Meta title={pageMeta.title} description={pageMeta.description} />
       <div className="flex flex-col justify-center py-16 text-center space-y-2">
         <h1>500</h1>
         <p>Internal Server Error</p>
@@ -19,7 +18,7 @@ const PageServerError = () => {
           <Link href="/">Return to Home</Link>
         </div>
         <div className="flex justify-center">
-          <Image
+          <img
             src="/assets/images/Sad.svg"
             alt="Hero"
             width="320"
@@ -28,7 +27,7 @@ const PageServerError = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PageServerError;
+export default PageServerError

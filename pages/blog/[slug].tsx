@@ -1,124 +1,71 @@
-import { MDXRemote } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import ErrorPage from 'next/error';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { RiArrowRightSLine } from 'react-icons/ri';
-import Meta from 'components/common/Meta';
-import PostBody from 'components/pages/post/PostBody';
-import PostHeader from 'components/pages/post/PostHeader';
-import PostTitle from 'components/pages/post/PostTitle';
-import { getPostBySlug, getAllPosts } from 'lib/postsHandler';
-import PostType from 'types/post';
-import { NextSeo } from 'next-seo';
-import { BASE_URL, SITE_NAME } from 'data/constants';
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+
+import Meta from 'components/Meta'
+import PostBody from 'components/post/PostBody'
+import PostBreadcrumb from 'components/post/PostBreadcrumb'
+import PostHeader from 'components/post/PostHeader'
+import { PostController } from 'lib/controllers/post'
+import type { PostModel } from 'lib/models/post'
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
-};
+  post: PostModel
+  slug: string
+}
 
-const Post = ({ post }: Props) => {
-  const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-
+const Post = ({ post, slug }: Props) => {
   const pageMeta = {
     title: post.title,
     description: post.excerpt,
-    ogImage: post.ogImage.url,
-  };
+    ogImage: post.coverImage.url,
+    currentPath: `/blog/${slug}`,
+  }
+
   return (
     <>
-      {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
-      ) : (
-        <>
-          <NextSeo
+      <Meta
+        title={pageMeta.title}
+        description={pageMeta.description}
+        ogImage={pageMeta.ogImage}
+        currentPath={pageMeta.currentPath}
+      />
+      <div className="max-w-3xl mx-auto">
+        <PostBreadcrumb />
+        <PostBody>
+          <PostHeader
             title={post.title}
-            description={post.excerpt}
-            canonical={`${BASE_URL}/${post.slug}`}
-            openGraph={{
-              type: 'article',
-              article: {
-                publishedTime: '2022-06-21T23:04:13Z',
-                modifiedTime: '2022-01-21T18:04:43Z',
-                authors: ['Irfan Nurghiffari Muhajir'],
-                tags: [`${post.category}`],
-              },
-              url: `${BASE_URL}/${post.slug}`,
-              site_name: `${SITE_NAME}`,
-            }}
+            category={post.category}
+            coverImage={post.coverImage.url}
+            date={post.date}
+            caption={post.caption}
           />
-          <Meta data={pageMeta} />
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center mb-2 w-fit hover:cursor-pointer text-neutral-900 dark:text-gray-200">
-              <Link href="/">Home</Link>
-              <RiArrowRightSLine className="text-2xl" />
-              <Link href="/blog">Blog</Link>
-            </div>
-            <article className="mb-32 text-neutral-800 prose md:prose-lg max-w-none dark:prose-invert dark:text-gray-200">
-              <PostBody>
-                <PostHeader
-                  title={post.title}
-                  category={post.category}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                  caption={post.caption}
-                />
-                <MDXRemote {...post.content} />
-              </PostBody>
-            </article>
-          </div>
-        </>
-      )}
+          <MDXRemote {...post.content} />
+        </PostBody>
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post
 
-type Params = {
+interface Params {
   params: {
-    slug: string;
-  };
-};
+    slug: string
+  }
+}
 
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'category',
-    'date',
-    'slug',
-    'content',
-    'ogImage',
-    'caption',
-    'coverImage',
-  ]);
+export async function getServerSideProps({ params }: Params) {
+  const slug = params.slug
+  const post = await PostController.getPost(slug)
+  const content = await serialize(post.content)
 
-  const content = await serialize(post.content);
   return {
     props: {
       post: {
         ...post,
         content,
       },
+      slug,
     },
-  };
-}
-
-export function getStaticPaths() {
-  const posts = getAllPosts(['slug']);
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
+  }
 }

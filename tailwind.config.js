@@ -1,4 +1,4 @@
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./components/**/*.tsx', './pages/**/*.tsx'],
@@ -53,7 +53,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-};
+  plugins: [require('@tailwindcss/typography')],
+}

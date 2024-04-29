@@ -1,23 +1,23 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 const transition = {
   type: 'spring',
   stiffness: 200,
   damping: 10,
-};
+}
 
 const Sun = () => {
-  const whileTap = { scale: 0.95, rotate: 15 };
+  const whileTap = { scale: 0.95, rotate: 15 }
 
   const raysVariants = {
     initial: { rotate: 45 },
     animate: { rotate: 0, transition },
-  };
+  }
 
   const coreVariants = {
     initial: { scale: 1.5 },
     animate: { scale: 1, transition },
-  };
+  }
 
   return (
     <motion.svg
@@ -69,7 +69,7 @@ const Sun = () => {
         <circle cx="12" cy="1.71143" r="1.71143" fill="#FFCE31" />
       </motion.g>
     </motion.svg>
-  );
-};
+  )
+}
 
-export default Sun;
+export default Sun
