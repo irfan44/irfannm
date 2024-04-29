@@ -8,14 +8,17 @@ import SocialContact from 'components/about/SocialContact'
 import PageHeader from 'components/layouts/PageHeader'
 import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
+import { ExperienceController } from 'lib/controllers/experience'
 import type { ConstantModel } from 'lib/models/constant'
+import type { ExperiencesModel } from 'lib/models/experience'
 
 interface Props {
   aboutMeSource: MDXRemoteSerializeResult
   resumeUrl: ConstantModel
+  experiences: ExperiencesModel
 }
 
-const About = ({ aboutMeSource, resumeUrl }: Props) => {
+const About = ({ aboutMeSource, resumeUrl, experiences }: Props) => {
   const pageMeta = {
     title: 'About',
     description: 'About me',
@@ -36,7 +39,7 @@ const About = ({ aboutMeSource, resumeUrl }: Props) => {
       <div className="space-y-12 max-w-3xl mx-auto">
         <PageHeader title={pageHeader.title} />
         <AboutMe aboutMeSource={aboutMeSource} />
-        <Experience />
+        <Experience experiences={experiences} />
         <Resume
           resumeUrl={resumeUrl.stringValue}
           updatedAt={resumeUrl.updatedAt}
@@ -49,6 +52,7 @@ const About = ({ aboutMeSource, resumeUrl }: Props) => {
 
 export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
+  const experiences = await ExperienceController.getExperiences()
 
   const aboutMeValue = constants.filter(
     (constant) => constant.slug === 'about-me'
@@ -62,7 +66,7 @@ export const getServerSideProps = async () => {
   const resumeUrl = resumeUrlValue[0]
 
   return {
-    props: { aboutMeSource, resumeUrl },
+    props: { aboutMeSource, resumeUrl, experiences },
   }
 }
 

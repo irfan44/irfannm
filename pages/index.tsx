@@ -6,16 +6,28 @@ import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
 import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
+import { ExperienceController } from 'lib/controllers/experience'
 import { PostController } from 'lib/controllers/post'
+import { ProjectController } from 'lib/controllers/project'
+import type { ExperiencesModel } from 'lib/models/experience'
 import type { PostsModel } from 'lib/models/post'
+import type { ProjectsModel } from 'lib/models/project'
 
 interface Props {
   description: string
   resumeUrl: string
-  posts: PostsModel
+  experiences: ExperiencesModel
+  featuredProjects: ProjectsModel
+  highlightedPosts: PostsModel
 }
 
-const Home = ({ description, resumeUrl, posts }: Props) => {
+const Home = ({
+  description,
+  resumeUrl,
+  experiences,
+  featuredProjects,
+  highlightedPosts,
+}: Props) => {
   const pageMeta = {
     title: "Hi, I'm Irfan!",
     description: "Irfan Nurghiffari Muhajir's personal website",
@@ -27,13 +39,13 @@ const Home = ({ description, resumeUrl, posts }: Props) => {
       <div className="space-y-16">
         <HeroSection description={description} resumeUrl={resumeUrl} />
         <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
-          <ExperienceSummary />
-          <FeaturedProject />
+          <ExperienceSummary experiences={experiences} />
+          <FeaturedProject featuredProjects={featuredProjects} />
         </div>
-        {posts && (
+        {highlightedPosts && (
           <>
             <Section title="Latest Posts">
-              <PostsList posts={posts} />
+              <PostsList posts={highlightedPosts} />
             </Section>
             <ReadMore url="/blog">Read more post</ReadMore>
           </>
@@ -45,7 +57,9 @@ const Home = ({ description, resumeUrl, posts }: Props) => {
 
 export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
-  const posts = await PostController.getHighlightedPosts()
+  const experiences = await ExperienceController.getExperiences()
+  const featuredProjects = await ProjectController.getFeaturedProjects()
+  const highlightedPosts = await PostController.getHighlightedPosts()
 
   const resumeUrlValue = constants.filter(
     (constant) => constant.slug === 'resume-url'
@@ -58,7 +72,13 @@ export const getServerSideProps = async () => {
   const description = descriptionValue[0].stringValue
 
   return {
-    props: { description, resumeUrl, posts },
+    props: {
+      description,
+      resumeUrl,
+      experiences,
+      featuredProjects,
+      highlightedPosts,
+    },
   }
 }
 

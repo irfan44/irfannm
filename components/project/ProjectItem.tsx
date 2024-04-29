@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import ProjectCard from 'components/projects/ProjectCard'
-import ProjectDialog from 'components/projects/ProjectDialog'
+import ProjectCard from 'components/project/ProjectCard'
+import ProjectDialog from 'components/project/ProjectDialog'
 import type { ProjectModel } from 'lib/models/project'
 
 interface Props {

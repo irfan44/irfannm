@@ -1,4 +1,4 @@
-import ProjectItem from 'components/projects/ProjectItem'
+import ProjectItem from 'components/project/ProjectItem'
 import type { ProjectsModel } from 'lib/models/project'
 
 type Props = {

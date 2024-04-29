@@ -1,4 +1,4 @@
-import { ConstantsModel } from 'lib/models/constant'
+import type { ConstantsModel } from 'lib/models/constant'
 
 export interface ConstantsResponse {
   constants: ConstantsModel

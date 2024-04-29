@@ -11,7 +11,9 @@ export interface ProjectModel {
   sourceCode?: string
   url?: string
   responsibility?: string[]
-  image?: string
+  image?: {
+    url: string
+  }
   overview?: string
   date?: string
   role?: string
