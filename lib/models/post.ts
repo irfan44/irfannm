@@ -12,7 +12,7 @@ export interface PostModel {
   category: string
   date: string
   coverImage: {
-    url: string
+    secure_url: string
   }
   caption: string
   excerpt: string
