@@ -57,7 +57,7 @@ const Blog = ({ posts }: Props) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const posts = await PostController.getPosts()
 
   return {
