@@ -7,7 +7,7 @@ export class PostService {
     const response = await contentClient.query<PostsResponse>({
       query: GET_POSTS,
       variables: {
-        orderBy: 'publishedAt_DESC',
+        orderBy: 'date_DESC',
       },
     })
     return response.data
@@ -27,7 +27,7 @@ export class PostService {
     const response = await contentClient.query<PostsResponse>({
       query: GET_POSTS,
       variables: {
-        orderBy: 'publishedAt_DESC',
+        orderBy: 'date_DESC',
         first: 2,
       },
     })
