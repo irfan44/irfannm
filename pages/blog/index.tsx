@@ -41,7 +41,7 @@ const Blog = ({ posts }: Props) => {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage.url}
+              coverImage={heroPost.coverImage.secure_url}
               date={heroPost.date}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
@@ -57,7 +57,7 @@ const Blog = ({ posts }: Props) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const posts = await PostController.getPosts()
 
   return {

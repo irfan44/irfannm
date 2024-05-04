@@ -13,7 +13,7 @@ const PostList = ({ posts }: Props) => {
           key={post.slug}
           title={post.title}
           category={post.category}
-          coverImage={post.coverImage.url}
+          coverImage={post.coverImage.secure_url}
           date={post.date}
           slug={post.slug}
           excerpt={post.excerpt}

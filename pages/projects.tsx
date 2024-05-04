@@ -74,7 +74,7 @@ const Projects = ({ workProjects, personalProjects }: Props) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const projects = await ProjectController.getProjects()
   const workProjects = projects.filter((value) => value.type === 'Work')
   const personalProjects = projects.filter((value) => value.type === 'Personal')
