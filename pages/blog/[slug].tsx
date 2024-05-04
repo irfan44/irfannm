@@ -17,7 +17,7 @@ const Post = ({ post, slug }: Props) => {
   const pageMeta = {
     title: post.title,
     description: post.excerpt,
-    ogImage: post.coverImage.url,
+    ogImage: post.coverImage.secure_url,
     currentPath: `/blog/${slug}`,
   }
 
@@ -35,7 +35,7 @@ const Post = ({ post, slug }: Props) => {
           <PostHeader
             title={post.title}
             category={post.category}
-            coverImage={post.coverImage.url}
+            coverImage={post.coverImage.secure_url}
             date={post.date}
             caption={post.caption}
           />
@@ -46,15 +46,28 @@ const Post = ({ post, slug }: Props) => {
   )
 }
 
-export default Post
-
 interface Params {
   params: {
     slug: string
   }
 }
 
-export async function getServerSideProps({ params }: Params) {
+export const getStaticPaths = async () => {
+  const posts = await PostController.getPosts()
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      }
+    }),
+    fallback: false,
+  }
+}
+
+export async function getStaticProps({ params }: Params) {
   const slug = params.slug
   const post = await PostController.getPost(slug)
   const content = await serialize(post.content)
@@ -69,3 +82,5 @@ export async function getServerSideProps({ params }: Params) {
     },
   }
 }
+
+export default Post

@@ -12,7 +12,7 @@ export interface ProjectModel {
   url?: string
   responsibility?: string[]
   image?: {
-    url: string
+    secure_url: string
   }
   overview?: string
   date?: string

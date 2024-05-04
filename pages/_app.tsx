@@ -2,6 +2,7 @@ import { AppProps } from 'next/app'
 import Router from 'next/router'
 import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import Footer from 'components/Footer'
 import Container from 'components/layouts/Container'
@@ -30,6 +31,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         </main>
         <Footer />
       </ThemeProvider>
+      <SpeedInsights />
     </>
   )
 }
