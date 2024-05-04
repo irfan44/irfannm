@@ -6,12 +6,10 @@ import socials from 'datas/socials'
 const SocialContact = () => {
   return (
     <div>
-      <div className="mb-6">
-        <h2>Contact</h2>
-      </div>
+      <h2 className="mb-6">Contact</h2>
       <p className="mb-2">
         Here are several of my socials for you to look at. Feel free to follow
-        and check out for my things i do :
+        and check out for things i do :
       </p>
       <ul className="list-disc ml-4 space-y-1">
         {socials.map((social) => {
