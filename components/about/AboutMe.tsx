@@ -1,17 +1,18 @@
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 interface Props {
+  aboutImage: string
   aboutMeSource: MDXRemoteSerializeResult
 }
 
-const AboutMe = ({ aboutMeSource }: Props) => {
+const AboutMe = ({ aboutImage, aboutMeSource }: Props) => {
   return (
     <>
       <div className="flex justify-center mb-12">
         <img
           className="rounded-full"
           alt="Irfan Nurghiffari Muhajir"
-          src="/assets/images/irfan.jpeg"
+          src={aboutImage}
           width="224"
           height="224"
         />

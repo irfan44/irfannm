@@ -13,12 +13,18 @@ import type { ConstantModel } from 'lib/models/constant'
 import type { ExperiencesModel } from 'lib/models/experience'
 
 interface Props {
+  aboutImage: string
   aboutMeSource: MDXRemoteSerializeResult
   resumeUrl: ConstantModel
   experiences: ExperiencesModel
 }
 
-const About = ({ aboutMeSource, resumeUrl, experiences }: Props) => {
+const About = ({
+  aboutImage,
+  aboutMeSource,
+  resumeUrl,
+  experiences,
+}: Props) => {
   const pageMeta = {
     title: 'About',
     description: 'About me',
@@ -38,7 +44,7 @@ const About = ({ aboutMeSource, resumeUrl, experiences }: Props) => {
       />
       <div className="space-y-12 max-w-3xl mx-auto">
         <PageHeader title={pageHeader.title} />
-        <AboutMe aboutMeSource={aboutMeSource} />
+        <AboutMe aboutImage={aboutImage} aboutMeSource={aboutMeSource} />
         <Experience experiences={experiences} />
         <Resume
           resumeUrl={resumeUrl.stringValue}
@@ -54,6 +60,11 @@ export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
   const experiences = await ExperienceController.getExperiences()
 
+  const aboutImageValue = constants.filter(
+    (constant) => constant.slug === 'about-image'
+  )
+  const aboutImage = aboutImageValue[0].stringValue
+
   const aboutMeValue = constants.filter(
     (constant) => constant.slug === 'about-me'
   )
@@ -66,7 +77,7 @@ export const getServerSideProps = async () => {
   const resumeUrl = resumeUrlValue[0]
 
   return {
-    props: { aboutMeSource, resumeUrl, experiences },
+    props: { aboutImage, aboutMeSource, resumeUrl, experiences },
   }
 }
 
