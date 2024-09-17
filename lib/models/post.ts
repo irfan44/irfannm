@@ -10,6 +10,7 @@ export interface PostModel {
   slug: string
   title: string
   category: string
+  blogCategory: BlogCategoryModel
   date: string
   coverImage: {
     secure_url: string
@@ -17,4 +18,11 @@ export interface PostModel {
   caption: string
   excerpt: string
   content: MDXRemoteSerializeResult
+}
+
+export type BlogCategoriesModel = BlogCategoryModel[]
+
+export interface BlogCategoryModel {
+  name: string
+  slug: string
 }

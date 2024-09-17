@@ -1,5 +1,9 @@
 import { PostService } from 'lib/api/services/post'
-import type { PostModel, PostsModel } from 'lib/models/post'
+import type {
+  BlogCategoriesModel,
+  PostModel,
+  PostsModel,
+} from 'lib/models/post'
 
 export class PostController {
   static async getPosts(): Promise<PostsModel> {
@@ -22,5 +26,10 @@ export class PostController {
   static async getHighlightedPosts(): Promise<PostsModel> {
     const response = await PostService.getHighlightedPosts()
     return response.posts
+  }
+
+  static async getBlogCategories(): Promise<BlogCategoriesModel> {
+    const response = await PostService.getBlogCategories()
+    return response.blogCategories
   }
 }
