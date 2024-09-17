@@ -47,7 +47,7 @@ const Home = ({
             <Section title="Latest Posts">
               <PostsList posts={highlightedPosts} />
             </Section>
-            <ReadMore url="/blog">Read more post</ReadMore>
+            <ReadMore url="/blog">Read more posts</ReadMore>
           </>
         )}
       </div>
