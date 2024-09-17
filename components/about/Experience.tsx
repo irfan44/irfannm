@@ -21,9 +21,9 @@ const Experience = ({ experiences }: Props) => {
                     return (
                       <div key={work.startingDate}>
                         <h4>{work.title}</h4>
-                        <div className="flex space-x-1">
-                          <span className="font-bold">{work.company},</span>
-                          <span>{work.employmentType}</span>
+                        <div>
+                          <strong>{work.company}</strong>
+                          <span>, {work.employmentType}</span>
                         </div>
                         <div className="flex space-x-1">
                           <span>{convertDate(work.startingDate)}</span>
