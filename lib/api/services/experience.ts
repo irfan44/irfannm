@@ -9,6 +9,7 @@ export class ExperienceService {
       variables: {
         orderBy: 'startingDate_DESC',
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }

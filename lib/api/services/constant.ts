@@ -9,6 +9,7 @@ export class ConstantService {
   static async getConstants(): Promise<ConstantsResponse> {
     const response = await contentClient.query<ConstantsResponse>({
       query: GET_CONSTANTS,
+      fetchPolicy: 'network-only',
     })
     return response.data
   }
@@ -19,6 +20,7 @@ export class ConstantService {
       variables: {
         slug,
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }

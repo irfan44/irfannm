@@ -13,6 +13,7 @@ export class PostService {
       variables: {
         orderBy: 'date_DESC',
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }
@@ -23,6 +24,7 @@ export class PostService {
       variables: {
         slug,
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }
@@ -33,6 +35,7 @@ export class PostService {
       variables: {
         legacySlug,
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }
@@ -44,6 +47,7 @@ export class PostService {
         orderBy: 'date_DESC',
         first: 2,
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }

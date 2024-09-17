@@ -9,6 +9,10 @@ export class ProjectService {
   static async getProjects(): Promise<ProjectsResponse> {
     const response = await contentClient.query<ProjectsResponse>({
       query: GET_PROJECTS,
+      variables: {
+        orderBy: 'startingDate_DESC',
+      },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }
@@ -18,7 +22,9 @@ export class ProjectService {
       query: GET_FEATURED_PROJECTS,
       variables: {
         isFeatured: true,
+        orderBy: 'startingDate_DESC',
       },
+      fetchPolicy: 'network-only',
     })
     return response.data
   }
