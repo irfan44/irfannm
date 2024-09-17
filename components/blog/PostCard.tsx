@@ -30,7 +30,7 @@ const PostCard = ({
 
   return (
     <Link
-      className="m-0 flex flex-col h-full space-y-4 rounded-2xl bg-white border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:rounded-xl"
+      className="m-0 flex flex-col h-full space-y-4 rounded-2xl border border-neutral-200 bg-secondary dark:bg-neutral-800 dark:border-neutral-700 hover:rounded-xl"
       href={`/blog/${slug}`}
       passHref
     >

@@ -30,7 +30,7 @@ const ThemeSwitcher = () => {
       className={`${
         currentTheme === 'dark'
           ? 'bg-neutral-800 border-neutral-700'
-          : 'bg-neutral-100 border-neutral-200'
+          : 'bg-secondary border-neutral-200'
       } relative inline-flex h-8 w-16 items-center rounded-full border`}
     >
       <span className="sr-only">Enable notifications</span>

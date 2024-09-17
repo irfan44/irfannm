@@ -12,6 +12,8 @@ module.exports = {
         light: '#f5f5f5',
         dark: '#161616',
         accent: '#0f4c81',
+        black: '#1c1d1f',
+        secondary: '#eeeeef',
       },
       typography: (theme) => ({
         DEFAULT: {

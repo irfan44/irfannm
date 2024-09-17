@@ -10,7 +10,7 @@ const TabMenu = () => {
   const { pathname } = useRouter()
 
   return (
-    <div className="h-9 text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full px-1 flex items-center">
+    <div className="h-9 text-sm border border-neutral-200 bg-secondary dark:bg-neutral-800 dark:border-neutral-700 rounded-full px-1 flex items-center">
       <Tab.Group>
         <Tab.List className="space-x-1">
           {navMenu.map(({ name, link }) => {
