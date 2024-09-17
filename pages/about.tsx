@@ -50,7 +50,7 @@ const About = ({ aboutMeSource, resumeUrl, experiences }: Props) => {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
   const experiences = await ExperienceController.getExperiences()
 
