@@ -13,6 +13,12 @@ export class PostController {
     return post
   }
 
+  static async getLegacyPost(legacySlug: string): Promise<PostModel> {
+    const response = await PostService.getLegacyPost(legacySlug)
+    const post = response.posts[0]
+    return post
+  }
+
   static async getHighlightedPosts(): Promise<PostsModel> {
     const response = await PostService.getHighlightedPosts()
     return response.posts
