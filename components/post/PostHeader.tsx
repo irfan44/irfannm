@@ -15,18 +15,18 @@ const PostHeader = ({ title, category, coverImage, date, caption }: Props) => {
     <>
       <Title
         type="pageTitle"
-        className="lg:text-5xl md:text-5xl text-4xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-center md:text-left"
+        className="mb-4 text-center text-4xl font-bold leading-tight tracking-tighter md:text-left md:text-5xl md:leading-none lg:text-5xl"
       >
         {title}
       </Title>
-      <div className="flex items-center mb-8 justify-center md:justify-start">
+      <div className="mb-8 flex items-center justify-center md:justify-start">
         <div className="font-bold">{category}</div>
         <div className="px-2">|</div>
         <div>
           <DateTime dateString={date} />
         </div>
       </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="mb-8 sm:mx-0 md:mb-16">
         <figure>
           <PostCoverImage
             title={title}

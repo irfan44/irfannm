@@ -10,26 +10,28 @@ interface Props {
 const Posts = ({ posts }: Props) => {
   const allPosts = posts
   const techPosts = posts.filter((posts) => posts.category === 'Tech')
-  const generasiGigihPosts = posts.filter(
-    (posts) => posts.category === 'GenerasiGigih'
+  const financePosts = posts.filter((posts) => posts.category === 'Finance')
+  const otherPosts = posts.filter(
+    (posts) => posts.category !== 'Tech' && posts.category !== 'Finance'
   )
 
   const categoryList = [
     { category: 'All', posts: allPosts },
     { category: 'Tech', posts: techPosts },
-    { category: 'Generasi Gigih', posts: generasiGigihPosts },
+    { category: 'Finance', posts: financePosts },
+    { category: 'Other', posts: otherPosts },
   ]
 
   return (
     <Tab.Group>
-      <Tab.List className="space-x-2 mx-auto px-1 py-1 h-9 flex text-sm border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-full w-fit">
+      <Tab.List className="mx-auto flex h-9 w-fit space-x-2 rounded-full border border-neutral-200 bg-secondary px-1 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-800">
         {categoryList.map((items) => {
           return (
             <Tab
               key={items.category}
               className={({ selected }) =>
                 selected
-                  ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
+                  ? 'rounded-full bg-white px-3 py-1 font-bold text-black dark:bg-neutral-900 dark:text-white'
                   : 'px-3 py-1'
               }
             >

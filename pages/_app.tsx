@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     <>
       <ThemeProvider enableSystem attribute="class">
         <Navbar />
-        <main className="min-h-screen mt-16 transition-all">
+        <main className="mt-16 min-h-screen transition-all">
           <Container>
             <Component {...pageProps} />
           </Container>

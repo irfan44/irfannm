@@ -11,10 +11,10 @@ const PageServerError = () => {
   return (
     <>
       <Meta title={pageMeta.title} description={pageMeta.description} />
-      <div className="flex flex-col justify-center py-16 text-center space-y-2">
+      <div className="flex flex-col justify-center space-y-2 py-16 text-center">
         <h1>500</h1>
         <p>Internal Server Error</p>
-        <div className="w-fit bg-black py-2 px-3 rounded-2xl text-white dark:bg-neutral-800 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 shadow-sm mx-auto">
+        <div className="mx-auto w-fit rounded-2xl bg-black px-3 py-2 text-white shadow-sm hover:bg-neutral-900 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700">
           <Link href="/">Return to Home</Link>
         </div>
         <div className="flex justify-center">

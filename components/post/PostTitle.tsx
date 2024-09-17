@@ -8,7 +8,7 @@ const PostTitle = ({ children }: Props) => {
   return (
     <Title
       type="pageTitle"
-      className="lg:text-5xl md:text-5xl text-4xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-center md:text-left"
+      className="mb-4 text-center text-4xl font-bold leading-tight tracking-tighter md:text-left md:text-5xl md:leading-none lg:text-5xl"
     >
       {children}
     </Title>
