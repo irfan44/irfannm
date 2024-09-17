@@ -9,12 +9,12 @@ import Menu from 'components/navigation/ListMenu'
 const Footer = () => {
   return (
     <Container>
-      <div className="mb-6 mt-32 flex rounded-3xl py-12">
+      <div className="mb-16 mt-32 flex rounded-2xl border border-neutral-200 bg-secondary p-12 dark:border-neutral-700 dark:bg-neutral-800">
         <div className="mx-auto flex-1 text-center md:mx-0 md:text-left">
           <ul className="flex list-none flex-col space-y-1 md:hidden">
             <Menu />
           </ul>
-          <div className="my-4 md:pr-8">
+          <div className="mb-4 mt-4 md:mt-0 md:pr-8">
             <Link
               href="/"
               className="font-sans text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"

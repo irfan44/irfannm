@@ -22,7 +22,7 @@ const ExternalLink = ({
   switch (type) {
     case 'button':
       return (
-        <div className="w-fit rounded-2xl bg-black px-3 py-2 text-white shadow-sm hover:bg-neutral-900 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700">
+        <div className="w-fit rounded-2xl border border-neutral-200 bg-black px-3 py-2 text-white shadow-sm hover:bg-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700">
           <a
             target="_blank"
             rel="noopener noreferrer"
