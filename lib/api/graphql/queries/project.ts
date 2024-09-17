@@ -16,6 +16,7 @@ export const GET_PROJECTS = gql`
       techStack
       type
       sourceCode
+      url
     }
   }
 `
@@ -39,6 +40,7 @@ export const GET_FEATURED_PROJECTS = gql`
       techStack
       type
       sourceCode
+      url
     }
   }
 `
