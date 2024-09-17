@@ -32,3 +32,22 @@ export const GET_POST = gql`
     }
   }
 `
+
+export const GET_LEGACY_POST = gql`
+  query GetLegacyPost($legacySlug: String) {
+    posts(where: { legacySlug: $legacySlug }) {
+      caption
+      category
+      content
+      coverImage
+      createdAt
+      date
+      excerpt
+      id
+      publishedAt
+      slug
+      title
+      updatedAt
+    }
+  }
+`

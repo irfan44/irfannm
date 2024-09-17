@@ -4,6 +4,7 @@ import { Dialog } from '@headlessui/react'
 
 import ExternalLink from 'components/common/base/ExternalLink'
 import type { ProjectModel } from 'lib/models/project'
+import convertDate from 'lib/utils/convertDate'
 
 interface Props {
   isOpen: boolean
@@ -26,7 +27,15 @@ const ProjectDialog = ({ isOpen, handleOnClose, project }: Props) => {
               <div>
                 <h4>{project.name}</h4>
                 {project.company && <p>{project.company}</p>}
-                <p>{project.date}</p>
+                <div className="flex space-x-1">
+                  <span>{convertDate(project.startingDate)}</span>
+                  <span>-</span>
+                  {project.endDate ? (
+                    <span>{convertDate(project.endDate)}</span>
+                  ) : (
+                    <span>Present</span>
+                  )}
+                </div>
               </div>
               <div className="space-y-1">
                 {project.url && (

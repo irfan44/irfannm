@@ -4,6 +4,8 @@ export interface ProjectModel {
   id?: string
   isFeatured?: boolean
   name: string
+  startingDate: string
+  endDate?: string
   type?: 'Work' | 'Personal'
   company?: string
   description: string
@@ -15,6 +17,5 @@ export interface ProjectModel {
     secure_url: string
   }
   overview?: string
-  date?: string
   role?: string
 }
