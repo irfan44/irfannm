@@ -10,9 +10,9 @@ type Props = {
 const ReadMore = ({ url, children }: Props) => {
   return (
     <Link href={url} passHref>
-      <p className="mt-4 font-medium flex items-center hover:cursor-pointer hover:underline text-black dark:text-white">
+      <p className="mt-4 flex items-center font-medium text-black hover:cursor-pointer hover:underline dark:text-white">
         {children}
-        <HiArrowNarrowRight className="text-xl ml-1" />
+        <HiArrowNarrowRight className="ml-1 text-xl" />
       </p>
     </Link>
   )

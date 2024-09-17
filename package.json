@@ -19,6 +19,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "typecheck": "tsc",
+    "format": "prettier . --write",
     "lint": "next lint",
     "prepare": "husky install",
     "test": "npm run typecheck && npm run lint"
@@ -58,6 +59,7 @@
     "husky": "^9.0.11",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.3"
   }
 }

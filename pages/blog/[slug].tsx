@@ -29,7 +29,7 @@ const Post = ({ post, slug }: Props) => {
         ogImage={pageMeta.ogImage}
         currentPath={pageMeta.currentPath}
       />
-      <div className="max-w-3xl mx-auto">
+      <div className="mx-auto max-w-3xl">
         <PostBreadcrumb />
         <PostBody>
           <PostHeader

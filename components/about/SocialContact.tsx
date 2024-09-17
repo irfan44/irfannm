@@ -11,7 +11,7 @@ const SocialContact = () => {
         Here are several of my socials for you to look at. Feel free to follow
         and check out for things i do :
       </p>
-      <ul className="list-disc ml-4 space-y-1">
+      <ul className="ml-4 list-disc space-y-1">
         {socials.map((social) => {
           return (
             <li key={social.name}>

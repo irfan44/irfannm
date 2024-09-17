@@ -15,8 +15,8 @@ const ExperienceSummary = ({ experiences }: Props) => {
           {experiences.map((data) => {
             return (
               <div key={data.year}>
-                <hr className="border border-neutral-300 dark:border-neutral-500 mb-6" />
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-[100px_minmax(0,1fr)]">
+                <hr className="mb-6 border border-neutral-300 dark:border-neutral-500" />
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-[100px_minmax(0,1fr)]">
                   <div>
                     <h3>{data.year}</h3>
                   </div>
@@ -25,9 +25,9 @@ const ExperienceSummary = ({ experiences }: Props) => {
                       return (
                         <div key={work.startingDate}>
                           <h4>{work.title}</h4>
-                          <div className="flex space-x-1">
-                            <span className="font-bold">{work.company},</span>
-                            <span>{work.employmentType}</span>
+                          <div>
+                            <strong>{work.company}</strong>
+                            <span>, {work.employmentType}</span>
                           </div>
                           <div className="flex space-x-1">
                             <span>{convertDate(work.startingDate)}</span>
@@ -47,7 +47,7 @@ const ExperienceSummary = ({ experiences }: Props) => {
             )
           })}
         </div>
-        <ReadMore url="/about">View more</ReadMore>
+        <ReadMore url="/about#experience">View more</ReadMore>
       </Section>
     </>
   )

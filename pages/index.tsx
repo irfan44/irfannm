@@ -38,7 +38,7 @@ const Home = ({
       <Meta title={pageMeta.title} description={pageMeta.description} />
       <div className="space-y-16">
         <HeroSection description={description} resumeUrl={resumeUrl} />
-        <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
           <ExperienceSummary experiences={experiences} />
           <FeaturedProject featuredProjects={featuredProjects} />
         </div>
@@ -47,7 +47,7 @@ const Home = ({
             <Section title="Latest Posts">
               <PostsList posts={highlightedPosts} />
             </Section>
-            <ReadMore url="/blog">Read more post</ReadMore>
+            <ReadMore url="/blog">Read more posts</ReadMore>
           </>
         )}
       </div>

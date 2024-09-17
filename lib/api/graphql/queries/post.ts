@@ -4,6 +4,9 @@ export const GET_POSTS = gql`
   query GetPosts($orderBy: PostOrderByInput, $first: Int) {
     posts(orderBy: $orderBy, first: $first) {
       category
+      blogCategory {
+        slug
+      }
       coverImage
       date
       excerpt
@@ -19,6 +22,9 @@ export const GET_POST = gql`
     posts(where: { slug: $slug }) {
       caption
       category
+      blogCategory {
+        slug
+      }
       content
       coverImage
       createdAt
@@ -38,6 +44,9 @@ export const GET_LEGACY_POST = gql`
     posts(where: { legacySlug: $legacySlug }) {
       caption
       category
+      blogCategory {
+        slug
+      }
       content
       coverImage
       createdAt
@@ -48,6 +57,15 @@ export const GET_LEGACY_POST = gql`
       slug
       title
       updatedAt
+    }
+  }
+`
+
+export const GET_BLOG_CATEGORIES = gql`
+  query GetBlogCategories {
+    blogCategories {
+      name
+      slug
     }
   }
 `

@@ -42,7 +42,7 @@ const About = ({
         description={pageMeta.description}
         currentPath={pageMeta.currentPath}
       />
-      <div className="space-y-12 max-w-3xl mx-auto">
+      <div className="mx-auto max-w-3xl space-y-12">
         <PageHeader title={pageHeader.title} />
         <AboutMe aboutImage={aboutImage} aboutMeSource={aboutMeSource} />
         <Experience experiences={experiences} />

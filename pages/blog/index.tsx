@@ -22,7 +22,7 @@ const Blog = ({ posts }: Props) => {
   const pageHeader = {
     title: 'Blog',
     description:
-      'I mainly write about technology and other stuffs. Most of this post is created for my collage assignment.',
+      'Place where you can read my writing. I mainly write about tech, finance, and investment stuff.',
   }
 
   return (
