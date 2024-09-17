@@ -10,12 +10,12 @@ interface Props {
 const ProjectCard = ({ handleOnOpen, project }: Props) => {
   return (
     <div
-      className="flex flex-col justify-between space-y-3 rounded-2xl p-4 border border-neutral-200 bg-secondary cursor-pointer dark:bg-neutral-800 dark:border-neutral-700 hover:bg-secondaryHover dark:hover:bg-neutral-800/75"
+      className="flex cursor-pointer flex-col justify-between space-y-3 rounded-2xl border border-neutral-200 bg-secondary p-4 hover:bg-secondaryHover dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800/75"
       onClick={handleOnOpen}
     >
       <h4 className="flex items-center">
         {project.name}{' '}
-        <span className="text-sm ml-2">
+        <span className="ml-2 text-sm">
           <FaChevronRight />
         </span>
       </h4>
@@ -26,7 +26,7 @@ const ProjectCard = ({ handleOnOpen, project }: Props) => {
             return (
               <div
                 key={stack}
-                className="bg-black text-white px-2 py-1 rounded-lg text-sm flex items-center dark:bg-neutral-900"
+                className="flex items-center rounded-lg bg-black px-2 py-1 text-sm text-white dark:bg-neutral-900"
               >
                 <p>{stack}</p>
               </div>

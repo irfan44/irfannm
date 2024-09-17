@@ -29,7 +29,7 @@ const PostCard = ({
 
   return (
     <Link
-      className="m-0 flex flex-col p-4 h-full rounded-2xl border border-neutral-200 bg-secondary dark:bg-neutral-800 dark:border-neutral-700 hover:bg-secondaryHover dark:hover:bg-neutral-800/75"
+      className="m-0 flex h-full flex-col rounded-2xl border border-neutral-200 bg-secondary p-4 hover:bg-secondaryHover dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800/75"
       href={`/blog/${slug}`}
       passHref
     >
@@ -40,7 +40,7 @@ const PostCard = ({
           <DateTime dateString={date} />
         </div>
         <h3>{title}</h3>
-        <p className="leading-relaxed text-base line-clamp-3">{excerpt}</p>
+        <p className="line-clamp-3 text-base leading-relaxed">{excerpt}</p>
       </div>
       <div className="mt-4">
         <img
@@ -48,7 +48,7 @@ const PostCard = ({
           alt={`Cover Image for ${title}`}
           width="462"
           height="256"
-          className="rounded-2xl w-full h-40 xl:h-64 object-cover"
+          className="h-40 w-full rounded-2xl object-cover xl:h-64"
         />
       </div>
     </Link>

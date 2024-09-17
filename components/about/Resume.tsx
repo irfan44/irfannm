@@ -18,7 +18,7 @@ const Resume = ({ resumeUrl, updatedAt }: Props) => {
       <span>
         You can see and download my latest resume{' '}
         <ExternalLink
-          className="font-bold underline !inline"
+          className="!inline font-bold underline"
           type="text"
           title="Download here"
           href={resumeUrl}

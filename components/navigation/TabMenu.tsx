@@ -10,7 +10,7 @@ const TabMenu = () => {
   const { pathname } = useRouter()
 
   return (
-    <div className="h-9 text-sm border border-neutral-200 bg-secondary dark:bg-neutral-800 dark:border-neutral-700 rounded-full px-1 flex items-center">
+    <div className="flex h-9 items-center rounded-full border border-neutral-200 bg-secondary px-1 text-sm dark:border-neutral-700 dark:bg-neutral-800">
       <Tab.Group>
         <Tab.List className="space-x-1">
           {navMenu.map(({ name, link }) => {
@@ -21,7 +21,7 @@ const TabMenu = () => {
                     className={
                       route.pathname == link ||
                       (pathname.startsWith(link) && link != '/')
-                        ? 'relative z-[1] font-bold dark:text-white text-black'
+                        ? 'relative z-[1] font-bold text-black dark:text-white'
                         : 'relative z-[1] font-normal'
                     }
                     href={link}
@@ -31,7 +31,7 @@ const TabMenu = () => {
                   {route.pathname == link ||
                   (pathname.startsWith(link) && link != '/') ? (
                     <motion.div
-                      className="dark:bg-neutral-900 bg-white rounded-full absolute top-0 h-full right-0 left-0 z-[0]"
+                      className="absolute left-0 right-0 top-0 z-[0] h-full rounded-full bg-white dark:bg-neutral-900"
                       layoutId="active"
                       transition={{
                         type: 'spring',

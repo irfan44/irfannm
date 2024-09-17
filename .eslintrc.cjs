@@ -3,7 +3,7 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },
-  plugins: ["simple-import-sort"],
+  plugins: ['simple-import-sort'],
   overrides: [
     {
       files: ['**/*.js', '**/*.ts', '**/*.tsx'],
@@ -15,13 +15,7 @@ module.exports = {
             groups: [
               // `react` first, `next` second, then packages starting with a character
               ['^react$', '^next', '^[a-z]', '^@'],
-              [
-                'components',
-                'datas',
-                'pages',
-                'lib',
-                'styles'
-              ],
+              ['components', 'datas', 'pages', 'lib', 'styles'],
               // Imports starting with `../`
               ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
               // Imports starting with `./`

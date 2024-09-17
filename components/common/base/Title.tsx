@@ -11,7 +11,7 @@ const Title = ({ type, className, children }: Props) => {
     case 'pageTitle':
       return (
         <h1
-          className={`font-sans text-4xl font-bold md:text-5xl tracking-tighter leading-tight text-black dark:text-white ${
+          className={`font-sans text-4xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-5xl ${
             className ? className : ''
           }`}
         >
@@ -21,7 +21,7 @@ const Title = ({ type, className, children }: Props) => {
     case 'sectionTitle':
       return (
         <h2
-          className={`font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white ${
+          className={`font-sans text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl ${
             className ? className : ''
           }`}
         >

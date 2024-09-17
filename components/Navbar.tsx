@@ -12,16 +12,16 @@ const Navbar = () => {
   const [isActive, setActive] = useState(false)
 
   return (
-    <nav className="mt-4 w-full bg-neutral-50 dark:bg-neutral-900 z-10">
+    <nav className="z-10 mt-4 w-full bg-neutral-50 dark:bg-neutral-900">
       <Container>
-        <div className="flex justify-between py-4 items-center">
+        <div className="flex items-center justify-between py-4">
           <Link
-            className="leading-tightfont-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white block"
+            className="leading-tightfont-sans block text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"
             href="/"
           >
             inm
           </Link>
-          <div className="flex space-x-2 items-center md:hidden ml-auto py-auto">
+          <div className="py-auto ml-auto flex items-center space-x-2 md:hidden">
             <button
               className="ml-2 flex items-center"
               type="button"
@@ -41,17 +41,17 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="hidden md:block text-left">
+          <div className="hidden text-left md:block">
             <TabMenu />
           </div>
-          <div className="hidden md:block text-left">
+          <div className="hidden text-left md:block">
             <ThemeSwitcher />
           </div>
         </div>
         {isActive && (
           <div className="h-screen w-full">
-            <div className="grid items-center border rounded-lg border-zinc-200 p-4">
-              <ul className="flex flex-col space-y-4 items-center">
+            <div className="grid items-center rounded-lg border border-zinc-200 p-4">
+              <ul className="flex flex-col items-center space-y-4">
                 <Menu setActive={setActive} />
                 <li>
                   <ContactButton />

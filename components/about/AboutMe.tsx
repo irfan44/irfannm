@@ -8,7 +8,7 @@ interface Props {
 const AboutMe = ({ aboutImage, aboutMeSource }: Props) => {
   return (
     <>
-      <div className="flex justify-center mb-12">
+      <div className="mb-12 flex justify-center">
         <img
           className="rounded-full"
           alt="Irfan Nurghiffari Muhajir"

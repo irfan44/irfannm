@@ -22,11 +22,11 @@ const ExternalLink = ({
   switch (type) {
     case 'button':
       return (
-        <div className="w-fit bg-black py-2 px-3 rounded-2xl text-white dark:bg-neutral-800 dark:text-white hover:bg-neutral-900 dark:hover:bg-neutral-700 shadow-sm">
+        <div className="w-fit rounded-2xl bg-black px-3 py-2 text-white shadow-sm hover:bg-neutral-900 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700">
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center font-semibold space-x-2"
+            className="flex items-center space-x-2 font-semibold"
             title={title}
             href={href}
           >
@@ -41,7 +41,7 @@ const ExternalLink = ({
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className={`w-fit flex items-center font-semibold space-x-2 hover:underline ${className}`}
+          className={`flex w-fit items-center space-x-2 font-semibold hover:underline ${className}`}
           title={title}
           href={href}
         >

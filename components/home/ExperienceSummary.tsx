@@ -15,8 +15,8 @@ const ExperienceSummary = ({ experiences }: Props) => {
           {experiences.map((data) => {
             return (
               <div key={data.year}>
-                <hr className="border border-neutral-300 dark:border-neutral-500 mb-6" />
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-[100px_minmax(0,1fr)]">
+                <hr className="mb-6 border border-neutral-300 dark:border-neutral-500" />
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-[100px_minmax(0,1fr)]">
                   <div>
                     <h3>{data.year}</h3>
                   </div>

@@ -22,14 +22,14 @@ const Posts = ({ posts }: Props) => {
 
   return (
     <Tab.Group>
-      <Tab.List className="space-x-2 mx-auto px-1 py-1 h-9 flex text-sm border border-neutral-200 bg-secondary dark:bg-neutral-800 dark:border-neutral-700 rounded-full w-fit">
+      <Tab.List className="mx-auto flex h-9 w-fit space-x-2 rounded-full border border-neutral-200 bg-secondary px-1 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-800">
         {categoryList.map((items) => {
           return (
             <Tab
               key={items.category}
               className={({ selected }) =>
                 selected
-                  ? 'dark:bg-neutral-900 bg-white rounded-full px-3 py-1 font-bold text-black dark:text-white'
+                  ? 'rounded-full bg-white px-3 py-1 font-bold text-black dark:bg-neutral-900 dark:text-white'
                   : 'px-3 py-1'
               }
             >

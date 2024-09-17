@@ -9,20 +9,20 @@ import Menu from 'components/navigation/ListMenu'
 const Footer = () => {
   return (
     <Container>
-      <div className="mt-32 mb-6 rounded-3xl flex py-12">
-        <div className="flex-1 mx-auto md:mx-0 text-center md:text-left">
-          <ul className="flex flex-col list-none space-y-1 md:hidden">
+      <div className="mb-6 mt-32 flex rounded-3xl py-12">
+        <div className="mx-auto flex-1 text-center md:mx-0 md:text-left">
+          <ul className="flex list-none flex-col space-y-1 md:hidden">
             <Menu />
           </ul>
-          <div className="md:pr-8 my-4">
+          <div className="my-4 md:pr-8">
             <Link
               href="/"
-              className="font-sans text-2xl font-bold md:text-4xl tracking-tighter leading-tight text-black dark:text-white"
+              className="font-sans text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"
             >
               inm
             </Link>
           </div>
-          <div className="flex space-x-4 mb-8 justify-center md:justify-start">
+          <div className="mb-8 flex justify-center space-x-4 md:justify-start">
             <SocialLinks />
           </div>
           <div className="mb-4 flex justify-center md:justify-start">
@@ -34,12 +34,12 @@ const Footer = () => {
             </p>
             <p className="text-sm">With 😻 using NextJS & Tailwind CSS</p>
           </div>
-          <div className="md:hidden mt-6 flex justify-center">
+          <div className="mt-6 flex justify-center md:hidden">
             <a
               href="https://github.com/irfan44/irfannm"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex text-sm items-center"
+              className="flex items-center text-sm"
               title="Source code"
             >
               <FaGithub className="mr-2 text-xl text-black dark:text-white" />
@@ -47,15 +47,15 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="md:flex flex-col justify-between hidden">
-          <ul className="flex flex-col w-fit">
+        <div className="hidden flex-col justify-between md:flex">
+          <ul className="flex w-fit flex-col">
             <Menu />
           </ul>
           <a
             href="https://github.com/irfan44/irfannm"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex text-sm items-center"
+            className="flex items-center text-sm"
             title="Source code"
           >
             <FaGithub className="mr-2 text-xl text-black dark:text-white" />
