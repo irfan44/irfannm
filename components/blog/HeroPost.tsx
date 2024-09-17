@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import DateTime from 'components/common/base/DateTime'
-import PostCoverImage from 'components/post/PostCoverImage'
 
 type Props = {
   title: string
@@ -35,11 +34,12 @@ const HeroPost = ({
       passHref
     >
       <div className="lg:w-3/5">
-        <PostCoverImage
-          title={title}
+        <img
           src={coverImage}
-          height={620}
-          width={1240}
+          alt={`Cover Image for ${title}`}
+          width="555"
+          height="320"
+          className="rounded-2xl w-full h-64 md:h-80 xl:h-96 object-cover"
         />
       </div>
       <div className="lg:w-1/2 lg:px-8 mt-8 lg:mt-0 space-y-4">

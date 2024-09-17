@@ -13,7 +13,8 @@ module.exports = {
         dark: '#161616',
         accent: '#0f4c81',
         black: '#1c1d1f',
-        secondary: '#eeeeef',
+        secondary: '#f3f3f4',
+        secondaryHover: '#eeeeef',
       },
       typography: (theme) => ({
         DEFAULT: {
