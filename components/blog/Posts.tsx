@@ -10,14 +10,16 @@ interface Props {
 const Posts = ({ posts }: Props) => {
   const allPosts = posts
   const techPosts = posts.filter((posts) => posts.category === 'Tech')
-  const generasiGigihPosts = posts.filter(
-    (posts) => posts.category === 'GenerasiGigih'
+  const financePosts = posts.filter((posts) => posts.category === 'Finance')
+  const otherPosts = posts.filter(
+    (posts) => posts.category !== 'Tech' && posts.category !== 'Finance'
   )
 
   const categoryList = [
     { category: 'All', posts: allPosts },
     { category: 'Tech', posts: techPosts },
-    { category: 'Generasi Gigih', posts: generasiGigihPosts },
+    { category: 'Finance', posts: financePosts },
+    { category: 'Other', posts: otherPosts },
   ]
 
   return (
