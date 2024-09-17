@@ -1,7 +1,7 @@
 import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
-import convertDate from '../../lib/utils/convertDate'
 import type { ExperiencesModel } from 'lib/models/experience'
+import convertDate from 'lib/utils/convertDate'
 
 interface Props {
   experiences: ExperiencesModel

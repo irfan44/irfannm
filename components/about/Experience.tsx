@@ -1,5 +1,5 @@
-import convertDate from '../../lib/utils/convertDate'
 import type { ExperiencesModel } from 'lib/models/experience'
+import convertDate from 'lib/utils/convertDate'
 
 interface Props {
   experiences: ExperiencesModel
