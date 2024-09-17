@@ -1,4 +1,5 @@
 import type { ExperiencesModel } from 'lib/models/experience'
+import convertDate from 'lib/utils/convertDate'
 
 interface Props {
   experiences: ExperiencesModel
@@ -18,12 +19,21 @@ const Experience = ({ experiences }: Props) => {
                 <div className="space-y-4">
                   {data.experiences.map((work) => {
                     return (
-                      <div key={work.period}>
+                      <div key={work.startingDate}>
                         <h4>{work.title}</h4>
-                        <p>
-                          <strong>{work.company}</strong>, {work.employmentType}
-                        </p>
-                        <p>{work.period}</p>
+                        <div className="flex space-x-1">
+                          <span className="font-bold">{work.company},</span>
+                          <span>{work.employmentType}</span>
+                        </div>
+                        <div className="flex space-x-1">
+                          <span>{convertDate(work.startingDate)}</span>
+                          <span>-</span>
+                          {work.endDate ? (
+                            <span>{convertDate(work.endDate)}</span>
+                          ) : (
+                            <span>Present</span>
+                          )}
+                        </div>
                         <div className="mt-2">
                           <p>Responsible for :</p>
                           <ul className="list-disc ml-5">

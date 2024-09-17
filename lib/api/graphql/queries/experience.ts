@@ -5,10 +5,10 @@ export const GET_EXPERIENCES = gql`
     experiences(orderBy: $orderBy) {
       company
       employmentType
-      period
+      startingDate
+      endDate
       responsibility
       title
-      startingYear
     }
   }
 `

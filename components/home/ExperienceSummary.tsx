@@ -1,6 +1,7 @@
 import ReadMore from 'components/home/ReadMore'
 import Section from 'components/layouts/Section'
 import type { ExperiencesModel } from 'lib/models/experience'
+import convertDate from 'lib/utils/convertDate'
 
 interface Props {
   experiences: ExperiencesModel
@@ -22,13 +23,21 @@ const ExperienceSummary = ({ experiences }: Props) => {
                   <div className="space-y-4">
                     {data.experiences.map((work) => {
                       return (
-                        <div key={work.period}>
+                        <div key={work.startingDate}>
                           <h4>{work.title}</h4>
                           <div className="flex space-x-1">
                             <span className="font-bold">{work.company},</span>
                             <span>{work.employmentType}</span>
                           </div>
-                          <p>{work.period}</p>
+                          <div className="flex space-x-1">
+                            <span>{convertDate(work.startingDate)}</span>
+                            <span>-</span>
+                            {work.endDate ? (
+                              <span>{convertDate(work.endDate)}</span>
+                            ) : (
+                              <span>Present</span>
+                            )}
+                          </div>
                         </div>
                       )
                     })}

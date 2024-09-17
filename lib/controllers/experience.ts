@@ -6,23 +6,19 @@ export class ExperienceController {
     const response = await ExperienceService.getExperiences()
     const experiencesData = response.experiences
 
-    const experiencesObject: any = {}
-    experiencesData.forEach((experience) => {
-      const startingYear = experience.startingYear
-      if (!experiencesObject[startingYear]) {
-        experiencesObject[startingYear] = []
+    const groupedByYear = experiencesData.reduce((acc: any, exp) => {
+      const year = new Date(exp.startingDate).getFullYear()
+      if (!acc[year]) {
+        acc[year] = { year, experiences: [] }
       }
-      experiencesObject[startingYear].push(experience)
-    })
+      acc[year].experiences.push(exp)
+      return acc
+    }, {})
 
-    const experiences = Object.keys(experiencesObject)
-      .map((year) => {
-        return {
-          year: parseInt(year),
-          experiences: experiencesObject[year],
-        }
-      })
-      .sort((a, b) => b.year - a.year)
-    return experiences
+    const sortedExperiences = Object.values(groupedByYear).sort(
+      (a: any, b: any) => b.year - a.year
+    ) as ExperiencesModel
+
+    return sortedExperiences
   }
 }

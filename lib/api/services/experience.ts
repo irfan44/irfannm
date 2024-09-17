@@ -7,7 +7,7 @@ export class ExperienceService {
     const response = await contentClient.query<ExperiencesResponse>({
       query: GET_EXPERIENCES,
       variables: {
-        orderBy: 'createdAt_DESC',
+        orderBy: 'startingDate_DESC',
       },
     })
     return response.data
