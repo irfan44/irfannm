@@ -8,8 +8,8 @@ export interface ExperienceModel {
 export interface ExperienceDetailModel {
   title: string
   company: string
-  period: string
-  startingYear: string
+  startingDate: string
+  endDate?: string
   employmentType: EmploymentType
   responsibility: string[]
 }
