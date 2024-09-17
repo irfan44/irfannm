@@ -47,7 +47,7 @@ const ExperienceSummary = ({ experiences }: Props) => {
             )
           })}
         </div>
-        <ReadMore url="/about">View more</ReadMore>
+        <ReadMore url="/about#experience">View more</ReadMore>
       </Section>
     </>
   )

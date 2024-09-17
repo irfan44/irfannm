@@ -7,7 +7,7 @@ interface Props {
 
 const Experience = ({ experiences }: Props) => {
   return (
-    <div>
+    <div id="experience">
       <h2 className="mb-6">Experience</h2>
       <div className="flex flex-col space-y-8">
         {experiences.map((data) => {
