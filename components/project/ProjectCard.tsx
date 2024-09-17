@@ -10,7 +10,7 @@ interface Props {
 const ProjectCard = ({ handleOnOpen, project }: Props) => {
   return (
     <div
-      className="flex flex-col justify-between space-y-3 rounded-2xl p-4 bg-secondary cursor-pointer dark:bg-neutral-800 hover:bg-secondaryHover dark:hover:bg-neutral-800/75"
+      className="flex flex-col justify-between space-y-3 rounded-2xl p-4 border border-neutral-200 bg-secondary cursor-pointer dark:bg-neutral-800 dark:border-neutral-700 hover:bg-secondaryHover dark:hover:bg-neutral-800/75"
       onClick={handleOnOpen}
     >
       <h4 className="flex items-center">
