@@ -9,7 +9,7 @@ import Menu from 'components/navigation/ListMenu'
 const Footer = () => {
   return (
     <Container>
-      <div className="mb-16 mt-32 flex rounded-2xl border border-neutral-200 bg-secondary p-12 dark:border-neutral-700 dark:bg-neutral-800">
+      <div className="mb-8 mt-32 flex rounded-2xl border border-neutral-200 bg-secondary p-12 dark:border-neutral-700 dark:bg-neutral-800">
         <div className="mx-auto flex-1 text-center md:mx-0 md:text-left">
           <ul className="flex list-none flex-col space-y-1 md:hidden">
             <Menu />
