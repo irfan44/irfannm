@@ -19,6 +19,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "typecheck": "tsc",
+    "format": "prettier . --write",
     "lint": "next lint",
     "prepare": "husky install",
     "test": "npm run typecheck && npm run lint"
