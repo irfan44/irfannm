@@ -5,6 +5,7 @@ export const GET_POSTS = gql`
     posts(orderBy: $orderBy, first: $first) {
       category
       blogCategory {
+        name
         slug
       }
       coverImage
@@ -17,12 +18,35 @@ export const GET_POSTS = gql`
   }
 `
 
+export const GET_CATEGORIZED_POSTS = gql`
+  query GetCategorizedPosts($orderBy: PostOrderByInput) {
+    posts(orderBy: $orderBy) {
+      category
+      blogCategory {
+        name
+        slug
+      }
+      coverImage
+      date
+      excerpt
+      id
+      slug
+      title
+    }
+    blogCategories {
+      name
+      slug
+    }
+  }
+`
+
 export const GET_POST = gql`
   query GetPost($slug: String) {
     posts(where: { slug: $slug }) {
       caption
       category
       blogCategory {
+        name
         slug
       }
       content
@@ -45,6 +69,7 @@ export const GET_LEGACY_POST = gql`
       caption
       category
       blogCategory {
+        name
         slug
       }
       content
@@ -57,15 +82,6 @@ export const GET_LEGACY_POST = gql`
       slug
       title
       updatedAt
-    }
-  }
-`
-
-export const GET_BLOG_CATEGORIES = gql`
-  query GetBlogCategories {
-    blogCategories {
-      name
-      slug
     }
   }
 `

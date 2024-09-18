@@ -12,7 +12,7 @@ const PostList = ({ posts }: Props) => {
         <PostCard
           key={post.slug}
           title={post.title}
-          category={post.category}
+          category={post.blogCategory.name}
           coverImage={post.coverImage.secure_url}
           date={post.date}
           slug={post.slug}

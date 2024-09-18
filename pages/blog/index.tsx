@@ -4,14 +4,14 @@ import PageHeader from 'components/layouts/PageHeader'
 import Section from 'components/layouts/Section'
 import Meta from 'components/Meta'
 import { PostController } from 'lib/controllers/post'
-import type { PostsModel } from 'lib/models/post'
+import type { CategorizedPostsModel } from 'lib/models/post'
 
 interface Props {
-  posts: PostsModel
+  categorizedPosts: CategorizedPostsModel
 }
 
-const Blog = ({ posts }: Props) => {
-  const heroPost = posts[0]
+const Blog = ({ categorizedPosts }: Props) => {
+  const heroPost = categorizedPosts[0].posts[0]
 
   const pageMeta = {
     title: 'Blog',
@@ -50,7 +50,7 @@ const Blog = ({ posts }: Props) => {
           )}
         </Section>
         <Section title="Posts">
-          <Posts posts={posts} />
+          <Posts categorizedPosts={categorizedPosts} />
         </Section>
       </div>
     </>
@@ -58,10 +58,10 @@ const Blog = ({ posts }: Props) => {
 }
 
 export const getServerSideProps = async () => {
-  const posts = await PostController.getPosts()
+  const categorizedPosts = await PostController.getCategorizedPosts()
 
   return {
-    props: { posts },
+    props: { categorizedPosts },
   }
 }
 

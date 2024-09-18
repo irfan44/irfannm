@@ -1,7 +1,10 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
-export interface AllPostsModel {
-  allPosts: PostsModel
+export type CategorizedPostsModel = CategorizedPostModel[]
+
+export interface CategorizedPostModel {
+  category: string
+  posts: PostsModel
 }
 
 export type PostsModel = PostModel[]

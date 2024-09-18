@@ -34,7 +34,7 @@ const Post = ({ post, slug }: Props) => {
         <PostBody>
           <PostHeader
             title={post.title}
-            category={post.category}
+            category={post.blogCategory.name}
             coverImage={post.coverImage.secure_url}
             date={post.date}
             caption={post.caption}

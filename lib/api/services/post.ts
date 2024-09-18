@@ -1,20 +1,20 @@
 import { contentClient } from 'lib/api/graphql/content'
 import {
-  GET_BLOG_CATEGORIES,
+  GET_CATEGORIZED_POSTS,
   GET_LEGACY_POST,
   GET_POST,
   GET_POSTS,
 } from 'lib/api/graphql/queries/post'
 import type {
-  BlogCategoriesResponse,
+  CategorizedPostsResponse,
   PostResponse,
   PostsResponse,
 } from 'lib/api/types/post'
 
 export class PostService {
-  static async getPosts(): Promise<PostsResponse> {
-    const response = await contentClient.query<PostsResponse>({
-      query: GET_POSTS,
+  static async getCategorizedPosts(): Promise<CategorizedPostsResponse> {
+    const response = await contentClient.query<CategorizedPostsResponse>({
+      query: GET_CATEGORIZED_POSTS,
       variables: {
         orderBy: 'date_DESC',
       },
@@ -52,14 +52,6 @@ export class PostService {
         orderBy: 'date_DESC',
         first: 2,
       },
-      fetchPolicy: 'network-only',
-    })
-    return response.data
-  }
-
-  static async getBlogCategories(): Promise<BlogCategoriesResponse> {
-    const response = await contentClient.query<BlogCategoriesResponse>({
-      query: GET_BLOG_CATEGORIES,
       fetchPolicy: 'network-only',
     })
     return response.data
