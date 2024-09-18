@@ -4,8 +4,8 @@ import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
+import Container from 'components/common/layouts/Container'
 import Footer from 'components/Footer'
-import Container from 'components/layouts/Container'
 import Navbar from 'components/Navbar'
 import { useScrollRestoration } from 'lib/hooks/useScrollRestoration'
 

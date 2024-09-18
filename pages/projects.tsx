@@ -1,6 +1,6 @@
 import { Tab } from '@headlessui/react'
 
-import PageHeader from 'components/layouts/PageHeader'
+import PageHeader from 'components/common/layouts/PageHeader'
 import Meta from 'components/Meta'
 import ProjectList from 'components/project/ProjectList'
 import { ProjectController } from 'lib/controllers/project'

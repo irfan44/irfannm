@@ -1,5 +1,5 @@
+import Section from 'components/common/layouts/Section'
 import ReadMore from 'components/home/ReadMore'
-import Section from 'components/layouts/Section'
 import ProjectList from 'components/project/ProjectList'
 import type { ProjectsModel } from 'lib/models/project'
 

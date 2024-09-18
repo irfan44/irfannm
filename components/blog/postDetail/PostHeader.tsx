@@ -1,6 +1,6 @@
+import PostCoverImage from 'components/blog/postDetail/PostCoverImage'
 import DateTime from 'components/common/base/DateTime'
 import Title from 'components/common/base/Title'
-import PostCoverImage from 'components/post/PostCoverImage'
 
 type Props = {
   title: string

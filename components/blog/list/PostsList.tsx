@@ -1,13 +1,13 @@
 import { Tab } from '@headlessui/react'
 
-import PostList from 'components/blog/PostList'
+import PostCardList from 'components/blog/list/PostCardList'
 import type { CategorizedPostsModel } from 'lib/models/post'
 
 interface Props {
   categorizedPosts: CategorizedPostsModel
 }
 
-const Posts = ({ categorizedPosts }: Props) => {
+const PostsList = ({ categorizedPosts }: Props) => {
   return (
     <Tab.Group>
       <Tab.List className="mx-auto flex h-9 w-fit space-x-2 rounded-full border border-neutral-200 bg-secondary px-1 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-800">
@@ -31,7 +31,7 @@ const Posts = ({ categorizedPosts }: Props) => {
           return (
             <Tab.Panel key={items.category}>
               <div className="mt-8">
-                <PostList posts={items.posts} />
+                <PostCardList posts={items.posts} />
               </div>
             </Tab.Panel>
           )
@@ -41,4 +41,4 @@ const Posts = ({ categorizedPosts }: Props) => {
   )
 }
 
-export default Posts
+export default PostsList

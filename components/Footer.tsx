@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { FaGithub } from 'react-icons/fa'
 
 import ContactButton from 'components/common/ContactButton'
+import Container from 'components/common/layouts/Container'
+import Menu from 'components/common/navigation/ListMenu'
 import SocialLinks from 'components/common/SocialMedia'
-import Container from 'components/layouts/Container'
-import Menu from 'components/navigation/ListMenu'
 
 const Footer = () => {
   return (

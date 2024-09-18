@@ -1,5 +1,5 @@
+import Section from 'components/common/layouts/Section'
 import ReadMore from 'components/home/ReadMore'
-import Section from 'components/layouts/Section'
 import type { ExperiencesModel } from 'lib/models/experience'
 import convertDate from 'lib/utils/convertDate'
 

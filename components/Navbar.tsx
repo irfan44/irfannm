@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
 
 import ContactButton from 'components/common/ContactButton'
-import Container from 'components/layouts/Container'
-import Menu from 'components/navigation/ListMenu'
-import TabMenu from 'components/navigation/TabMenu'
+import Container from 'components/common/layouts/Container'
+import Menu from 'components/common/navigation/ListMenu'
+import TabMenu from 'components/common/navigation/TabMenu'
 import ThemeSwitcher from 'components/ThemeSwitcher'
 
 const Navbar = () => {

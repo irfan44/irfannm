@@ -1,7 +1,7 @@
-import HeroPost from 'components/blog/HeroPost'
-import Posts from 'components/blog/Posts'
-import PageHeader from 'components/layouts/PageHeader'
-import Section from 'components/layouts/Section'
+import HeroPost from 'components/blog/list/HeroPost'
+import PostsList from 'components/blog/list/PostsList'
+import PageHeader from 'components/common/layouts/PageHeader'
+import Section from 'components/common/layouts/Section'
 import Meta from 'components/Meta'
 import { PostController } from 'lib/controllers/post'
 import type { CategorizedPostsModel } from 'lib/models/post'
@@ -50,7 +50,7 @@ const Blog = ({ categorizedPosts }: Props) => {
           )}
         </Section>
         <Section title="Posts">
-          <Posts categorizedPosts={categorizedPosts} />
+          <PostsList categorizedPosts={categorizedPosts} />
         </Section>
       </div>
     </>
