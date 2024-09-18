@@ -13,6 +13,7 @@ export const GET_POSTS = gql`
       excerpt
       id
       slug
+      legacySlug
       title
     }
   }
@@ -31,6 +32,7 @@ export const GET_CATEGORIZED_POSTS = gql`
       excerpt
       id
       slug
+      legacySlug
       title
     }
     blogCategories {
@@ -57,6 +59,7 @@ export const GET_POST = gql`
       id
       publishedAt
       slug
+      legacySlug
       title
       updatedAt
     }
@@ -80,6 +83,7 @@ export const GET_LEGACY_POST = gql`
       id
       publishedAt
       slug
+      legacySlug
       title
       updatedAt
     }

@@ -6,6 +6,11 @@ import type {
 } from 'lib/models/post'
 
 export class PostController {
+  static async getPosts(): Promise<PostsModel> {
+    const response = await PostService.getPosts()
+    return response.posts
+  }
+
   static async getCategorizedPosts(): Promise<CategorizedPostsModel> {
     const response = await PostService.getCategorizedPosts()
     const categories = response.blogCategories

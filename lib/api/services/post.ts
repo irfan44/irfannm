@@ -13,6 +13,18 @@ import type {
 import { BaseContentService } from './base/content'
 
 export class PostService {
+  static async getPosts(): Promise<PostsResponse> {
+    const variables = {
+      orderBy: 'date_DESC',
+    }
+
+    const response = await BaseContentService.handleQuery<PostsResponse>(
+      GET_POSTS,
+      variables
+    )
+    return response.data
+  }
+
   static async getCategorizedPosts(): Promise<CategorizedPostsResponse> {
     const variables = {
       orderBy: 'date_DESC',

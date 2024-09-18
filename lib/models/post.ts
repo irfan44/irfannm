@@ -11,6 +11,7 @@ export type PostsModel = PostModel[]
 
 export interface PostModel {
   slug: string
+  legacySlug: string
   title: string
   category: string
   blogCategory: BlogCategoryModel
