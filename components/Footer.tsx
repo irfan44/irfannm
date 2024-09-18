@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa'
 import ContactButton from 'components/common/ContactButton'
 import Container from 'components/common/layouts/Container'
 import Menu from 'components/common/navigation/ListMenu'
-import SocialLinks from 'components/common/SocialMedia'
+import SocialMedia from 'components/common/SocialMedia'
 
 const Footer = () => {
   return (
@@ -23,7 +23,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className="mb-8 flex justify-center space-x-4 md:justify-start">
-            <SocialLinks />
+            <SocialMedia type="icon" />
           </div>
           <div className="mb-4 flex justify-center md:justify-start">
             <ContactButton />
