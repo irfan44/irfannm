@@ -7,13 +7,15 @@ import type {
 import { BaseContentService } from './base/content'
 
 export class ConstantService {
-  static async getConstants(): Promise<ConstantsResponse> {
+  static async getConstants(): Promise<ConstantsResponse | undefined> {
     const response =
       await BaseContentService.handleQuery<ConstantsResponse>(GET_CONSTANTS)
     return response.data
   }
 
-  static async getConstant(slug: string): Promise<ConstantResponse> {
+  static async getConstant(
+    slug: string
+  ): Promise<ConstantResponse | undefined> {
     const variables = {
       slug,
     }

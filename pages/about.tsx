@@ -60,6 +60,15 @@ export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
   const experiences = await ExperienceController.getExperiences()
 
+  if (!constants || !experiences) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
+
   const aboutImageValue = constants.filter(
     (constant) => constant.slug === 'about-image'
   )

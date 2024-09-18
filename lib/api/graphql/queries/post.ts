@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@urql/core'
 
 export const GET_POSTS = gql`
   query GetPosts($orderBy: PostOrderByInput, $first: Int) {

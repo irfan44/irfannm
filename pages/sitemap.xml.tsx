@@ -48,12 +48,6 @@ function generateSiteMap(posts: PostsModel) {
           </url>`
         })
         .join('')}
-      <url>
-        <loc>${EXTERNAL_DATA_URL}/about</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-      </url>
    </urlset>
  `
 }
@@ -64,8 +58,17 @@ interface Params {
   res: any
 }
 
-export async function getServerSideProps({ res }: Params) {
+export const getServerSideProps = async ({ res }: Params) => {
   const response = await PostController.getPosts()
+
+  if (!response) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
 
   const sitemap = generateSiteMap(response)
 

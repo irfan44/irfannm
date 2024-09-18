@@ -7,7 +7,7 @@ import type { ProjectsResponse } from 'lib/api/types/project'
 import { BaseContentService } from './base/content'
 
 export class ProjectService {
-  static async getProjects(): Promise<ProjectsResponse> {
+  static async getProjects(): Promise<ProjectsResponse | undefined> {
     const variables = {
       orderBy: 'startingDate_DESC',
     }
@@ -19,7 +19,7 @@ export class ProjectService {
     return response.data
   }
 
-  static async getFeaturedProjects(): Promise<ProjectsResponse> {
+  static async getFeaturedProjects(): Promise<ProjectsResponse | undefined> {
     const variables = {
       isFeatured: true,
       orderBy: 'startingDate_DESC',

@@ -1,18 +1,14 @@
 import type { DocumentNode } from 'graphql/language'
-import type { OperationVariables } from '@apollo/client'
+import type { AnyVariables } from '@urql/core'
 
 import { contentClient } from 'lib/api/graphql/content'
 
 export class BaseContentService {
   static async handleQuery<T>(
     query: DocumentNode,
-    variables: OperationVariables | undefined = undefined
+    variables: AnyVariables | undefined = undefined
   ) {
-    const response = await contentClient.query<T>({
-      query,
-      variables,
-      fetchPolicy: 'network-only',
-    })
+    const response = await contentClient.query<T>(query, variables)
     return response
   }
 }

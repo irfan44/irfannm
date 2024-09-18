@@ -6,13 +6,19 @@ import type {
 } from 'lib/models/post'
 
 export class PostController {
-  static async getPosts(): Promise<PostsModel> {
+  static async getPosts(): Promise<PostsModel | undefined> {
     const response = await PostService.getPosts()
+    if (!response) return undefined
+
     return response.posts
   }
 
-  static async getCategorizedPosts(): Promise<CategorizedPostsModel> {
+  static async getCategorizedPosts(): Promise<
+    CategorizedPostsModel | undefined
+  > {
     const response = await PostService.getCategorizedPosts()
+    if (!response) return undefined
+
     const categories = response.blogCategories
     const posts = response.posts
 
@@ -37,20 +43,28 @@ export class PostController {
     return categorizedPosts
   }
 
-  static async getPost(slug: string): Promise<PostModel> {
+  static async getPost(slug: string): Promise<PostModel | undefined> {
     const response = await PostService.getPost(slug)
+    if (!response) return undefined
+
     const post = response.posts[0]
     return post
   }
 
-  static async getLegacyPost(legacySlug: string): Promise<PostModel> {
+  static async getLegacyPost(
+    legacySlug: string
+  ): Promise<PostModel | undefined> {
     const response = await PostService.getLegacyPost(legacySlug)
+    if (!response) return undefined
+
     const post = response.posts[0]
     return post
   }
 
-  static async getHighlightedPosts(): Promise<PostsModel> {
+  static async getHighlightedPosts(): Promise<PostsModel | undefined> {
     const response = await PostService.getHighlightedPosts()
+    if (!response) return undefined
+
     return response.posts
   }
 }

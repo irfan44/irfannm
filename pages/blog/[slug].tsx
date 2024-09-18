@@ -52,7 +52,7 @@ interface Params {
   }
 }
 
-export async function getServerSideProps({ params }: Params) {
+export const getServerSideProps = async ({ params }: Params) => {
   const slug = params.slug
   const post = await PostController.getPost(slug)
 

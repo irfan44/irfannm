@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@urql/core'
 
 export const GET_PROJECTS = gql`
   query GetProjects($orderBy: ProjectOrderByInput) {

@@ -4,7 +4,7 @@ import type { ExperiencesResponse } from 'lib/api/types/experience'
 import { BaseContentService } from './base/content'
 
 export class ExperienceService {
-  static async getExperiences(): Promise<ExperiencesResponse> {
+  static async getExperiences(): Promise<ExperiencesResponse | undefined> {
     const variables = {
       orderBy: 'startingDate_DESC',
     }

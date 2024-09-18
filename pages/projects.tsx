@@ -44,6 +44,16 @@ const Projects = ({ workProjects, personalProjects }: Props) => {
 
 export const getServerSideProps = async () => {
   const projects = await ProjectController.getProjects()
+
+  if (!projects) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
+
   const workProjects = projects.filter((value) => value.type === 'Work')
   const personalProjects = projects.filter((value) => value.type === 'Personal')
 

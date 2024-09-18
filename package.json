@@ -24,8 +24,8 @@
     "test": "npm run typecheck && npm run lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.10.1",
     "@headlessui/react": "^1.7.19",
+    "@urql/core": "^5.0.6",
     "@vercel/speed-insights": "^1.0.10",
     "framer-motion": "^11.1.7",
     "graphql": "^16.8.1",

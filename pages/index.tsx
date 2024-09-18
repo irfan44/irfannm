@@ -54,6 +54,15 @@ export const getServerSideProps = async () => {
   const featuredProjects = await ProjectController.getFeaturedProjects()
   const highlightedPosts = await PostController.getHighlightedPosts()
 
+  if (!constants || !experiences || !featuredProjects || !highlightedPosts) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
+
   const resumeUrlValue = constants.filter(
     (constant) => constant.slug === 'resume-url'
   )

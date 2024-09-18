@@ -60,6 +60,15 @@ const Blog = ({ categorizedPosts }: Props) => {
 export const getServerSideProps = async () => {
   const categorizedPosts = await PostController.getCategorizedPosts()
 
+  if (!categorizedPosts) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
+
   return {
     props: { categorizedPosts },
   }

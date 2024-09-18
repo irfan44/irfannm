@@ -13,7 +13,7 @@ import type {
 import { BaseContentService } from './base/content'
 
 export class PostService {
-  static async getPosts(): Promise<PostsResponse> {
+  static async getPosts(): Promise<PostsResponse | undefined> {
     const variables = {
       orderBy: 'date_DESC',
     }
@@ -25,7 +25,9 @@ export class PostService {
     return response.data
   }
 
-  static async getCategorizedPosts(): Promise<CategorizedPostsResponse> {
+  static async getCategorizedPosts(): Promise<
+    CategorizedPostsResponse | undefined
+  > {
     const variables = {
       orderBy: 'date_DESC',
     }
@@ -38,7 +40,7 @@ export class PostService {
     return response.data
   }
 
-  static async getPost(slug: string): Promise<PostResponse> {
+  static async getPost(slug: string): Promise<PostResponse | undefined> {
     const variables = {
       slug,
     }
@@ -50,7 +52,9 @@ export class PostService {
     return response.data
   }
 
-  static async getLegacyPost(legacySlug: string): Promise<PostResponse> {
+  static async getLegacyPost(
+    legacySlug: string
+  ): Promise<PostResponse | undefined> {
     const variables = {
       legacySlug,
     }
@@ -62,7 +66,7 @@ export class PostService {
     return response.data
   }
 
-  static async getHighlightedPosts(): Promise<PostsResponse> {
+  static async getHighlightedPosts(): Promise<PostsResponse | undefined> {
     const variables = {
       orderBy: 'date_DESC',
       first: 2,
