@@ -15,6 +15,12 @@ function generateSiteMap(posts: PostsModel) {
         <priority>0.7</priority>
       </url>
       <url>
+        <loc>${EXTERNAL_DATA_URL}/about</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+      </url>
+      <url>
         <loc>${EXTERNAL_DATA_URL}/projects</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
         <changefreq>daily</changefreq>
