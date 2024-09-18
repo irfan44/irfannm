@@ -1,7 +1,7 @@
 import * as process from 'node:process'
 
-import { PostController } from '../lib/controllers/post'
-import { PostModel, PostsModel } from '../lib/models/post'
+import { PostController } from 'lib/controllers/post'
+import type { PostModel, PostsModel } from 'lib/models/post'
 
 const EXTERNAL_DATA_URL = process.env.SITE_URL || 'https://irfannm.dev'
 
