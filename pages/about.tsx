@@ -5,7 +5,7 @@ import AboutMe from 'components/about/AboutMe'
 import Experience from 'components/about/Experience'
 import Resume from 'components/about/Resume'
 import SocialContact from 'components/about/SocialContact'
-import PageHeader from 'components/layouts/PageHeader'
+import PageHeader from 'components/common/layouts/PageHeader'
 import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
 import { ExperienceController } from 'lib/controllers/experience'
@@ -59,6 +59,15 @@ const About = ({
 export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
   const experiences = await ExperienceController.getExperiences()
+
+  if (!constants || !experiences) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
 
   const aboutImageValue = constants.filter(
     (constant) => constant.slug === 'about-image'

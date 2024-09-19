@@ -15,7 +15,10 @@ interface Props {
 const ProjectDialog = ({ isOpen, handleOnClose, project }: Props) => {
   return (
     <Dialog open={isOpen} onClose={handleOnClose} className="relative z-50">
-      <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+      <div
+        className="fixed inset-0 bg-black/80 dark:bg-black/85"
+        aria-hidden="true"
+      />
       <div className="fixed inset-0 flex items-center justify-center overflow-scroll p-4 md:overflow-hidden">
         <Dialog.Panel className="mx-auto my-2 w-full space-y-4 rounded-3xl bg-white p-6 dark:bg-neutral-800 lg:w-2/3">
           <div className="flex items-center justify-between">

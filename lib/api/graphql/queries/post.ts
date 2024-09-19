@@ -1,10 +1,11 @@
-import { gql } from '@apollo/client'
+import { gql } from '@urql/core'
 
 export const GET_POSTS = gql`
   query GetPosts($orderBy: PostOrderByInput, $first: Int) {
     posts(orderBy: $orderBy, first: $first) {
       category
       blogCategory {
+        name
         slug
       }
       coverImage
@@ -12,7 +13,31 @@ export const GET_POSTS = gql`
       excerpt
       id
       slug
+      legacySlug
       title
+    }
+  }
+`
+
+export const GET_CATEGORIZED_POSTS = gql`
+  query GetCategorizedPosts($orderBy: PostOrderByInput) {
+    posts(orderBy: $orderBy) {
+      category
+      blogCategory {
+        name
+        slug
+      }
+      coverImage
+      date
+      excerpt
+      id
+      slug
+      legacySlug
+      title
+    }
+    blogCategories {
+      name
+      slug
     }
   }
 `
@@ -23,6 +48,7 @@ export const GET_POST = gql`
       caption
       category
       blogCategory {
+        name
         slug
       }
       content
@@ -33,6 +59,7 @@ export const GET_POST = gql`
       id
       publishedAt
       slug
+      legacySlug
       title
       updatedAt
     }
@@ -45,6 +72,7 @@ export const GET_LEGACY_POST = gql`
       caption
       category
       blogCategory {
+        name
         slug
       }
       content
@@ -55,17 +83,9 @@ export const GET_LEGACY_POST = gql`
       id
       publishedAt
       slug
+      legacySlug
       title
       updatedAt
-    }
-  }
-`
-
-export const GET_BLOG_CATEGORIES = gql`
-  query GetBlogCategories {
-    blogCategories {
-      name
-      slug
     }
   }
 `

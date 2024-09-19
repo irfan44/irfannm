@@ -1,6 +1,6 @@
 import Title from 'components/common/base/Title'
 import ResumeButton from 'components/common/ResumeButton'
-import SocialLink from 'components/common/SocialMedia'
+import SocialMedia from 'components/common/SocialMedia'
 
 interface Props {
   description: string
@@ -16,11 +16,9 @@ const HeroSection = ({ description, resumeUrl }: Props) => {
           <Title type="pageTitle">I&apos;m Irfan! 👋</Title>
         </div>
         <p>{description}</p>
-        <div>
-          <ResumeButton resumeUrl={resumeUrl} />
-        </div>
-        <div className="flex space-x-4 py-4">
-          <SocialLink />
+        <ResumeButton resumeUrl={resumeUrl} />
+        <div className="pt-8">
+          <SocialMedia type="icon" />
         </div>
       </div>
       <div className="flex justify-center md:w-1/2">

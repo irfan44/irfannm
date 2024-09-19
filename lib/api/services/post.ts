@@ -1,67 +1,81 @@
-import { contentClient } from 'lib/api/graphql/content'
 import {
-  GET_BLOG_CATEGORIES,
+  GET_CATEGORIZED_POSTS,
   GET_LEGACY_POST,
   GET_POST,
   GET_POSTS,
 } from 'lib/api/graphql/queries/post'
 import type {
-  BlogCategoriesResponse,
+  CategorizedPostsResponse,
   PostResponse,
   PostsResponse,
 } from 'lib/api/types/post'
 
+import { BaseContentService } from './base/content'
+
 export class PostService {
-  static async getPosts(): Promise<PostsResponse> {
-    const response = await contentClient.query<PostsResponse>({
-      query: GET_POSTS,
-      variables: {
-        orderBy: 'date_DESC',
-      },
-      fetchPolicy: 'network-only',
-    })
+  static async getPosts(): Promise<PostsResponse | undefined> {
+    const variables = {
+      orderBy: 'date_DESC',
+    }
+
+    const response = await BaseContentService.handleQuery<PostsResponse>(
+      GET_POSTS,
+      variables
+    )
     return response.data
   }
 
-  static async getPost(slug: string): Promise<PostResponse> {
-    const response = await contentClient.query<PostResponse>({
-      query: GET_POST,
-      variables: {
-        slug,
-      },
-      fetchPolicy: 'network-only',
-    })
+  static async getCategorizedPosts(): Promise<
+    CategorizedPostsResponse | undefined
+  > {
+    const variables = {
+      orderBy: 'date_DESC',
+    }
+
+    const response =
+      await BaseContentService.handleQuery<CategorizedPostsResponse>(
+        GET_CATEGORIZED_POSTS,
+        variables
+      )
     return response.data
   }
 
-  static async getLegacyPost(legacySlug: string): Promise<PostResponse> {
-    const response = await contentClient.query<PostResponse>({
-      query: GET_LEGACY_POST,
-      variables: {
-        legacySlug,
-      },
-      fetchPolicy: 'network-only',
-    })
+  static async getPost(slug: string): Promise<PostResponse | undefined> {
+    const variables = {
+      slug,
+    }
+
+    const response = await BaseContentService.handleQuery<PostResponse>(
+      GET_POST,
+      variables
+    )
     return response.data
   }
 
-  static async getHighlightedPosts(): Promise<PostsResponse> {
-    const response = await contentClient.query<PostsResponse>({
-      query: GET_POSTS,
-      variables: {
-        orderBy: 'date_DESC',
-        first: 2,
-      },
-      fetchPolicy: 'network-only',
-    })
+  static async getLegacyPost(
+    legacySlug: string
+  ): Promise<PostResponse | undefined> {
+    const variables = {
+      legacySlug,
+    }
+
+    const response = await BaseContentService.handleQuery<PostResponse>(
+      GET_LEGACY_POST,
+      variables
+    )
     return response.data
   }
 
-  static async getBlogCategories(): Promise<BlogCategoriesResponse> {
-    const response = await contentClient.query<BlogCategoriesResponse>({
-      query: GET_BLOG_CATEGORIES,
-      fetchPolicy: 'network-only',
-    })
+  static async getHighlightedPosts(): Promise<PostsResponse | undefined> {
+    const variables = {
+      orderBy: 'date_DESC',
+      first: 2,
+    }
+
+    const response = await BaseContentService.handleQuery<PostsResponse>(
+      GET_POSTS,
+      variables
+    )
     return response.data
   }
 }
