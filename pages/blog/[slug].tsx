@@ -1,10 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
+import PostBody from 'components/blog/postDetail/PostBody'
+import PostBreadcrumb from 'components/blog/postDetail/PostBreadcrumb'
+import PostHeader from 'components/blog/postDetail/PostHeader'
 import Meta from 'components/Meta'
-import PostBody from 'components/post/PostBody'
-import PostBreadcrumb from 'components/post/PostBreadcrumb'
-import PostHeader from 'components/post/PostHeader'
 import { PostController } from 'lib/controllers/post'
 import type { PostModel } from 'lib/models/post'
 
@@ -34,7 +34,7 @@ const Post = ({ post, slug }: Props) => {
         <PostBody>
           <PostHeader
             title={post.title}
-            category={post.category}
+            category={post.blogCategory.name}
             coverImage={post.coverImage.secure_url}
             date={post.date}
             caption={post.caption}
@@ -52,7 +52,7 @@ interface Params {
   }
 }
 
-export async function getServerSideProps({ params }: Params) {
+export const getServerSideProps = async ({ params }: Params) => {
   const slug = params.slug
   const post = await PostController.getPost(slug)
 

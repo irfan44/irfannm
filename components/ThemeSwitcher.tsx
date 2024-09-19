@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Switch } from '@headlessui/react'
 
-import Moon from 'components/icons/Moon'
-import Sun from 'components/icons/Sun'
+import Moon from 'components/common/icons/Moon'
+import Sun from 'components/common/icons/Sun'
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false)

@@ -1,9 +1,7 @@
-import PostsList from 'components/blog/PostList'
 import ExperienceSummary from 'components/home/ExperienceSummary'
 import FeaturedProject from 'components/home/FeaturedProject'
 import HeroSection from 'components/home/HeroSection'
-import ReadMore from 'components/home/ReadMore'
-import Section from 'components/layouts/Section'
+import HighlightedPosts from 'components/home/HighlightedPosts'
 import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
 import { ExperienceController } from 'lib/controllers/experience'
@@ -43,12 +41,7 @@ const Home = ({
           <FeaturedProject featuredProjects={featuredProjects} />
         </div>
         {highlightedPosts && (
-          <>
-            <Section title="Latest Posts">
-              <PostsList posts={highlightedPosts} />
-            </Section>
-            <ReadMore url="/blog">Read more posts</ReadMore>
-          </>
+          <HighlightedPosts highlightedPosts={highlightedPosts} />
         )}
       </div>
     </>
@@ -60,6 +53,15 @@ export const getServerSideProps = async () => {
   const experiences = await ExperienceController.getExperiences()
   const featuredProjects = await ProjectController.getFeaturedProjects()
   const highlightedPosts = await PostController.getHighlightedPosts()
+
+  if (!constants || !experiences || !featuredProjects || !highlightedPosts) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
 
   const resumeUrlValue = constants.filter(
     (constant) => constant.slug === 'resume-url'
