@@ -1,7 +1,7 @@
-import ExperienceSummary from 'components/home/ExperienceSummary'
 import FeaturedProject from 'components/home/FeaturedProject'
 import HeroSection from 'components/home/HeroSection'
 import HighlightedPosts from 'components/home/HighlightedPosts'
+import RecentExperience from 'components/home/RecentExperience'
 import Meta from 'components/Meta'
 import { ConstantController } from 'lib/controllers/constant'
 import { ExperienceController } from 'lib/controllers/experience'
@@ -14,7 +14,7 @@ import type { ProjectsModel } from 'lib/models/project'
 interface Props {
   description: string
   resumeUrl: string
-  experiences: ExperiencesModel
+  recentExperiences: ExperiencesModel
   featuredProjects: ProjectsModel
   highlightedPosts: PostsModel
 }
@@ -22,7 +22,7 @@ interface Props {
 const Home = ({
   description,
   resumeUrl,
-  experiences,
+  recentExperiences,
   featuredProjects,
   highlightedPosts,
 }: Props) => {
@@ -37,7 +37,7 @@ const Home = ({
       <div className="space-y-16">
         <HeroSection description={description} resumeUrl={resumeUrl} />
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
-          <ExperienceSummary experiences={experiences} />
+          <RecentExperience recentExperiences={recentExperiences} />
           <FeaturedProject featuredProjects={featuredProjects} />
         </div>
         {highlightedPosts && (
@@ -50,11 +50,16 @@ const Home = ({
 
 export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
-  const experiences = await ExperienceController.getExperiences()
+  const recentExperiences = await ExperienceController.getRecentExperiences()
   const featuredProjects = await ProjectController.getFeaturedProjects()
   const highlightedPosts = await PostController.getHighlightedPosts()
 
-  if (!constants || !experiences || !featuredProjects || !highlightedPosts) {
+  if (
+    !constants ||
+    !recentExperiences ||
+    !featuredProjects ||
+    !highlightedPosts
+  ) {
     return {
       redirect: {
         destination: '/500',
@@ -77,7 +82,7 @@ export const getServerSideProps = async () => {
     props: {
       description,
       resumeUrl,
-      experiences,
+      recentExperiences,
       featuredProjects,
       highlightedPosts,
     },

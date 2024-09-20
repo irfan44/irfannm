@@ -23,6 +23,7 @@ export class ProjectService {
     const variables = {
       isFeatured: true,
       orderBy: 'startingDate_DESC',
+      first: 5,
     }
 
     const response = await BaseContentService.handleQuery<ProjectsResponse>(

@@ -1,5 +1,5 @@
-import type { ExperienceDetailModel } from 'lib/models/experience'
+import type { ExperiencesModel } from 'lib/models/experience'
 
 export interface ExperiencesResponse {
-  experiences: ExperienceDetailModel[]
+  experiences: ExperiencesModel
 }
