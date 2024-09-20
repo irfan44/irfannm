@@ -56,7 +56,7 @@ const About = ({
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const constants = await ConstantController.getConstants()
   const experiences = await ExperienceController.getExperiences()
 
