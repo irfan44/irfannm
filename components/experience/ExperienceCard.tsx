@@ -37,14 +37,20 @@ const ExperienceCard = ({ withResponsibility = false, experience }: Props) => {
         </div>
       </div>
       {withResponsibility && (
-        <div className="mt-2">
-          <p>Responsible for :</p>
-          <ul className="ml-5 list-disc">
-            {experience.responsibility.map((responsibility) => {
-              return <li key={responsibility}>{responsibility}</li>
-            })}
-          </ul>
-        </div>
+        <>
+          {experience.responsibility.length > 0 ? (
+            <div className="mt-2">
+              <p>Responsible for :</p>
+              <ul className="ml-5 list-disc">
+                {experience.responsibility.map((responsibility) => {
+                  return <li key={responsibility}>{responsibility}</li>
+                })}
+              </ul>
+            </div>
+          ) : (
+            <></>
+          )}
+        </>
       )}
     </div>
   )

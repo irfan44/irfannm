@@ -21,7 +21,7 @@ export class ExperienceService {
   > {
     const variables = {
       orderBy: 'startingDate_DESC',
-      first: 5,
+      first: 6,
     }
 
     const response = await BaseContentService.handleQuery<ExperiencesResponse>(
