@@ -25,8 +25,13 @@ export const GET_FEATURED_PROJECTS = gql`
   query GetFeaturedProjects(
     $isFeatured: Boolean
     $orderBy: ProjectOrderByInput
+    $first: Int
   ) {
-    projects(where: { isFeatured: $isFeatured }, orderBy: $orderBy) {
+    projects(
+      where: { isFeatured: $isFeatured }
+      orderBy: $orderBy
+      first: $first
+    ) {
       company
       image
       isFeatured
