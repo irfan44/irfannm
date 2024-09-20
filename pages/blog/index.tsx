@@ -57,7 +57,7 @@ const Blog = ({ categorizedPosts }: Props) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const categorizedPosts = await PostController.getCategorizedPosts()
 
   if (!categorizedPosts) {
