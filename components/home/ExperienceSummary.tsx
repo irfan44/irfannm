@@ -9,7 +9,7 @@ interface Props {
 
 const ExperienceSummary = ({ experiences }: Props) => {
   return (
-    <Section title="Experience">
+    <Section title="Working Experience">
       <div className="space-y-6">
         <ExperienceList experiences={experiences} />
       </div>
