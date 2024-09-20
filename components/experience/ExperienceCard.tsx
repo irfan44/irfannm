@@ -15,6 +15,8 @@ const ExperienceCard = ({ withResponsibility = false, experience }: Props) => {
             className="h-10 w-10 object-scale-down"
             src={experience.companyLogo.secure_url}
             alt={experience.company}
+            height={40}
+            width={40}
           />
         </div>
         <div>
