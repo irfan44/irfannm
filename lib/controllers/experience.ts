@@ -8,4 +8,11 @@ export class ExperienceController {
 
     return response.experiences
   }
+
+  static async getRecentExperiences(): Promise<ExperiencesModel | undefined> {
+    const response = await ExperienceService.getRecentExperiences()
+    if (!response) return undefined
+
+    return response.experiences
+  }
 }

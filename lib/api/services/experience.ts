@@ -15,4 +15,19 @@ export class ExperienceService {
     )
     return response.data
   }
+
+  static async getRecentExperiences(): Promise<
+    ExperiencesResponse | undefined
+  > {
+    const variables = {
+      orderBy: 'startingDate_DESC',
+      first: 5,
+    }
+
+    const response = await BaseContentService.handleQuery<ExperiencesResponse>(
+      GET_EXPERIENCES,
+      variables
+    )
+    return response.data
+  }
 }

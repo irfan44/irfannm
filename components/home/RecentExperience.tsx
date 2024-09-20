@@ -4,18 +4,18 @@ import ReadMore from 'components/home/ReadMore'
 import type { ExperiencesModel } from 'lib/models/experience'
 
 interface Props {
-  experiences: ExperiencesModel
+  recentExperiences: ExperiencesModel
 }
 
-const ExperienceSummary = ({ experiences }: Props) => {
+const RecentExperience = ({ recentExperiences }: Props) => {
   return (
     <Section title="Working Experience">
       <div className="space-y-6">
-        <ExperienceList experiences={experiences} />
+        <ExperienceList experiences={recentExperiences} />
       </div>
       <ReadMore url="/about#experience">View more</ReadMore>
     </Section>
   )
 }
 
-export default ExperienceSummary
+export default RecentExperience
