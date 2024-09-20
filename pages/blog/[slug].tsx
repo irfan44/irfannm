@@ -52,24 +52,33 @@ interface Params {
   }
 }
 
-export const getServerSideProps = async ({ params }: Params) => {
+export const getStaticPaths = async () => {
+  const posts = await PostController.getPosts()
+
+  if (!posts) {
+    return {
+      redirect: {
+        destination: '/500',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    paths: posts.map((post) => ({
+      params: { slug: post.slug },
+    })),
+    fallback: false,
+  }
+}
+
+export const getStaticProps = async ({ params }: Params) => {
   const slug = params.slug
   const post = await PostController.getPost(slug)
 
   if (!post) {
-    const legacyPost = await PostController.getLegacyPost(slug)
-
-    if (!legacyPost) {
-      return {
-        notFound: true,
-      }
-    }
-
     return {
-      redirect: {
-        destination: `/blog/${legacyPost.slug}`,
-        permanent: true,
-      },
+      notFound: true,
     }
   }
 
