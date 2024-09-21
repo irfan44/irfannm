@@ -1,5 +1,7 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
+import type { CloudinaryImageModel } from './media'
+
 export type CategorizedPostsModel = CategorizedPostModel[]
 
 export interface CategorizedPostModel {
@@ -16,9 +18,7 @@ export interface PostModel {
   category: string
   blogCategory: BlogCategoryModel
   date: string
-  coverImage: {
-    secure_url: string
-  }
+  coverImage: CloudinaryImageModel
   caption: string
   excerpt: string
   content: MDXRemoteSerializeResult

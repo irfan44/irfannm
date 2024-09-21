@@ -78,7 +78,7 @@ const ProjectDialog = ({ isOpen, handleOnClose, project }: Props) => {
                     <div className="flex justify-center py-2">
                       <img
                         className="rounded-xl"
-                        src={project.image.secure_url}
+                        src={project.image.derived[0].secure_url}
                         alt={project.name}
                         width={500}
                         height={300}

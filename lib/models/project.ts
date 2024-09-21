@@ -1,3 +1,5 @@
+import type { CloudinaryImageModel } from './media'
+
 export type ProjectsModel = ProjectModel[]
 
 export interface ProjectModel {
@@ -13,9 +15,7 @@ export interface ProjectModel {
   sourceCode?: string
   url?: string
   responsibility?: string[]
-  image?: {
-    secure_url: string
-  }
+  image?: CloudinaryImageModel
   overview?: string
   role?: string
 }
