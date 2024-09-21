@@ -41,7 +41,7 @@ const Blog = ({ categorizedPosts }: Props) => {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage.secure_url}
+              coverImage={heroPost.coverImage.derived[0].secure_url}
               date={heroPost.date}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
