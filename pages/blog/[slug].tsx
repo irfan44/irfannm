@@ -17,7 +17,7 @@ const Post = ({ post, slug }: Props) => {
   const pageMeta = {
     title: post.title,
     description: post.excerpt,
-    ogImage: post.coverImage.secure_url,
+    ogImage: post.coverImage.derived[0].secure_url,
     currentPath: `/blog/${slug}`,
   }
 
@@ -35,7 +35,7 @@ const Post = ({ post, slug }: Props) => {
           <PostHeader
             title={post.title}
             category={post.blogCategory.name}
-            coverImage={post.coverImage.secure_url}
+            coverImage={post.coverImage.derived[0].secure_url}
             date={post.date}
             caption={post.caption}
           />
