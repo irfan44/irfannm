@@ -13,7 +13,7 @@ const ExperienceCard = ({ withResponsibility = false, experience }: Props) => {
         <div className="h-fit w-fit rounded-2xl bg-secondary p-2 dark:bg-white">
           <img
             className="h-10 w-10 object-scale-down"
-            src={experience.companyLogo.secure_url}
+            src={experience.companyLogo.derived[0].secure_url}
             alt={experience.company}
             height={40}
             width={40}
