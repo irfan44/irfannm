@@ -89,3 +89,31 @@ export const GET_LEGACY_POST = gql`
     }
   }
 `
+
+export const GET_OTHER_POSTS = gql`
+  query GetPosts(
+    $orderBy: PostOrderByInput
+    $first: Int
+    $category: String
+    $slug: String
+  ) {
+    posts(
+      orderBy: $orderBy
+      first: $first
+      where: { blogCategory: { slug: $category }, slug_not: $slug }
+    ) {
+      category
+      blogCategory {
+        name
+        slug
+      }
+      coverImage
+      date
+      excerpt
+      id
+      slug
+      legacySlug
+      title
+    }
+  }
+`
