@@ -1,6 +1,7 @@
 import {
   GET_CATEGORIZED_POSTS,
   GET_LEGACY_POST,
+  GET_OTHER_POSTS,
   GET_POST,
   GET_POSTS,
 } from 'lib/api/graphql/queries/post'
@@ -74,6 +75,24 @@ export class PostService {
 
     const response = await BaseContentService.handleQuery<PostsResponse>(
       GET_POSTS,
+      variables
+    )
+    return response.data
+  }
+
+  static async getOtherPosts(
+    category: string,
+    slug: string
+  ): Promise<PostsResponse | undefined> {
+    const variables = {
+      orderBy: 'date_DESC',
+      first: 2,
+      category,
+      slug,
+    }
+
+    const response = await BaseContentService.handleQuery<PostsResponse>(
+      GET_OTHER_POSTS,
       variables
     )
     return response.data
