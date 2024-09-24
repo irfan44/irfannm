@@ -67,4 +67,14 @@ export class PostController {
 
     return response.posts
   }
+
+  static async getOtherPosts(
+    category: string,
+    slug: string
+  ): Promise<PostsModel | undefined> {
+    const response = await PostService.getOtherPosts(category, slug)
+    if (!response) return undefined
+
+    return response.posts
+  }
 }

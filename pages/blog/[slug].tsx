@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
+import PostCardList from 'components/blog/list/PostCardList'
 import PostBody from 'components/blog/postDetail/PostBody'
 import PostBreadcrumb from 'components/blog/postDetail/PostBreadcrumb'
 import PostHeader from 'components/blog/postDetail/PostHeader'
@@ -9,11 +10,12 @@ import { PostController } from 'lib/controllers/post'
 import type { PostModel } from 'lib/models/post'
 
 type Props = {
-  post: PostModel
   slug: string
+  post: PostModel
+  otherPosts: PostModel[]
 }
 
-const Post = ({ post, slug }: Props) => {
+const Post = ({ slug, post, otherPosts }: Props) => {
   const pageMeta = {
     title: post.title,
     description: post.excerpt,
@@ -29,7 +31,7 @@ const Post = ({ post, slug }: Props) => {
         ogImage={pageMeta.ogImage}
         currentPath={pageMeta.currentPath}
       />
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto mb-24 max-w-3xl">
         <PostBreadcrumb />
         <PostBody>
           <PostHeader
@@ -42,6 +44,12 @@ const Post = ({ post, slug }: Props) => {
           <MDXRemote {...post.content} />
         </PostBody>
       </div>
+      {otherPosts.length > 0 && (
+        <div className="mb-32">
+          <h2 className="mb-8">More from {post.blogCategory.name}</h2>
+          <PostCardList posts={otherPosts} />
+        </div>
+      )}
     </>
   )
 }
@@ -82,15 +90,20 @@ export const getStaticProps = async ({ params }: Params) => {
     }
   }
 
+  const otherPosts = await PostController.getOtherPosts(
+    post.blogCategory.slug,
+    slug
+  )
   const content = await serialize(post.content)
 
   return {
     props: {
+      slug,
       post: {
         ...post,
         content,
       },
-      slug,
+      otherPosts: otherPosts ? otherPosts : [],
     },
   }
 }
