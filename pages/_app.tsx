@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import NProgress from 'nprogress'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
+import BackToTop from 'components/common/BackToTop'
 import Container from 'components/common/layouts/Container'
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
@@ -28,6 +29,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
           <Container>
             <Component {...pageProps} />
           </Container>
+          <BackToTop />
         </main>
         <Footer />
       </ThemeProvider>
