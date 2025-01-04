@@ -48,7 +48,7 @@ const Home = ({
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const constants = await ConstantController.getConstants()
   const recentExperiences = await ExperienceController.getRecentExperiences()
   const featuredProjects = await ProjectController.getFeaturedProjects()
