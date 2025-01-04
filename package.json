@@ -1,7 +1,19 @@
 {
   "name": "irfannm",
-  "type": "module",
   "version": "2.0.0",
+  "author": {
+    "name": "Irfan Nurghiffari Muhajir",
+    "email": "irfannmuhajir@gmail.com",
+    "url": "https://irfannm.dev"
+  },
+  "homepage": "https://irfannm.dev",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/irfan44/irfannm"
+  },
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
