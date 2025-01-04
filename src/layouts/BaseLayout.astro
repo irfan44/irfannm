@@ -1,10 +1,12 @@
 ---
+import Navbar from '@components/Navbar'
 import Meta from '../components/Meta.astro'
 import '../styles/index.css'
+import Footer from '@components/Footer'
 
 const {
   title = "Hi I'm Irfan",
-  description,
+  description = "I'm a software engineer, writer, and creator. I write about software engineering, productivity, and personal growth.",
   currentPath = '/',
   ogImage = 'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714299015/irfannm/logo.png',
 } = Astro.props
@@ -24,8 +26,10 @@ const {
     <Meta title={title} description={description} currentPath={currentPath} ogImage={ogImage} />
   </head>
   <body class="antialiased scroll-smooth">
+    <Navbar />
     <main class="mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
