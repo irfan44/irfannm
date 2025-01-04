@@ -42,7 +42,7 @@ const Projects = ({ workProjects, personalProjects }: Props) => {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const projects = await ProjectController.getProjects()
 
   if (!projects) {
