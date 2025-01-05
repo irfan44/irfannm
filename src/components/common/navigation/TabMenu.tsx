@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Tab } from '@headlessui/react'
 
 import navMenus from '@libs/constants/navMenus'

@@ -1,0 +1,25 @@
+---
+import type { IconType } from 'react-icons'
+
+interface Props {
+  title: string
+  href: string
+  iconLeft?: IconType
+  iconRight?: IconType
+}
+
+const { title, href, iconLeft, iconRight } = Astro.props
+---
+<div class="w-fit rounded-2xl border border-neutral-200 bg-black px-3 py-2 text-white shadow-sm hover:bg-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700">
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center space-x-2 font-semibold"
+      title={title}
+      href={href}
+    >
+      {iconLeft && <span>{iconLeft}</span>}
+      <slot />
+      {iconRight && <span>{iconRight}</span>}
+    </a>
+  </div>

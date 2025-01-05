@@ -1,7 +1,7 @@
 import { cacheExchange, Client, fetchExchange } from '@urql/core'
 
-const contentUrl = process.env.CONTENT_API_URL || 'localhost:4000/graphql'
-const isProduction = process.env.NODE_ENV === 'production'
+const contentUrl = import.meta.env.CONTENT_API_URL || 'localhost:4000/graphql'
+const isProduction = import.meta.env.NODE_ENV === 'production'
 
 export const contentClient = new Client({
   url: contentUrl,

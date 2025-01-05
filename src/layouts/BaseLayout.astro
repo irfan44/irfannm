@@ -1,14 +1,24 @@
 ---
-import Navbar from '@components/Navbar'
-import Meta from '../components/Meta.astro'
-import '../styles/index.css'
-import Footer from '@components/Footer'
+import Footer from '@components/layouts/Footer.astro'
+import Meta from '@components/layouts/Meta.astro'
+import Navbar from '@components/layouts/Navbar.astro'
+import BackToTop from '@components/common/BackToTop.astro'
+import '@styles/index.css'
+
+interface Props {
+  title?: string
+  description?: string
+  currentPath?: string
+  ogImage?: string
+  additionalClass?: string
+}
 
 const {
   title = "Hi I'm Irfan",
   description = "I'm a software engineer, writer, and creator. I write about software engineering, productivity, and personal growth.",
   currentPath = '/',
   ogImage = 'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714299015/irfannm/logo.png',
+  additionalClass = ''
 } = Astro.props
 ---
 
@@ -24,12 +34,24 @@ const {
     <meta name="description" content={description} />
 
     <Meta title={title} description={description} currentPath={currentPath} ogImage={ogImage} />
+
+    <script is:inline>
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
   <body class="antialiased scroll-smooth">
     <Navbar />
-    <main class="mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32">
+    <main class={`mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32 ${additionalClass}`}>
       <slot />
     </main>
+    <BackToTop />
     <Footer />
   </body>
 </html>

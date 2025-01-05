@@ -1,0 +1,66 @@
+---
+import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
+
+import ContactButton from '@components/common/ContactButton.astro'
+import Menu from '@components/common/navigation/ListMenu.tsx'
+import TabMenu from '@components/common/navigation/TabMenu.tsx'
+import ThemeSwitcher from './ThemeSwitcher.astro'
+
+let isActive = false
+---
+
+<nav
+  class="z-10 mt-4 w-full container mx-auto px-5 md:px-16 lg:px-32 bg-neutral-50 dark:bg-neutral-900"
+>
+  <div class="flex items-center justify-between py-4">
+    <a
+      class="leading-tightfont-sans block text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"
+      href="/"
+    >
+      inm
+    </a>
+    <div class="py-auto ml-auto flex items-center space-x-2 md:hidden">
+      <button
+        id="nav-menu-mobile"
+        class="ml-2 flex items-center"
+        type="button"
+        title="Menu"
+      >
+        {
+          isActive ? (
+            <p class="text-xl">
+              <RiCloseLine />
+            </p>
+          ) : (
+            <p class="text-xl">
+              <RiMenuLine />
+            </p>
+          )
+        }
+      </button>
+    </div>
+    <div class="hidden text-left md:block">
+      <TabMenu />
+    </div>
+    <div class="hidden text-left md:block">
+      <ThemeSwitcher />
+    </div>
+  </div>
+  {
+    isActive && (
+      <div class="h-screen w-full">
+        <div class="grid items-center rounded-lg border border-zinc-200 p-4">
+          <ul class="flex flex-col items-center space-y-4">
+            <Menu />
+            <li>
+              <ContactButton />
+            </li>
+            <li>
+              <ThemeSwitcher />
+            </li>
+          </ul>
+        </div>
+      </div>
+    )
+  }
+</nav>

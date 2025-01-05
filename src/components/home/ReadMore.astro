@@ -1,0 +1,18 @@
+---
+import { HiArrowNarrowRight } from 'react-icons/hi'
+
+type Props = {
+  url: string
+}
+
+const { url } = Astro.props
+---
+
+<a class="block w-fit" href={url}>
+  <span
+    class="mt-4 flex items-center font-semibold text-black hover:cursor-pointer hover:underline dark:text-white"
+  >
+    <slot />
+    <HiArrowNarrowRight className="ml-1 text-xl" />
+  </span>
+</a>

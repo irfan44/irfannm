@@ -1,39 +1,46 @@
 ---
-import FeaturedProject from "@components/home/FeaturedProject";
-import HeroSection from "@components/home/HeroSection";
-import HighlightedPosts from "@components/home/HighlightedPosts";
-import RecentExperience from "@components/home/RecentExperience";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import { ConstantController } from "@libs/controllers/constant";
-import { ExperienceController } from "@libs/controllers/experience";
-import { PostController } from "@libs/controllers/post";
-import { ProjectController } from "@libs/controllers/project";
+import FeaturedProject from '@components/home/FeaturedProject.astro'
+import HeroSection from '@components/home/HeroSection.astro'
+import HighlightedPosts from '@components/home/HighlightedPosts.astro'
+import RecentExperience from '@components/home/RecentExperience.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { ConstantController } from '@libs/controllers/constant'
+import { ExperienceController } from '@libs/controllers/experience'
+import { PostController } from '@libs/controllers/post'
+import { ProjectController } from '@libs/controllers/project'
 
 const constants = await ConstantController.getConstants()
-  const recentExperiences = await ExperienceController.getRecentExperiences()
-  const featuredProjects = await ProjectController.getFeaturedProjects()
-  const highlightedPosts = await PostController.getHighlightedPosts()
+const recentExperiences = await ExperienceController.getRecentExperiences()
+const featuredProjects = await ProjectController.getFeaturedProjects()
+const highlightedPosts = await PostController.getHighlightedPosts()
 
-  const resumeUrlValue = constants ? constants.filter(
-    (constant) => constant.slug === 'resume-url'
-  ) : [{stringValue: ''}]
-  const resumeUrl = resumeUrlValue[0].stringValue
+const resumeUrlValue = constants
+  ? constants.filter((constant) => constant.slug === 'resume-url')
+  : [{ stringValue: '' }]
+const resumeUrl = resumeUrlValue[0].stringValue
 
-  const descriptionValue = constants ? constants.filter(
-    (constant) => constant.slug === 'description'
-  ) : [{stringValue: ''}]
-  const description = descriptionValue[0].stringValue
+const descriptionValue = constants
+  ? constants.filter((constant) => constant.slug === 'description')
+  : [{ stringValue: '' }]
+const description = descriptionValue[0].stringValue
 ---
-
-<BaseLayout>
-    <div class="space-y-16">
-        <HeroSection description={description} resumeUrl={resumeUrl} />
-        <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
-          <!-- <RecentExperience recentExperiences={recentExperiences} /> -->
-          <!-- <FeaturedProject featuredProjects={featuredProjects} /> -->
-        </div>
-        {highlightedPosts && (
-          <HighlightedPosts highlightedPosts={highlightedPosts} />
-        )}
-      </div>
+<BaseLayout additionalClass="space-y-16">
+    <HeroSection description={description} resumeUrl={resumeUrl} />
+    <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
+      {
+        recentExperiences && (
+          <RecentExperience recentExperiences={recentExperiences} />
+        )
+      }
+      {
+        featuredProjects && (
+          <FeaturedProject featuredProjects={featuredProjects} />
+        )
+      }
+    </div>
+    {
+      highlightedPosts && (
+        <HighlightedPosts highlightedPosts={highlightedPosts} />
+      )
+    }
 </BaseLayout>

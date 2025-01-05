@@ -1,9 +1,19 @@
-const convertDate = (date: string) => {
-  const convertedDate = new Date(date).toLocaleDateString('en-US', {
+const convertDate = (date: string, isFull: boolean = false) => {
+  const currentDate = new Date(date)
+  
+  if (isFull) {
+    return currentDate
+      .toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+  }
+  
+  return currentDate.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
   })
-  return convertedDate
 }
 
 export default convertDate

@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string
+  description?: string
+  isHeader?: boolean
+}
+
+const { title, description = '', isHeader = false } = Astro.props
+---
+
+<section>
+  {isHeader ? <h1 class="mb-6">{title}</h1> : <h2 class="mb-6">{title}</h2>}
+  {description && <p>{description}</p>}
+  <slot />
+</section>

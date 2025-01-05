@@ -1,0 +1,33 @@
+---
+import SocialMedia from '@components/common/SocialMedia.astro'
+import ResumeButton from './ResumeButton.astro'
+
+interface Props {
+  description: string
+  resumeUrl: string
+}
+
+const { description, resumeUrl } = Astro.props
+---
+
+    <div class="mb-12 flex flex-col items-center py-6 md:flex-row">
+      <div class="space-y-6 md:w-1/2">
+        <div>
+          <p class="text-xl font-bold text-black dark:text-white">Hi,</p>
+          <h1>I&apos;m Irfan! 👋</h1>
+        </div>
+        <p>{description}</p>
+        <ResumeButton resumeUrl={resumeUrl} />
+        <div class="pt-8">
+          <SocialMedia type="icon" />
+        </div>
+      </div>
+      <div class="flex justify-center md:w-1/2">
+        <img
+          src="/images/Person.svg"
+          alt="Hero"
+          width="320"
+          height="320"
+        />
+      </div>
+    </div>

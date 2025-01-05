@@ -1,0 +1,16 @@
+---
+import Section from '@components/layouts/Section.astro'
+import ReadMore from '@components/home/ReadMore.astro'
+import type { PostsModel } from '@libs/models/post.ts'
+
+interface Props {
+  highlightedPosts: PostsModel
+}
+
+const { highlightedPosts } = Astro.props
+---
+
+<Section title="Latest Posts">
+  {/* <PostsList posts={highlightedPosts} /> */}
+  <ReadMore url="/blog">Read more posts</ReadMore>
+</Section>
