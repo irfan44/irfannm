@@ -18,7 +18,7 @@ const {
   description = "I'm a software engineer, writer, and creator. I write about software engineering, productivity, and personal growth.",
   currentPath = '/',
   ogImage = 'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714299015/irfannm/logo.png',
-  additionalClass = ''
+  additionalClass = '',
 } = Astro.props
 ---
 
@@ -33,22 +33,30 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
 
-    <Meta title={title} description={description} currentPath={currentPath} ogImage={ogImage} />
+    <Meta
+      title={title}
+      description={description}
+      currentPath={currentPath}
+      ogImage={ogImage}
+    />
 
     <script is:inline>
       if (
         localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add('dark')
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove('dark')
       }
     </script>
   </head>
   <body class="antialiased scroll-smooth">
     <Navbar />
-    <main class={`mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32 ${additionalClass}`}>
+    <main
+      class={`mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32 ${additionalClass}`}
+    >
       <slot />
     </main>
     <BackToTop />

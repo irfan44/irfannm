@@ -10,8 +10,7 @@ const { type } = Astro.props
 ---
 
 {
-  (type === 'icon') &&
-  (
+  type === 'icon' && (
     <ul class="flex space-x-4">
       {socials.map((social) => {
         return (
@@ -33,8 +32,7 @@ const { type } = Astro.props
 }
 
 {
-  (type === 'list') &&
-  (
+  type === 'list' && (
     <ul class="ml-4 list-disc space-y-1">
       {socials.map((social) => {
         return (

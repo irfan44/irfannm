@@ -9,9 +9,7 @@ const ListMenu = ({ setActive }: Props) => {
     <>
       {navMenus.map(({ name, link }) => {
         return (
-          <li
-            key={name}
-          >
+          <li key={name}>
             <a
               className="hover:text-black dark:hover:text-white"
               href={link}

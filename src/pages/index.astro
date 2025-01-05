@@ -24,23 +24,20 @@ const descriptionValue = constants
   : [{ stringValue: '' }]
 const description = descriptionValue[0].stringValue
 ---
+
 <BaseLayout additionalClass="space-y-16">
-    <HeroSection description={description} resumeUrl={resumeUrl} />
-    <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
-      {
-        recentExperiences && (
-          <RecentExperience recentExperiences={recentExperiences} />
-        )
-      }
-      {
-        featuredProjects && (
-          <FeaturedProject featuredProjects={featuredProjects} />
-        )
-      }
-    </div>
+  <HeroSection description={description} resumeUrl={resumeUrl} />
+  <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
     {
-      highlightedPosts && (
-        <HighlightedPosts highlightedPosts={highlightedPosts} />
+      recentExperiences && (
+        <RecentExperience recentExperiences={recentExperiences} />
       )
     }
+    {
+      featuredProjects && (
+        <FeaturedProject featuredProjects={featuredProjects} />
+      )
+    }
+  </div>
+  {highlightedPosts && <HighlightedPosts highlightedPosts={highlightedPosts} />}
 </BaseLayout>

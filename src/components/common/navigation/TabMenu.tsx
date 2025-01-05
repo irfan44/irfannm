@@ -11,9 +11,7 @@ const TabMenu = () => {
             return (
               <Tab key={name}>
                 <div className="relative px-3 py-1">
-                  <a href={link}>
-                    {name}
-                  </a>
+                  <a href={link}>{name}</a>
                 </div>
               </Tab>
             )
