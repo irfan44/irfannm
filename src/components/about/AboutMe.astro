@@ -1,0 +1,23 @@
+---
+import RenderMarkdown from '@components/common/RenderMarkdown.astro'
+
+interface Props {
+  aboutImage: string
+  aboutMeSource: string
+}
+
+const { aboutImage, aboutMeSource } = Astro.props
+---
+
+<div class="mb-12 flex justify-center">
+  <img
+    class="rounded-full"
+    alt="Irfan Nurghiffari Muhajir"
+    src={aboutImage}
+    width="224"
+    height="224"
+  />
+</div>
+<div class="space-y-6">
+  <RenderMarkdown markdownSource={aboutMeSource} />
+</div>

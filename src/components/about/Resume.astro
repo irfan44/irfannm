@@ -1,0 +1,29 @@
+---
+import ExternalLink from '@components/ui/links/ExernalLink.astro'
+import convertDate from '@libs/utils/convertDate'
+
+interface Props {
+  resumeUrl: string
+  updatedAt: string
+}
+
+const { resumeUrl, updatedAt } = Astro.props
+
+const updateDate = convertDate(updatedAt, true)
+---
+
+<div>
+  <h2 class="mb-6">Resume</h2>
+  <span>
+    You can see and download my latest resume{' '}
+    <ExternalLink
+      title="Download here"
+      href={resumeUrl}
+      withIcon={false}
+      additionalClass="!inline font-bold underline"
+    >
+      here
+    </ExternalLink>{' '}
+    (last updated: {updateDate})
+  </span>
+</div>
