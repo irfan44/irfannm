@@ -3,6 +3,7 @@ import AboutMe from '@components/about/AboutMe.astro'
 import Experience from '@components/about/Experience.astro'
 import Resume from '@components/about/Resume.astro'
 import SocialContact from '@components/about/SocialContact.astro'
+import Section from '@components/layouts/Section.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { ConstantController } from '@libs/controllers/constant'
 import { ExperienceController } from '@libs/controllers/experience'
@@ -31,10 +32,14 @@ const resumeUrl = resumeUrlValue[0]
   description="Get to know me better"
   currentPath="/about"
 >
-  <div class="mx-auto max-w-3xl space-y-12">
+  <Section
+    title="About"
+    isHeader
+    additionalClass="mx-auto max-w-3xl space-y-12"
+  >
     <AboutMe aboutImage={aboutImage} aboutMeSource={aboutMeSource} />
     {experiences && <Experience experiences={experiences} />}
     <Resume resumeUrl={resumeUrl.stringValue} updatedAt={resumeUrl.updatedAt} />
     <SocialContact />
-  </div>
+  </Section>
 </BaseLayout>

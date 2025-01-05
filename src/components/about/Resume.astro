@@ -15,15 +15,13 @@ const updateDate = convertDate(updatedAt, true)
 <div>
   <h2 class="mb-6">Resume</h2>
   <span>
-    You can see and download my latest resume{' '}
-    <ExternalLink
+    You can see and download my latest resume <ExternalLink
       title="Download here"
       href={resumeUrl}
       withIcon={false}
-      additionalClass="!inline font-bold underline"
+      additionalClass="!inline-block font-bold underline"
     >
       here
-    </ExternalLink>{' '}
-    (last updated: {updateDate})
-  </span>
+    </ExternalLink> (last updated: {updateDate})</span
+  >
 </div>

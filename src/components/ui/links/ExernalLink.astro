@@ -19,5 +19,5 @@ const { title, href, additionalClass = '', withIcon = true } = Astro.props
   href={href}
 >
   <slot />
-  {withIcon && <RiExternalLinkLine />}
+  {withIcon && <RiExternalLinkLine className="inline" />}
 </a>
