@@ -1,0 +1,23 @@
+---
+import Tab from '@components/ui/tabs/Tab.astro'
+import TabList from '@components/ui/tabs/TabList.astro'
+import { NAV_MENUS } from '@libs/constants/navMenus'
+
+const currentPath = Astro.url.pathname
+---
+
+<TabList>
+  {
+    NAV_MENUS.map(({ name, link }) => {
+      const isActive =
+        currentPath === link || (currentPath.startsWith(link) && link !== '/')
+      return (
+        <Tab isActive={isActive}>
+          <a class={isActive ? 'font-bold' : ''} href={link}>
+            {name}
+          </a>
+        </Tab>
+      )
+    })
+  }
+</TabList>

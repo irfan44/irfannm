@@ -7,7 +7,7 @@ interface SocialMedia {
   icon: IconType
 }
 
-const socials: SocialMedia[] = [
+const SOCIALS: SocialMedia[] = [
   {
     name: 'Email',
     link: 'mailto:irfannmuhajir@gmail.com',
@@ -30,4 +30,4 @@ const socials: SocialMedia[] = [
   },
 ]
 
-export default socials
+export { SOCIALS }

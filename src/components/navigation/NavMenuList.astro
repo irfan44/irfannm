@@ -1,0 +1,22 @@
+---
+import { NAV_MENUS } from '@libs/constants/navMenus'
+
+const currentPath = Astro.url.pathname
+---
+
+{
+  NAV_MENUS.map(({ name, link }) => {
+    const isActive =
+      currentPath === link || (currentPath.startsWith(link) && link !== '/')
+    return (
+      <li>
+        <a
+          class={`hover:text-black dark:hover:text-white ${isActive ? 'font-bold' : ''}`}
+          href={link}
+        >
+          {name}
+        </a>
+      </li>
+    )
+  })
+}

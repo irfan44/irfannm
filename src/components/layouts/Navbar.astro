@@ -2,8 +2,8 @@
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
 
 import ContactButton from '@components/common/ContactButton.astro'
-import Menu from '@components/common/navigation/ListMenu.tsx'
-import TabMenu from '@components/common/navigation/TabMenu.tsx'
+import NavMenuList from '@components/navigation/NavMenuList.astro'
+import NavMenuTab from '@components/navigation/NavMenuTab.astro'
 import ThemeSwitcher from './ThemeSwitcher.astro'
 
 let isActive = false
@@ -40,7 +40,7 @@ let isActive = false
       </button>
     </div>
     <div class="hidden text-left md:block">
-      <TabMenu />
+      <NavMenuTab />
     </div>
     <div class="hidden text-left md:block">
       <ThemeSwitcher />
@@ -51,7 +51,7 @@ let isActive = false
       <div class="h-screen w-full">
         <div class="grid items-center rounded-lg border border-zinc-200 p-4">
           <ul class="flex flex-col items-center space-y-4">
-            <Menu />
+            <NavMenuList />
             <li>
               <ContactButton />
             </li>

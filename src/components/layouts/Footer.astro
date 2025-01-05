@@ -2,7 +2,7 @@
 import { FaGithub } from 'react-icons/fa'
 
 import ContactButton from '@components/common/ContactButton.astro'
-import Menu from '@components/common/navigation/ListMenu.tsx'
+import NavMenuList from '@components/navigation/NavMenuList.astro'
 import SocialMedia from '@components/common/SocialMedia.astro'
 ---
 
@@ -12,7 +12,7 @@ import SocialMedia from '@components/common/SocialMedia.astro'
   >
     <div class="mx-auto flex-1 text-center md:mx-0 md:text-left">
       <ul class="flex list-none flex-col space-y-1 md:hidden">
-        <Menu />
+        <NavMenuList />
       </ul>
       <div class="mb-4 mt-4 md:mt-0 md:pr-8">
         <a
@@ -49,7 +49,7 @@ import SocialMedia from '@components/common/SocialMedia.astro'
     </div>
     <div class="hidden flex-col justify-between md:flex">
       <ul class="flex w-fit flex-col">
-        <Menu />
+        <NavMenuList />
       </ul>
       <a
         href="https://github.com/irfan44/irfannm"

@@ -3,11 +3,11 @@ interface Menu {
   link: string
 }
 
-const navMenus: Menu[] = [
+const NAV_MENUS: Menu[] = [
   { name: 'Home', link: '/' },
   { name: 'Projects', link: '/projects' },
   { name: 'Blog', link: '/blog' },
   { name: 'About', link: '/about' },
 ]
 
-export default navMenus
+export { NAV_MENUS }

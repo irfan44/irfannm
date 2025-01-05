@@ -1,6 +1,6 @@
 ---
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
-import socials from '@libs/constants/socials.ts'
+import { SOCIALS } from '@libs/constants/socials.ts'
 
 interface Props {
   type: 'icon' | 'list'
@@ -12,7 +12,7 @@ const { type } = Astro.props
 {
   type === 'icon' && (
     <ul class="flex space-x-4">
-      {socials.map((social) => {
+      {SOCIALS.map((social) => {
         return (
           <li class="text-2xl text-black dark:text-white">
             <ExternalLink
@@ -34,7 +34,7 @@ const { type } = Astro.props
 {
   type === 'list' && (
     <ul class="ml-4 list-disc space-y-1">
-      {socials.map((social) => {
+      {SOCIALS.map((social) => {
         return (
           <li>
             <ExternalLink

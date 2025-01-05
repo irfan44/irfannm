@@ -1,14 +1,10 @@
 ---
-import type { IconType } from 'react-icons'
-
 interface Props {
   title: string
   href: string
-  iconLeft?: IconType
-  iconRight?: IconType
 }
 
-const { title, href, iconLeft, iconRight } = Astro.props
+const { title, href } = Astro.props
 ---
 
 <div
@@ -21,8 +17,6 @@ const { title, href, iconLeft, iconRight } = Astro.props
     title={title}
     href={href}
   >
-    {iconLeft && <span>{iconLeft}</span>}
     <slot />
-    {iconRight && <span>{iconRight}</span>}
   </a>
 </div>
