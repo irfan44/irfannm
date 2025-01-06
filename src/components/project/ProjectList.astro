@@ -1,0 +1,16 @@
+---
+import ProjectCard from './ProjectCard.astro'
+import type { ProjectsModel } from '@libs/models/project'
+
+type Props = {
+  projects: ProjectsModel
+}
+
+const { projects } = Astro.props
+---
+
+{
+  projects.map((project) => {
+    return <ProjectCard project={project} />
+  })
+}

@@ -1,0 +1,25 @@
+---
+import PostCard from './PostCard.astro'
+import type { PostsModel } from '@libs/models/post.ts'
+
+type Props = {
+  posts: PostsModel
+}
+
+const { posts } = Astro.props
+---
+
+<div class="grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-6 lg:gap-8">
+  {
+    posts.map((post) => (
+      <PostCard
+        title={post.title}
+        category={post.blogCategory.name}
+        coverImage={post.coverImage.derived[0].secure_url}
+        date={post.date}
+        slug={post.slug}
+        excerpt={post.excerpt}
+      />
+    ))
+  }
+</div>

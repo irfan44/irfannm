@@ -15,7 +15,9 @@ const {
 ---
 
 <section class={additionalClass}>
-  {isHeader ? <h1 class="mb-6">{title}</h1> : <h2 class="mb-6">{title}</h2>}
-  {description && <p>{description}</p>}
+  <div>
+    {isHeader ? <h1 class="mb-6">{title}</h1> : <h2 class="mb-6">{title}</h2>}
+    {description && <p>{description}</p>}
+  </div>
   <slot />
 </section>

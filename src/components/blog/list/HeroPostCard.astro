@@ -1,0 +1,42 @@
+---
+import { FaChevronRight } from 'react-icons/fa'
+
+import convertDate from '@libs/utils/convertDate.ts'
+
+interface Props {
+  title: string
+  category: string
+  coverImage: string
+  date: string
+  excerpt: string
+  slug: string
+}
+
+const { title, category, coverImage, date, excerpt, slug } = Astro.props
+
+const convertedDate = convertDate(date, true)
+---
+
+<a class="flex flex-col lg:flex-row lg:items-center" href={`/blog/${slug}`}>
+  <div class="lg:w-3/5">
+    <img
+      src={coverImage}
+      alt={`Cover Image for ${title}`}
+      width="555"
+      height="320"
+      class="h-64 w-full rounded-2xl object-cover md:h-80 xl:h-96"
+    />
+  </div>
+  <div class="mt-8 space-y-4 lg:mt-0 lg:w-1/2 lg:px-8">
+    <h3 class="text-2xl font-bold lg:text-4xl">{title}</h3>
+    <div class="flex space-x-2 text-sm">
+      <span class="font-bold">{category}</span>
+      <span>|</span>
+      <span>{convertedDate}</span>
+    </div>
+    <p class="leading-relaxed">{excerpt}</p>
+    <div id={`read-post-${slug}`} class="mt-4 flex items-center font-semibold">
+      Read <FaChevronRight className="text-sm" />
+    </div>
+  </div>
+</a>
