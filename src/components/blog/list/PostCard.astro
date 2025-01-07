@@ -18,7 +18,7 @@ const { title, category, coverImage, date, excerpt, slug } = Astro.props
 const convertedDate = convertDate(date, true)
 ---
 
-<a href={`/blog/${slug}`}>
+<a id={`post-card-${slug}`} href={`/blog/${slug}`}>
   <Card additionalClass="h-full">
     <div class="mb-4">
       <img
@@ -35,11 +35,23 @@ const convertedDate = convertDate(date, true)
         <span>|</span>
         <span>{convertedDate}</span>
       </div>
-      <h3>{title}</h3>
+      <h3 id={`post-card-title-${slug}`}>{title}</h3>
       <p class="line-clamp-3 text-base leading-relaxed">{excerpt}</p>
     </div>
-    <div id={`read-post-${slug}`} class="mt-4 flex items-center font-semibold">
+    <div class="mt-4 flex items-center font-semibold">
       Read <FaChevronRight className="text-sm" />
     </div>
   </Card>
 </a>
+<script is:inline define:vars={{ slug }}>
+  const postCard = document.getElementById(`post-card-${slug}`)
+  const readText = document.getElementById(`post-card-title-${slug}`)
+
+  postCard.addEventListener('pointerenter', () => {
+    readText.style.textDecoration = 'underline'
+  })
+
+  postCard.addEventListener('pointerleave', () => {
+    readText.style.textDecoration = 'none'
+  })
+</script>
