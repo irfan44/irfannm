@@ -16,7 +16,7 @@ const { items, additionalClass = '' } = Astro.props
   {
     items && items.map((item, index) => {
       return <Fragment>
-        <a class="hover:underline" href={item.url}>{item.title}</a>
+        <a class="hover:underline" href={item.path}>{item.title}</a>
         {index + 1 !== items.length && <FaChevronRight className="mx-1 text-sm" />}
       </Fragment>
     })

@@ -12,8 +12,14 @@ interface Props {
   additionalClass?: string
 }
 
-const { title, description, currentPath, ogImage, breadcrumbItems, additionalClass } =
-  Astro.props
+const {
+  title,
+  description,
+  currentPath,
+  ogImage,
+  breadcrumbItems,
+  additionalClass,
+} = Astro.props
 ---
 
 <BaseLayout
@@ -23,8 +29,11 @@ const { title, description, currentPath, ogImage, breadcrumbItems, additionalCla
   ogImage={ogImage}
   additionalClass={additionalClass}
 >
-  <div class="mx-auto mb-24 max-w-3xl">
+  <section class="mx-auto mb-24 max-w-3xl">
     <Breadcrumb items={breadcrumbItems} additionalClass="mb-2" />
     <slot />
-  </div>
+  </section>
+  <section class="mb-32">
+    <slot name="otherDetail" />
+  </section>
 </BaseLayout>

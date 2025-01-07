@@ -1,6 +1,6 @@
 export interface BreadcrumbItem {
   title: string
-  url: string
+  path: string
 }
 
 export type BreadcrumbItems = BreadcrumbItem[]
