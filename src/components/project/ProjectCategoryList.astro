@@ -1,0 +1,27 @@
+---
+import TabPanel from '@components/ui/tabs/TabPanel.astro'
+import Tabs from '@components/ui/tabs/Tabs.astro'
+import ProjectList from './ProjectList.astro'
+import type { ProjectsModel } from '@libs/models/project'
+
+interface Props {
+  workProjects: ProjectsModel
+  personalProjects: ProjectsModel
+}
+
+const { workProjects, personalProjects } = Astro.props
+
+const tabs = [
+  { id: 'personal', label: 'Personal 👨‍💻' },
+  { id: 'work', label: 'Work 💼' },
+]
+---
+
+<Tabs tabs={tabs} additionalClass="flex justify-center mb-8">
+  <TabPanel id="personal" active>
+    <ProjectList projects={personalProjects} />
+  </TabPanel>
+  <TabPanel id="work" active>
+    <ProjectList projects={workProjects} />
+  </TabPanel>
+</Tabs>

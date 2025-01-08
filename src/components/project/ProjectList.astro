@@ -9,8 +9,10 @@ type Props = {
 const { projects } = Astro.props
 ---
 
-{
-  projects.map((project) => {
-    return <ProjectCard project={project} />
-  })
-}
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+  {
+    projects.map((project) => {
+      return <ProjectCard project={project} />
+    })
+  }
+</div>
