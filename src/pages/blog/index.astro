@@ -1,6 +1,6 @@
 ---
-import HeroPost from '@components/blog/list/HeroPostCard.astro'
-import PostList from '@components/blog/list/PostList.astro'
+import BlogCategoryList from '@components/blog/BlogCategoryList.astro'
+import HeroPost from '@components/blog/HeroPostCard.astro'
 import Section from '@components/layouts/Section.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { PostController } from '@libs/controllers/post'
@@ -43,7 +43,8 @@ const heroPost = categorizedPosts ? categorizedPosts[0].posts[0] : null
     {
       categorizedPosts && (
         <Section title="Posts">
-          <PostList posts={categorizedPosts[0].posts} />
+          {/* <PostList posts={categorizedPosts[0].posts} /> */}
+          <BlogCategoryList categorizedPosts={categorizedPosts} />
         </Section>
       )
     }

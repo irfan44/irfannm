@@ -13,17 +13,17 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
 <div data-tabs>
   <div class={additionalClass}>
     <div
-      class="w-fit p-1 inline-flex h-9 items-center rounded-full border border-neutral-200 bg-secondary text-sm dark:border-neutral-700 dark:bg-neutral-800"
+      class="flex w-fit gap-2 p-1 items-center rounded-full border border-neutral-200 bg-secondary text-sm dark:border-neutral-700 dark:bg-neutral-800"
       role="tablist"
     >
       {
         tabs.map((tab) => (
           <button
             class:list={[
-              'px-3 py-1 transition-all duration-200 rounded-full whitespace-nowrap',
+              'flex items-center justify-center px-3 py-1 text-center transition-all duration-200 rounded-full whitespace-nowrap',
               {
-                'bg-white dark:bg-neutral-900 font-bold': tab.id === defaultTab,
-                'bg-transparent font-normal': tab.id !== defaultTab,
+                'bg-white dark:bg-neutral-900 font-bold': tab.id === defaultTab, // Active tab
+                'bg-transparent font-normal': tab.id !== defaultTab, // Inactive tab
               },
             ]}
             role="tab"
