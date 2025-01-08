@@ -1,0 +1,85 @@
+---
+import type { TabsItems } from './tabs.types'
+
+interface Props {
+  tabs: TabsItems
+  defaultTab?: string
+}
+
+const { tabs, defaultTab = tabs[0]?.id } = Astro.props
+---
+
+<div data-tabs>
+  <div
+    class="w-fit px-1 flex h-9 items-center rounded-full border border-neutral-200 bg-secondary text-sm dark:border-neutral-700 dark:bg-neutral-800"
+    role="tablist"
+  >
+    {
+      tabs.map((tab) => (
+        <button
+          class:list={[
+            'px-3 py-1 transition-colors duration-200 rounded-full',
+            {
+              'bg-white dark:bg-neutral-900 font-bold': tab.id === defaultTab,
+              'bg-transparent font-normal': tab.id !== defaultTab,
+            },
+          ]}
+          role="tab"
+          aria-selected={tab.id === defaultTab}
+          aria-controls={`panel-${tab.id}`}
+          data-tab={tab.id}
+          type="button"
+        >
+          {tab.label}
+        </button>
+      ))
+    }
+  </div>
+  <div class="mt-4">
+    <slot />
+  </div>
+</div>
+
+<script>
+  function switchTab(tabId: string, tabsContainer: HTMLElement) {
+    const buttons = tabsContainer.querySelectorAll('[role="tab"]')
+    const panels = tabsContainer.querySelectorAll('[role="tabpanel"]')
+
+    buttons.forEach((btn) => {
+      const isActive = btn.getAttribute('data-tab') === tabId
+      btn.setAttribute('aria-selected', isActive.toString())
+      btn.classList.toggle('font-bold', isActive)
+      btn.classList.toggle('dark:bg-neutral-900', isActive)
+      btn.classList.toggle('bg-white', isActive)
+      btn.classList.toggle('font-normal', !isActive)
+      btn.classList.toggle('bg-transparent', !isActive)
+    })
+
+    panels.forEach((panel) => {
+      const isPanelActive = panel.id === `panel-${tabId}`
+      panel.classList.toggle('hidden', !isPanelActive)
+      panel.classList.toggle('block', isPanelActive)
+    })
+  }
+
+  function initTabs() {
+    const tabsContainers = document.querySelectorAll('[data-tabs]')
+
+    tabsContainers.forEach((container) => {
+      const buttons = container.querySelectorAll('[role="tab"]')
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const tabId = button.getAttribute('data-tab')
+          if (tabId) {
+            switchTab(tabId, container as HTMLElement)
+          }
+        })
+      })
+    })
+  }
+
+  initTabs()
+
+  document.addEventListener('astro:page-load', initTabs)
+</script>
