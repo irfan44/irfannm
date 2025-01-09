@@ -51,3 +51,25 @@ export const GET_FEATURED_PROJECTS = gql`
     }
   }
 `
+
+export const GET_PROJECT = gql`
+  query GetProject($slug: String) {
+    projects(where: { slug: $slug }) {
+      company
+      image
+      isFeatured
+      overview
+      name
+      slug
+      description
+      startingDate
+      endDate
+      responsibility
+      role
+      techStack
+      type
+      sourceCode
+      url
+    }
+  }
+`

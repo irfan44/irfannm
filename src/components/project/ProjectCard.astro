@@ -17,7 +17,7 @@ const { name, slug, description, techStack } = Astro.props
 
 <a id={`project-card-${slug}`} href={`projects/${slug}`}>
   <Card additionalClass="h-full">
-    <h4 class="flex items-center">
+    <h4 id={`project-card-title-${slug}`} class="flex items-center">
       {name}
       <FaChevronRight className="text-sm ml-2" />
     </h4>
@@ -31,3 +31,15 @@ const { name, slug, description, techStack } = Astro.props
     </div>
   </Card>
 </a>
+<script is:inline define:vars={{ slug }}>
+  const projectCard = document.getElementById(`project-card-${slug}`)
+  const projectCardTitle = document.getElementById(`project-card-title-${slug}`)
+
+  projectCard.addEventListener('pointerenter', () => {
+    projectCardTitle.style.textDecoration = 'underline'
+  })
+
+  projectCard.addEventListener('pointerleave', () => {
+    projectCardTitle.style.textDecoration = 'none'
+  })
+</script>
