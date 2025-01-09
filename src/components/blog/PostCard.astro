@@ -45,13 +45,13 @@ const convertedDate = convertDate(date, true)
 </a>
 <script is:inline define:vars={{ slug }}>
   const postCard = document.getElementById(`post-card-${slug}`)
-  const readText = document.getElementById(`post-card-title-${slug}`)
+  const postCardTitle = document.getElementById(`post-card-title-${slug}`)
 
   postCard.addEventListener('pointerenter', () => {
-    readText.style.textDecoration = 'underline'
+    postCardTitle.style.textDecoration = 'underline'
   })
 
   postCard.addEventListener('pointerleave', () => {
-    readText.style.textDecoration = 'none'
+    postCardTitle.style.textDecoration = 'none'
   })
 </script>
