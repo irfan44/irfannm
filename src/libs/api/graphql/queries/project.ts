@@ -8,6 +8,7 @@ export const GET_PROJECTS = gql`
       isFeatured
       overview
       name
+      slug
       description
       startingDate
       endDate
@@ -37,6 +38,7 @@ export const GET_FEATURED_PROJECTS = gql`
       isFeatured
       overview
       name
+      slug
       description
       startingDate
       endDate

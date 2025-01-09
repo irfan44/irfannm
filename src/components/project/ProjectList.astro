@@ -12,7 +12,14 @@ const { projects } = Astro.props
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   {
     projects.map((project) => {
-      return <ProjectCard project={project} />
+      return (
+        <ProjectCard
+          name={project.name}
+          slug={project.slug}
+          description={project.description}
+          techStack={project.techStack}
+        />
+      )
     })
   }
 </div>

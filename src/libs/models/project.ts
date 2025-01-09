@@ -6,6 +6,7 @@ export interface ProjectModel {
   id?: string
   isFeatured?: boolean
   name: string
+  slug: string
   startingDate: string
   endDate?: string
   type?: 'Work' | 'Personal'
