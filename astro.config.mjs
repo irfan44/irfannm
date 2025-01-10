@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
+  site: import.meta.env.SITE_URL || "https://irfannm.dev",
   integrations: [react(), tailwind(), sitemap()],
   redirects: {
     '/blog/2022-04-10-generasi-gigih-critical-thinking': {
