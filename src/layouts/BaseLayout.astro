@@ -55,7 +55,10 @@ const {
   <body class="antialiased scroll-smooth">
     <Navbar />
     <main
-      class={`mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32 ${additionalClass}`}
+      class:list={[
+        'mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32',
+        additionalClass,
+      ]}
     >
       <slot />
     </main>

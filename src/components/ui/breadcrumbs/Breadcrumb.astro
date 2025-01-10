@@ -11,14 +11,24 @@ const { items, additionalClass = '' } = Astro.props
 ---
 
 <div
-  class={`flex w-fit items-center text-neutral-900 dark:text-gray-200 ${additionalClass}`}
+  class:list={[
+    'flex w-fit items-center text-neutral-900 dark:text-gray-200',
+    additionalClass,
+  ]}
 >
   {
-    items && items.map((item, index) => {
-      return <Fragment>
-        <a class="hover:underline" href={item.path}>{item.title}</a>
-        {index + 1 !== items.length && <FaChevronRight className="mx-1 text-sm" />}
-      </Fragment>
-    })
+    items &&
+      items.map((item, index) => {
+        return (
+          <Fragment>
+            <a class="hover:underline" href={item.path}>
+              {item.title}
+            </a>
+            {index + 1 !== items.length && (
+              <FaChevronRight className="mx-1 text-sm" />
+            )}
+          </Fragment>
+        )
+      })
   }
 </div>
