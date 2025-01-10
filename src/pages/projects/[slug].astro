@@ -5,6 +5,7 @@ import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.type
 import DetailLayout from '@layouts/DetailLayout.astro'
 import { ProjectController } from '@libs/controllers/project'
 import convertDate from '@libs/utils/convertDate'
+import Chip from '@components/ui/chips/Chip.astro'
 
 export async function getStaticPaths() {
   const projects = await ProjectController.getProjects()
@@ -45,74 +46,89 @@ const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
   currentPath={`/blog/${slug}`}
   breadcrumbItems={breadcrumbItems}
 >
-  <h1 class="mb-4 text-center md:text-left md:leading-none md:text-5xl">
-    {project.name}
-  </h1>
-  {project.company && <p>{project.company}</p>}
-  {
-    project.image && (
-      <img
-        class="rounded-2xl"
-        src={project.image.derived[0].secure_url}
-        alt={`Cover Image for ${project.name}`}
-        width="100%"
-        height="620"
-      />
-    )
-  }
-  <div class="flex space-x-1">
-    <span>{startingDate}</span>
-    <span>-</span>
-    <span>{endDate}</span>
-  </div>
-  {
-    project.url && (
-      <ExternalLink title="Visit website" href={project.url} withIcon>
-        <span>Visit</span>
-      </ExternalLink>
-    )
-  }
-  {
-    project.sourceCode && (
-      <ExternalLink title="View source code" href={project.sourceCode}>
-        <FaGithub className="text-xl text-black dark:text-white" />
-        <span>Source code</span>
-      </ExternalLink>
-    )
-  }
-  {
-    project.overview && (
-      <div>
-        <p class="break-words">{project.overview}</p>
-      </div>
-    )
-  }
-  {
-    project.role && (
-      <div>
-        <h5>Role</h5>
-        <p>{project.role}</p>
-      </div>
-    )
-  }
-  {
-    project.responsibility && project.responsibility.length > 0 && (
-      <div>
-        <h5>What I do</h5>
-        <ul class="ml-5 list-disc">
-          {project.responsibility.map((value) => {
-            return <li class="break-words">{value}</li>
-          })}
-        </ul>
-      </div>
-    )
-  }
-  <h5>Tech Stack</h5>
-  <ul class="ml-5 list-disc">
+  <article
+    class="prose prose-h2:mt-8 prose-h2:mb-4 text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200"
+  >
+    <h1 class="text-left md:leading-none md:text-5xl">
+      {project.name}
+    </h1>
+    {project.company && <span>{project.company}</span>}
+    <div class="flex space-x-1">
+      <span>{startingDate}</span>
+      <span>-</span>
+      <span>{endDate}</span>
+    </div>
     {
-      project.techStack.map((stack) => {
-        return <li>{stack}</li>
-      })
+      (project.url || project.sourceCode) && (
+        <div class="flex space-x-6">
+          {project.url && (
+            <ExternalLink title="Visit website" href={project.url} withIcon>
+              <span>Visit</span>
+            </ExternalLink>
+          )}
+          {project.sourceCode && (
+            <ExternalLink
+              title="View source code"
+              href={project.sourceCode}
+              withIcon={false}
+            >
+              <FaGithub className="text-xl text-black dark:text-white" />
+              <span>Source code</span>
+            </ExternalLink>
+          )}
+        </div>
+      )
     }
-  </ul>
+    {
+      project.image && (
+        <img
+          class="rounded-2xl"
+          src={project.image.derived[0].secure_url}
+          alt={`Cover Image for ${project.name}`}
+          width="100%"
+          height="620"
+        />
+      )
+    }
+    {
+      project.overview && (
+        <div>
+          <h2>Overview</h2>
+          <p class="break-words">{project.overview}</p>
+        </div>
+      )
+    }
+    {
+      project.role && (
+        <div>
+          <h2>Role</h2>
+          <p>{project.role}</p>
+        </div>
+      )
+    }
+    {
+      project.responsibility && project.responsibility.length > 0 && (
+        <div>
+          <h2>What I do</h2>
+          <ul class="ml-5 list-disc">
+            {project.responsibility.map((value) => {
+              return <li class="break-words">{value}</li>
+            })}
+          </ul>
+        </div>
+      )
+    }
+    <h2>Tech Stack</h2>
+    <div class="flex flex-wrap gap-2">
+      {
+        project.techStack.map((stack) => {
+          return (
+            <Chip additionalClass="border border-neutral-200 dark:border-neutral-700 ">
+              {stack}
+            </Chip>
+          )
+        })
+      }
+    </div>
+  </article>
 </DetailLayout>

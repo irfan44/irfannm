@@ -1,5 +1,16 @@
+---
+interface Props {
+  additionalClass?: string
+}
+
+const { additionalClass = '' } = Astro.props
+---
+
 <div
-  class="flex items-center rounded-lg bg-black px-2 py-1 text-sm text-white dark:bg-neutral-900"
+  class:list={[
+    'flex items-center rounded-lg bg-black px-2 py-1 text-sm text-white dark:bg-neutral-900',
+    additionalClass,
+  ]}
 >
   <slot />
 </div>
