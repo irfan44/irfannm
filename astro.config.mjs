@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
 
-import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 
@@ -10,7 +9,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: import.meta.env.SITE_URL || "https://irfannm.dev",
-  integrations: [react(), tailwind(), sitemap(), icon()],
+  integrations: [tailwind(), sitemap(), icon()],
   redirects: {
     '/blog/2022-04-10-generasi-gigih-critical-thinking': {
       status: 301,
