@@ -1,5 +1,9 @@
+---
+let id = Math.random()
+---
+
 <button
-  id="theme-switcher"
+  id={`theme-switcher-${id}`}
   class="border-neutral-200 bg-secondary dark:border-neutral-700 dark:bg-neutral-800 relative inline-flex h-8 w-16 items-center rounded-full border"
   role="switch"
 >
@@ -48,14 +52,16 @@
   </span>
 </button>
 
-<script>
-  document.getElementById('theme-switcher')?.addEventListener('click', () => {
-    if (localStorage.theme === 'dark') {
-      localStorage.theme = 'light'
-      document.documentElement.classList.remove('dark')
-    } else {
-      localStorage.theme = 'dark'
-      document.documentElement.classList.add('dark')
-    }
-  })
+<script is:inline define:vars={{ id }}>
+  document
+    .getElementById(`theme-switcher-${id}`)
+    .addEventListener('click', () => {
+      if (localStorage.theme === 'dark') {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      }
+    })
 </script>
