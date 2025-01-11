@@ -122,11 +122,7 @@ const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
     <div class="flex flex-wrap gap-2">
       {
         project.techStack.map((stack) => {
-          return (
-            <Chip additionalClass="border border-neutral-200 dark:border-neutral-700 ">
-              {stack}
-            </Chip>
-          )
+          return <Chip additionalClass="dark:!bg-neutral-800">{stack}</Chip>
         })
       }
     </div>

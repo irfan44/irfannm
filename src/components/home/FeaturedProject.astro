@@ -13,7 +13,7 @@ const { featuredProjects } = Astro.props
 
 <Section title="Featured Project">
   <div class="space-y-4">
-    <ProjectList projects={featuredProjects} />
+    <ProjectList projects={featuredProjects} isFeatured />
   </div>
   <ReadMore url="/projects">View all projects</ReadMore>
 </Section>
