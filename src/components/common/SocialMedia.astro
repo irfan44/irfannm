@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
 import { SOCIALS } from '@libs/constants/socials.ts'
 
@@ -20,9 +22,7 @@ const { type } = Astro.props
               href={social.link}
               withIcon={false}
             >
-              <span>
-                <social.icon />
-              </span>
+              <Icon name={social.icon} />
             </ExternalLink>
           </li>
         )
