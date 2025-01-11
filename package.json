@@ -29,6 +29,7 @@
     "@types/react-dom": "^19.0.2",
     "@urql/core": "^5.1.0",
     "astro": "^5.1.2",
+    "astro-icon": "^1.1.5",
     "graphql": "^16.10.0",
     "marked": "^15.0.5",
     "react": "^19.0.0",

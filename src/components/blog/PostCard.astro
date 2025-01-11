@@ -1,5 +1,5 @@
 ---
-import { FaChevronRight } from 'react-icons/fa'
+import { Icon } from 'astro-icon/components'
 
 import Card from '@components/ui/cards/Card.astro'
 import convertDate from '@libs/utils/convertDate.ts'
@@ -39,7 +39,7 @@ const convertedDate = convertDate(date, true)
       <p class="line-clamp-3 text-base leading-relaxed">{excerpt}</p>
     </div>
     <div class="mt-4 flex items-center font-semibold">
-      Read <FaChevronRight className="text-sm" />
+      Read <Icon name="chevron-right" class="text-sm ml-1" />
     </div>
   </Card>
 </a>

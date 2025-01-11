@@ -1,5 +1,5 @@
 ---
-import { HiArrowNarrowRight } from 'react-icons/hi'
+import { Icon } from 'astro-icon/components'
 
 type Props = {
   url: string
@@ -13,6 +13,6 @@ const { url } = Astro.props
     class="mt-4 flex items-center font-semibold text-black hover:cursor-pointer hover:underline dark:text-white"
   >
     <slot />
-    <HiArrowNarrowRight className="ml-1 text-xl" />
+    <Icon name="arrow-right" class="ml-1 text-xl" />
   </span>
 </a>

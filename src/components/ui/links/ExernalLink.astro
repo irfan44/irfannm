@@ -1,5 +1,5 @@
 ---
-import { RiExternalLinkLine } from 'react-icons/ri'
+import { Icon } from 'astro-icon/components'
 
 interface Props {
   title: string
@@ -22,5 +22,5 @@ const { title, href, additionalClass = '', withIcon = true } = Astro.props
   href={href}
 >
   <slot />
-  {withIcon && <RiExternalLinkLine className="inline" />}
+  {withIcon && <Icon name="external-link" class="inline" />}
 </a>

@@ -1,11 +1,12 @@
 ---
-import { FaGithub } from 'react-icons/fa'
+import { Icon } from 'astro-icon/components'
+
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
 import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import Chip from '@components/ui/chips/Chip.astro'
 import DetailLayout from '@layouts/DetailLayout.astro'
 import { ProjectController } from '@libs/controllers/project'
 import convertDate from '@libs/utils/convertDate'
-import Chip from '@components/ui/chips/Chip.astro'
 
 export async function getStaticPaths() {
   const projects = await ProjectController.getProjects()
@@ -72,7 +73,7 @@ const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
               href={project.sourceCode}
               withIcon={false}
             >
-              <FaGithub className="text-xl text-black dark:text-white" />
+              <Icon name="github" class="text-xl text-black dark:text-white" />
               <span>Source code</span>
             </ExternalLink>
           )}

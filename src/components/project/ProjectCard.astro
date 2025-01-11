@@ -1,9 +1,8 @@
 ---
-import { FaChevronRight } from 'react-icons/fa'
+import { Icon } from 'astro-icon/components'
 
 import Card from '@components/ui/cards/Card.astro'
 import Chip from '@components/ui/chips/Chip.astro'
-import type { ProjectModel } from '@libs/models/project'
 
 interface Props {
   name: string
@@ -19,7 +18,7 @@ const { name, slug, description, techStack } = Astro.props
   <Card additionalClass="h-full">
     <h4 id={`project-card-title-${slug}`} class="flex items-center">
       {name}
-      <FaChevronRight className="text-sm ml-2" />
+      <Icon name="chevron-right" class="text-sm ml-2" />
     </h4>
     <p>{description}</p>
     <div class="flex flex-wrap gap-2 mt-4">

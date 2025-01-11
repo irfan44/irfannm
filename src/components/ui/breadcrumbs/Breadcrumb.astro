@@ -1,5 +1,6 @@
 ---
-import { FaChevronRight } from 'react-icons/fa'
+import { Icon } from 'astro-icon/components'
+
 import type { BreadcrumbItems } from './breadcrumb.types'
 
 interface Props {
@@ -25,7 +26,7 @@ const { items, additionalClass = '' } = Astro.props
               {item.title}
             </a>
             {index + 1 !== items.length && (
-              <FaChevronRight className="mx-1 text-sm" />
+              <Icon name="chevron-right" class="mx-1 text-sm" />
             )}
           </Fragment>
         )
