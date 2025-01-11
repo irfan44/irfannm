@@ -1,0 +1,33 @@
+---
+import Section from '@components/layouts/Section.astro'
+import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { ProjectController } from '@libs/controllers/project'
+
+const projects = await ProjectController.getProjects()
+
+const workProjects = projects
+  ? projects.filter((value) => value.type === 'Work')
+  : []
+const personalProjects = projects
+  ? projects.filter((value) => value.type === 'Personal')
+  : []
+---
+
+<BaseLayout
+  title="Projects"
+  description="Irfan Nurghiffari Muhajir's projects"
+  currentPath="/projects"
+>
+  <Section
+    title="Projects"
+    description="Various projects that I have worked on."
+    isHeader
+    additionalClass="space-y-12"
+  >
+    <ProjectCategoryList
+      workProjects={workProjects}
+      personalProjects={personalProjects}
+    />
+  </Section>
+</BaseLayout>

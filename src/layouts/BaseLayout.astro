@@ -1,0 +1,69 @@
+---
+import BackToTop from '@components/common/BackToTop.astro'
+import Footer from '@components/layouts/Footer.astro'
+import Meta from '@components/layouts/Meta.astro'
+import Navbar from '@components/layouts/Navbar.astro'
+import '@styles/index.css'
+
+interface Props {
+  title?: string
+  description?: string
+  currentPath?: string
+  ogImage?: string
+  additionalClass?: string
+}
+
+const {
+  title = "Hi I'm Irfan",
+  description = "I'm a software engineer, writer, and creator. I write about software engineering, productivity, and personal growth.",
+  currentPath = '/',
+  ogImage = 'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714299015/irfannm/logo.png',
+  additionalClass = '',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} - Irfan Nurghiffari Muhajir</title>
+
+    <link rel="icon" type="image/svg+xml" href="/meta/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <Meta
+      title={title}
+      description={description}
+      currentPath={currentPath}
+      ogImage={ogImage}
+    />
+
+    <script is:inline>
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+  <body class="antialiased scroll-smooth">
+    <Navbar />
+    <main
+      class:list={[
+        'mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32',
+        additionalClass,
+      ]}
+    >
+      <slot />
+    </main>
+    <BackToTop />
+    <Footer />
+  </body>
+</html>

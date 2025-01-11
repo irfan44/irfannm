@@ -1,0 +1,122 @@
+---
+
+import ContactButton from '@components/common/ContactButton.astro'
+import NavMenuList from '@components/navigation/NavMenuList.astro'
+import NavMenuTab from '@components/navigation/NavMenuTab.astro'
+import { Icon } from 'astro-icon/components'
+import ThemeSwitcher from './ThemeSwitcher.astro'
+---
+
+<nav
+  class="z-50 mt-4 w-full container mx-auto px-5 md:px-16 lg:px-32 bg-neutral-50 dark:bg-neutral-900"
+>
+  <div class="flex items-center justify-between py-4">
+    <a
+      class="leading-tightfont-sans block text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"
+      href="/"
+    >
+      inm
+    </a>
+    <div class="flex items-center space-x-4 md:hidden">
+      <ThemeSwitcher />
+      <button
+        id="nav-menu-mobile-button"
+        class="ml-2 flex items-center relative z-50"
+        type="button"
+        title="Menu"
+      >
+        <Icon
+          name="close"
+          id="nav-button-close"
+          class="text-xl"
+          style="display: none;"
+        />
+        <Icon
+          name="menu"
+          id="nav-button-menu"
+          class="text-xl"
+          style="display: block;"
+        />
+      </button>
+    </div>
+    <div class="h-[38px] hidden md:block">
+      <NavMenuTab />
+    </div>
+    <div class="hidden md:block">
+      <ThemeSwitcher />
+    </div>
+  </div>
+  <div
+    id="nav-overlay"
+    class="fixed inset-0 bg-black/80 dark:bg-black/85 opacity-0 invisible transition-opacity duration-300 md:hidden"
+    style="z-index: 40;"
+  >
+  </div>
+  <div
+    id="nav-menu-mobile"
+    class="absolute left-0 right-0 px-5 md:hidden opacity-0 -translate-y-2 invisible transition-all duration-300"
+    style="z-index: 45;"
+  >
+    <div class="mx-auto max-w-screen-xl">
+      <div
+        class="p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900"
+      >
+        <ul class="flex flex-col items-center space-y-4">
+          <NavMenuList />
+          <li>
+            <ContactButton />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuButton = document.getElementById('nav-menu-mobile-button')
+  const mobileMenu = document.getElementById('nav-menu-mobile')
+  const closeIcon = document.getElementById('nav-button-close')
+  const menuIcon = document.getElementById('nav-button-menu')
+  const overlay = document.getElementById('nav-overlay')
+
+  let isMenuOpen = false
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen
+
+    if (mobileMenu) {
+      if (isMenuOpen) {
+        mobileMenu.classList.add('visible', 'opacity-100', 'translate-y-0')
+        mobileMenu.classList.remove('invisible', 'opacity-0', '-translate-y-2')
+      } else {
+        mobileMenu.classList.remove('visible', 'opacity-100', 'translate-y-0')
+        mobileMenu.classList.add('invisible', 'opacity-0', '-translate-y-2')
+      }
+    }
+
+    if (overlay) {
+      if (isMenuOpen) {
+        overlay.classList.add('visible', 'opacity-100')
+        overlay.classList.remove('invisible', 'opacity-0')
+        document.body.style.overflow = 'hidden'
+      } else {
+        overlay.classList.remove('visible', 'opacity-100')
+        overlay.classList.add('invisible', 'opacity-0')
+        document.body.style.overflow = ''
+      }
+    }
+
+    if (closeIcon && menuIcon) {
+      closeIcon.style.display = isMenuOpen ? 'block' : 'none'
+      menuIcon.style.display = isMenuOpen ? 'none' : 'block'
+    }
+  }
+
+  overlay?.addEventListener('click', () => {
+    if (isMenuOpen) {
+      toggleMenu()
+    }
+  })
+
+  menuButton?.addEventListener('click', toggleMenu)
+</script>

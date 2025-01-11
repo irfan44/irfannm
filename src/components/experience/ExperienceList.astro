@@ -1,0 +1,30 @@
+---
+import type { ExperienceModel } from '@libs/models/experience'
+
+import ExperienceCard from './ExperienceCard.astro'
+
+interface Props {
+  experiences: ExperienceModel[]
+  withResponsibility?: boolean
+}
+
+const { experiences, withResponsibility = false } = Astro.props
+---
+
+<div class="space-y-6">
+  {
+    experiences.map((experience) => {
+      return (
+        <div>
+          {withResponsibility && (
+            <hr class="mb-6 border border-neutral-300 dark:border-neutral-500" />
+          )}
+          <ExperienceCard
+            withResponsibility={withResponsibility}
+            experience={experience}
+          />
+        </div>
+      )
+    })
+  }
+</div>

@@ -1,0 +1,63 @@
+---
+import convertDate from '@libs/utils/convertDate.ts'
+import { Icon } from 'astro-icon/components'
+
+
+interface Props {
+  title: string
+  category: string
+  coverImage: string
+  date: string
+  excerpt: string
+  slug: string
+}
+
+const { title, category, coverImage, date, excerpt, slug } = Astro.props
+
+const convertedDate = convertDate(date, true)
+---
+
+<a
+  id={`hero-post-card-${slug}`}
+  class="flex flex-col lg:flex-row lg:items-center"
+  href={`/blog/${slug}`}
+>
+  <div class="lg:w-3/5">
+    <img
+      src={coverImage}
+      alt={`Cover Image for ${title}`}
+      width="555"
+      height="320"
+      class="h-64 w-full rounded-2xl object-cover md:h-80 xl:h-96"
+    />
+  </div>
+  <div class="mt-8 space-y-4 lg:mt-0 lg:w-1/2 lg:px-8">
+    <h3
+      id={`hero-post-card-title-${slug}`}
+      class="text-2xl font-bold lg:text-4xl"
+    >
+      {title}
+    </h3>
+    <div class="flex space-x-2 text-sm">
+      <span class="font-bold">{category}</span>
+      <span>|</span>
+      <span>{convertedDate}</span>
+    </div>
+    <p class="leading-relaxed">{excerpt}</p>
+    <div id={`read-post-${slug}`} class="mt-4 flex items-center font-semibold">
+      Read <Icon name="chevron-right" class="text-sm ml-1" />
+    </div>
+  </div>
+</a>
+<script is:inline define:vars={{ slug }}>
+  const postCard = document.getElementById(`hero-post-card-${slug}`)
+  const readText = document.getElementById(`hero-post-card-title-${slug}`)
+
+  postCard.addEventListener('pointerenter', () => {
+    readText.style.textDecoration = 'underline'
+  })
+
+  postCard.addEventListener('pointerleave', () => {
+    readText.style.textDecoration = 'none'
+  })
+</script>

@@ -1,0 +1,23 @@
+---
+import Tabs from '@components/ui/tabs/Tabs.astro'
+import { NAV_MENUS } from '@libs/constants/navMenus'
+
+const currentPath = Astro.url.pathname
+
+const tabs = NAV_MENUS.map(({ name, link }) => {
+  return {
+    id: link,
+    label: name,
+    href: link,
+  }
+})
+---
+
+<Tabs
+  tabs={tabs}
+  defaultTab={tabs.find(
+    (tab) =>
+      tab.href === currentPath ||
+      (tab.href !== '/' && currentPath.startsWith(tab.href))
+  )?.id || tabs[0].id}
+/>

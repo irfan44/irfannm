@@ -1,0 +1,57 @@
+---
+
+import Card from '@components/ui/cards/Card.astro'
+import convertDate from '@libs/utils/convertDate.ts'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  title: string
+  category: string
+  coverImage: string
+  date: string
+  excerpt: string
+  slug: string
+}
+
+const { title, category, coverImage, date, excerpt, slug } = Astro.props
+
+const convertedDate = convertDate(date, true)
+---
+
+<a id={`post-card-${slug}`} href={`/blog/${slug}`}>
+  <Card additionalClass="h-full">
+    <div class="mb-4">
+      <img
+        src={coverImage}
+        alt={`Cover image for ${title}`}
+        width="462"
+        height="256"
+        class="h-40 w-full rounded-2xl object-cover xl:h-64"
+      />
+    </div>
+    <div class="flex-1 space-y-4">
+      <div class="flex space-x-2 text-sm">
+        <span class="font-bold">{category}</span>
+        <span>|</span>
+        <span>{convertedDate}</span>
+      </div>
+      <h3 id={`post-card-title-${slug}`}>{title}</h3>
+      <p class="line-clamp-3 text-base leading-relaxed">{excerpt}</p>
+    </div>
+    <div class="mt-4 flex items-center font-semibold">
+      Read <Icon name="chevron-right" class="text-sm ml-1" />
+    </div>
+  </Card>
+</a>
+<script is:inline define:vars={{ slug }}>
+  const postCard = document.getElementById(`post-card-${slug}`)
+  const postCardTitle = document.getElementById(`post-card-title-${slug}`)
+
+  postCard.addEventListener('pointerenter', () => {
+    postCardTitle.style.textDecoration = 'underline'
+  })
+
+  postCard.addEventListener('pointerleave', () => {
+    postCardTitle.style.textDecoration = 'none'
+  })
+</script>
