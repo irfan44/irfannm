@@ -1,7 +1,6 @@
-import type { DocumentNode } from 'graphql/language'
-import type { AnyVariables } from '@urql/core'
-
 import { contentClient } from '@libs/api/graphql/content'
+import type { AnyVariables } from '@urql/core'
+import type { DocumentNode } from 'graphql/language'
 
 export class BaseContentService {
   static async handleQuery<T>(

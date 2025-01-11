@@ -4,11 +4,6 @@ import HeroPost from '@components/blog/HeroPostCard.astro'
 import Section from '@components/layouts/Section.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { PostController } from '@libs/controllers/post'
-import type { CategorizedPostsModel, PostModel } from '@libs/models/post'
-
-interface Props {
-  categorizedPosts: CategorizedPostsModel
-}
 
 const categorizedPosts = await PostController.getCategorizedPosts()
 
