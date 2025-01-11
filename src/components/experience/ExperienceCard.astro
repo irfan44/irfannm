@@ -23,10 +23,9 @@ const { experience, withResponsibility = false } = Astro.props
     </div>
     <div>
       <h4>{experience.title}</h4>
-      <div>
-        <strong>{experience.company}</strong>
-        <span>, {experience.employmentType}</span>
-      </div>
+      <p>
+        <strong>{experience.company}</strong>, {experience.employmentType}
+      </p>
       <div class="flex space-x-1">
         <span>{convertDate(experience.startingDate)}</span>
         <span>-</span>
