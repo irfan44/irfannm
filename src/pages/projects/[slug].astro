@@ -1,12 +1,11 @@
 ---
-
+import { Icon } from 'astro-icon/components'
 import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
 import Chip from '@components/ui/chips/Chip.astro'
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
 import DetailLayout from '@layouts/DetailLayout.astro'
 import { ProjectController } from '@libs/controllers/project'
 import convertDate from '@libs/utils/convertDate'
-import { Icon } from 'astro-icon/components'
 
 export async function getStaticPaths() {
   const projects = await ProjectController.getProjects()
@@ -39,6 +38,9 @@ const breadcrumbItems: BreadcrumbItems = [
 
 const startingDate = convertDate(project.startingDate)
 const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
+
+const placeholderImageUrl =
+  'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714286335/irfannm/projects/qfle9tpzyggdn1y9s90n.png'
 ---
 
 <DetailLayout
@@ -50,7 +52,7 @@ const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
   <article
     class="prose prose-h2:mt-8 prose-h2:mb-4 text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200"
   >
-    <h1 class="text-left md:leading-none md:text-5xl">
+    <h1 class="mb-4 text-left md:leading-none md:text-5xl">
       {project.name}
     </h1>
     {project.company && <span>{project.company}</span>}
@@ -80,17 +82,13 @@ const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
         </div>
       )
     }
-    {
-      project.image && (
-        <img
-          class="rounded-2xl"
-          src={project.image.derived[0].secure_url}
-          alt={`Cover Image for ${project.name}`}
-          width="100%"
-          height="620"
-        />
-      )
-    }
+    <img
+      class="rounded-2xl h-[390px] w-full object-cover"
+      src={project.image
+        ? project.image.derived[0].secure_url
+        : placeholderImageUrl}
+      alt={`Cover Image for ${project.name}`}
+    />
     {
       project.overview && (
         <div>
