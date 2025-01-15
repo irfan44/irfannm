@@ -17,5 +17,9 @@ const { error } = Astro.props
   <h1>500</h1>
   <p>{error instanceof Error ? error.message : 'Internal Server Error'}</p>
   <ButtonLink title="Back to Home" href="/">Back to Home</ButtonLink>
-  <img src="/images/Sad.svg" alt="Not Found" width="320" height="320" />
+  <img
+    class="h-[400px]"
+    src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person-sad"
+    alt="Not Found"
+  />
 </BaseLayout>

@@ -2,20 +2,17 @@
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
 
 interface Props {
-  aboutImage: string
   aboutMeSource: string
 }
 
-const { aboutImage, aboutMeSource } = Astro.props
+const { aboutMeSource } = Astro.props
 ---
 
 <div class="mb-12 flex justify-center">
   <img
-    class="rounded-full"
+    class="h-[224px] rounded-full"
     alt="Irfan Nurghiffari Muhajir"
-    src={aboutImage}
-    width="224"
-    height="224"
+    src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/profile"
   />
 </div>
 <div class="space-y-6">
