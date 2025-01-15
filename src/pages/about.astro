@@ -11,11 +11,6 @@ import { ExperienceController } from '@libs/controllers/experience'
 const constants = await ConstantController.getConstants()
 const experiences = await ExperienceController.getExperiences()
 
-const aboutImageValue = constants
-  ? constants.filter((constant) => constant.slug === 'about-image')
-  : [{ stringValue: '' }]
-const aboutImage = aboutImageValue[0].stringValue
-
 const aboutMeValue = constants
   ? constants.filter((constant) => constant.slug === 'about-me')
   : [{ markdownValue: '' }]
@@ -37,7 +32,7 @@ const resumeUrl = resumeUrlValue[0]
     isHeader
     additionalClass="mx-auto max-w-3xl space-y-12"
   >
-    <AboutMe aboutImage={aboutImage} aboutMeSource={aboutMeSource} />
+    <AboutMe aboutMeSource={aboutMeSource} />
     {experiences && <Experience experiences={experiences} />}
     <Resume resumeUrl={resumeUrl.stringValue} updatedAt={resumeUrl.updatedAt} />
     <SocialContact />
