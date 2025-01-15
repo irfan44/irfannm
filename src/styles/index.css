@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: 'Lexend Deca';
-    font-style: normal;
-    font-weight: 400 700;
-    font-display: swap;
-    src: url('/fonts/LexendDeca-VariableFont.ttf') format('truetype');
-  }
-
   h1,
   .h1 {
     @apply font-sans text-4xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-5xl;
