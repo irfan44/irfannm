@@ -1,0 +1,19 @@
+---
+import ButtonLink from '@components/ui/links/ButtonLink.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="404 Not Found | Error"
+  description="Page Not Found"
+  additionalClass="flex flex-col items-center justify-center space-y-2 py-16 text-center"
+>
+  <h1>404</h1>
+  <p>Page Not Found</p>
+  <ButtonLink title="Back to Home" href="/">Back to Home</ButtonLink>
+  <img
+    class="h-[400px]"
+    src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person-sad"
+    alt="Not Found"
+  />
+</BaseLayout>

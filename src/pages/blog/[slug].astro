@@ -1,0 +1,89 @@
+---
+import PostList from '@components/blog/PostList.astro'
+import RenderMarkdown from '@components/common/RenderMarkdown.astro'
+import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import DetailLayout from '@layouts/DetailLayout.astro'
+import { PostController } from '@libs/controllers/post'
+import type { PostModel } from '@libs/models/post'
+import convertDate from '@libs/utils/convertDate'
+
+interface Props {
+  slug: string
+  post: PostModel
+  otherPosts: PostModel[]
+}
+
+export async function getStaticPaths() {
+  const posts = await PostController.getPosts()
+
+  if (!posts) {
+    return {
+      redirect: '/500',
+    }
+  }
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }))
+}
+
+const { slug } = Astro.params
+
+const post = await PostController.getPost(slug)
+
+if (!post) {
+  return {
+    notFound: true,
+  }
+}
+
+const otherPosts =
+  (await PostController.getOtherPosts(post.blogCategory.slug, slug)) ?? []
+
+const breadcrumbItems: BreadcrumbItems = [
+  { title: 'Home', path: '/' },
+  { title: 'Blog', path: `/blog` },
+]
+
+const convertedDate = convertDate(post.date, true)
+---
+
+<DetailLayout
+  title={`${post.title} | Blog`}
+  description={post.excerpt}
+  currentPath={`/blog/${slug}`}
+  ogImage={post.coverImage.derived[0].secure_url}
+  breadcrumbItems={breadcrumbItems}
+>
+  <article
+    class="prose text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200"
+  >
+    <h1 class="mb-4 text-center md:text-left md:leading-none md:text-5xl">
+      {post.title}
+    </h1>
+    <div class="mb-8 flex space-x-2 justify-center md:justify-start">
+      <span class="font-bold">{post.category}</span>
+      <span>|</span>
+      <span>{convertedDate}</span>
+    </div>
+    <div class="mb-8 md:mb-16">
+      <figure>
+        <img
+          class="rounded-2xl h-[390px] w-full object-cover"
+          src={post.coverImage.derived[0].secure_url}
+          alt={`Cover Image for ${post.title}`}
+        />
+        <figcaption>{post.caption}</figcaption>
+      </figure>
+    </div>
+    <RenderMarkdown markdownSource={post.content} />
+  </article>
+  {
+    otherPosts.length > 0 && (
+      <div slot="otherDetail">
+        <h2 class="mb-8">More from {post.blogCategory.name}</h2>
+        <PostList posts={otherPosts} />
+      </div>
+    )
+  }
+</DetailLayout>

@@ -1,0 +1,54 @@
+---
+import type { ExperienceModel } from '@libs/models/experience'
+import convertDate from '@libs/utils/convertDate'
+
+interface Props {
+  experience: ExperienceModel
+  withResponsibility?: boolean
+}
+
+const { experience, withResponsibility = false } = Astro.props
+---
+
+<div>
+  <div class="flex flex-col gap-1 md:flex-row md:items-center md:gap-4">
+    <div class="h-fit w-fit rounded-2xl bg-secondary p-2 dark:bg-white">
+      <img
+        class="h-10 w-10 object-scale-down"
+        src={experience.companyLogo.derived[0].secure_url}
+        alt={experience.company}
+        height={40}
+        width={40}
+      />
+    </div>
+    <div>
+      <h4>{experience.title}</h4>
+      <p>
+        <strong>{experience.company}</strong>, {experience.employmentType}
+      </p>
+      <div class="flex space-x-1">
+        <span>{convertDate(experience.startingDate)}</span>
+        <span>-</span>
+        {
+          experience.endDate ? (
+            <span>{convertDate(experience.endDate)}</span>
+          ) : (
+            <span>Present</span>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  {
+    withResponsibility && experience.responsibility.length > 0 && (
+      <div class="mt-2">
+        <p>Responsible for :</p>
+        <ul class="ml-5 list-disc">
+          {experience.responsibility.map((responsibility) => {
+            return <li>{responsibility}</li>
+          })}
+        </ul>
+      </div>
+    )
+  }
+</div>

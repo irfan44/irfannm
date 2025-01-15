@@ -1,0 +1,129 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import Chip from '@components/ui/chips/Chip.astro'
+import ExternalLink from '@components/ui/links/ExernalLink.astro'
+import DetailLayout from '@layouts/DetailLayout.astro'
+import { ProjectController } from '@libs/controllers/project'
+import convertDate from '@libs/utils/convertDate'
+
+export async function getStaticPaths() {
+  const projects = await ProjectController.getProjects()
+
+  if (!projects) {
+    return {
+      redirect: '/500',
+    }
+  }
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+  }))
+}
+
+const { slug } = Astro.params
+
+const project = await ProjectController.getProject(slug)
+
+if (!project) {
+  return {
+    notFound: true,
+  }
+}
+
+const breadcrumbItems: BreadcrumbItems = [
+  { title: 'Home', path: '/' },
+  { title: 'Projects', path: `/projects` },
+]
+
+const startingDate = convertDate(project.startingDate)
+const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
+
+const placeholderImageUrl =
+  'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714286335/irfannm/projects/qfle9tpzyggdn1y9s90n.png'
+---
+
+<DetailLayout
+  title={`${project.name} | Projects`}
+  description={project.description}
+  currentPath={`/blog/${slug}`}
+  breadcrumbItems={breadcrumbItems}
+>
+  <article
+    class="prose prose-h2:mt-8 prose-h2:mb-4 text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200"
+  >
+    <h1 class="mb-4 text-left md:leading-none md:text-5xl">
+      {project.name}
+    </h1>
+    {project.company && <span>{project.company}</span>}
+    <div class="flex space-x-1">
+      <span>{startingDate}</span>
+      <span>-</span>
+      <span>{endDate}</span>
+    </div>
+    {
+      (project.url || project.sourceCode) && (
+        <div class="flex space-x-6">
+          {project.url && (
+            <ExternalLink title="Visit website" href={project.url} withIcon>
+              <span>Visit</span>
+            </ExternalLink>
+          )}
+          {project.sourceCode && (
+            <ExternalLink
+              title="View source code"
+              href={project.sourceCode}
+              withIcon={false}
+            >
+              <Icon name="github" class="text-xl text-black dark:text-white" />
+              <span>Source code</span>
+            </ExternalLink>
+          )}
+        </div>
+      )
+    }
+    <img
+      class="rounded-2xl h-[390px] w-full object-cover"
+      src={project.image
+        ? project.image.derived[0].secure_url
+        : placeholderImageUrl}
+      alt={`Cover Image for ${project.name}`}
+    />
+    {
+      project.overview && (
+        <div>
+          <h2>Overview</h2>
+          <p class="break-words">{project.overview}</p>
+        </div>
+      )
+    }
+    {
+      project.role && (
+        <div>
+          <h2>Role</h2>
+          <p>{project.role}</p>
+        </div>
+      )
+    }
+    {
+      project.responsibility && project.responsibility.length > 0 && (
+        <div>
+          <h2>What I do</h2>
+          <ul class="ml-5 list-disc">
+            {project.responsibility.map((value) => {
+              return <li class="break-words">{value}</li>
+            })}
+          </ul>
+        </div>
+      )
+    }
+    <h2>Tech Stack</h2>
+    <div class="flex flex-wrap gap-2">
+      {
+        project.techStack.map((stack) => {
+          return <Chip additionalClass="dark:!bg-neutral-800">{stack}</Chip>
+        })
+      }
+    </div>
+  </article>
+</DetailLayout>

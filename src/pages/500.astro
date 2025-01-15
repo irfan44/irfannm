@@ -1,0 +1,25 @@
+---
+import ButtonLink from '@components/ui/links/ButtonLink.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+
+interface Props {
+  error: unknown
+}
+
+const { error } = Astro.props
+---
+
+<BaseLayout
+  title="500 Internal Server Error | Error"
+  description="Internal Server Error"
+  additionalClass="flex flex-col items-center justify-center space-y-2 py-16 text-center"
+>
+  <h1>500</h1>
+  <p>{error instanceof Error ? error.message : 'Internal Server Error'}</p>
+  <ButtonLink title="Back to Home" href="/">Back to Home</ButtonLink>
+  <img
+    class="h-[400px]"
+    src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person-sad"
+    alt="Not Found"
+  />
+</BaseLayout>

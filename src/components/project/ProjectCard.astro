@@ -1,0 +1,43 @@
+---
+import Card from '@components/ui/cards/Card.astro'
+import Chip from '@components/ui/chips/Chip.astro'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  name: string
+  slug: string
+  description: string
+  techStack: string[]
+}
+
+const { name, slug, description, techStack } = Astro.props
+---
+
+<a id={`project-card-${slug}`} href={`projects/${slug}`}>
+  <Card additionalClass="h-full">
+    <h4 id={`project-card-title-${slug}`} class="flex items-center">
+      {name}
+      <Icon name="chevron-right" class="text-sm ml-2" />
+    </h4>
+    <p>{description}</p>
+    <div class="flex flex-wrap gap-2 mt-4">
+      {
+        techStack.map((stack) => {
+          return <Chip>{stack}</Chip>
+        })
+      }
+    </div>
+  </Card>
+</a>
+<script is:inline define:vars={{ slug }}>
+  const projectCard = document.getElementById(`project-card-${slug}`)
+  const projectCardTitle = document.getElementById(`project-card-title-${slug}`)
+
+  projectCard.addEventListener('pointerenter', () => {
+    projectCardTitle.style.textDecoration = 'underline'
+  })
+
+  projectCard.addEventListener('pointerleave', () => {
+    projectCardTitle.style.textDecoration = 'none'
+  })
+</script>

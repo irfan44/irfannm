@@ -1,0 +1,16 @@
+---
+interface Props {
+  additionalClass?: string
+}
+
+const { additionalClass = '' } = Astro.props
+---
+
+<div
+  class:list={[
+    'flex cursor-pointer flex-col justify-between space-y-3 rounded-2xl border border-neutral-200 bg-secondary p-4 hover:bg-secondaryHover dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800/75',
+    additionalClass,
+  ]}
+>
+  <slot />
+</div>

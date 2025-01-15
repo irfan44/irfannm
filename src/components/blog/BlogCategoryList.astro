@@ -1,0 +1,32 @@
+---
+import TabPanel from '@components/ui/tabs/TabPanel.astro'
+import Tabs from '@components/ui/tabs/Tabs.astro'
+import type { CategorizedPostsModel } from '@libs/models/post'
+import PostList from './PostList.astro'
+
+interface Props {
+  categorizedPosts: CategorizedPostsModel
+}
+
+const { categorizedPosts } = Astro.props
+
+const tabs = [
+  { id: 'All', label: 'All' },
+  { id: 'Tech', label: 'Tech' },
+  { id: 'Finance', label: 'Finance' },
+  { id: 'Other', label: 'Other' },
+]
+---
+
+<Tabs tabs={tabs} additionalClass="flex justify-center mb-8">
+  {
+    categorizedPosts.map((categorizedPost) => (
+      <TabPanel
+        id={categorizedPost.category}
+        active={categorizedPost.category === 'All'}
+      >
+        <PostList posts={categorizedPost.posts} />
+      </TabPanel>
+    ))
+  }
+</Tabs>

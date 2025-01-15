@@ -1,0 +1,15 @@
+---
+import ExperienceList from '@components/experience/ExperienceList.astro'
+import type { ExperiencesModel } from '@libs/models/experience'
+
+interface Props {
+  experiences: ExperiencesModel
+}
+
+const { experiences } = Astro.props
+---
+
+<div id="experience">
+  <h2 class="mb-6">Working Experience</h2>
+  <ExperienceList withResponsibility experiences={experiences} />
+</div>

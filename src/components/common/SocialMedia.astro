@@ -1,0 +1,51 @@
+---
+import ExternalLink from '@components/ui/links/ExernalLink.astro'
+import { SOCIALS } from '@libs/constants/socials.ts'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  type: 'icon' | 'list'
+}
+
+const { type } = Astro.props
+---
+
+{
+  type === 'icon' && (
+    <ul class="flex space-x-4">
+      {SOCIALS.map((social) => {
+        return (
+          <li class="text-2xl text-black dark:text-white">
+            <ExternalLink
+              title={social.name}
+              href={social.link}
+              withIcon={false}
+            >
+              <Icon name={social.icon} />
+            </ExternalLink>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+{
+  type === 'list' && (
+    <ul class="ml-4 list-disc space-y-1">
+      {SOCIALS.map((social) => {
+        return (
+          <li>
+            <ExternalLink
+              additionalClass="w-fit underline"
+              title={social.name}
+              href={social.link}
+            >
+              <span>{social.name}</span>
+            </ExternalLink>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}

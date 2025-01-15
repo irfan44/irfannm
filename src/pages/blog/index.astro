@@ -1,0 +1,46 @@
+---
+import BlogCategoryList from '@components/blog/BlogCategoryList.astro'
+import HeroPost from '@components/blog/HeroPostCard.astro'
+import Section from '@components/layouts/Section.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { PostController } from '@libs/controllers/post'
+
+const categorizedPosts = await PostController.getCategorizedPosts()
+
+const heroPost = categorizedPosts ? categorizedPosts[0].posts[0] : null
+---
+
+<BaseLayout
+  title="Blog"
+  description="Irfan Nurghiffari Muhajir's blog posts"
+  currentPath="/blog"
+>
+  <Section
+    title="Blog"
+    description="Place where you can read my writing. I mainly write about tech, finance, and investment stuff."
+    isHeader
+    additionalClass="space-y-12"
+  >
+    {
+      heroPost && (
+        <Section title="Featured">
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.coverImage.derived[0].secure_url}
+            date={heroPost.date}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+            category={heroPost.category}
+          />
+        </Section>
+      )
+    }
+    {
+      categorizedPosts && (
+        <Section title="Posts">
+          <BlogCategoryList categorizedPosts={categorizedPosts} />
+        </Section>
+      )
+    }
+  </Section>
+</BaseLayout>

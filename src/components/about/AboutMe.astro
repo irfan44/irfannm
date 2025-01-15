@@ -1,0 +1,20 @@
+---
+import RenderMarkdown from '@components/common/RenderMarkdown.astro'
+
+interface Props {
+  aboutMeSource: string
+}
+
+const { aboutMeSource } = Astro.props
+---
+
+<div class="mb-12 flex justify-center">
+  <img
+    class="h-[224px] rounded-full"
+    alt="Irfan Nurghiffari Muhajir"
+    src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/profile"
+  />
+</div>
+<div class="space-y-6">
+  <RenderMarkdown markdownSource={aboutMeSource} />
+</div>

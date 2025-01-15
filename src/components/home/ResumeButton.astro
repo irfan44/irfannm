@@ -1,0 +1,14 @@
+---
+import ButtonLink from '@components/ui/links/ButtonLink.astro'
+
+interface Props {
+  resumeUrl: string
+}
+
+const { resumeUrl } = Astro.props
+---
+
+<ButtonLink title="View my resume!" href={resumeUrl}>
+  <span class="text-xl">📄</span>
+  View Resume!
+</ButtonLink>

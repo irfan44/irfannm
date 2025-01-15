@@ -1,0 +1,13 @@
+---
+import { marked } from 'marked'
+
+interface Props {
+  markdownSource: string
+}
+
+const { markdownSource } = Astro.props
+
+const markdownContent = await marked.parse(markdownSource)
+---
+
+<Fragment set:html={markdownContent} />
