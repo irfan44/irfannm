@@ -1,4 +1,5 @@
 import { contentClient } from '@libs/api/graphql/content'
+
 import type { AnyVariables } from '@urql/core'
 import type { DocumentNode } from 'graphql/language'
 

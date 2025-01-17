@@ -1,0 +1,8 @@
+node_modules
+dist
+
+# IDE Settings
+.vscode
+.idea
+
+public

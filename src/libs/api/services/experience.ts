@@ -1,10 +1,8 @@
-import {
-  GET_EXPERIENCES,
-  GET_RECENT_EXPERIENCES,
-} from '@libs/api/graphql/queries/experience'
-import type { ExperiencesResponse } from '@libs/api/types/experience'
+import { GET_EXPERIENCES, GET_RECENT_EXPERIENCES } from '@libs/api/graphql/queries/experience'
 
 import { BaseContentService } from './base/content'
+
+import type { ExperiencesResponse } from '@libs/api/types/experience'
 
 export class ExperienceService {
   static async getExperiences(): Promise<ExperiencesResponse | undefined> {
@@ -19,9 +17,7 @@ export class ExperienceService {
     return response.data
   }
 
-  static async getRecentExperiences(): Promise<
-    ExperiencesResponse | undefined
-  > {
+  static async getRecentExperiences(): Promise<ExperiencesResponse | undefined> {
     const variables = {
       orderBy: 'startingDate_DESC',
       first: 5,

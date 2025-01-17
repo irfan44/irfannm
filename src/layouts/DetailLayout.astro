@@ -1,7 +1,9 @@
 ---
 import Breadcrumb from '@components/ui/breadcrumbs/Breadcrumb.astro'
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types.ts'
+
 import BaseLayout from './BaseLayout.astro'
+
+import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types.ts'
 
 interface Props {
   title: string
@@ -12,14 +14,7 @@ interface Props {
   additionalClass?: string
 }
 
-const {
-  title,
-  description,
-  currentPath,
-  ogImage,
-  breadcrumbItems,
-  additionalClass,
-} = Astro.props
+const { title, description, currentPath, ogImage, breadcrumbItems, additionalClass } = Astro.props
 ---
 
 <BaseLayout

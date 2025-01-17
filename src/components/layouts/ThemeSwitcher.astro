@@ -4,13 +4,13 @@ let id = Math.random()
 
 <button
   id={`theme-switcher-${id}`}
-  class="border-neutral-200 bg-secondary dark:border-neutral-700 dark:bg-neutral-800 relative inline-flex h-8 w-16 items-center rounded-full border"
+  class="relative inline-flex h-8 w-16 items-center rounded-full border border-neutral-200 bg-secondary dark:border-neutral-700 dark:bg-neutral-800"
   role="switch"
   aria-checked="false"
 >
   <span class="sr-only">Toggle theme</span>
   <span
-    class="translate-x-1 bg-white dark:translate-x-9 dark:bg-neutral-900 inline-block h-6 w-6 transform-all rounded-full p-1"
+    class="transform-all inline-block h-6 w-6 translate-x-1 rounded-full bg-white p-1 dark:translate-x-9 dark:bg-neutral-900"
   >
     <span class="hidden dark:inline">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -22,31 +22,15 @@ let id = Math.random()
     <span class="dark:hidden">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="12" r="5.754" fill="#FFCE31"></circle>
-        <circle
-          cx="3.09"
-          cy="6.855"
-          r="1.711"
-          transform="rotate(-60 3.09 6.855)"
-          fill="#FFCE31"></circle>
-        <circle
-          cx="3.09"
-          cy="17.144"
-          r="1.711"
-          transform="rotate(-120 3.09 17.144)"
-          fill="#FFCE31"></circle>
+        <circle cx="3.09" cy="6.855" r="1.711" transform="rotate(-60 3.09 6.855)" fill="#FFCE31"
+        ></circle>
+        <circle cx="3.09" cy="17.144" r="1.711" transform="rotate(-120 3.09 17.144)" fill="#FFCE31"
+        ></circle>
         <circle cx="12" cy="22.288" r="1.711" fill="#FFCE31"></circle>
-        <circle
-          cx="20.91"
-          cy="17.144"
-          r="1.711"
-          transform="rotate(-60 20.91 17.144)"
-          fill="#FFCE31"></circle>
-        <circle
-          cx="20.91"
-          cy="6.855"
-          r="1.711"
-          transform="rotate(-120 20.91 6.855)"
-          fill="#FFCE31"></circle>
+        <circle cx="20.91" cy="17.144" r="1.711" transform="rotate(-60 20.91 17.144)" fill="#FFCE31"
+        ></circle>
+        <circle cx="20.91" cy="6.855" r="1.711" transform="rotate(-120 20.91 6.855)" fill="#FFCE31"
+        ></circle>
         <circle cx="12" cy="1.711" r="1.711" fill="#FFCE31"></circle>
       </svg>
     </span>
@@ -58,8 +42,7 @@ let id = Math.random()
 
   if (
     localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
     themeSwitcher.setAttribute('aria-checked', 'true')
   } else {

@@ -4,9 +4,9 @@ import Experience from '@components/about/Experience.astro'
 import Resume from '@components/about/Resume.astro'
 import SocialContact from '@components/about/SocialContact.astro'
 import Section from '@components/layouts/Section.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
 import { ConstantController } from '@libs/controllers/constant'
 import { ExperienceController } from '@libs/controllers/experience'
+import BaseLayout from '@layouts/BaseLayout.astro'
 
 const constants = await ConstantController.getConstants()
 const experiences = await ExperienceController.getExperiences()
@@ -22,16 +22,8 @@ const resumeUrlValue = constants
 const resumeUrl = resumeUrlValue[0]
 ---
 
-<BaseLayout
-  title="About"
-  description="Get to know me better"
-  currentPath="/about"
->
-  <Section
-    title="About"
-    isHeader
-    additionalClass="mx-auto max-w-3xl space-y-12"
-  >
+<BaseLayout title="About" description="Get to know me better" currentPath="/about">
+  <Section title="About" isHeader additionalClass="mx-auto max-w-3xl space-y-12">
     <AboutMe aboutMeSource={aboutMeSource} />
     {experiences && <Experience experiences={experiences} />}
     <Resume resumeUrl={resumeUrl.stringValue} updatedAt={resumeUrl.updatedAt} />

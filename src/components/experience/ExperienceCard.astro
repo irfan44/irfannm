@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets'
-import type { ExperienceModel } from '@libs/models/experience'
+
 import convertDate from '@libs/utils/convertDate'
+
+import type { ExperienceModel } from '@libs/models/experience'
 
 interface Props {
   experience: ExperienceModel
@@ -30,13 +32,7 @@ const { experience, withResponsibility = false } = Astro.props
       <div class="flex space-x-1">
         <span>{convertDate(experience.startingDate)}</span>
         <span>-</span>
-        {
-          experience.endDate ? (
-            <span>{convertDate(experience.endDate)}</span>
-          ) : (
-            <span>Present</span>
-          )
-        }
+        {experience.endDate ? <span>{convertDate(experience.endDate)}</span> : <span>Present</span>}
       </div>
     </div>
   </div>
