@@ -19,6 +19,7 @@ const { title, href, additionalClass = '', withIcon = true } = Astro.props
     additionalClass,
   ]}
   title={title}
+  aria-label={title}
   href={href}
 >
   <slot />

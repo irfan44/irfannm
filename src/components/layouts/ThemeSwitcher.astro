@@ -6,6 +6,7 @@ let id = Math.random()
   id={`theme-switcher-${id}`}
   class="border-neutral-200 bg-secondary dark:border-neutral-700 dark:bg-neutral-800 relative inline-flex h-8 w-16 items-center rounded-full border"
   role="switch"
+  aria-checked="false"
 >
   <span class="sr-only">Toggle theme</span>
   <span
@@ -53,15 +54,27 @@ let id = Math.random()
 </button>
 
 <script is:inline define:vars={{ id }}>
-  document
-    .getElementById(`theme-switcher-${id}`)
-    .addEventListener('click', () => {
-      if (localStorage.theme === 'dark') {
-        localStorage.theme = 'light'
-        document.documentElement.classList.remove('dark')
-      } else {
-        localStorage.theme = 'dark'
-        document.documentElement.classList.add('dark')
-      }
-    })
+  const themeSwitcher = document.getElementById(`theme-switcher-${id}`)
+
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    themeSwitcher.setAttribute('aria-checked', 'true')
+  } else {
+    themeSwitcher.setAttribute('aria-checked', 'false')
+  }
+
+  themeSwitcher.addEventListener('click', () => {
+    if (localStorage.theme === 'dark') {
+      localStorage.theme = 'light'
+      document.documentElement.classList.remove('dark')
+      themeSwitcher.setAttribute('aria-checked', 'false')
+    } else {
+      localStorage.theme = 'dark'
+      document.documentElement.classList.add('dark')
+      themeSwitcher.setAttribute('aria-checked', 'true')
+    }
+  })
 </script>

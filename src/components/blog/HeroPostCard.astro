@@ -1,6 +1,7 @@
 ---
-import convertDate from '@libs/utils/convertDate.ts'
+import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
+import convertDate from '@libs/utils/convertDate.ts'
 
 interface Props {
   title: string
@@ -22,12 +23,13 @@ const convertedDate = convertDate(date, true)
   href={`/blog/${slug}`}
 >
   <div class="lg:w-3/5">
-    <img
+    <Image
+      class="h-64 w-full rounded-2xl object-cover md:h-80 xl:h-96"
       src={coverImage}
-      alt={`Cover Image for ${title}`}
+      alt={`Cover for ${title}`}
       width="555"
       height="320"
-      class="h-64 w-full rounded-2xl object-cover md:h-80 xl:h-96"
+      loading="eager"
     />
   </div>
   <div class="mt-8 space-y-4 lg:mt-0 lg:w-1/2 lg:px-8">

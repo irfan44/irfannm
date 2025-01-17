@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import ButtonLink from '@components/ui/links/ButtonLink.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 
@@ -17,9 +18,11 @@ const { error } = Astro.props
   <h1>500</h1>
   <p>{error instanceof Error ? error.message : 'Internal Server Error'}</p>
   <ButtonLink title="Back to Home" href="/">Back to Home</ButtonLink>
-  <img
+  <Image
     class="h-[400px]"
     src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person-sad"
-    alt="Not Found"
+    alt="Server Error"
+    height="400"
+    width="320"
   />
 </BaseLayout>

@@ -1,7 +1,8 @@
 ---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 import Card from '@components/ui/cards/Card.astro'
 import convertDate from '@libs/utils/convertDate.ts'
-import { Icon } from 'astro-icon/components'
 
 interface Props {
   title: string
@@ -20,9 +21,9 @@ const convertedDate = convertDate(date, true)
 <a id={`post-card-${slug}`} href={`/blog/${slug}`}>
   <Card additionalClass="h-full">
     <div class="mb-4">
-      <img
+      <Image
         src={coverImage}
-        alt={`Cover image for ${title}`}
+        alt={`Cover for ${title}`}
         width="462"
         height="256"
         class="h-40 w-full rounded-2xl object-cover xl:h-64"

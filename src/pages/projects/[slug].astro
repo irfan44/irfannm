@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
 import Chip from '@components/ui/chips/Chip.astro'
@@ -82,12 +83,15 @@ const placeholderImageUrl =
         </div>
       )
     }
-    <img
+    <Image
       class="rounded-2xl h-[390px] w-full object-cover"
       src={project.image
         ? project.image.derived[0].secure_url
         : placeholderImageUrl}
-      alt={`Cover Image for ${project.name}`}
+      alt={`Cover for ${project.name}`}
+      height="390"
+      width="711"
+      loading="eager"
     />
     {
       project.overview && (

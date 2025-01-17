@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import PostList from '@components/blog/PostList.astro'
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
 import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
@@ -68,10 +69,13 @@ const convertedDate = convertDate(post.date, true)
     </div>
     <div class="mb-8 md:mb-16">
       <figure>
-        <img
+        <Image
           class="rounded-2xl h-[390px] w-full object-cover"
           src={post.coverImage.derived[0].secure_url}
-          alt={`Cover Image for ${post.title}`}
+          alt={`Cover for ${post.title}`}
+          height="390"
+          width="711"
+          loading="eager"
         />
         <figcaption>{post.caption}</figcaption>
       </figure>

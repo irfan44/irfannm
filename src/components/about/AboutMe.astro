@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
 
 interface Props {
@@ -9,10 +10,13 @@ const { aboutMeSource } = Astro.props
 ---
 
 <div class="mb-12 flex justify-center">
-  <img
-    class="h-[224px] rounded-full"
+  <Image
+    class="rounded-full"
     alt="Irfan Nurghiffari Muhajir"
     src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/profile"
+    height={224}
+    width={224}
+    loading="eager"
   />
 </div>
 <div class="space-y-6">
