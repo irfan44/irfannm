@@ -8,7 +8,7 @@ import icon from 'astro-icon'
 // https://astro.build/config
 export default defineConfig({
   site: import.meta.env.SITE_URL || 'https://irfannm.dev',
-  integrations: [tailwind(), sitemap(), icon()],
+  integrations: [tailwind({ applyBaseStyles: false }), sitemap(), icon()],
   redirects: {
     '/blog/2022-04-10-generasi-gigih-critical-thinking': {
       status: 301,
@@ -29,6 +29,11 @@ export default defineConfig({
     '/blog/2020-07-21-perbedaan-bahasa-pemrograman': {
       status: 301,
       destination: '/blog/perbandingan-bahasa-pemrograman-cpp-java-dan-c',
+    },
+  },
+  vite: {
+    build: {
+      sourcemap: false,
     },
   },
 })
