@@ -23,21 +23,22 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
-    "@tailwindcss/typography": "^0.5.15",
     "@urql/core": "^5.1.0",
     "astro": "^5.1.2",
     "astro-icon": "^1.1.5",
     "graphql": "^16.10.0",
-    "marked": "^15.0.5",
-    "tailwindcss": "^3.4.17"
+    "marked": "^15.0.5"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@tailwindcss/typography": "^0.5.15",
     "@typescript-eslint/parser": "^8.19.1",
     "eslint": "^9.18.0",
     "eslint-plugin-astro": "^1.3.1",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-tailwindcss": "^3.18.0",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript-eslint": "^8.19.1"
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "tailwindcss": "^3.4.17"
   }
 }

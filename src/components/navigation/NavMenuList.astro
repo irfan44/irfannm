@@ -6,8 +6,7 @@ const currentPath = Astro.url.pathname
 
 {
   NAV_MENUS.map(({ name, link }) => {
-    const isActive =
-      currentPath === link || (currentPath.startsWith(link) && link !== '/')
+    const isActive = currentPath === link || (currentPath.startsWith(link) && link !== '/')
     return (
       <li>
         <a

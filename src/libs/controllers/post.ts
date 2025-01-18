@@ -1,9 +1,6 @@
 import { PostService } from '@libs/api/services/post'
-import type {
-  CategorizedPostsModel,
-  PostModel,
-  PostsModel,
-} from '@libs/models/post'
+
+import type { CategorizedPostsModel, PostModel, PostsModel } from '@libs/models/post'
 
 export class PostController {
   static async getPosts(): Promise<PostsModel | undefined> {
@@ -13,9 +10,7 @@ export class PostController {
     return response.posts
   }
 
-  static async getCategorizedPosts(): Promise<
-    CategorizedPostsModel | undefined
-  > {
+  static async getCategorizedPosts(): Promise<CategorizedPostsModel | undefined> {
     const response = await PostService.getCategorizedPosts()
     if (!response) return undefined
 
@@ -51,9 +46,7 @@ export class PostController {
     return post
   }
 
-  static async getLegacyPost(
-    legacySlug: string
-  ): Promise<PostModel | undefined> {
+  static async getLegacyPost(legacySlug: string): Promise<PostModel | undefined> {
     const response = await PostService.getLegacyPost(legacySlug)
     if (!response) return undefined
 
@@ -68,10 +61,7 @@ export class PostController {
     return response.posts
   }
 
-  static async getOtherPosts(
-    category: string,
-    slug: string
-  ): Promise<PostsModel | undefined> {
+  static async getOtherPosts(category: string, slug: string): Promise<PostsModel | undefined> {
     const response = await PostService.getOtherPosts(category, slug)
     if (!response) return undefined
 

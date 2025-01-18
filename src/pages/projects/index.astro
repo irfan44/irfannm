@@ -1,17 +1,13 @@
 ---
 import Section from '@components/layouts/Section.astro'
 import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
 import { ProjectController } from '@libs/controllers/project'
+import BaseLayout from '@layouts/BaseLayout.astro'
 
 const projects = await ProjectController.getProjects()
 
-const workProjects = projects
-  ? projects.filter((value) => value.type === 'Work')
-  : []
-const personalProjects = projects
-  ? projects.filter((value) => value.type === 'Personal')
-  : []
+const workProjects = projects ? projects.filter((value) => value.type === 'Work') : []
+const personalProjects = projects ? projects.filter((value) => value.type === 'Personal') : []
 ---
 
 <BaseLayout
@@ -25,9 +21,6 @@ const personalProjects = projects
     isHeader
     additionalClass="space-y-12"
   >
-    <ProjectCategoryList
-      workProjects={workProjects}
-      personalProjects={personalProjects}
-    />
+    <ProjectCategoryList workProjects={workProjects} personalProjects={personalProjects} />
   </Section>
 </BaseLayout>

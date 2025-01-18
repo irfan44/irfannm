@@ -1,11 +1,8 @@
-import {
-  GET_FEATURED_PROJECTS,
-  GET_PROJECT,
-  GET_PROJECTS,
-} from '@libs/api/graphql/queries/project'
-import type { ProjectResponse, ProjectsResponse } from '@libs/api/types/project'
+import { GET_FEATURED_PROJECTS, GET_PROJECT, GET_PROJECTS } from '@libs/api/graphql/queries/project'
 
 import { BaseContentService } from './base/content'
+
+import type { ProjectResponse, ProjectsResponse } from '@libs/api/types/project'
 
 export class ProjectService {
   static async getProjects(): Promise<ProjectsResponse | undefined> {
@@ -13,10 +10,7 @@ export class ProjectService {
       orderBy: 'startingDate_DESC',
     }
 
-    const response = await BaseContentService.handleQuery<ProjectsResponse>(
-      GET_PROJECTS,
-      variables
-    )
+    const response = await BaseContentService.handleQuery<ProjectsResponse>(GET_PROJECTS, variables)
     return response.data
   }
 
@@ -39,10 +33,7 @@ export class ProjectService {
       slug,
     }
 
-    const response = await BaseContentService.handleQuery<ProjectResponse>(
-      GET_PROJECT,
-      variables
-    )
+    const response = await BaseContentService.handleQuery<ProjectResponse>(GET_PROJECT, variables)
     return response.data
   }
 }

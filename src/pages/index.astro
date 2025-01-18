@@ -3,11 +3,11 @@ import FeaturedProject from '@components/home/FeaturedProject.astro'
 import HeroSection from '@components/home/HeroSection.astro'
 import HighlightedPosts from '@components/home/HighlightedPosts.astro'
 import RecentExperience from '@components/home/RecentExperience.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
 import { ConstantController } from '@libs/controllers/constant'
 import { ExperienceController } from '@libs/controllers/experience'
 import { PostController } from '@libs/controllers/post'
 import { ProjectController } from '@libs/controllers/project'
+import BaseLayout from '@layouts/BaseLayout.astro'
 
 const constants = await ConstantController.getConstants()
 const recentExperiences = await ExperienceController.getRecentExperiences()
@@ -28,16 +28,8 @@ const description = descriptionValue[0].stringValue
 <BaseLayout additionalClass="space-y-16">
   <HeroSection description={description} resumeUrl={resumeUrl} />
   <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
-    {
-      recentExperiences && (
-        <RecentExperience recentExperiences={recentExperiences} />
-      )
-    }
-    {
-      featuredProjects && (
-        <FeaturedProject featuredProjects={featuredProjects} />
-      )
-    }
+    {recentExperiences && <RecentExperience recentExperiences={recentExperiences} />}
+    {featuredProjects && <FeaturedProject featuredProjects={featuredProjects} />}
   </div>
   {highlightedPosts && <HighlightedPosts highlightedPosts={highlightedPosts} />}
 </BaseLayout>

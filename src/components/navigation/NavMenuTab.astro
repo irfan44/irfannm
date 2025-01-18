@@ -16,8 +16,6 @@ const tabs = NAV_MENUS.map(({ name, link }) => {
 <Tabs
   tabs={tabs}
   defaultTab={tabs.find(
-    (tab) =>
-      tab.href === currentPath ||
-      (tab.href !== '/' && currentPath.startsWith(tab.href))
+    (tab) => tab.href === currentPath || (tab.href !== '/' && currentPath.startsWith(tab.href))
   )?.id || tabs[0].id}
 />

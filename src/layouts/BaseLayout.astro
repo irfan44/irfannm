@@ -3,6 +3,7 @@ import BackToTop from '@components/common/BackToTop.astro'
 import Footer from '@components/layouts/Footer.astro'
 import Meta from '@components/layouts/Meta.astro'
 import Navbar from '@components/layouts/Navbar.astro'
+
 import '@styles/index.css'
 
 interface Props {
@@ -34,12 +35,7 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
 
-    <Meta
-      title={title}
-      description={description}
-      currentPath={currentPath}
-      ogImage={ogImage}
-    />
+    <Meta title={title} description={description} currentPath={currentPath} ogImage={ogImage} />
 
     <link
       rel="preload"
@@ -61,8 +57,7 @@ const {
     <script is:inline>
       if (
         localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
         document.documentElement.classList.add('dark')
       } else {
@@ -70,13 +65,10 @@ const {
       }
     </script>
   </head>
-  <body class="antialiased scroll-smooth">
+  <body class="scroll-smooth antialiased">
     <Navbar />
     <main
-      class:list={[
-        'mt-16 min-h-screen container mx-auto px-5 md:px-16 lg:px-32',
-        additionalClass,
-      ]}
+      class:list={['container mx-auto mt-16 min-h-screen px-5 md:px-16 lg:px-32', additionalClass]}
     >
       <slot />
     </main>
