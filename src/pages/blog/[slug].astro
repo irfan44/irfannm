@@ -1,11 +1,14 @@
 ---
+import { Image } from 'astro:assets'
+
 import PostList from '@components/blog/PostList.astro'
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
-import DetailLayout from '@layouts/DetailLayout.astro'
 import { PostController } from '@libs/controllers/post'
-import type { PostModel } from '@libs/models/post'
 import convertDate from '@libs/utils/convertDate'
+import DetailLayout from '@layouts/DetailLayout.astro'
+
+import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import type { PostModel } from '@libs/models/post'
 
 interface Props {
   slug: string
@@ -37,8 +40,7 @@ if (!post) {
   }
 }
 
-const otherPosts =
-  (await PostController.getOtherPosts(post.blogCategory.slug, slug)) ?? []
+const otherPosts = (await PostController.getOtherPosts(post.blogCategory.slug, slug)) ?? []
 
 const breadcrumbItems: BreadcrumbItems = [
   { title: 'Home', path: '/' },
@@ -55,23 +57,24 @@ const convertedDate = convertDate(post.date, true)
   ogImage={post.coverImage.derived[0].secure_url}
   breadcrumbItems={breadcrumbItems}
 >
-  <article
-    class="prose text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200"
-  >
-    <h1 class="mb-4 text-center md:text-left md:leading-none md:text-5xl">
+  <article class="prose text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200">
+    <h1 class="mb-4 text-center md:text-left md:text-5xl md:leading-none">
       {post.title}
     </h1>
-    <div class="mb-8 flex space-x-2 justify-center md:justify-start">
+    <div class="mb-8 flex justify-center space-x-2 md:justify-start">
       <span class="font-bold">{post.category}</span>
       <span>|</span>
       <span>{convertedDate}</span>
     </div>
     <div class="mb-8 md:mb-16">
       <figure>
-        <img
-          class="rounded-2xl h-[390px] w-full object-cover"
+        <Image
+          class="h-[390px] w-full rounded-2xl object-cover"
           src={post.coverImage.derived[0].secure_url}
-          alt={`Cover Image for ${post.title}`}
+          alt={`Cover for ${post.title}`}
+          height="390"
+          width="711"
+          loading="eager"
         />
         <figcaption>{post.caption}</figcaption>
       </figure>

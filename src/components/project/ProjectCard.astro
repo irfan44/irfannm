@@ -1,7 +1,8 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 import Card from '@components/ui/cards/Card.astro'
 import Chip from '@components/ui/chips/Chip.astro'
-import { Icon } from 'astro-icon/components'
 
 interface Props {
   name: string
@@ -17,10 +18,10 @@ const { name, slug, description, techStack } = Astro.props
   <Card additionalClass="h-full">
     <h4 id={`project-card-title-${slug}`} class="flex items-center">
       {name}
-      <Icon name="chevron-right" class="text-sm ml-2" />
+      <Icon name="chevron-right" class="ml-2 text-sm" />
     </h4>
     <p>{description}</p>
-    <div class="flex flex-wrap gap-2 mt-4">
+    <div class="mt-4 flex flex-wrap gap-2">
       {
         techStack.map((stack) => {
           return <Chip>{stack}</Chip>

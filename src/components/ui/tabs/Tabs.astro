@@ -13,7 +13,7 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
 <div data-tabs>
   <div class={additionalClass}>
     <div
-      class="flex w-fit gap-2 p-1 items-center rounded-full border border-neutral-200 bg-secondary text-sm dark:border-neutral-700 dark:bg-neutral-800"
+      class="flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-secondary p-1 text-sm dark:border-neutral-700 dark:bg-neutral-800"
       role="tablist"
     >
       {
@@ -22,10 +22,9 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
             return (
               <a
                 class:list={[
-                  'flex items-center justify-center px-3 py-1 text-center transition-all duration-200 rounded-full whitespace-nowrap',
+                  'flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-center transition-all duration-200',
                   {
-                    'bg-white dark:bg-neutral-900 font-bold':
-                      tab.id === defaultTab,
+                    'bg-white font-bold dark:bg-neutral-900': tab.id === defaultTab,
                     'bg-transparent font-normal': tab.id !== defaultTab,
                   },
                 ]}
@@ -42,10 +41,9 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
           return (
             <button
               class:list={[
-                'flex items-center justify-center px-3 py-1 text-center transition-all duration-200 rounded-full whitespace-nowrap',
+                'flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-center transition-all duration-200',
                 {
-                  'bg-white dark:bg-neutral-900 font-bold':
-                    tab.id === defaultTab,
+                  'bg-white font-bold dark:bg-neutral-900': tab.id === defaultTab,
                   'bg-transparent font-normal': tab.id !== defaultTab,
                 },
               ]}

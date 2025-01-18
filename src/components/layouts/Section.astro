@@ -6,12 +6,7 @@ interface Props {
   additionalClass?: string
 }
 
-const {
-  title,
-  description = '',
-  isHeader = false,
-  additionalClass = '',
-} = Astro.props
+const { title, description = '', isHeader = false, additionalClass = '' } = Astro.props
 ---
 
 <section class={additionalClass}>

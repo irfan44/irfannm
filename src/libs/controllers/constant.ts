@@ -1,4 +1,5 @@
 import { ConstantService } from '@libs/api/services/constant'
+
 import type { ConstantModel, ConstantsModel } from '@libs/models/constant'
 
 export class ConstantController {
