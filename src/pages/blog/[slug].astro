@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 
 import PostList from '@components/blog/PostList.astro'
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
@@ -68,8 +68,8 @@ const convertedDate = convertDate(post.date, true)
     </div>
     <div class="mb-8 md:mb-16">
       <figure>
-        <Image
-          class="h-[390px] w-full rounded-2xl object-cover"
+        <Picture
+          class="rounded-2xl object-cover"
           src={post.coverImage.derived[0].secure_url}
           alt={`Cover for ${post.title}`}
           height="390"

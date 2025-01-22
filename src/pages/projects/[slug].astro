@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 
 import Chip from '@components/ui/chips/Chip.astro'
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
@@ -81,8 +81,8 @@ const placeholderImageUrl =
         </div>
       )
     }
-    <Image
-      class="h-[390px] w-full rounded-2xl object-cover"
+    <Picture
+      class="rounded-2xl object-cover"
       src={project.image ? project.image.derived[0].secure_url : placeholderImageUrl}
       alt={`Cover for ${project.name}`}
       height="390"
