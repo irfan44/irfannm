@@ -1,13 +1,13 @@
 ---
-import FeaturedProject from '@components/home/FeaturedProject.astro'
+import HighlightedPosts from '@components/blog/HighlightedPosts.astro'
+import RecentExperience from '@components/experience/RecentExperience.astro'
 import HeroSection from '@components/home/HeroSection.astro'
-import HighlightedPosts from '@components/home/HighlightedPosts.astro'
-import RecentExperience from '@components/home/RecentExperience.astro'
+import FeaturedProject from '@components/project/FeaturedProject.astro'
+import BaseLayout from '@layouts/BaseLayout.astro'
 import { ConstantController } from '@libs/controllers/constant'
 import { ExperienceController } from '@libs/controllers/experience'
 import { PostController } from '@libs/controllers/post'
 import { ProjectController } from '@libs/controllers/project'
-import BaseLayout from '@layouts/BaseLayout.astro'
 
 const constants = await ConstantController.getConstants()
 const recentExperiences = await ExperienceController.getRecentExperiences()
