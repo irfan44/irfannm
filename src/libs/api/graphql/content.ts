@@ -1,4 +1,4 @@
-import { cacheExchange, Client, fetchExchange } from '@urql/core'
+import { Client, cacheExchange, fetchExchange } from '@urql/core'
 
 const contentUrl = import.meta.env.CONTENT_API_URL || 'localhost:4000/graphql'
 const isProduction = import.meta.env.NODE_ENV === 'production'

@@ -2,8 +2,8 @@
 import BlogCategoryList from '@components/blog/BlogCategoryList.astro'
 import HeroPost from '@components/blog/HeroPostCard.astro'
 import Section from '@components/layouts/Section.astro'
-import { PostController } from '@libs/controllers/post'
 import BaseLayout from '@layouts/BaseLayout.astro'
+import { PostController } from '@libs/controllers/post'
 
 const categorizedPosts = await PostController.getCategorizedPosts()
 

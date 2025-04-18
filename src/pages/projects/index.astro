@@ -1,8 +1,8 @@
 ---
 import Section from '@components/layouts/Section.astro'
 import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
-import { ProjectController } from '@libs/controllers/project'
 import BaseLayout from '@layouts/BaseLayout.astro'
+import { ProjectController } from '@libs/controllers/project'
 
 const projects = await ProjectController.getProjects()
 

@@ -3,9 +3,9 @@ import { Picture } from 'astro:assets'
 
 import PostList from '@components/blog/PostList.astro'
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
+import DetailLayout from '@layouts/DetailLayout.astro'
 import { PostController } from '@libs/controllers/post'
 import convertDate from '@libs/utils/convertDate'
-import DetailLayout from '@layouts/DetailLayout.astro'
 
 import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
 import type { PostModel } from '@libs/models/post'
