@@ -12,12 +12,7 @@ import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.type
 
 export async function getStaticPaths() {
   const projects = await ProjectController.getProjects()
-
-  if (!projects) {
-    return {
-      redirect: '/500',
-    }
-  }
+  if (!projects) throw Astro.redirect('/500')
 
   return projects.map((project) => ({
     params: { slug: project.slug },
@@ -27,12 +22,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 const project = await ProjectController.getProject(slug)
-
-if (!project) {
-  return {
-    notFound: true,
-  }
-}
+if (!project) throw Astro.redirect('/404')
 
 const breadcrumbItems: BreadcrumbItems = [
   { title: 'Home', path: '/' },

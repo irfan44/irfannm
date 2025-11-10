@@ -18,12 +18,7 @@ interface Props {
 
 export async function getStaticPaths() {
   const posts = await PostController.getPosts()
-
-  if (!posts) {
-    return {
-      redirect: '/500',
-    }
-  }
+  if (!posts) throw Astro.redirect('/500')
 
   return posts.map((post) => ({
     params: { slug: post.slug },
@@ -33,12 +28,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 const post = await PostController.getPost(slug)
-
-if (!post) {
-  return {
-    notFound: true,
-  }
-}
+if (!post) throw Astro.redirect('/404')
 
 const otherPosts = (await PostController.getOtherPosts(post.blogCategory.slug, slug)) ?? []
 
