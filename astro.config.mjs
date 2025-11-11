@@ -1,4 +1,5 @@
 // @ts-check
+import cloudflare from '@astrojs/cloudflare'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import icon from 'astro-icon'
@@ -8,6 +9,7 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   site: import.meta.env.SITE_URL || 'https://irfannm.dev',
   integrations: [tailwind({ applyBaseStyles: false }), sitemap(), icon()],
+
   redirects: {
     '/blog/2022-04-10-generasi-gigih-critical-thinking': {
       status: 301,
@@ -30,9 +32,12 @@ export default defineConfig({
       destination: '/blog/perbandingan-bahasa-pemrograman-cpp-java-dan-c',
     },
   },
+
   vite: {
     build: {
       sourcemap: false,
     },
   },
+
+  adapter: cloudflare(),
 })
