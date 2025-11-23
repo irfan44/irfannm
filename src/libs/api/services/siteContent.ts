@@ -1,5 +1,5 @@
-import { BaseCmsService } from '@libs/api/services/base/cms.ts'
-import type { SiteContentResponse, SiteContentsResponse } from '@libs/api/types/siteContent.ts'
+import { BaseCmsService } from '@libs/api/services/base/cms'
+import type { SiteContentResponse, SiteContentsResponse } from '@libs/api/types/siteContent'
 
 export class SiteContentService {
   static async getConstants(): Promise<SiteContentsResponse | undefined> {

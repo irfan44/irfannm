@@ -1,5 +1,5 @@
-import type { BaseCmsResponse } from '@libs/api/types/cms.ts'
-import type { SiteContentModel, SiteContentsModel } from '@libs/models/siteContent.ts'
+import type { BaseCmsResponse } from '@libs/api/types/cms'
+import type { SiteContentModel, SiteContentsModel } from '@libs/models/siteContent'
 
 export type SiteContentsResponse = BaseCmsResponse<SiteContentsModel>
 

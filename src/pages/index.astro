@@ -7,8 +7,8 @@ import BaseLayout from '@layouts/BaseLayout.astro'
 import { ExperienceController } from '@libs/controllers/experience'
 import { PostController } from '@libs/controllers/post'
 import { ProjectController } from '@libs/controllers/project'
-import { SiteContentController } from '@libs/controllers/siteContent.ts'
-import { getSiteContent } from '@libs/utils/siteContent.ts'
+import { SiteContentController } from '@libs/controllers/siteContent'
+import { getSiteContent } from '@libs/utils/siteContent'
 
 const [constants, recentExperiences, featuredProjects, highlightedPosts] = await Promise.all([
   SiteContentController.getConstants(),

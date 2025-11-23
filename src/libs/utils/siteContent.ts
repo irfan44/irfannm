@@ -1,4 +1,4 @@
-import type { SiteContentsModel } from '@libs/models/siteContent.ts'
+import type { SiteContentsModel } from '@libs/models/siteContent'
 
 interface ResumeUrlContent {
   value: string

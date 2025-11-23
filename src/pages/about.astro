@@ -6,8 +6,8 @@ import Section from '@components/layouts/Section.astro'
 import Resume from '@components/resume/Resume.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { ExperienceController } from '@libs/controllers/experience'
-import { SiteContentController } from '@libs/controllers/siteContent.ts'
-import { getSiteContent } from '@libs/utils/siteContent.ts'
+import { SiteContentController } from '@libs/controllers/siteContent'
+import { getSiteContent } from '@libs/utils/siteContent'
 
 const [constants, experiences] = await Promise.all([
   SiteContentController.getConstants(),

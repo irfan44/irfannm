@@ -1,4 +1,4 @@
-import { BaseCmsService } from '@libs/api/services/base/cms.ts'
+import { BaseCmsService } from '@libs/api/services/base/cms'
 import type { ProjectResponse, ProjectsResponse } from '@libs/api/types/project'
 
 export class ProjectService {
