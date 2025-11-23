@@ -1,21 +1,12 @@
-import type { CloudinaryImageModel } from './media'
-
 export type ExperiencesModel = ExperienceModel[]
 
 export interface ExperienceModel {
+  id: string
   title: string
   company: string
-  companyLogo: CloudinaryImageModel
+  companyLogo: string
+  employmentType: string
   startingDate: string
+  responsibilities: string[]
   endDate?: string
-  employmentType: EmploymentType
-  responsibility: string[]
 }
-
-export type EmploymentType =
-  | 'Full Time'
-  | 'Part Time'
-  | 'Contract'
-  | 'Internship'
-  | 'Freelance'
-  | 'Freelance (Project)'

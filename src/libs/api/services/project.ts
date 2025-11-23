@@ -1,8 +1,4 @@
-import { GET_FEATURED_PROJECTS, GET_PROJECT, GET_PROJECTS } from '@libs/api/graphql/queries/project'
 import { BaseCmsService } from '@libs/api/services/base/cms.ts'
-
-import { BaseContentService } from './base/content'
-
 import type { ProjectResponse, ProjectsResponse } from '@libs/api/types/project'
 
 export class ProjectService {
