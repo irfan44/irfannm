@@ -1,14 +1,13 @@
 ---
-import { Picture } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
-
+import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
 import Chip from '@components/ui/chips/Chip.astro'
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
 import DetailLayout from '@layouts/DetailLayout.astro'
 import { ProjectController } from '@libs/controllers/project'
 import convertDate from '@libs/utils/convertDate'
+import { Icon } from 'astro-icon/components'
 
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import { Picture } from 'astro:assets'
 
 export async function getStaticPaths() {
   const projects = await ProjectController.getProjects()

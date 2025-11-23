@@ -1,5 +1,4 @@
 import { SiteContentService } from '@libs/api/services/siteContent'
-
 import type { SiteContentModel, SiteContentsModel } from '@libs/models/siteContent'
 
 export class SiteContentController {

@@ -1,5 +1,4 @@
 import { PostService } from '@libs/api/services/post'
-
 import type { CategorizedPostsModel, PostModel, PostsModel } from '@libs/models/post'
 
 export class PostController {

@@ -38,21 +38,21 @@ const {
     <Meta title={title} description={description} currentPath={currentPath} ogImage={ogImage} />
 
     <link
-      rel="preload"
-      href="/fonts/LexendDeca-VariableFont.woff2"
-      crossorigin="anonymous"
-      as="font"
-      type="font/woff2"
-    />
-    <style is:global>
-      @font-face {
-        font-family: 'Lexend Deca';
-        font-style: normal;
-        font-weight: 400 700;
-        font-display: swap;
-        src: url('/fonts/LexendDeca-VariableFont.woff2') format('woff2');
-      }
-    </style>
+  rel="preload"
+  href="/fonts/LexendDeca-VariableFont.ttf"
+  crossorigin="anonymous"
+  as="font"
+  type="font/ttf"
+/>
+<style is:global>
+  @font-face {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/LexendDeca-VariableFont.ttf') format('truetype');
+  }
+</style>
 
     <script is:inline>
       if (

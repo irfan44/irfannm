@@ -5,10 +5,9 @@ import {
   GET_POST,
   GET_POSTS,
 } from '@libs/api/graphql/queries/post'
+import type { CategorizedPostsResponse, PostResponse, PostsResponse } from '@libs/api/types/post'
 
 import { BaseContentService } from './base/content'
-
-import type { CategorizedPostsResponse, PostResponse, PostsResponse } from '@libs/api/types/post'
 
 export class PostService {
   static async getPosts(): Promise<PostsResponse | undefined> {

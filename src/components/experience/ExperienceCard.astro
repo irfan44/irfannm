@@ -1,9 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-
+import type { ExperienceModel } from '@libs/models/experience'
 import convertDate from '@libs/utils/convertDate'
 
-import type { ExperienceModel } from '@libs/models/experience'
+import { Image } from 'astro:assets'
 
 interface Props {
   experience: ExperienceModel
