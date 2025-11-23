@@ -7,19 +7,19 @@ import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.type
 
 interface Props {
   title: string
-  description: string
+  excerpt: string
   currentPath: string
   ogImage?: string
   breadcrumbItems: BreadcrumbItems
   additionalClass?: string
 }
 
-const { title, description, currentPath, ogImage, breadcrumbItems, additionalClass } = Astro.props
+const { title, excerpt, currentPath, ogImage, breadcrumbItems, additionalClass } = Astro.props
 ---
 
 <BaseLayout
   title={title}
-  description={description}
+  description={excerpt}
   currentPath={`/blog/${currentPath}`}
   ogImage={ogImage}
   additionalClass={additionalClass}

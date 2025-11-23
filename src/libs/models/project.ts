@@ -1,22 +1,20 @@
-import type { CloudinaryImageModel } from './media'
-
 export type ProjectsModel = ProjectModel[]
 
 export interface ProjectModel {
-  id?: string
-  isFeatured?: boolean
+  id: string
+  isFeatured: boolean
   name: string
   slug: string
+  image?: string
+  projectType: string
   startingDate: string
   endDate?: string
-  type?: 'Work' | 'Personal'
-  company?: string
-  description: string
+  role: string
+  excerpt: string
+  overview: string
   techStack: string[]
+  responsibilities?: string[]
   sourceCode?: string
   url?: string
-  responsibility?: string[]
-  image?: CloudinaryImageModel
-  overview?: string
-  role?: string
+  company?: string
 }

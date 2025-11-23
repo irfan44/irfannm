@@ -29,6 +29,7 @@
     "astro": "^5.15.4",
     "astro-icon": "^1.1.5",
     "axios": "^1.13.2",
+    "camelcase-keys": "^10.0.1",
     "graphql": "^16.10.0",
     "marked": "^15.0.5"
   },

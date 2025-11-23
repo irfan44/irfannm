@@ -6,8 +6,10 @@ import { ProjectController } from '@libs/controllers/project'
 
 const projects = await ProjectController.getProjects()
 
-const workProjects = projects ? projects.filter((value) => value.type === 'Work') : []
-const personalProjects = projects ? projects.filter((value) => value.type === 'Personal') : []
+const workProjects = projects ? projects.filter((value) => value.projectType === 'Work') : []
+const personalProjects = projects
+  ? projects.filter((value) => value.projectType === 'Personal')
+  : []
 ---
 
 <BaseLayout

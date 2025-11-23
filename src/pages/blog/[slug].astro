@@ -42,7 +42,7 @@ const convertedDate = convertDate(post.date, true)
 
 <DetailLayout
   title={`${post.title} | Blog`}
-  description={post.excerpt}
+  excerpt={post.excerpt}
   currentPath={`/blog/${slug}`}
   ogImage={post.coverImage.derived[0].secure_url}
   breadcrumbItems={breadcrumbItems}
