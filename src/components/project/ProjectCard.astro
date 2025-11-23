@@ -14,7 +14,7 @@ interface Props {
 const { name, slug, excerpt, techStack } = Astro.props
 ---
 
-<a id={`project-card-${slug}`} href={`projects/${slug}`}>
+<a id={`project-card-${slug}`} href={`/projects/${slug}`}>
   <Card additionalClass="h-full">
     <h4 id={`project-card-title-${slug}`} class="flex items-center">
       {name}
