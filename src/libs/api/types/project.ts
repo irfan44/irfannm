@@ -1,9 +1,6 @@
-import type { ProjectsModel } from '@libs/models/project'
+import type { BaseCmsResponse } from '@libs/api/types/cms'
+import type { ProjectModel, ProjectsModel } from '@libs/models/project'
 
-export interface ProjectsResponse {
-  projects: ProjectsModel
-}
+export type ProjectsResponse = BaseCmsResponse<ProjectsModel>
 
-export interface ProjectResponse {
-  projects: ProjectsModel
-}
+export type ProjectResponse = BaseCmsResponse<ProjectModel>

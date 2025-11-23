@@ -38,7 +38,7 @@ const placeholderImageUrl =
 
 <DetailLayout
   title={`${project.name} | Projects`}
-  description={project.description}
+  excerpt={project.excerpt}
   currentPath={`/blog/${slug}`}
   breadcrumbItems={breadcrumbItems}
 >
@@ -73,7 +73,7 @@ const placeholderImageUrl =
     }
     <Picture
       class="rounded-2xl object-cover"
-      src={project.image ? project.image.derived[0].secure_url : placeholderImageUrl}
+      src={project.image ? project.image : placeholderImageUrl}
       alt={`Cover for ${project.name}`}
       height="390"
       width="711"
@@ -96,11 +96,11 @@ const placeholderImageUrl =
       )
     }
     {
-      project.responsibility && project.responsibility.length > 0 && (
+      project.responsibilities && project.responsibilities.length > 0 && (
         <div>
           <h2>What I do</h2>
           <ul class="ml-5 list-disc">
-            {project.responsibility.map((value) => {
+            {project.responsibilities.map((value) => {
               return <li class="break-words">{value}</li>
             })}
           </ul>

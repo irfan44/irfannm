@@ -4,25 +4,21 @@ import RecentExperience from '@components/experience/RecentExperience.astro'
 import HeroSection from '@components/home/HeroSection.astro'
 import FeaturedProject from '@components/project/FeaturedProject.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { ConstantController } from '@libs/controllers/constant'
 import { ExperienceController } from '@libs/controllers/experience'
 import { PostController } from '@libs/controllers/post'
 import { ProjectController } from '@libs/controllers/project'
+import { SiteContentController } from '@libs/controllers/siteContent'
+import { getSiteContent } from '@libs/utils/siteContent'
 
-const constants = await ConstantController.getConstants()
-const recentExperiences = await ExperienceController.getRecentExperiences()
-const featuredProjects = await ProjectController.getFeaturedProjects()
-const highlightedPosts = await PostController.getHighlightedPosts()
+const [constants, recentExperiences, featuredProjects, highlightedPosts] = await Promise.all([
+  SiteContentController.getConstants(),
+  ExperienceController.getRecentExperiences(),
+  ProjectController.getFeaturedProjects(),
+  PostController.getHighlightedPosts(),
+])
 
-const resumeUrlValue = constants
-  ? constants.filter((constant) => constant.slug === 'resume-url')
-  : [{ stringValue: '' }]
-const resumeUrl = resumeUrlValue[0].stringValue
-
-const descriptionValue = constants
-  ? constants.filter((constant) => constant.slug === 'description')
-  : [{ stringValue: '' }]
-const description = descriptionValue[0].stringValue
+const description = getSiteContent(constants, 'home-description')
+const resumeUrl = getSiteContent(constants, 'resume-url', true).value
 ---
 
 <BaseLayout additionalClass="space-y-16">

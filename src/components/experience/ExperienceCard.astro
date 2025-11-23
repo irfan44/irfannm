@@ -18,7 +18,7 @@ const { experience, withResponsibility = false } = Astro.props
     <div class="h-fit w-fit rounded-2xl bg-secondary p-2 dark:bg-white">
       <Image
         class="h-10 w-10 object-scale-down"
-        src={experience.companyLogo.derived[0].secure_url}
+        src={experience.companyLogo}
         alt={experience.company}
         height="40"
         width="40"
@@ -37,11 +37,11 @@ const { experience, withResponsibility = false } = Astro.props
     </div>
   </div>
   {
-    withResponsibility && experience.responsibility.length > 0 && (
+    withResponsibility && experience.responsibilities && (
       <div class="mt-2">
         <p>Responsible for :</p>
         <ul class="ml-5 list-disc">
-          {experience.responsibility.map((responsibility) => {
+          {experience.responsibilities.map((responsibility) => {
             return <li>{responsibility}</li>
           })}
         </ul>

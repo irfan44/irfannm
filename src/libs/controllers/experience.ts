@@ -7,13 +7,13 @@ export class ExperienceController {
     const response = await ExperienceService.getExperiences()
     if (!response) return undefined
 
-    return response.experiences
+    return response.data
   }
 
   static async getRecentExperiences(): Promise<ExperiencesModel | undefined> {
     const response = await ExperienceService.getRecentExperiences()
     if (!response) return undefined
 
-    return response.experiences
+    return response.data
   }
 }

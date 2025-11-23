@@ -1,5 +1,4 @@
+import type { BaseCmsResponse } from '@libs/api/types/cms'
 import type { ExperiencesModel } from '@libs/models/experience'
 
-export interface ExperiencesResponse {
-  experiences: ExperiencesModel
-}
+export type ExperiencesResponse = BaseCmsResponse<ExperiencesModel>

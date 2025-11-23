@@ -5,28 +5,24 @@ import Experience from '@components/experience/Experience.astro'
 import Section from '@components/layouts/Section.astro'
 import Resume from '@components/resume/Resume.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { ConstantController } from '@libs/controllers/constant'
 import { ExperienceController } from '@libs/controllers/experience'
+import { SiteContentController } from '@libs/controllers/siteContent'
+import { getSiteContent } from '@libs/utils/siteContent'
 
-const constants = await ConstantController.getConstants()
-const experiences = await ExperienceController.getExperiences()
+const [constants, experiences] = await Promise.all([
+  SiteContentController.getConstants(),
+  ExperienceController.getExperiences(),
+])
 
-const aboutMeValue = constants
-  ? constants.filter((constant) => constant.slug === 'about-me')
-  : [{ markdownValue: '' }]
-const aboutMeSource = aboutMeValue[0].markdownValue
-
-const resumeUrlValue = constants
-  ? constants.filter((constant) => constant.slug === 'resume-url')
-  : [{ stringValue: '', updatedAt: '' }]
-const resumeUrl = resumeUrlValue[0]
+const aboutMeSource = getSiteContent(constants, 'about-me-text')
+const resumeUrl = getSiteContent(constants, 'resume-url', true)
 ---
 
 <BaseLayout title="About" description="Get to know me better" currentPath="/about">
   <Section title="About" isHeader additionalClass="mx-auto max-w-3xl space-y-12">
-    <AboutMe aboutMeSource={aboutMeSource} />
-    {experiences && <Experience experiences={experiences} />}
-    <Resume resumeUrl={resumeUrl.stringValue} updatedAt={resumeUrl.updatedAt} />
+      {aboutMeSource && <AboutMe aboutMeSource={aboutMeSource} />}
+      {experiences && <Experience experiences={experiences} />}
+      {resumeUrl && <Resume resumeUrl={resumeUrl.value} updatedAt={resumeUrl.updatedAt} />}
     <SocialContact />
   </Section>
 </BaseLayout>

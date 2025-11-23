@@ -1,32 +1,16 @@
-import { GET_EXPERIENCES, GET_RECENT_EXPERIENCES } from '@libs/api/graphql/queries/experience'
-
-import { BaseContentService } from './base/content'
-
+import { BaseCmsService } from '@libs/api/services/base/cms'
 import type { ExperiencesResponse } from '@libs/api/types/experience'
 
 export class ExperienceService {
   static async getExperiences(): Promise<ExperiencesResponse | undefined> {
-    const variables = {
-      orderBy: 'startingDate_DESC',
-    }
-
-    const response = await BaseContentService.handleQuery<ExperiencesResponse>(
-      GET_EXPERIENCES,
-      variables
-    )
-    return response.data
+    const response = await BaseCmsService.handleGet<ExperiencesResponse>('/experiences')
+    return response
   }
 
-  static async getRecentExperiences(): Promise<ExperiencesResponse | undefined> {
-    const variables = {
-      orderBy: 'startingDate_DESC',
-      first: 5,
-    }
-
-    const response = await BaseContentService.handleQuery<ExperiencesResponse>(
-      GET_RECENT_EXPERIENCES,
-      variables
+  static async getRecentExperiences(limit = 5): Promise<ExperiencesResponse | undefined> {
+    const response = await BaseCmsService.handleGet<ExperiencesResponse>(
+      `/experiences/recent?limit=${limit}`
     )
-    return response.data
+    return response
   }
 }
