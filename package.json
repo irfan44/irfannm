@@ -25,6 +25,7 @@
     "@astrojs/cloudflare": "12.6.11",
     "@astrojs/sitemap": "3.6.0",
     "@astrojs/tailwind": "6.0.2",
+    "@fontsource-variable/lexend-deca": "5.2.10",
     "@urql/core": "6.0.1",
     "astro": "5.16.0",
     "astro-icon": "1.1.5",

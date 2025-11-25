@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lexend Deca', ...fontFamily.sans],
+        sans: ['Lexend Deca Variable', ...fontFamily.sans],
       },
       colors: {
         light: '#f5f5f5',
