@@ -3,20 +3,20 @@ import PostList from '@components/blog/PostList.astro'
 import RenderMarkdown from '@components/common/RenderMarkdown.astro'
 import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
 import DetailLayout from '@layouts/DetailLayout.astro'
-import { PostController } from '@libs/controllers/post'
-import type { PostModel } from '@libs/models/post'
+import type { Post, Posts } from '@libs/application/dtos/post'
+import { PostHandler } from '@libs/handlers/post'
 import convertDate from '@libs/utils/convertDate'
 
 import { Picture } from 'astro:assets'
 
 interface Props {
   slug: string
-  post: PostModel
-  otherPosts: PostModel[]
+  post: Post
+  otherPosts: Posts
 }
 
 export async function getStaticPaths() {
-  const posts = await PostController.getPosts()
+  const posts = await PostHandler.getPosts()
   if (!posts) throw Astro.redirect('/500')
 
   return posts.map((post) => ({
@@ -26,10 +26,10 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params
 
-const post = await PostController.getPost(slug)
+const post = await PostHandler.getPost(slug)
 if (!post) throw Astro.redirect('/404')
 
-const otherPosts = (await PostController.getOtherPosts(post.blogCategory.slug, slug)) ?? []
+const otherPosts = (await PostHandler.getOtherPosts(post.categorySlug, slug)) ?? []
 
 const breadcrumbItems: BreadcrumbItems = [
   { title: 'Home', path: '/' },
@@ -43,7 +43,7 @@ const convertedDate = convertDate(post.date, true)
   title={`${post.title} | Blog`}
   excerpt={post.excerpt}
   currentPath={`/blog/${slug}`}
-  ogImage={post.coverImage.derived[0].secure_url}
+  ogImage={post.coverImageUrl}
   breadcrumbItems={breadcrumbItems}
 >
   <article class="prose text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200">
@@ -59,7 +59,7 @@ const convertedDate = convertDate(post.date, true)
       <figure>
         <Picture
           class="rounded-2xl object-cover"
-          src={post.coverImage.derived[0].secure_url}
+          src={post.coverImageUrl}
           alt={`Cover for ${post.title}`}
           height="390"
           width="711"
@@ -73,7 +73,7 @@ const convertedDate = convertDate(post.date, true)
   {
     otherPosts.length > 0 && (
       <div slot="otherDetail">
-        <h2 class="mb-8">More from {post.blogCategory.name}</h2>
+        <h2 class="mb-8">More from {post.category}</h2>
         <PostList posts={otherPosts} />
       </div>
     )

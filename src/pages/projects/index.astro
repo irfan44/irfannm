@@ -2,9 +2,9 @@
 import Section from '@components/layouts/Section.astro'
 import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { ProjectController } from '@libs/controllers/project'
+import { ProjectHandler } from '@libs/handlers/project'
 
-const projects = await ProjectController.getProjects()
+const projects = await ProjectHandler.getProjects()
 
 const workProjects = projects ? projects.filter((value) => value.projectType === 'Work') : []
 const personalProjects = projects

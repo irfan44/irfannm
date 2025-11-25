@@ -4,17 +4,17 @@ import RecentExperience from '@components/experience/RecentExperience.astro'
 import HeroSection from '@components/home/HeroSection.astro'
 import FeaturedProject from '@components/project/FeaturedProject.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { ExperienceController } from '@libs/controllers/experience'
-import { PostController } from '@libs/controllers/post'
-import { ProjectController } from '@libs/controllers/project'
-import { SiteContentController } from '@libs/controllers/siteContent'
+import { ExperienceHandler } from '@libs/handlers/experience'
+import { PostHandler } from '@libs/handlers/post'
+import { ProjectHandler } from '@libs/handlers/project'
+import { SiteContentHandler } from '@libs/handlers/siteContent'
 import { getSiteContent } from '@libs/utils/siteContent'
 
 const [constants, recentExperiences, featuredProjects, highlightedPosts] = await Promise.all([
-  SiteContentController.getConstants(),
-  ExperienceController.getRecentExperiences(),
-  ProjectController.getFeaturedProjects(),
-  PostController.getHighlightedPosts(),
+  SiteContentHandler.getConstants(),
+  ExperienceHandler.getRecentExperiences(),
+  ProjectHandler.getFeaturedProjects(),
+  PostHandler.getHighlightedPosts(),
 ])
 
 const description = getSiteContent(constants, 'home-description')

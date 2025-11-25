@@ -30,7 +30,7 @@
             "groups": [
               ":PACKAGE:",
               ":BLANK_LINE:",
-              ["@assets/**", "@components/**", "@layouts/**", "@libs/**", "@styles/**"],
+              ["@assets/**", "@components/**", "@layouts/**", "@libs/**", "@styles/**", ".", ".."],
               ":BLANK_LINE:",
               { "type": true }
             ]

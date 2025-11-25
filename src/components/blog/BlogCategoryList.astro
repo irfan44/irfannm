@@ -1,12 +1,12 @@
 ---
 import TabPanel from '@components/ui/tabs/TabPanel.astro'
 import Tabs from '@components/ui/tabs/Tabs.astro'
-import type { CategorizedPostsModel } from '@libs/models/post'
+import type { CategorizedPosts } from '@libs/application/dtos/post'
 
 import PostList from './PostList.astro'
 
 interface Props {
-  categorizedPosts: CategorizedPostsModel
+  categorizedPosts: CategorizedPosts
 }
 
 const { categorizedPosts } = Astro.props

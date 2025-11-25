@@ -1,5 +1,3 @@
-import type { CloudinaryImageModel } from './media'
-
 export type CategorizedPostsModel = CategorizedPostModel[]
 
 export interface CategorizedPostModel {
@@ -11,12 +9,11 @@ export type PostsModel = PostModel[]
 
 export interface PostModel {
   slug: string
-  legacySlug: string
   title: string
   category: string
-  blogCategory: BlogCategoryModel
+  categorySlug: string
+  coverImageUrl: string
   date: string
-  coverImage: CloudinaryImageModel
   caption: string
   excerpt: string
   content: any // change with MDX type

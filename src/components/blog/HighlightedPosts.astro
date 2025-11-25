@@ -2,10 +2,10 @@
 import PostList from '@components/blog/PostList.astro'
 import ReadMore from '@components/common/ReadMore.astro'
 import Section from '@components/layouts/Section.astro'
-import type { PostsModel } from '@libs/models/post'
+import type { Posts } from '@libs/application/dtos/post'
 
 interface Props {
-  highlightedPosts: PostsModel
+  highlightedPosts: Posts
 }
 
 const { highlightedPosts } = Astro.props

@@ -1,13 +1,13 @@
 ---
 import TabPanel from '@components/ui/tabs/TabPanel.astro'
 import Tabs from '@components/ui/tabs/Tabs.astro'
-import type { ProjectsModel } from '@libs/models/project'
+import type { Projects } from '@libs/application/dtos/project'
 
 import ProjectList from './ProjectList.astro'
 
 interface Props {
-  workProjects: ProjectsModel
-  personalProjects: ProjectsModel
+  workProjects: Projects
+  personalProjects: Projects
 }
 
 const { workProjects, personalProjects } = Astro.props

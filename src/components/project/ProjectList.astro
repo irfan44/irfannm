@@ -1,10 +1,10 @@
 ---
-import type { ProjectsModel } from '@libs/models/project'
+import type { Projects } from '@libs/application/dtos/project'
 
 import ProjectCard from './ProjectCard.astro'
 
 type Props = {
-  projects: ProjectsModel
+  projects: Projects
   isFeatured?: boolean
 }
 

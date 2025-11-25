@@ -1,9 +1,9 @@
 ---
 import ExperienceList from '@components/experience/ExperienceList.astro'
-import type { ExperiencesModel } from '@libs/models/experience'
+import type { Experiences } from '@libs/application/dtos/experience'
 
 interface Props {
-  experiences: ExperiencesModel
+  experiences: Experiences
 }
 
 const { experiences } = Astro.props
