@@ -3,14 +3,14 @@ import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.type
 import Chip from '@components/ui/chips/Chip.astro'
 import ExternalLink from '@components/ui/links/ExernalLink.astro'
 import DetailLayout from '@layouts/DetailLayout.astro'
-import { ProjectController } from '@libs/controllers/project'
+import { ProjectHandler } from '@libs/handlers/project'
 import convertDate from '@libs/utils/convertDate'
 import { Icon } from 'astro-icon/components'
 
 import { Picture } from 'astro:assets'
 
 export async function getStaticPaths() {
-  const projects = await ProjectController.getProjects()
+  const projects = await ProjectHandler.getProjects()
   if (!projects) throw Astro.redirect('/500')
 
   return projects.map((project) => ({
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params
 
-const project = await ProjectController.getProject(slug)
+const project = await ProjectHandler.getProject(slug)
 if (!project) throw Astro.redirect('/404')
 
 const breadcrumbItems: BreadcrumbItems = [

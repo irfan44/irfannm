@@ -1,10 +1,10 @@
 ---
-import type { PostsModel } from '@libs/models/post'
+import type { Posts } from '@libs/application/dtos/post'
 
 import PostCard from './PostCard.astro'
 
 type Props = {
-  posts: PostsModel
+  posts: Posts
 }
 
 const { posts } = Astro.props

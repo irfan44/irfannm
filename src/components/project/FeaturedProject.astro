@@ -2,10 +2,10 @@
 import ReadMore from '@components/common/ReadMore.astro'
 import Section from '@components/layouts/Section.astro'
 import ProjectList from '@components/project/ProjectList.astro'
-import type { ProjectsModel } from '@libs/models/project'
+import type { Projects } from '@libs/application/dtos/project'
 
 interface Props {
-  featuredProjects: ProjectsModel
+  featuredProjects: Projects
 }
 
 const { featuredProjects } = Astro.props

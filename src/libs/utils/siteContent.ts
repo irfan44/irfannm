@@ -1,24 +1,24 @@
-import type { SiteContentsModel } from '@libs/models/siteContent'
+import type { SiteContent, SiteContents } from '@libs/application/dtos/siteContent'
 
 interface ResumeUrlContent {
   value: string
   updatedAt: string
 }
 
-export function getSiteContent(contents: SiteContentsModel | undefined, key: string): string
+export function getSiteContent(contents: SiteContents | undefined, key: string): string
 
 export function getSiteContent(
-  contents: SiteContentsModel | undefined,
+  contents: SiteContents | undefined,
   key: string,
   isResume: true
 ): ResumeUrlContent
 
 export function getSiteContent(
-  contents: SiteContentsModel | undefined,
+  contents: SiteContents | undefined,
   key: string,
   isResume = false
 ): string | ResumeUrlContent {
-  const siteContentResult = contents?.find((c) => c.key === key)
+  const siteContentResult = contents?.find((c: SiteContent) => c.key === key)
 
   if (!isResume) {
     return siteContentResult?.value ?? ''

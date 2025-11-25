@@ -1,10 +1,10 @@
 ---
-import type { ExperienceModel } from '@libs/models/experience'
+import type { Experience } from '@libs/application/dtos/experience'
 
 import ExperienceCard from './ExperienceCard.astro'
 
 interface Props {
-  experiences: ExperienceModel[]
+  experiences: Experience[]
   withResponsibility?: boolean
 }
 
