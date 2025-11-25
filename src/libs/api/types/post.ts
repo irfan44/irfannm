@@ -1,15 +1,15 @@
-import type { BlogCategoriesModel, PostsModel } from '@libs/models/post'
+import type { BaseCmsResponse } from '@libs/api/types/cms'
+import type {
+  BlogCategoriesModel,
+  CategorizedPostsModel,
+  PostModel,
+  PostsModel,
+} from '@libs/models/post'
 
-export interface PostsResponse {
-  posts: PostsModel
-}
+export type PostsResponse = BaseCmsResponse<PostsModel>
 
-export type CategorizedPostsResponse = PostsResponse & BlogCategoriesResponse
+export type CategorizedPostsResponse = BaseCmsResponse<CategorizedPostsModel>
 
-export interface PostResponse {
-  posts: PostsModel
-}
+export type PostResponse = BaseCmsResponse<PostModel>
 
-export interface BlogCategoriesResponse {
-  blogCategories: BlogCategoriesModel
-}
+export type BlogCategoriesResponse = BaseCmsResponse<BlogCategoriesModel>

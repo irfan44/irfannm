@@ -15,8 +15,8 @@ const { posts } = Astro.props
     posts.map((post) => (
       <PostCard
         title={post.title}
-        category={post.blogCategory.name}
-        coverImage={post.coverImage.derived[0].secure_url}
+        category={post.category}
+        coverImage={post.coverImageUrl}
         date={post.date}
         slug={post.slug}
         excerpt={post.excerpt}
