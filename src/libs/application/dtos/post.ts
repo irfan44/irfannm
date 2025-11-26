@@ -12,9 +12,9 @@ export interface Post {
   title: string
   category: string
   categorySlug: string
-  coverImageUrl: string
+  coverImage: string
   date: string
-  caption: string
+  coverCaption: string
   excerpt: string
   content: any // change with MDX type
 }

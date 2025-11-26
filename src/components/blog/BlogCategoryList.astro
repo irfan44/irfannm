@@ -1,6 +1,7 @@
 ---
 import TabPanel from '@components/ui/tabs/TabPanel.astro'
 import Tabs from '@components/ui/tabs/Tabs.astro'
+import type { TabsItems } from '@components/ui/tabs/tabs.types'
 import type { CategorizedPosts } from '@libs/application/dtos/post'
 
 import PostList from './PostList.astro'
@@ -11,15 +12,29 @@ interface Props {
 
 const { categorizedPosts } = Astro.props
 
-const tabs = [
+const defaultTabs = [
   { id: 'All', label: 'All' },
   { id: 'Tech', label: 'Tech' },
   { id: 'Finance', label: 'Finance' },
   { id: 'Other', label: 'Other' },
 ]
+
+const getTabsFromPosts = () => {
+  const tabs: TabsItems = []
+  categorizedPosts.forEach((categorizedPost) => {
+    tabs.push({
+      id: categorizedPost.category,
+      label: categorizedPost.category,
+    })
+  })
+
+  if (tabs.length === 0) return defaultTabs
+
+  return tabs
+}
 ---
 
-<Tabs tabs={tabs} additionalClass="flex justify-center mb-8">
+<Tabs tabs={getTabsFromPosts()} additionalClass="flex justify-center mb-8">
   {
     categorizedPosts.map((categorizedPost) => (
       <TabPanel id={categorizedPost.category} active={categorizedPost.category === 'All'}>
