@@ -43,7 +43,7 @@ const convertedDate = convertDate(post.date, true)
   title={`${post.title} | Blog`}
   excerpt={post.excerpt}
   currentPath={`/blog/${slug}`}
-  ogImage={post.coverImageUrl}
+  ogImage={post.coverImage}
   breadcrumbItems={breadcrumbItems}
 >
   <article class="prose text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200">
@@ -59,13 +59,13 @@ const convertedDate = convertDate(post.date, true)
       <figure>
         <Picture
           class="rounded-2xl object-cover"
-          src={post.coverImageUrl}
+          src={post.coverImage}
           alt={`Cover for ${post.title}`}
           height="390"
           width="711"
           loading="eager"
         />
-        <figcaption>{post.caption}</figcaption>
+        <figcaption>{post.coverCaption}</figcaption>
       </figure>
     </div>
     <RenderMarkdown markdownSource={post.content} />
