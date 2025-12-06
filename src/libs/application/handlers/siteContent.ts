@@ -9,8 +9,8 @@ export class SiteContentHandler {
     return response
   }
 
-  static async getConstant(slug: string): Promise<SiteContent | undefined> {
-    const response = await SiteContentUseCase.getConstant(slug)
+  static async getConstant(key: string): Promise<SiteContent | undefined> {
+    const response = await SiteContentUseCase.getConstant(key)
     if (!response) return undefined
 
     return response

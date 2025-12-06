@@ -3,7 +3,7 @@ import BlogCategoryList from '@components/blog/BlogCategoryList.astro'
 import HeroPost from '@components/blog/HeroPostCard.astro'
 import Section from '@components/layouts/Section.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { PostHandler } from '@libs/handlers/post'
+import { PostHandler } from '@libs/application/handlers/post'
 
 const categorizedPosts = await PostHandler.getCategorizedPosts()
 

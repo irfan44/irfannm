@@ -1,5 +1,5 @@
 import type { CategorizedPosts, Post, Posts } from '@libs/application/dtos/post'
-import { PostCmsRepository } from '@libs/infrastructure/persistance/cms-api/post'
+import { PostCmsRepository } from '@libs/infrastructure/cms-api/post'
 
 export class PostUseCase {
   static async getPosts(): Promise<Posts | undefined> {

@@ -1,5 +1,5 @@
 import type { CategorizedPostsModel, PostModel, PostsModel } from '@libs/domain/models/post'
-import { BaseCmsRepository } from '@libs/infrastructure/persistance/cms-api/base/cms'
+import { BaseCmsRepository } from '@libs/infrastructure/cms-api/base/cms'
 
 export class PostCmsRepository {
   static async getPosts(): Promise<PostsModel | undefined> {
@@ -13,7 +13,7 @@ export class PostCmsRepository {
   }
 
   static async getPost(slug: string): Promise<PostModel | undefined> {
-    const response = await BaseCmsRepository.handleGet<PostModel>(`/posts/${slug}`)
+    const response = await BaseCmsRepository.handleGet<PostModel>(`/posts/slug/${slug}`)
     return response.data
   }
 

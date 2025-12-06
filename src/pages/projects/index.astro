@@ -2,7 +2,7 @@
 import Section from '@components/layouts/Section.astro'
 import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { ProjectHandler } from '@libs/handlers/project'
+import { ProjectHandler } from '@libs/application/handlers/project'
 
 const projects = await ProjectHandler.getProjects()
 

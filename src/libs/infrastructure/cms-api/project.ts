@@ -1,5 +1,5 @@
 import type { ProjectModel, ProjectsModel } from '@libs/domain/models/project'
-import { BaseCmsRepository } from '@libs/infrastructure/persistance/cms-api/base/cms'
+import { BaseCmsRepository } from '@libs/infrastructure/cms-api/base/cms'
 
 export class ProjectCmsRepository {
   static async getProjects(): Promise<ProjectsModel | undefined> {
@@ -15,7 +15,7 @@ export class ProjectCmsRepository {
   }
 
   static async getProject(slug: string): Promise<ProjectModel | undefined> {
-    const response = await BaseCmsRepository.handleGet<ProjectModel>(`/projects/${slug}`)
+    const response = await BaseCmsRepository.handleGet<ProjectModel>(`/projects/slug/${slug}`)
     return response.data
   }
 }

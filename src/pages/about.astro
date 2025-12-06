@@ -5,8 +5,8 @@ import Experience from '@components/experience/Experience.astro'
 import Section from '@components/layouts/Section.astro'
 import Resume from '@components/resume/Resume.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
-import { ExperienceHandler } from '@libs/handlers/experience'
-import { SiteContentHandler } from '@libs/handlers/siteContent'
+import { ExperienceHandler } from '@libs/application/handlers/experience'
+import { SiteContentHandler } from '@libs/application/handlers/siteContent'
 import { getSiteContent } from '@libs/utils/siteContent'
 
 const [constants, experiences] = await Promise.all([

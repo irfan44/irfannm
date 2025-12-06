@@ -1,5 +1,5 @@
 import type { Project, Projects } from '@libs/application/dtos/project'
-import { ProjectCmsRepository } from '@libs/infrastructure/persistance/cms-api/project'
+import { ProjectCmsRepository } from '@libs/infrastructure/cms-api/project'
 
 export class ProjectUseCase {
   static async getProjects(): Promise<Projects | undefined> {

@@ -1,5 +1,5 @@
 import type { Experiences } from '@libs/application/dtos/experience'
-import { ExperienceCmsRepository } from '@libs/infrastructure/persistance/cms-api/experience'
+import { ExperienceCmsRepository } from '@libs/infrastructure/cms-api/experience'
 
 export class ExperienceUseCase {
   static async getExperiences(): Promise<Experiences | undefined> {

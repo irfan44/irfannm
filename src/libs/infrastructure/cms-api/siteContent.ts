@@ -1,5 +1,5 @@
 import type { SiteContentModel, SiteContentsModel } from '@libs/domain/models/siteContent'
-import { BaseCmsRepository } from '@libs/infrastructure/persistance/cms-api/base/cms'
+import { BaseCmsRepository } from '@libs/infrastructure/cms-api/base/cms'
 
 export class SiteContentCmsRepository {
   static async getConstants(): Promise<SiteContentsModel | undefined> {
@@ -7,8 +7,8 @@ export class SiteContentCmsRepository {
     return response.data
   }
 
-  static async getConstant(slug: string): Promise<SiteContentModel | undefined> {
-    const response = await BaseCmsRepository.handleGet<SiteContentModel>(`/site-contents/${slug}`)
+  static async getConstant(key: string): Promise<SiteContentModel | undefined> {
+    const response = await BaseCmsRepository.handleGet<SiteContentModel>(`/site-contents/key/${key}`)
     return response.data
   }
 }
