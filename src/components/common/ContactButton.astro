@@ -1,8 +1,10 @@
 ---
 import ButtonLink from '@components/ui/links/ButtonLink.astro'
+
+const EMAIL = 'irfannmuhajir@gmail.com'
 ---
 
-<ButtonLink title="Contact me!" href="mailto:irfannmuhajir@gmail.com">
+<ButtonLink title="Contact me!" href={`mailto:${EMAIL}`}>
   <span class="text-xl">📧</span>
   <span>Contact me!</span>
 </ButtonLink>
