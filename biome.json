@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**"]
+    "includes": ["**", "!dist", "!node_modules", "!.vscode", "!.idea"]
   },
   "formatter": {
     "enabled": true,

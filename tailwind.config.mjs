@@ -1,5 +1,5 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
 import typography from '@tailwindcss/typography'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const { fontFamily } = defaultTheme
 
