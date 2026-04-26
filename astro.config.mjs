@@ -1,14 +1,14 @@
 // @ts-check
 import cloudflare from '@astrojs/cloudflare'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
   site: import.meta.env.SITE_URL || 'https://irfannm.dev',
-  integrations: [tailwind({ applyBaseStyles: false }), sitemap(), icon()],
+  integrations: [sitemap(), icon()],
 
   redirects: {
     '/blog/2022-04-10-generasi-gigih-critical-thinking': {
@@ -34,6 +34,7 @@ export default defineConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     build: {
       sourcemap: false,
     },
