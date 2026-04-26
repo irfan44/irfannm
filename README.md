@@ -6,9 +6,6 @@ Codebase for ([irfannm.dev](https://irfannm.dev/))
 
 - Astro
 - Tailwind CSS
-- Hygraph
-- GraphQL
-
 ---
 
 Copyright © 2025 by Irfan Nurghiffari Muhajir

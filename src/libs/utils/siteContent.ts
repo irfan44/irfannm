@@ -1,4 +1,4 @@
-import type { SiteContent, SiteContents } from '@libs/application/dtos/siteContent'
+import type { SiteContent, SiteContents } from '@libs/business/entity'
 
 interface ResumeUrlContent {
   value: string

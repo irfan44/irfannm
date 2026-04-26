@@ -19,7 +19,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "npx @biomejs/biome check --write ."
+    "postinstall": "bun ./scripts/setup-hooks.mjs",
+    "format": "biome format --write .",
+    "lint": "biome check --write ."
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.11",

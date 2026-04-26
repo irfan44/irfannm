@@ -1,4 +1,4 @@
-const convertDate = (date: string, isFull: boolean = false) => {
+export const convertDate = (date: string, isFull: boolean = false) => {
   const currentDate = new Date(date)
 
   if (isFull) {
@@ -14,5 +14,3 @@ const convertDate = (date: string, isFull: boolean = false) => {
     month: 'short',
   })
 }
-
-export default convertDate
