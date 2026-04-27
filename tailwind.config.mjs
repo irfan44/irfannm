@@ -18,7 +18,7 @@ export default {
         secondary: '#f3f3f4',
         secondaryHover: '#eeeeef',
       },
-      typography: (theme) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             color: '#161616',

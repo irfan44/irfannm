@@ -1,5 +1,5 @@
 ---
-import { marked } from 'marked'
+import { renderMarkdownSafely } from '@libs/utils'
 
 interface Props {
   markdownSource: string
@@ -7,7 +7,7 @@ interface Props {
 
 const { markdownSource } = Astro.props
 
-const markdownContent = await marked.parse(markdownSource)
+const markdownContent = await renderMarkdownSafely(markdownSource)
 ---
 
 <Fragment set:html={markdownContent} />

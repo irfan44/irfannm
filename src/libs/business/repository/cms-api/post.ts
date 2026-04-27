@@ -5,28 +5,28 @@ import { BaseCmsRepository } from './base/cms'
 export class PostCmsRepository {
   static async getPosts(): Promise<PostsModel | undefined> {
     const response = await BaseCmsRepository.handleGet<PostsModel>('/posts')
-    return response.data
+    return response?.data
   }
 
   static async getCategorizedPosts(): Promise<CategorizedPostsModel | undefined> {
     const response = await BaseCmsRepository.handleGet<CategorizedPostsModel>('/posts/categorized')
-    return response.data
+    return response?.data
   }
 
   static async getPost(slug: string): Promise<PostModel | undefined> {
     const response = await BaseCmsRepository.handleGet<PostModel>(`/posts/slug/${slug}`)
-    return response.data
+    return response?.data
   }
 
   static async getHighlightedPosts(): Promise<PostsModel | undefined> {
     const response = await BaseCmsRepository.handleGet<PostsModel>('/posts/highlighted')
-    return response.data
+    return response?.data
   }
 
   static async getOtherPosts(category: string, slug: string): Promise<PostsModel | undefined> {
     const response = await BaseCmsRepository.handleGet<PostsModel>(
       `/posts/${category}/${slug}/others`
     )
-    return response.data
+    return response?.data
   }
 }

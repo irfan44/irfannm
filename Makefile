@@ -18,6 +18,10 @@ format:
 lint:
 	bun run lint
 
+check:
+	bun run check
+
 ci:
 	bun run format
 	bun run lint
+	bun run check

@@ -20,15 +20,18 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "biome format --write .",
-    "lint": "biome check --write ."
+    "lint": "biome check --write .",
+    "check": "astro check"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.8",
     "@astrojs/cloudflare": "13.2.1",
     "@twodft/astro-icon": "1.2.4",
     "astro": "6.1.9",
     "axios": "1.13.2",
     "camelcase-keys": "10.0.2",
-    "marked": "18.0.2"
+    "marked": "18.0.2",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@astrojs/sitemap": "3.7.2",
