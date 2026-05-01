@@ -1,8 +1,8 @@
 ---
+import ResumeButton from "@components/common/ResumeButton.astro";
 import SocialMedia from "@components/common/SocialMedia.astro";
 
 import { Image } from "astro:assets";
-import ResumeButton from "./ResumeButton.astro";
 
 interface Props {
   description: string;
@@ -26,7 +26,7 @@ const { description, resumeUrl } = Astro.props;
   </div>
   <div class="flex justify-center md:w-1/2">
     <Image
-      class="h-[400px]"
+      class="h-100"
       src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person"
       alt="Hero"
       height="400"
