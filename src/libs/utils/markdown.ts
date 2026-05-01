@@ -11,6 +11,10 @@ function escapeHtml(value: string): string {
     .replaceAll("'", '&#39;')
 }
 
+function isAllowedInlineHtmlTag(text: string): boolean {
+  return /^<\/?u>$/i.test(text.trim())
+}
+
 function sanitizeUrl(url: string | null | undefined): string | null {
   if (!url) return null
 
@@ -36,7 +40,7 @@ function sanitizeUrl(url: string | null | undefined): string | null {
 
 const renderer = new Renderer()
 
-renderer.html = ({ text }) => escapeHtml(text)
+renderer.html = ({ text }) => (isAllowedInlineHtmlTag(text) ? text : escapeHtml(text))
 
 renderer.link = function ({ href, title, tokens }) {
   const sanitizedUrl = sanitizeUrl(href)

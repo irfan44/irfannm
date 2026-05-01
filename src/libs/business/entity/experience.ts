@@ -7,7 +7,7 @@ export interface ExperienceModel {
   companyLogo: string
   employmentType: string
   startingDate: string
-  responsibilities: string[]
+  responsibilities?: string[]
   endDate?: string
 }
 
@@ -20,6 +20,6 @@ export interface Experience {
   companyLogo: string
   employmentType: string
   startingDate: string
-  responsibilities: string[]
+  responsibilities?: string[]
   endDate?: string
 }

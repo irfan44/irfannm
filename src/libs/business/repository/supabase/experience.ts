@@ -7,7 +7,7 @@ export class ExperienceSupabaseRepository {
   static async getExperiences(): Promise<ExperiencesModel | undefined> {
     const supabase = createServerClient()
 
-    const { data, error } = await supabase.from('experience').select('*')
+    const { data, error } = await supabase.from('experience').select('*').order('starting_date', { ascending: false })
 
     if (error) {
       console.error(error)
@@ -42,7 +42,7 @@ export class ExperienceSupabaseRepository {
       companyLogo: data.company_logo,
       employmentType: data.employment_type,
       startingDate: data.starting_date,
-      responsibilities: data.responsibilities ?? [],
+      responsibilities: data.responsibilities ?? undefined,
       endDate: data.end_date ?? undefined,
     }
   }
