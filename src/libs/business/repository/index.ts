@@ -1,1 +1,1 @@
-export * from './cms-api'
+export * from './supabase'

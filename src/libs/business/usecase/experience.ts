@@ -1,16 +1,16 @@
 import type { Experiences } from '@libs/business/entity'
-import { ExperienceCmsRepository } from '@libs/business/repository'
+import { ExperienceSupabaseRepository } from '@libs/business/repository'
 
 export class ExperienceUseCase {
   static async getExperiences(): Promise<Experiences | undefined> {
-    const response = await ExperienceCmsRepository.getExperiences()
+    const response = await ExperienceSupabaseRepository.getExperiences()
     if (!response) return undefined
 
     return response
   }
 
   static async getRecentExperiences(): Promise<Experiences | undefined> {
-    const response = await ExperienceCmsRepository.getRecentExperiences()
+    const response = await ExperienceSupabaseRepository.getRecentExperiences()
     if (!response) return undefined
 
     return response
