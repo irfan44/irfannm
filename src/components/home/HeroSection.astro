@@ -15,8 +15,8 @@ const { description, resumeUrl } = Astro.props
 <div class="mb-12 flex flex-col items-center py-6 md:flex-row">
   <div class="space-y-6 md:w-1/2">
     <div>
-      <p class="text-xl font-bold text-black dark:text-white">Hi,</p>
-      <h1>I&apos;m Irfan! 👋</h1>
+      <h1>Hi,</p>
+      <h1>I&apos;m <span class="rounded-lg px-2 border border-neutral-200 bg-secondary dark:bg-neutral-800 dark:border-neutral-700">Irfan!</span> 👋</h1>
     </div>
     <p>{description}</p>
     <ResumeButton resumeUrl={resumeUrl} />

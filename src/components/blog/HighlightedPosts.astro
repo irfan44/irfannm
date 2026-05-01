@@ -12,6 +12,8 @@ const { highlightedPosts } = Astro.props
 ---
 
 <Section title="Latest Posts">
-  <PostList posts={highlightedPosts} />
+  <div class="mb-8">
+    <PostList posts={highlightedPosts} />
+  </div>
   <ReadMore url="/blog">Read more posts</ReadMore>
 </Section>
