@@ -1,14 +1,14 @@
 ---
 // biome-ignore assist/source/organizeImports: Ignore sorting for single type import
-import type { TabsItems } from './tabs.types'
+import type { TabsItems } from "./tabs.types";
 
 interface Props {
-  tabs: TabsItems
-  defaultTab?: string
-  additionalClass?: string
+  tabs: TabsItems;
+  defaultTab?: string;
+  additionalClass?: string;
 }
 
-const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
+const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
 ---
 
 <div data-tabs>

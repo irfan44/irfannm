@@ -1,75 +1,78 @@
-import { Marked, Renderer } from 'marked'
+import { Marked, Renderer } from "marked";
 
-const allowedUrlProtocols = new Set(['http:', 'https:', 'mailto:', 'tel:'])
+const allowedUrlProtocols = new Set(["http:", "https:", "mailto:", "tel:"]);
 
 function escapeHtml(value: string): string {
   return value
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;')
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 function isAllowedInlineHtmlTag(text: string): boolean {
-  return /^<\/?u>$/i.test(text.trim())
+  return /^<\/?u>$/i.test(text.trim());
 }
 
 function sanitizeUrl(url: string | null | undefined): string | null {
-  if (!url) return null
+  if (!url) return null;
 
-  const normalizedUrl = url.trim()
-  if (!normalizedUrl) return null
+  const normalizedUrl = url.trim();
+  if (!normalizedUrl) return null;
 
   if (
-    normalizedUrl.startsWith('/') ||
-    normalizedUrl.startsWith('./') ||
-    normalizedUrl.startsWith('../') ||
-    normalizedUrl.startsWith('#')
+    normalizedUrl.startsWith("/") ||
+    normalizedUrl.startsWith("./") ||
+    normalizedUrl.startsWith("../") ||
+    normalizedUrl.startsWith("#")
   ) {
-    return normalizedUrl
+    return normalizedUrl;
   }
 
   try {
-    const parsedUrl = new URL(normalizedUrl)
-    return allowedUrlProtocols.has(parsedUrl.protocol) ? normalizedUrl : null
+    const parsedUrl = new URL(normalizedUrl);
+    return allowedUrlProtocols.has(parsedUrl.protocol) ? normalizedUrl : null;
   } catch {
-    return null
+    return null;
   }
 }
 
-const renderer = new Renderer()
+const renderer = new Renderer();
 
-renderer.html = ({ text }) => (isAllowedInlineHtmlTag(text) ? text : escapeHtml(text))
+renderer.html = ({ text }) =>
+  isAllowedInlineHtmlTag(text) ? text : escapeHtml(text);
 
 renderer.link = function ({ href, title, tokens }) {
-  const sanitizedUrl = sanitizeUrl(href)
-  const content = this.parser.parseInline(tokens)
+  const sanitizedUrl = sanitizeUrl(href);
+  const content = this.parser.parseInline(tokens);
 
   if (!sanitizedUrl) {
-    return content
+    return content;
   }
 
-  const titleAttribute = title ? ` title="${escapeHtml(title)}"` : ''
-  return `<a href="${escapeHtml(sanitizedUrl)}"${titleAttribute}>${content}</a>`
-}
+  const titleAttribute = title ? ` title="${escapeHtml(title)}"` : "";
+  return `<a href="${escapeHtml(sanitizedUrl)}"${titleAttribute}>${content}</a>`;
+};
 
-renderer.image = function ({ href, title, text }) {
-  const sanitizedUrl = sanitizeUrl(href)
+renderer.image = ({ href, title, text }) => {
+  const sanitizedUrl = sanitizeUrl(href);
   if (!sanitizedUrl) {
-    return escapeHtml(text)
+    return escapeHtml(text);
   }
 
-  const titleAttribute = title ? ` title="${escapeHtml(title)}"` : ''
-  return `<img src="${escapeHtml(sanitizedUrl)}" alt="${escapeHtml(text)}"${titleAttribute}>`
-}
+  const titleAttribute = title ? ` title="${escapeHtml(title)}"` : "";
+  return `<img src="${escapeHtml(sanitizedUrl)}" alt="${escapeHtml(text)}"${titleAttribute}>`;
+};
 
 const markdownRenderer = new Marked({
   async: true,
   gfm: true,
   renderer,
-})
+});
 
-export async function renderMarkdownSafely(markdownSource: string): Promise<string> {
-  return markdownRenderer.parse(markdownSource)
+export async function renderMarkdownSafely(
+  markdownSource: string,
+): Promise<string> {
+  return markdownRenderer.parse(markdownSource);
 }

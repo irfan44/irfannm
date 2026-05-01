@@ -1,14 +1,14 @@
 ---
-import type { Experience } from '@libs/business/entity'
+import type { Experience } from "@libs/business/entity";
 
-import ExperienceCard from './ExperienceCard.astro'
+import ExperienceCard from "./ExperienceCard.astro";
 
 interface Props {
-  experiences: Experience[]
-  withResponsibility?: boolean
+  experiences: Experience[];
+  withResponsibility?: boolean;
 }
 
-const { experiences, withResponsibility = false } = Astro.props
+const { experiences, withResponsibility = false } = Astro.props;
 ---
 
 <div class="space-y-6">

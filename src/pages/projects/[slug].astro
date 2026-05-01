@@ -1,38 +1,38 @@
 ---
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
-import Chip from '@components/ui/chips/Chip.astro'
-import ExternalLink from '@components/ui/links/ExernalLink.astro'
-import DetailLayout from '@layouts/DetailLayout.astro'
-import { ProjectHandler } from '@libs/handlers/project'
-import { convertDate } from '@libs/utils'
-import { Icon } from '@twodft/astro-icon/components'
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
+import Chip from "@components/ui/chips/Chip.astro";
+import ExternalLink from "@components/ui/links/ExernalLink.astro";
+import DetailLayout from "@layouts/DetailLayout.astro";
+import { ProjectHandler } from "@libs/handlers/project";
+import { convertDate } from "@libs/utils";
+import { Icon } from "@twodft/astro-icon/components";
 
-import { Picture } from 'astro:assets'
+import { Picture } from "astro:assets";
 
 export async function getStaticPaths() {
-  const projects = await ProjectHandler.getProjects()
-  if (!projects) throw Astro.redirect('/500')
+  const projects = await ProjectHandler.getProjects();
+  if (!projects) throw Astro.redirect("/500");
 
   return projects.map((project) => ({
     params: { slug: project.slug },
-  }))
+  }));
 }
 
-const { slug } = Astro.params
+const { slug } = Astro.params;
 
-const project = await ProjectHandler.getProject(slug)
-if (!project) throw Astro.redirect('/404')
+const project = await ProjectHandler.getProject(slug);
+if (!project) throw Astro.redirect("/404");
 
 const breadcrumbItems: BreadcrumbItems = [
-  { title: 'Home', path: '/' },
-  { title: 'Projects', path: `/projects` },
-]
+  { title: "Home", path: "/" },
+  { title: "Projects", path: `/projects` },
+];
 
-const startingDate = convertDate(project.startingDate)
-const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
+const startingDate = convertDate(project.startingDate);
+const endDate = project.endDate ? convertDate(project.endDate) : "Present";
 
 const placeholderImageUrl =
-  'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714286335/irfannm/projects/qfle9tpzyggdn1y9s90n.png'
+  "https://res.cloudinary.com/dflb9qqcu/image/upload/v1714286335/irfannm/projects/qfle9tpzyggdn1y9s90n.png";
 ---
 
 <DetailLayout

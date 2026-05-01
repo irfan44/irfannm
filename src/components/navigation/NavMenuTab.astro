@@ -1,16 +1,16 @@
 ---
-import Tabs from '@components/ui/tabs/Tabs.astro'
-import { NAV_MENUS } from '@libs/constants'
+import Tabs from "@components/ui/tabs/Tabs.astro";
+import { NAV_MENUS } from "@libs/constants";
 
-const currentPath = Astro.url.pathname
+const currentPath = Astro.url.pathname;
 
 const tabs = NAV_MENUS.map(({ name, link }) => {
   return {
     id: link,
     label: name,
     href: link,
-  }
-})
+  };
+});
 ---
 
 <Tabs

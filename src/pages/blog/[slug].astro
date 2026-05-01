@@ -1,42 +1,43 @@
 ---
-import PostList from '@components/blog/PostList.astro'
-import RenderMarkdown from '@components/common/RenderMarkdown.astro'
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
-import DetailLayout from '@layouts/DetailLayout.astro'
-import type { Post, Posts } from '@libs/business/entity'
-import { PostHandler } from '@libs/handlers'
-import { convertDate } from '@libs/utils'
+import PostList from "@components/blog/PostList.astro";
+import RenderMarkdown from "@components/common/RenderMarkdown.astro";
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
+import DetailLayout from "@layouts/DetailLayout.astro";
+import type { Post, Posts } from "@libs/business/entity";
+import { PostHandler } from "@libs/handlers";
+import { convertDate } from "@libs/utils";
 
-import { Picture } from 'astro:assets'
+import { Picture } from "astro:assets";
 
 interface Props {
-  slug: string
-  post: Post
-  otherPosts: Posts
+  slug: string;
+  post: Post;
+  otherPosts: Posts;
 }
 
 export async function getStaticPaths() {
-  const posts = await PostHandler.getPosts()
-  if (!posts) throw Astro.redirect('/500')
+  const posts = await PostHandler.getPosts();
+  if (!posts) throw Astro.redirect("/500");
 
   return posts.map((post) => ({
     params: { slug: post.slug },
-  }))
+  }));
 }
 
-const { slug } = Astro.params
+const { slug } = Astro.params;
 
-const post = await PostHandler.getPost(slug)
-if (!post) throw Astro.redirect('/404')
+const post = await PostHandler.getPost(slug);
+if (!post) throw Astro.redirect("/404");
 
-const otherPosts = (await PostHandler.getOtherPosts(post.categorySlug, slug)) ?? []
+const otherPosts =
+  (await PostHandler.getOtherPosts(post.categorySlug, slug)) ?? [];
 
 const breadcrumbItems: BreadcrumbItems = [
-  { title: 'Home', path: '/' },
-  { title: 'Blog', path: `/blog` },
-]
+  { title: "Home", path: "/" },
+  { title: "Blog", path: `/blog` },
+];
 
-const convertedDate = convertDate(post.date, true)
+const convertedDate = convertDate(post.date, true);
 ---
 
 <DetailLayout

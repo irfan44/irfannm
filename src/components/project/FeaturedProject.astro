@@ -1,14 +1,14 @@
 ---
-import ReadMore from '@components/common/ReadMore.astro'
-import Section from '@components/layouts/Section.astro'
-import ProjectList from '@components/project/ProjectList.astro'
-import type { Projects } from '@libs/business/entity'
+import ReadMore from "@components/common/ReadMore.astro";
+import Section from "@components/layouts/Section.astro";
+import ProjectList from "@components/project/ProjectList.astro";
+import type { Projects } from "@libs/business/entity";
 
 interface Props {
-  featuredProjects: Projects
+  featuredProjects: Projects;
 }
 
-const { featuredProjects } = Astro.props
+const { featuredProjects } = Astro.props;
 ---
 
 <Section title="Featured Project">

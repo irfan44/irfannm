@@ -1,14 +1,14 @@
 ---
-import ButtonLink from '@components/ui/links/ButtonLink.astro'
+import ButtonLink from "@components/ui/links/ButtonLink.astro";
 
 interface Props {
-  resumeUrl: string
+  resumeUrl: string;
 }
 
-const { resumeUrl } = Astro.props
+const { resumeUrl } = Astro.props;
 ---
 
 <ButtonLink title="View my resume!" href={resumeUrl}>
-  <span class="text-md mr-1">📄</span>
+  <span slot="icon">📄</span>
   View Resume!
 </ButtonLink>

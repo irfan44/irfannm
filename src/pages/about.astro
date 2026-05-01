@@ -1,20 +1,20 @@
 ---
-import AboutMe from '@components/about/AboutMe.astro'
-import Resume from '@components/about/Resume.astro'
-import SocialContact from '@components/about/SocialContact.astro'
-import Experience from '@components/experience/Experience.astro'
-import Section from '@components/layouts/Section.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { ExperienceHandler, SiteContentHandler } from '@libs/handlers'
-import { getSiteContent } from '@libs/utils'
+import AboutMe from "@components/about/AboutMe.astro";
+import Resume from "@components/about/Resume.astro";
+import SocialContact from "@components/about/SocialContact.astro";
+import Experience from "@components/experience/Experience.astro";
+import Section from "@components/layouts/Section.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { ExperienceHandler, SiteContentHandler } from "@libs/handlers";
+import { getSiteContent } from "@libs/utils";
 
 const [constants, experiences] = await Promise.all([
   SiteContentHandler.getConstants(),
   ExperienceHandler.getExperiences(),
-])
+]);
 
-const aboutMeSource = getSiteContent(constants, 'about-me-text')
-const resumeUrl = getSiteContent(constants, 'resume-url', true)
+const aboutMeSource = getSiteContent(constants, "about-me-text");
+const resumeUrl = getSiteContent(constants, "resume-url", true);
 ---
 
 <BaseLayout title="About" description="Get to know me better" currentPath="/about">

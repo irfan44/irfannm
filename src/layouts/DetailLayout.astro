@@ -1,19 +1,26 @@
 ---
-import Breadcrumb from '@components/ui/breadcrumbs/Breadcrumb.astro'
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import Breadcrumb from "@components/ui/breadcrumbs/Breadcrumb.astro";
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 
-import BaseLayout from './BaseLayout.astro'
+import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-  title: string
-  excerpt: string
-  currentPath: string
-  ogImage?: string
-  breadcrumbItems: BreadcrumbItems
-  additionalClass?: string
+  title: string;
+  excerpt: string;
+  currentPath: string;
+  ogImage?: string;
+  breadcrumbItems: BreadcrumbItems;
+  additionalClass?: string;
 }
 
-const { title, excerpt, currentPath, ogImage, breadcrumbItems, additionalClass } = Astro.props
+const {
+  title,
+  excerpt,
+  currentPath,
+  ogImage,
+  breadcrumbItems,
+  additionalClass,
+} = Astro.props;
 ---
 
 <BaseLayout

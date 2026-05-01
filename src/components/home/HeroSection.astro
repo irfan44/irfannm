@@ -1,15 +1,15 @@
 ---
-import SocialMedia from '@components/common/SocialMedia.astro'
+import SocialMedia from "@components/common/SocialMedia.astro";
 
-import { Image } from 'astro:assets'
-import ResumeButton from './ResumeButton.astro'
+import { Image } from "astro:assets";
+import ResumeButton from "./ResumeButton.astro";
 
 interface Props {
-  description: string
-  resumeUrl: string
+  description: string;
+  resumeUrl: string;
 }
 
-const { description, resumeUrl } = Astro.props
+const { description, resumeUrl } = Astro.props;
 ---
 
 <div class="mb-12 flex flex-col items-center py-6 md:flex-row">

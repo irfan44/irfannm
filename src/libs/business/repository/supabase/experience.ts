@@ -1,43 +1,45 @@
-import type { ExperienceModel, ExperiencesModel } from '@libs/business/entity'
+import type { ExperienceModel, ExperiencesModel } from "@libs/business/entity";
 
-import type { Tables } from './client/database.types'
-import { createServerClient } from './client/supabase'
+import type { Tables } from "./client/database.types";
+import { createServerClient } from "./client/supabase";
 
 export class ExperienceSupabaseRepository {
   static async getExperiences(): Promise<ExperiencesModel | undefined> {
-    const supabase = createServerClient()
+    const supabase = createServerClient();
 
     const { data, error } = await supabase
-      .from('experience')
-      .select('*')
-      .order('starting_date', { ascending: false })
+      .from("experience")
+      .select("*")
+      .order("starting_date", { ascending: false });
 
     if (error) {
-      console.error(error)
-      return
+      console.error(error);
+      return;
     }
 
-    return data?.map(this.mapToModel)
+    return data?.map(ExperienceSupabaseRepository.mapToModel);
   }
 
-  static async getRecentExperiences(limit = 5): Promise<ExperiencesModel | undefined> {
-    const supabase = createServerClient()
+  static async getRecentExperiences(
+    limit = 5,
+  ): Promise<ExperiencesModel | undefined> {
+    const supabase = createServerClient();
 
     const { data, error } = await supabase
-      .from('experience')
-      .select('*')
-      .order('starting_date', { ascending: false })
-      .limit(limit)
+      .from("experience")
+      .select("*")
+      .order("starting_date", { ascending: false })
+      .limit(limit);
 
     if (error) {
-      console.error(error)
-      return
+      console.error(error);
+      return;
     }
 
-    return data?.map(this.mapToModel)
+    return data?.map(ExperienceSupabaseRepository.mapToModel);
   }
 
-  private static mapToModel(data: Tables<'experience'>): ExperienceModel {
+  private static mapToModel(data: Tables<"experience">): ExperienceModel {
     return {
       id: String(data.id),
       title: data.title,
@@ -47,6 +49,6 @@ export class ExperienceSupabaseRepository {
       startingDate: data.starting_date,
       responsibilities: data.responsibilities ?? undefined,
       endDate: data.end_date ?? undefined,
-    }
+    };
   }
 }

@@ -1,57 +1,63 @@
-import type { ProjectModel, ProjectsModel } from '@libs/business/entity'
+import type { ProjectModel, ProjectsModel } from "@libs/business/entity";
 
-import type { Tables } from './client/database.types'
-import { createServerClient } from './client/supabase'
+import type { Tables } from "./client/database.types";
+import { createServerClient } from "./client/supabase";
 
 export class ProjectSupabaseRepository {
   static async getProjects(): Promise<ProjectsModel | undefined> {
-    const supabase = createServerClient()
+    const supabase = createServerClient();
 
     const { data, error } = await supabase
-      .from('project')
-      .select('*')
-      .order('starting_date', { ascending: false })
+      .from("project")
+      .select("*")
+      .order("starting_date", { ascending: false });
 
     if (error) {
-      console.error(error)
-      return
+      console.error(error);
+      return;
     }
 
-    return data?.map(this.mapToModel)
+    return data?.map(ProjectSupabaseRepository.mapToModel);
   }
 
-  static async getFeaturedProjects(limit = 4): Promise<ProjectsModel | undefined> {
-    const supabase = createServerClient()
+  static async getFeaturedProjects(
+    limit = 4,
+  ): Promise<ProjectsModel | undefined> {
+    const supabase = createServerClient();
 
     const { data, error } = await supabase
-      .from('project')
-      .select('*')
-      .eq('is_featured', true)
-      .order('starting_date', { ascending: false })
-      .limit(limit)
+      .from("project")
+      .select("*")
+      .eq("is_featured", true)
+      .order("starting_date", { ascending: false })
+      .limit(limit);
 
     if (error) {
-      console.error(error)
-      return
+      console.error(error);
+      return;
     }
 
-    return data?.map(this.mapToModel)
+    return data?.map(ProjectSupabaseRepository.mapToModel);
   }
 
   static async getProject(slug: string): Promise<ProjectModel | undefined> {
-    const supabase = createServerClient()
+    const supabase = createServerClient();
 
-    const { data, error } = await supabase.from('project').select('*').eq('slug', slug).single()
+    const { data, error } = await supabase
+      .from("project")
+      .select("*")
+      .eq("slug", slug)
+      .single();
 
     if (error) {
-      console.error(error)
-      return
+      console.error(error);
+      return;
     }
 
-    return this.mapToModel(data)
+    return ProjectSupabaseRepository.mapToModel(data);
   }
 
-  private static mapToModel(data: Tables<'project'>): ProjectModel {
+  private static mapToModel(data: Tables<"project">): ProjectModel {
     return {
       id: String(data.id),
       isFeatured: data.is_featured,
@@ -69,6 +75,6 @@ export class ProjectSupabaseRepository {
       url: data.url ?? undefined,
       sourceCode: data.source_code ?? undefined,
       company: data.company ?? undefined,
-    }
+    };
   }
 }

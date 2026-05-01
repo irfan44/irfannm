@@ -1,14 +1,14 @@
 ---
-import ReadMore from '@components/common/ReadMore.astro'
-import ExperienceList from '@components/experience/ExperienceList.astro'
-import Section from '@components/layouts/Section.astro'
-import type { Experiences } from '@libs/business/entity'
+import ReadMore from "@components/common/ReadMore.astro";
+import ExperienceList from "@components/experience/ExperienceList.astro";
+import Section from "@components/layouts/Section.astro";
+import type { Experiences } from "@libs/business/entity";
 
 interface Props {
-  recentExperiences: Experiences
+  recentExperiences: Experiences;
 }
 
-const { recentExperiences } = Astro.props
+const { recentExperiences } = Astro.props;
 ---
 
 <Section title="Working Experience">

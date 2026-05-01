@@ -1,15 +1,17 @@
 ---
-import Section from '@components/layouts/Section.astro'
-import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { ProjectHandler } from '@libs/handlers/project'
+import Section from "@components/layouts/Section.astro";
+import ProjectCategoryList from "@components/project/ProjectCategoryList.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { ProjectHandler } from "@libs/handlers/project";
 
-const projects = await ProjectHandler.getProjects()
+const projects = await ProjectHandler.getProjects();
 
-const workProjects = projects ? projects.filter((value) => value.projectType === 'Work') : []
+const workProjects = projects
+  ? projects.filter((value) => value.projectType === "Work")
+  : [];
 const personalProjects = projects
-  ? projects.filter((value) => value.projectType === 'Personal')
-  : []
+  ? projects.filter((value) => value.projectType === "Personal")
+  : [];
 ---
 
 <BaseLayout

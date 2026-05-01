@@ -1,10 +1,11 @@
 ---
 interface Props {
-  title: string
-  href: string
+  title: string;
+  href: string;
 }
 
-const { title, href } = Astro.props
+const { title, href } = Astro.props;
+const hasIcon = Astro.slots.has("icon");
 ---
 
 <div
@@ -17,6 +18,11 @@ const { title, href } = Astro.props
     title={title}
     href={href}
   >
+    {hasIcon && (
+      <span class="mr-1">
+        <slot name="icon" />
+      </span>
+    )}
     <slot />
   </a>
 </div>

@@ -1,14 +1,14 @@
 ---
-import type { Projects } from '@libs/business/entity'
+import type { Projects } from "@libs/business/entity";
 
-import ProjectCard from './ProjectCard.astro'
+import ProjectCard from "./ProjectCard.astro";
 
 type Props = {
-  projects: Projects
-  isFeatured?: boolean
-}
+  projects: Projects;
+  isFeatured?: boolean;
+};
 
-const { projects, isFeatured = false } = Astro.props
+const { projects, isFeatured = false } = Astro.props;
 ---
 
 <div

@@ -1,22 +1,22 @@
 ---
-import Card from '@components/ui/cards/Card.astro'
-import { convertDate } from '@libs/utils'
-import { Icon } from '@twodft/astro-icon/components'
+import Card from "@components/ui/cards/Card.astro";
+import { convertDate } from "@libs/utils";
+import { Icon } from "@twodft/astro-icon/components";
 
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 
 interface Props {
-  title: string
-  category: string
-  coverImage: string
-  date: string
-  excerpt: string
-  slug: string
+  title: string;
+  category: string;
+  coverImage: string;
+  date: string;
+  excerpt: string;
+  slug: string;
 }
 
-const { title, category, coverImage, date, excerpt, slug } = Astro.props
+const { title, category, coverImage, date, excerpt, slug } = Astro.props;
 
-const convertedDate = convertDate(date, true)
+const convertedDate = convertDate(date, true);
 ---
 
 <a id={`post-card-${slug}`} href={`/blog/${slug}`}>

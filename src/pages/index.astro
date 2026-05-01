@@ -1,21 +1,27 @@
 ---
-import HighlightedPosts from '@components/blog/HighlightedPosts.astro'
-import RecentExperience from '@components/experience/RecentExperience.astro'
-import HeroSection from '@components/home/HeroSection.astro'
-import FeaturedProject from '@components/project/FeaturedProject.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { ExperienceHandler, PostHandler, ProjectHandler, SiteContentHandler } from '@libs/handlers'
-import { getSiteContent } from '@libs/utils'
+import HighlightedPosts from "@components/blog/HighlightedPosts.astro";
+import RecentExperience from "@components/experience/RecentExperience.astro";
+import HeroSection from "@components/home/HeroSection.astro";
+import FeaturedProject from "@components/project/FeaturedProject.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  ExperienceHandler,
+  PostHandler,
+  ProjectHandler,
+  SiteContentHandler,
+} from "@libs/handlers";
+import { getSiteContent } from "@libs/utils";
 
-const [constants, recentExperiences, featuredProjects, highlightedPosts] = await Promise.all([
-  SiteContentHandler.getConstants(),
-  ExperienceHandler.getRecentExperiences(),
-  ProjectHandler.getFeaturedProjects(),
-  PostHandler.getHighlightedPosts(),
-])
+const [constants, recentExperiences, featuredProjects, highlightedPosts] =
+  await Promise.all([
+    SiteContentHandler.getConstants(),
+    ExperienceHandler.getRecentExperiences(),
+    ProjectHandler.getFeaturedProjects(),
+    PostHandler.getHighlightedPosts(),
+  ]);
 
-const description = getSiteContent(constants, 'home-description')
-const resumeUrl = getSiteContent(constants, 'resume-url', true).value
+const description = getSiteContent(constants, "home-description");
+const resumeUrl = getSiteContent(constants, "resume-url", true).value;
 ---
 
 <BaseLayout additionalClass="space-y-16">

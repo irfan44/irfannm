@@ -1,2 +1,2 @@
-export * from './navMenus'
-export * from './socials'
+export * from "./navMenus";
+export * from "./socials";

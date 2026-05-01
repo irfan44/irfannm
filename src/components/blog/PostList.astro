@@ -1,13 +1,13 @@
 ---
-import type { Posts } from '@libs/business/entity'
+import type { Posts } from "@libs/business/entity";
 
-import PostCard from './PostCard.astro'
+import PostCard from "./PostCard.astro";
 
 type Props = {
-  posts: Posts
-}
+  posts: Posts;
+};
 
-const { posts } = Astro.props
+const { posts } = Astro.props;
 ---
 
 <div class="grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-6 lg:gap-8">

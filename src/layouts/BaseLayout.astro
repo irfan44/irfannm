@@ -1,26 +1,26 @@
 ---
-import BackToTop from '@components/common/BackToTop.astro'
-import Footer from '@components/layouts/Footer.astro'
-import Meta from '@components/layouts/Meta.astro'
-import Navbar from '@components/layouts/Navbar.astro'
+import BackToTop from "@components/common/BackToTop.astro";
+import Footer from "@components/layouts/Footer.astro";
+import Meta from "@components/layouts/Meta.astro";
+import Navbar from "@components/layouts/Navbar.astro";
 
-import '@styles/index.css'
+import "@styles/index.css";
 
 interface Props {
-  title?: string
-  description?: string
-  currentPath?: string
-  ogImage?: string
-  additionalClass?: string
+  title?: string;
+  description?: string;
+  currentPath?: string;
+  ogImage?: string;
+  additionalClass?: string;
 }
 
 const {
   title = "Hi I'm Irfan",
   description = "I'm a software engineer, writer, and creator. I write about software engineering, productivity, and personal growth.",
-  currentPath = '/',
-  ogImage = 'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714299015/irfannm/logo.png',
-  additionalClass = '',
-} = Astro.props
+  currentPath = "/",
+  ogImage = "https://res.cloudinary.com/dflb9qqcu/image/upload/v1714299015/irfannm/logo.png",
+  additionalClass = "",
+} = Astro.props;
 ---
 
 <!doctype html>

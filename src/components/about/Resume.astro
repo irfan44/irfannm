@@ -1,15 +1,15 @@
 ---
-import ExternalLink from '@components/ui/links/ExernalLink.astro'
-import { convertDate } from '@libs/utils'
+import ExternalLink from "@components/ui/links/ExernalLink.astro";
+import { convertDate } from "@libs/utils";
 
 interface Props {
-  resumeUrl: string
-  updatedAt: string
+  resumeUrl: string;
+  updatedAt: string;
 }
 
-const { resumeUrl, updatedAt } = Astro.props
+const { resumeUrl, updatedAt } = Astro.props;
 
-const updateDate = convertDate(updatedAt, true)
+const updateDate = convertDate(updatedAt, true);
 ---
 
 <div>

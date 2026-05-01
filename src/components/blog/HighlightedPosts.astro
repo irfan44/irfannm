@@ -1,14 +1,14 @@
 ---
-import PostList from '@components/blog/PostList.astro'
-import ReadMore from '@components/common/ReadMore.astro'
-import Section from '@components/layouts/Section.astro'
-import type { Posts } from '@libs/business/entity'
+import PostList from "@components/blog/PostList.astro";
+import ReadMore from "@components/common/ReadMore.astro";
+import Section from "@components/layouts/Section.astro";
+import type { Posts } from "@libs/business/entity";
 
 interface Props {
-  highlightedPosts: Posts
+  highlightedPosts: Posts;
 }
 
-const { highlightedPosts } = Astro.props
+const { highlightedPosts } = Astro.props;
 ---
 
 <Section title="Latest Posts">

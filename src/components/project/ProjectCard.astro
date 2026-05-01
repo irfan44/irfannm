@@ -1,16 +1,16 @@
 ---
-import Card from '@components/ui/cards/Card.astro'
-import Chip from '@components/ui/chips/Chip.astro'
-import { Icon } from '@twodft/astro-icon/components'
+import Card from "@components/ui/cards/Card.astro";
+import Chip from "@components/ui/chips/Chip.astro";
+import { Icon } from "@twodft/astro-icon/components";
 
 interface Props {
-  name: string
-  slug: string
-  excerpt: string
-  techStack: string[]
+  name: string;
+  slug: string;
+  excerpt: string;
+  techStack: string[];
 }
 
-const { name, slug, excerpt, techStack } = Astro.props
+const { name, slug, excerpt, techStack } = Astro.props;
 ---
 
 <a id={`project-card-${slug}`} href={`/projects/${slug}`}>

@@ -1,12 +1,12 @@
 ---
 interface Props {
-  title: string
-  description: string
-  currentPath: string
-  ogImage: string
+  title: string;
+  description: string;
+  currentPath: string;
+  ogImage: string;
 }
 
-const { title, description, currentPath, ogImage } = Astro.props
+const { title, description, currentPath, ogImage } = Astro.props;
 ---
 
 <meta property="og:title" content={title} />

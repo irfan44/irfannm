@@ -1,13 +1,13 @@
 ---
-import { renderMarkdownSafely } from '@libs/utils'
+import { renderMarkdownSafely } from "@libs/utils";
 
 interface Props {
-  markdownSource: string
+  markdownSource: string;
 }
 
-const { markdownSource } = Astro.props
+const { markdownSource } = Astro.props;
 
-const markdownContent = await renderMarkdownSafely(markdownSource)
+const markdownContent = await renderMarkdownSafely(markdownSource);
 ---
 
 <Fragment set:html={markdownContent} />

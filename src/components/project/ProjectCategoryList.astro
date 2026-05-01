@@ -1,21 +1,21 @@
 ---
-import TabPanel from '@components/ui/tabs/TabPanel.astro'
-import Tabs from '@components/ui/tabs/Tabs.astro'
-import type { Projects } from '@libs/business/entity'
+import TabPanel from "@components/ui/tabs/TabPanel.astro";
+import Tabs from "@components/ui/tabs/Tabs.astro";
+import type { Projects } from "@libs/business/entity";
 
-import ProjectList from './ProjectList.astro'
+import ProjectList from "./ProjectList.astro";
 
 interface Props {
-  workProjects: Projects
-  personalProjects: Projects
+  workProjects: Projects;
+  personalProjects: Projects;
 }
 
-const { workProjects, personalProjects } = Astro.props
+const { workProjects, personalProjects } = Astro.props;
 
 const tabs = [
-  { id: 'personal', label: 'Personal 👨‍💻' },
-  { id: 'work', label: 'Work 💼' },
-]
+  { id: "personal", label: "Personal 👨‍💻" },
+  { id: "work", label: "Work 💼" },
+];
 ---
 
 <Tabs tabs={tabs} additionalClass="flex justify-center mb-8">

@@ -1,13 +1,13 @@
 ---
-import BlogCategoryList from '@components/blog/BlogCategoryList.astro'
-import HeroPost from '@components/blog/HeroPostCard.astro'
-import Section from '@components/layouts/Section.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { PostHandler } from '@libs/handlers'
+import BlogCategoryList from "@components/blog/BlogCategoryList.astro";
+import HeroPost from "@components/blog/HeroPostCard.astro";
+import Section from "@components/layouts/Section.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { PostHandler } from "@libs/handlers";
 
-const categorizedPosts = await PostHandler.getCategorizedPosts()
+const categorizedPosts = await PostHandler.getCategorizedPosts();
 
-const heroPost = categorizedPosts ? categorizedPosts[0].posts[0] : null
+const heroPost = categorizedPosts ? categorizedPosts[0].posts[0] : null;
 ---
 
 <BaseLayout title="Blog" description="Irfan Nurghiffari Muhajir's blog posts" currentPath="/blog">

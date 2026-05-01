@@ -1,15 +1,15 @@
 ---
-import type { Experience } from '@libs/business/entity'
-import { convertDate } from '@libs/utils'
+import type { Experience } from "@libs/business/entity";
+import { convertDate } from "@libs/utils";
 
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 
 interface Props {
-  experience: Experience
-  withResponsibility?: boolean
+  experience: Experience;
+  withResponsibility?: boolean;
 }
 
-const { experience, withResponsibility = false } = Astro.props
+const { experience, withResponsibility = false } = Astro.props;
 ---
 
 <div>
