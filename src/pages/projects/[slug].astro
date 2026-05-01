@@ -82,7 +82,7 @@ const placeholderImageUrl =
       project.overview && (
         <div>
           <h2>Overview</h2>
-          <p class="break-words">{project.overview}</p>
+          <p class="wrap-break-word">{project.overview}</p>
         </div>
       )
     }
@@ -100,7 +100,7 @@ const placeholderImageUrl =
           <h2>What I do</h2>
           <ul class="ml-5 list-disc">
             {project.responsibilities.map((value) => {
-              return <li class="break-words">{value}</li>
+              return <li class="wrap-break-word">{value}</li>
             })}
           </ul>
         </div>
