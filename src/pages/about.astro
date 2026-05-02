@@ -1,8 +1,8 @@
 ---
-import AboutMe from "@components/about/AboutMe.astro";
-import Resume from "@components/about/Resume.astro";
-import SocialContact from "@components/about/SocialContact.astro";
-import Experience from "@components/experience/Experience.astro";
+import AboutMe from "@components/features/about/AboutMe.astro";
+import Resume from "@components/features/about/Resume.astro";
+import SocialContact from "@components/features/about/SocialContact.astro";
+import Experience from "@components/features/experience/Experience.astro";
 import Section from "@components/layouts/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { ExperienceHandler, SiteContentHandler } from "@libs/handlers";
@@ -17,7 +17,7 @@ const aboutMeSource = getSiteContent(constants, "about-me-text");
 const resumeUrl = getSiteContent(constants, "resume-url", true);
 ---
 
-<BaseLayout title="About" description="Get to know me better" currentPath="/about">
+<BaseLayout title="About" description="Get to know me better">
   <Section title="About" isHeader additionalClass="mx-auto max-w-3xl space-y-12">
       {aboutMeSource && <AboutMe aboutMeSource={aboutMeSource} />}
       {experiences && <Experience experiences={experiences} />}

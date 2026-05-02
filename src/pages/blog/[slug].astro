@@ -1,6 +1,6 @@
 ---
-import PostList from "@components/blog/PostList.astro";
-import RenderMarkdown from "@components/common/RenderMarkdown.astro";
+import PostList from "@components/features/blog/PostList.astro";
+import RenderMarkdown from "@components/shared/RenderMarkdown.astro";
 import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 import DetailLayout from "@layouts/DetailLayout.astro";
 import type { Post, Posts } from "@libs/business/entity";
@@ -43,7 +43,6 @@ const convertedDate = convertDate(post.date, true);
 <DetailLayout
   title={`${post.title} | Blog`}
   excerpt={post.excerpt}
-  currentPath={`/blog/${slug}`}
   ogImage={post.coverImage}
   breadcrumbItems={breadcrumbItems}
 >

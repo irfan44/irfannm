@@ -1,6 +1,6 @@
 ---
+import ProjectCategoryList from "@components/features/project/ProjectCategoryList.astro";
 import Section from "@components/layouts/Section.astro";
-import ProjectCategoryList from "@components/project/ProjectCategoryList.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { ProjectHandler } from "@libs/handlers/project";
 
@@ -17,7 +17,6 @@ const personalProjects = projects
 <BaseLayout
   title="Projects"
   description="Irfan Nurghiffari Muhajir's projects"
-  currentPath="/projects"
 >
   <Section
     title="Projects"

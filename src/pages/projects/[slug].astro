@@ -1,7 +1,7 @@
 ---
 import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 import Chip from "@components/ui/chips/Chip.astro";
-import ExternalLink from "@components/ui/links/ExernalLink.astro";
+import ExternalLink from "@components/ui/links/ExternalLink.astro";
 import DetailLayout from "@layouts/DetailLayout.astro";
 import { ProjectHandler } from "@libs/handlers/project";
 import { convertDate } from "@libs/utils";
@@ -38,7 +38,6 @@ const placeholderImageUrl =
 <DetailLayout
   title={`${project.name} | Projects`}
   excerpt={project.excerpt}
-  currentPath={`/projects/${slug}`}
   breadcrumbItems={breadcrumbItems}
 >
   <article

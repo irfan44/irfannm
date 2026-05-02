@@ -2,17 +2,25 @@
 interface Props {
   title: string;
   description: string;
-  currentPath: string;
   ogImage: string;
+  currentPath: string;
 }
 
-const { title, description, currentPath, ogImage } = Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  currentPath = Astro.url.pathname,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? Astro.url;
+const ogUrl = new URL(currentPath, siteUrl).href;
 ---
 
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:url" content={`https://irfannm.dev${currentPath}`} />
+<meta property="og:url" content={ogUrl} />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={`${title} - Irfan Nurghiffari Muhajir`} />
 <meta property="twitter:card" content="summary" />

@@ -1,13 +1,16 @@
-// @ts-check
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "@twodft/astro-icon";
 import { defineConfig } from "astro/config";
+import { loadEnv } from "vite";
+
+// Load env in config files
+const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
 // https://astro.build/config
 export default defineConfig({
-  site: import.meta.env.SITE_URL || "https://irfannm.dev",
+  site: env.SITE_URL || "https://irfannm.dev",
   integrations: [sitemap(), icon()],
 
   redirects: {

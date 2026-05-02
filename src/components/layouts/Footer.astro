@@ -1,7 +1,8 @@
 ---
-import ContactButton from "@components/common/ContactButton.astro";
-import SocialMedia from "@components/common/SocialMedia.astro";
-import NavMenuList from "@components/navigation/NavMenuList.astro";
+import ContactButton from "@components/cta/ContactButton.astro";
+import NavMenuList from "@components/layouts/NavMenuList.astro";
+import Logo from "@components/shared/Logo.astro";
+import SocialMedia from "@components/shared/SocialMedia.astro";
 import { Icon } from "@twodft/astro-icon/components";
 ---
 
@@ -14,12 +15,7 @@ import { Icon } from "@twodft/astro-icon/components";
         <NavMenuList />
       </ul>
       <div class="mb-4 mt-4 md:mt-0 md:pr-8">
-        <a
-          href="/"
-          class="font-sans text-2xl font-bold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"
-        >
-          inm
-        </a>
+          <Logo />
       </div>
       <div class="mb-8 flex justify-center space-x-4 md:justify-start">
         <SocialMedia type="icon" />

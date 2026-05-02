@@ -1,6 +1,6 @@
 ---
-import BlogCategoryList from "@components/blog/BlogCategoryList.astro";
-import HeroPost from "@components/blog/HeroPostCard.astro";
+import BlogCategoryList from "@components/features/blog/BlogCategoryList.astro";
+import HeroPost from "@components/features/blog/HeroPostCard.astro";
 import Section from "@components/layouts/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { PostHandler } from "@libs/handlers";
@@ -10,7 +10,7 @@ const categorizedPosts = await PostHandler.getCategorizedPosts();
 const heroPost = categorizedPosts ? categorizedPosts[0].posts[0] : null;
 ---
 
-<BaseLayout title="Blog" description="Irfan Nurghiffari Muhajir's blog posts" currentPath="/blog">
+<BaseLayout title="Blog" description="Irfan Nurghiffari Muhajir's blog posts">
   <Section
     title="Blog"
     description="Place where you can read my writing. I mainly write about tech, finance, and investment stuff."
