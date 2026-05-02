@@ -13,7 +13,7 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
 <div data-tabs>
   <div class={additionalClass}>
     <div
-      class="bg-secondary flex w-fit items-center gap-2 rounded-full border border-neutral-200 p-1 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+      class="bg-tabs-bg border-tabs-border dark:border-tabs-border-dark dark:bg-tabs-bg-dark flex w-fit items-center gap-2 rounded-full border p-1 text-sm"
       role="tablist"
     >
       {
@@ -24,9 +24,10 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
                 class:list={[
                   "flex items-center justify-center rounded-full px-3 py-1 text-center whitespace-nowrap transition-all duration-200",
                   {
-                    "bg-white font-bold dark:bg-neutral-900":
+                    "dark:bg-tabs-active-bg-dark bg-tabs-active-bg text-tabs-text dark:text-tabs-text-dark font-bold":
                       tab.id === defaultTab,
-                    "bg-transparent font-normal": tab.id !== defaultTab,
+                    "text-tabs-text dark:text-tabs-text-dark bg-transparent font-normal":
+                      tab.id !== defaultTab,
                   },
                 ]}
                 id={`tab-${tab.id}`}
@@ -45,9 +46,10 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
               class:list={[
                 "flex items-center justify-center rounded-full px-3 py-1 text-center whitespace-nowrap transition-all duration-200",
                 {
-                  "bg-white font-bold dark:bg-neutral-900":
+                  "dark:bg-tabs-active-bg-dark bg-tabs-active-bg text-tabs-text dark:text-tabs-text-dark font-bold":
                     tab.id === defaultTab,
-                  "bg-transparent font-normal": tab.id !== defaultTab,
+                  "text-tabs-text dark:text-tabs-text-dark bg-transparent font-normal":
+                    tab.id !== defaultTab,
                 },
               ]}
               id={`tab-${tab.id}`}
@@ -76,8 +78,8 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
       const isActive = btn.getAttribute("data-tab") === tabId;
       btn.setAttribute("aria-selected", isActive.toString());
       btn.classList.toggle("font-bold", isActive);
-      btn.classList.toggle("dark:bg-neutral-900", isActive);
-      btn.classList.toggle("bg-white", isActive);
+      btn.classList.toggle("dark:bg-tabs-active-bg-dark", isActive);
+      btn.classList.toggle("bg-tabs-active-bg", isActive);
       btn.classList.toggle("font-normal", !isActive);
       btn.classList.toggle("bg-transparent", !isActive);
     });

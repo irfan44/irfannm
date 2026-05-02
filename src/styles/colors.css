@@ -1,0 +1,115 @@
+@theme {
+  /* Base page background used by the root body */
+  --color-background: #f5f5f5;
+  --color-background-dark: #161616;
+
+  /* Navbar shell, overlay, and mobile menu */
+  --color-navbar-bg: #f5f5f5;
+  --color-navbar-bg-dark: #161616;
+  --color-navbar-overlay: #000000;
+  --color-navbar-overlay-dark: #000000;
+  --color-navbar-menu-bg: #f5f5f5;
+  --color-navbar-menu-bg-dark: #171717;
+  --color-navbar-menu-border: #e5e5e5;
+  --color-navbar-menu-border-dark: #404040;
+  --color-navbar-icon: #1c1d1f;
+  --color-navbar-icon-dark: #ffffff;
+
+  /* Footer shell and footer icons */
+  --color-footer-bg: #f3f3f4;
+  --color-footer-bg-dark: #262626;
+  --color-footer-border: #e5e5e5;
+  --color-footer-border-dark: #404040;
+  --color-footer-icon: #1c1d1f;
+  --color-footer-icon-dark: #ffffff;
+
+  /* Shared card surfaces */
+  --color-card-bg: #f3f3f4;
+  --color-card-bg-hover: #eeeeef;
+  --color-card-bg-dark: #262626;
+  --color-card-bg-dark-hover: #404040;
+  --color-card-border: #e5e5e5;
+  --color-card-border-dark: #404040;
+
+  /* Button link shell */
+  --color-button-link-bg: #1c1d1f;
+  --color-button-link-bg-hover: #171717;
+  --color-button-link-bg-dark: #262626;
+  --color-button-link-bg-dark-hover: #404040;
+  --color-button-link-border: #e5e5e5;
+  --color-button-link-border-dark: #404040;
+  --color-button-link-text: #ffffff;
+  --color-button-link-text-dark: #ffffff;
+
+  /* Chip surface */
+  --color-chip-bg: #1c1d1f;
+  --color-chip-bg-dark: #171717;
+  --color-chip-text: #ffffff;
+  --color-chip-text-dark: #ffffff;
+
+  /* Theme switcher */
+  --color-theme-switcher-bg: #f3f3f4;
+  --color-theme-switcher-bg-dark: #262626;
+  --color-theme-switcher-border: #e5e5e5;
+  --color-theme-switcher-border-dark: #404040;
+  --color-theme-switcher-knob: #ffffff;
+  --color-theme-switcher-knob-dark: #171717;
+  --color-theme-switcher-icon: #ffce31;
+
+  /* Tabs */
+  --color-tabs-bg: #f3f3f4;
+  --color-tabs-bg-dark: #262626;
+  --color-tabs-border: #e5e5e5;
+  --color-tabs-border-dark: #404040;
+  --color-tabs-active-bg: #ffffff;
+  --color-tabs-active-bg-dark: #171717;
+  --color-tabs-text: #1c1d1f;
+  --color-tabs-text-dark: #f3f4f6;
+
+  /* Hero highlight */
+  --color-hero-badge-bg: #f3f3f4;
+  --color-hero-badge-bg-dark: #262626;
+  --color-hero-badge-border: #e5e5e5;
+  --color-hero-badge-border-dark: #404040;
+
+  /* Experience details */
+  --color-experience-logo-bg: #f3f3f4;
+  --color-experience-logo-bg-dark: #ffffff;
+  --color-experience-divider: #d4d4d8;
+  --color-experience-divider-dark: #404040;
+
+  /* Breadcrumbs, logo, and inline actions */
+  --color-breadcrumb-text: #1c1d1f;
+  --color-breadcrumb-text-dark: #f3f4f6;
+  --color-logo-text: #1c1d1f;
+  --color-logo-text-dark: #ffffff;
+  --color-read-more-text: #1c1d1f;
+  --color-read-more-text-dark: #ffffff;
+  --color-social-icon: #1c1d1f;
+  --color-social-icon-dark: #ffffff;
+  --color-project-source: #1c1d1f;
+  --color-project-source-dark: #ffffff;
+
+  /* Back-to-top control */
+  --color-back-to-top-bg: #ffffff;
+  --color-back-to-top-bg-hover: #f3f3f4;
+  --color-back-to-top-bg-dark: #262626;
+  --color-back-to-top-bg-dark-hover: #404040;
+  --color-back-to-top-border: #e5e5e5;
+  --color-back-to-top-border-dark: #404040;
+  --color-back-to-top-icon: #1c1d1f;
+  --color-back-to-top-icon-dark: #ffffff;
+
+  /* Navigation menu interaction */
+  --color-nav-link-hover: #1c1d1f;
+  --color-nav-link-hover-dark: #ffffff;
+
+  /* Main text and icon foregrounds used by headings, prose, and content */
+  --color-foreground: #1c1d1f;
+  --color-foreground-inverse: #f3f4f6;
+
+  /* Borders and dividers used by prose/content */
+  --color-border: #e5e5e5;
+  --color-border-muted: #d4d4d8;
+  --color-border-dark: #404040;
+}

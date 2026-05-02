@@ -39,7 +39,10 @@ const hasProjectLinks = Boolean(project.url || project.sourceCode);
             href={project.sourceCode}
             withIcon={false}
           >
-            <Icon name="github" class="text-xl text-black dark:text-white" />
+            <Icon
+              name="github"
+              class="text-project-source dark:text-project-source-dark text-xl"
+            />
             <span>Source code</span>
           </ExternalLink>
         )}

@@ -10,29 +10,21 @@ export default {
       fontFamily: {
         sans: ["Lexend Deca Variable", ...fontFamily.sans],
       },
-      colors: {
-        light: "#f5f5f5",
-        dark: "#161616",
-        accent: "#0f4c81",
-        black: "#1c1d1f",
-        secondary: "#f3f3f4",
-        secondaryHover: "#eeeeef",
-      },
       typography: () => ({
         DEFAULT: {
           css: {
-            color: "#161616",
+            color: "var(--color-foreground)",
             "h1, h2, h3, h4, h5, h6": {
-              color: "#161616",
+              color: "var(--color-foreground)",
             },
             "ol > li::marker": {
-              color: "#161616",
+              color: "var(--color-foreground)",
             },
             "ul > li::marker": {
-              color: "#161616",
+              color: "var(--color-foreground)",
             },
             blockquote: {
-              borderLeftColor: "#161616",
+              borderLeftColor: "var(--color-foreground)",
             },
             pre: {
               backgroundColor: "#000000",
@@ -42,13 +34,13 @@ export default {
         invert: {
           css: {
             "ol > li::marker": {
-              color: "#ffffff",
+              color: "var(--color-white)",
             },
             "ul > li::marker": {
-              color: "#ffffff",
+              color: "var(--color-white)",
             },
             blockquote: {
-              borderLeftColor: "#ffffff",
+              borderLeftColor: "var(--color-white)",
             },
             pre: {
               backgroundColor: "#000000",

@@ -9,7 +9,7 @@ import Logo from "@components/shared/Logo.astro";
 
 <footer class="container mx-auto px-5 md:px-16 lg:px-32">
   <div
-    class="bg-secondary mt-32 mb-8 flex rounded-2xl border border-neutral-200 p-12 dark:border-neutral-700 dark:bg-neutral-800"
+    class="bg-footer-bg border-footer-border dark:border-footer-border-dark dark:bg-footer-bg-dark mt-32 mb-8 flex rounded-2xl border p-12"
   >
     <div class="mx-auto flex-1 text-center md:mx-0 md:text-left">
       <ul class="flex list-none flex-col space-y-1 md:hidden">
@@ -36,7 +36,10 @@ import Logo from "@components/shared/Logo.astro";
           class="flex items-center text-sm"
           title="Source code"
         >
-          <Icon name="github" class="mr-2 text-xl text-black dark:text-white" />
+          <Icon
+            name="github"
+            class="text-footer-icon dark:text-footer-icon-dark mr-2 text-xl"
+          />
           Source code
         </a>
       </div>
@@ -52,7 +55,10 @@ import Logo from "@components/shared/Logo.astro";
         class="flex items-center text-sm"
         title="Source code"
       >
-        <Icon name="github" class="mr-2 text-xl text-black dark:text-white" />
+        <Icon
+          name="github"
+          class="text-footer-icon dark:text-footer-icon-dark mr-2 text-xl"
+        />
         Source code
       </a>
     </div>

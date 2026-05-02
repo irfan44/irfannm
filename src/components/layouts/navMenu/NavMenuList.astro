@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
     return (
       <li>
         <a
-          class={`hover:text-black dark:hover:text-white ${isActive ? "font-bold" : ""}`}
+          class={`hover:text-nav-link-hover dark:hover:text-nav-link-hover-dark ${isActive ? "font-bold" : ""}`}
           href={link}
         >
           {name}

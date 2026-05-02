@@ -9,7 +9,7 @@ import ThemeSwitcher from "@components/shared/ThemeSwitcher.astro";
 ---
 
 <nav
-  class="z-50 container mx-auto mt-4 w-full bg-neutral-50 px-5 md:px-16 lg:px-32 dark:bg-neutral-900"
+  class="bg-navbar-bg dark:bg-navbar-bg-dark z-50 container mx-auto mt-4 w-full px-5 md:px-16 lg:px-32"
 >
   <div class="flex items-center justify-between py-4">
     <div><Logo /></div>
@@ -17,7 +17,7 @@ import ThemeSwitcher from "@components/shared/ThemeSwitcher.astro";
       <ThemeSwitcher />
       <button
         id="nav-menu-mobile-button"
-        class="relative z-50 ml-2 flex items-center"
+        class="text-navbar-icon dark:text-navbar-icon-dark relative z-50 ml-2 flex items-center"
         type="button"
         title="Menu"
       >
@@ -40,7 +40,7 @@ import ThemeSwitcher from "@components/shared/ThemeSwitcher.astro";
   </div>
   <div
     id="nav-overlay"
-    class="invisible fixed inset-0 bg-black/80 opacity-0 transition-opacity duration-300 md:hidden dark:bg-black/85"
+    class="bg-navbar-overlay/80 dark:bg-navbar-overlay-dark/85 invisible fixed inset-0 opacity-0 transition-opacity duration-300 md:hidden"
     style="z-index: 40;"
   >
   </div>
@@ -51,7 +51,7 @@ import ThemeSwitcher from "@components/shared/ThemeSwitcher.astro";
   >
     <div class="mx-auto max-w-7xl">
       <div
-        class="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-900"
+        class="border-navbar-menu-border bg-navbar-menu-bg dark:border-navbar-menu-border-dark dark:bg-navbar-menu-bg-dark rounded-lg border p-4"
       >
         <ul class="flex flex-col items-center space-y-4">
           <NavMenuList />

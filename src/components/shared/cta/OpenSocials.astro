@@ -16,7 +16,7 @@ const { type } = Astro.props;
     <ul class="flex space-x-4">
       {SOCIALS.map((social) => {
         return (
-          <li class="text-2xl text-black dark:text-white">
+          <li class="text-social-icon dark:text-social-icon-dark text-2xl">
             <ExternalLink
               title={social.name}
               href={social.link}

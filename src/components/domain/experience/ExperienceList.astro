@@ -19,7 +19,7 @@ const { experiences, withResponsibility = false } = Astro.props;
       return (
         <div>
           {withResponsibility && !isFirst && (
-            <hr class="mb-6 border border-neutral-300 dark:border-neutral-500" />
+            <hr class="border-experience-divider dark:border-experience-divider-dark mb-6 border" />
           )}
           <ExperienceCard
             withResponsibility={withResponsibility}

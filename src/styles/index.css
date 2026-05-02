@@ -1,39 +1,6 @@
 @import "tailwindcss";
-@config "../../tailwind.config.mjs";
+
+@import "./colors.css";
+@import "./styles.css";
+
 @custom-variant dark (&:where(.dark, .dark *));
-
-@layer base {
-  h1,
-  .h1 {
-    @apply font-sans text-4xl leading-tight font-bold tracking-tighter text-black md:text-5xl dark:text-white;
-  }
-
-  h2,
-  .h2 {
-    @apply font-sans text-2xl leading-tight font-bold tracking-tighter text-black md:text-4xl dark:text-white;
-  }
-
-  h3,
-  .h3 {
-    @apply font-sans text-xl leading-tight font-bold tracking-tighter text-black md:text-3xl dark:text-white;
-  }
-
-  h4,
-  .h4 {
-    @apply font-sans text-lg font-bold text-black md:text-2xl dark:text-white;
-  }
-
-  h5,
-  .h5 {
-    @apply font-sans text-base leading-tight font-bold tracking-tighter text-black md:text-lg dark:text-white;
-  }
-
-  body,
-  .p {
-    @apply font-sans text-base text-neutral-800 dark:text-gray-100;
-  }
-
-  body {
-    @apply bg-neutral-50 dark:bg-neutral-900;
-  }
-}
