@@ -39,7 +39,7 @@ const breadcrumbItems: BreadcrumbItems = [
     {project.overview && <ProjectOverview overview={project.overview} />}
     {project.role && <ProjectRole role={project.role} />}
     {
-      project.responsibilities && (
+      project.responsibilities && project.responsibilities.length > 0 && (
         <ProjectResponsibility responsibilities={project.responsibilities} />
       )
     }
