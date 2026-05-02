@@ -1,80 +1,56 @@
 ---
-import PostList from '@components/blog/PostList.astro'
-import RenderMarkdown from '@components/common/RenderMarkdown.astro'
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
-import DetailLayout from '@layouts/DetailLayout.astro'
-import type { Post, Posts } from '@libs/application/dtos/post'
-import { PostHandler } from '@libs/application/handlers/post'
-import convertDate from '@libs/utils/convertDate'
+import BlogHeader from "@components/domain/blog/detail/BlogHeader.astro";
+import OtherPost from "@components/domain/blog/detail/OtherPost.astro";
+import RenderMarkdown from "@components/shared/RenderMarkdown.astro";
+import DetailLayout from "@layouts/DetailLayout.astro";
+import ProseLayout from "@layouts/ProseLayout.astro";
+import { PostHandler } from "@libs/handlers";
 
-import { Picture } from 'astro:assets'
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
+import type { Post, Posts } from "@libs/business/entity";
 
 interface Props {
-  slug: string
-  post: Post
-  otherPosts: Posts
+  slug: string;
+  post: Post;
+  otherPosts: Posts;
 }
 
 export async function getStaticPaths() {
-  const posts = await PostHandler.getPosts()
-  if (!posts) throw Astro.redirect('/500')
+  const posts = await PostHandler.getPosts();
+  if (!posts) throw Astro.redirect("/500");
 
   return posts.map((post) => ({
     params: { slug: post.slug },
-  }))
+  }));
 }
 
-const { slug } = Astro.params
+const { slug } = Astro.params;
 
-const post = await PostHandler.getPost(slug)
-if (!post) throw Astro.redirect('/404')
+const post = await PostHandler.getPost(slug);
+if (!post) throw Astro.redirect("/404");
 
-const otherPosts = (await PostHandler.getOtherPosts(post.categorySlug, slug)) ?? []
+const otherPosts = await PostHandler.getOtherPosts(post.categorySlug, slug);
 
 const breadcrumbItems: BreadcrumbItems = [
-  { title: 'Home', path: '/' },
-  { title: 'Blog', path: `/blog` },
-]
-
-const convertedDate = convertDate(post.date, true)
+  { title: "Home", path: "/" },
+  { title: "Blog", path: "/blog" },
+];
 ---
 
 <DetailLayout
   title={`${post.title} | Blog`}
   excerpt={post.excerpt}
-  currentPath={`/blog/${slug}`}
   ogImage={post.coverImage}
   breadcrumbItems={breadcrumbItems}
 >
-  <article class="prose text-neutral-800 dark:prose-invert md:prose-lg dark:text-gray-200">
-    <h1 class="mb-4 text-center md:text-left md:text-5xl md:leading-none">
-      {post.title}
-    </h1>
-    <div class="mb-8 flex justify-center space-x-2 md:justify-start">
-      <span class="font-bold">{post.category}</span>
-      <span>|</span>
-      <span>{convertedDate}</span>
-    </div>
-    <div class="mb-8 md:mb-16">
-      <figure>
-        <Picture
-          class="rounded-2xl object-cover"
-          src={post.coverImage}
-          alt={`Cover for ${post.title}`}
-          height="390"
-          width="711"
-          loading="eager"
-        />
-        <figcaption>{post.coverCaption}</figcaption>
-      </figure>
-    </div>
+  <BlogHeader post={post} />
+  <ProseLayout>
     <RenderMarkdown markdownSource={post.content} />
-  </article>
+  </ProseLayout>
   {
-    otherPosts.length > 0 && (
+    otherPosts && (
       <div slot="otherDetail">
-        <h2 class="mb-8">More from {post.category}</h2>
-        <PostList posts={otherPosts} />
+        <OtherPost post={post} otherPosts={otherPosts} />
       </div>
     )
   }

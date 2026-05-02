@@ -1,0 +1,24 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+
+import HeroPost from "./base/HeroPostCard.astro";
+
+import type { Post } from "@libs/business/entity";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<Section title="Featured">
+  <HeroPost
+    title={post.title}
+    coverImage={post.coverImage}
+    date={post.date}
+    slug={post.slug}
+    excerpt={post.excerpt}
+    category={post.category}
+  />
+</Section>

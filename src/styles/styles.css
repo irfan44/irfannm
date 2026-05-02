@@ -1,0 +1,37 @@
+@config "../../tailwind.config.mjs";
+
+@layer base {
+  h1,
+  .h1 {
+    @apply text-foreground font-sans text-4xl leading-tight font-bold tracking-tighter md:text-5xl dark:text-white;
+  }
+
+  h2,
+  .h2 {
+    @apply text-foreground font-sans text-2xl leading-tight font-bold tracking-tighter md:text-4xl dark:text-white;
+  }
+
+  h3,
+  .h3 {
+    @apply text-foreground font-sans text-xl leading-tight font-bold tracking-tighter md:text-3xl dark:text-white;
+  }
+
+  h4,
+  .h4 {
+    @apply text-foreground font-sans text-lg font-bold md:text-2xl dark:text-white;
+  }
+
+  h5,
+  .h5 {
+    @apply text-foreground font-sans text-base leading-tight font-bold tracking-tighter md:text-lg dark:text-white;
+  }
+
+  body,
+  .p {
+    @apply text-foreground dark:text-foreground-inverse font-sans text-base;
+  }
+
+  body {
+    @apply bg-background dark:bg-background-dark;
+  }
+}

@@ -1,0 +1,34 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+import type { Projects } from "@libs/business/entity";
+
+type Props = {
+  projects: Projects;
+  isFeatured?: boolean;
+};
+
+const { projects, isFeatured = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "grid gap-4",
+    {
+      "grid-cols-1 md:grid-cols-2": !isFeatured,
+    },
+  ]}
+>
+  {
+    projects.map((project) => {
+      return (
+        <ProjectCard
+          name={project.name}
+          slug={project.slug}
+          excerpt={project.excerpt}
+          techStack={project.techStack}
+        />
+      );
+    })
+  }
+</div>

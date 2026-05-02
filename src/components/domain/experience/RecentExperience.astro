@@ -1,0 +1,19 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+import ReadMore from "@components/shared/cta/ReadMore.astro";
+
+import ExperienceList from "./ExperienceList.astro";
+
+import type { Experiences } from "@libs/business/entity";
+
+interface Props {
+  recentExperiences: Experiences;
+}
+
+const { recentExperiences } = Astro.props;
+---
+
+<Section title="Working Experience">
+  <div class="mb-6"><ExperienceList experiences={recentExperiences} /></div>
+  <ReadMore url="/about#experience">View more</ReadMore>
+</Section>

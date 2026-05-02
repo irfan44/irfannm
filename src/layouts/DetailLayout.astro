@@ -1,33 +1,40 @@
 ---
-import Breadcrumb from '@components/ui/breadcrumbs/Breadcrumb.astro'
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
+import Breadcrumb from "@components/ui/breadcrumbs/Breadcrumb.astro";
 
-import BaseLayout from './BaseLayout.astro'
+import BaseLayout from "./BaseLayout.astro";
+
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 
 interface Props {
-  title: string
-  excerpt: string
-  currentPath: string
-  ogImage?: string
-  breadcrumbItems: BreadcrumbItems
-  additionalClass?: string
+  title: string;
+  excerpt: string;
+  ogImage?: string;
+  breadcrumbItems: BreadcrumbItems;
+  additionalClass?: string;
 }
 
-const { title, excerpt, currentPath, ogImage, breadcrumbItems, additionalClass } = Astro.props
+const { title, excerpt, ogImage, breadcrumbItems, additionalClass } =
+  Astro.props;
+
+const hasOtherDetail = Astro.slots.has("otherDetail");
 ---
 
 <BaseLayout
   title={title}
   description={excerpt}
-  currentPath={`/blog/${currentPath}`}
   ogImage={ogImage}
+  currentPath={Astro.url.pathname}
   additionalClass={additionalClass}
 >
-  <section class="mx-auto mb-24 max-w-3xl">
+  <div class="mx-auto mb-24 max-w-3xl">
     <Breadcrumb items={breadcrumbItems} additionalClass="mb-2" />
     <slot />
-  </section>
-  <section class="mb-32">
-    <slot name="otherDetail" />
-  </section>
+  </div>
+  {
+    hasOtherDetail && (
+      <div class="mb-32">
+        <slot name="otherDetail" />
+      </div>
+    )
+  }
 </BaseLayout>

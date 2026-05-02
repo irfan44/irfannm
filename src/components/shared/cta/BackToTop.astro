@@ -1,0 +1,38 @@
+---
+import { Icon } from "@twodft/astro-icon/components";
+---
+
+<button
+  id="back-to-top"
+  class="text-back-to-top-icon dark:text-back-to-top-icon-dark hover:bg-back-to-top-bg-hover border-back-to-top-border dark:border-back-to-top-border-dark dark:bg-back-to-top-bg-dark dark:hover:bg-back-to-top-bg-dark-hover bg-back-to-top-bg fixed right-4 bottom-4 hidden h-11 w-11 rounded-full border p-3 lg:right-5 lg:bottom-5"
+  type="button"
+>
+  <span class="flex"><Icon name="chevron-up" class="mx-auto text-sm" /></span>
+</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const backToTop = document.getElementById("back-to-top");
+
+    if (window.scrollY > 100) {
+      backToTop?.classList.remove("hidden");
+    } else {
+      backToTop?.classList.add("hidden");
+    }
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        backToTop?.classList.remove("hidden");
+      } else {
+        backToTop?.classList.add("hidden");
+      }
+    });
+
+    backToTop?.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>

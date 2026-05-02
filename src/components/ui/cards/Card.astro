@@ -1,14 +1,14 @@
 ---
 interface Props {
-  additionalClass?: string
+  additionalClass?: string;
 }
 
-const { additionalClass = '' } = Astro.props
+const { additionalClass = "" } = Astro.props;
 ---
 
 <div
   class:list={[
-    'flex cursor-pointer flex-col justify-between space-y-3 rounded-2xl border border-neutral-200 bg-secondary p-4 hover:bg-secondaryHover dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800/75',
+    "bg-card-bg hover:bg-card-bg-hover border-card-border dark:border-card-border-dark dark:bg-card-bg-dark dark:hover:bg-card-bg-dark-hover flex cursor-pointer flex-col justify-between space-y-3 rounded-2xl border p-4",
     additionalClass,
   ]}
 >

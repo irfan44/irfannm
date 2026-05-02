@@ -1,0 +1,18 @@
+---
+import { Icon } from "@twodft/astro-icon/components";
+
+type Props = {
+  url: string;
+};
+
+const { url } = Astro.props;
+---
+
+<a class="block w-fit" href={url}>
+  <span
+    class="text-read-more-text dark:text-read-more-text-dark mt-4 flex items-center font-semibold hover:cursor-pointer hover:underline"
+  >
+    <slot />
+    <Icon name="arrow-right" class="ml-1 text-xl" />
+  </span>
+</a>

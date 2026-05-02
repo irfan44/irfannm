@@ -1,118 +1,48 @@
 ---
-import type { BreadcrumbItems } from '@components/ui/breadcrumbs/breadcrumb.types'
-import Chip from '@components/ui/chips/Chip.astro'
-import ExternalLink from '@components/ui/links/ExernalLink.astro'
-import DetailLayout from '@layouts/DetailLayout.astro'
-import { ProjectHandler } from '@libs/application/handlers/project'
-import convertDate from '@libs/utils/convertDate'
-import { Icon } from 'astro-icon/components'
+import ProjectHeader from "@components/domain/project/detail/ProjectHeader.astro";
+import ProjectOverview from "@components/domain/project/detail/ProjectOverview.astro";
+import ProjectResponsibility from "@components/domain/project/detail/ProjectResponsibility.astro";
+import ProjectRole from "@components/domain/project/detail/ProjectRole.astro";
+import ProjectTechStack from "@components/domain/project/detail/ProjectTechStack.astro";
+import DetailLayout from "@layouts/DetailLayout.astro";
+import { ProjectHandler } from "@libs/handlers/project";
 
-import { Picture } from 'astro:assets'
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 
 export async function getStaticPaths() {
-  const projects = await ProjectHandler.getProjects()
-  if (!projects) throw Astro.redirect('/500')
+  const projects = await ProjectHandler.getProjects();
+  if (!projects) throw Astro.redirect("/500");
 
   return projects.map((project) => ({
     params: { slug: project.slug },
-  }))
+  }));
 }
 
-const { slug } = Astro.params
+const { slug } = Astro.params;
 
-const project = await ProjectHandler.getProject(slug)
-if (!project) throw Astro.redirect('/404')
+const project = await ProjectHandler.getProject(slug);
+if (!project) throw Astro.redirect("/404");
 
 const breadcrumbItems: BreadcrumbItems = [
-  { title: 'Home', path: '/' },
-  { title: 'Projects', path: `/projects` },
-]
-
-const startingDate = convertDate(project.startingDate)
-const endDate = project.endDate ? convertDate(project.endDate) : 'Present'
-
-const placeholderImageUrl =
-  'https://res.cloudinary.com/dflb9qqcu/image/upload/v1714286335/irfannm/projects/qfle9tpzyggdn1y9s90n.png'
+  { title: "Home", path: "/" },
+  { title: "Projects", path: "/projects" },
+];
 ---
 
 <DetailLayout
   title={`${project.name} | Projects`}
   excerpt={project.excerpt}
-  currentPath={`/projects/${slug}`}
   breadcrumbItems={breadcrumbItems}
 >
-  <article
-    class="prose text-neutral-800 dark:prose-invert md:prose-lg prose-h2:mb-4 prose-h2:mt-8 dark:text-gray-200"
-  >
-    <h1 class="mb-4 text-left md:text-5xl md:leading-none">
-      {project.name}
-    </h1>
-    {project.company && <span>{project.company}</span>}
-    <div class="flex space-x-1">
-      <span>{startingDate}</span>
-      <span>-</span>
-      <span>{endDate}</span>
-    </div>
+  <ProjectHeader project={project} />
+  <div class="space-y-8">
+    {project.overview && <ProjectOverview overview={project.overview} />}
+    {project.role && <ProjectRole role={project.role} />}
     {
-      (project.url || project.sourceCode) && (
-        <div class="flex space-x-6">
-          {project.url && (
-            <ExternalLink title="Visit website" href={project.url} withIcon>
-              <span>Visit</span>
-            </ExternalLink>
-          )}
-          {project.sourceCode && (
-            <ExternalLink title="View source code" href={project.sourceCode} withIcon={false}>
-              <Icon name="github" class="text-xl text-black dark:text-white" />
-              <span>Source code</span>
-            </ExternalLink>
-          )}
-        </div>
+      project.responsibilities && (
+        <ProjectResponsibility responsibilities={project.responsibilities} />
       )
     }
-    <Picture
-      class="rounded-2xl object-cover"
-      src={project.image ? project.image : placeholderImageUrl}
-      alt={`Cover for ${project.name}`}
-      height="390"
-      width="711"
-      loading="eager"
-    />
-    {
-      project.overview && (
-        <div>
-          <h2>Overview</h2>
-          <p class="break-words">{project.overview}</p>
-        </div>
-      )
-    }
-    {
-      project.role && (
-        <div>
-          <h2>Role</h2>
-          <p>{project.role}</p>
-        </div>
-      )
-    }
-    {
-      project.responsibilities && project.responsibilities.length > 0 && (
-        <div>
-          <h2>What I do</h2>
-          <ul class="ml-5 list-disc">
-            {project.responsibilities.map((value) => {
-              return <li class="break-words">{value}</li>
-            })}
-          </ul>
-        </div>
-      )
-    }
-    <h2>Tech Stack</h2>
-    <div class="flex flex-wrap gap-2">
-      {
-        project.techStack.map((stack) => {
-          return <Chip additionalClass="dark:!bg-neutral-800">{stack}</Chip>
-        })
-      }
-    </div>
-  </article>
+    {project.techStack && <ProjectTechStack techStack={project.techStack} />}
+  </div>
 </DetailLayout>

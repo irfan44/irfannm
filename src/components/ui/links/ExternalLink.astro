@@ -1,0 +1,27 @@
+---
+import { Icon } from "@twodft/astro-icon/components";
+
+interface Props {
+  title: string;
+  href: string;
+  additionalClass?: string;
+  withIcon?: boolean;
+}
+
+const { title, href, additionalClass = "", withIcon = true } = Astro.props;
+---
+
+<a
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    "flex w-fit items-center space-x-2 font-semibold hover:underline",
+    additionalClass,
+  ]}
+  title={title}
+  aria-label={title}
+  href={href}
+>
+  <slot />
+  {withIcon && <Icon name="external-link" class="inline" />}
+</a>

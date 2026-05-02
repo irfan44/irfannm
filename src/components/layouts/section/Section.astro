@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  additionalClass?: string;
+  isSmall?: boolean;
+}
+
+const {
+  title,
+  description = "",
+  additionalClass = "",
+  isSmall = false,
+} = Astro.props;
+---
+
+<section class={additionalClass}>
+  <div>
+    <h2 class={isSmall ? "mb-4" : " mb-6"}>{title}</h2>
+    {description && <p>{description}</p>}
+  </div>
+  <slot />
+</section>

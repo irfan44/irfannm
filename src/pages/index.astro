@@ -1,31 +1,42 @@
 ---
-import HighlightedPosts from '@components/blog/HighlightedPosts.astro'
-import RecentExperience from '@components/experience/RecentExperience.astro'
-import HeroSection from '@components/home/HeroSection.astro'
-import FeaturedProject from '@components/project/FeaturedProject.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { ExperienceHandler } from '@libs/application/handlers/experience'
-import { PostHandler } from '@libs/application/handlers/post'
-import { ProjectHandler } from '@libs/application/handlers/project'
-import { SiteContentHandler } from '@libs/application/handlers/siteContent'
-import { getSiteContent } from '@libs/utils/siteContent'
+import LatestPosts from "@components/domain/blog/list/LatestPosts.astro";
+import RecentExperience from "@components/domain/experience/RecentExperience.astro";
+import HeroSection from "@components/domain/home/HeroSection.astro";
+import FeaturedProject from "@components/domain/project/list/FeaturedProject.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  ExperienceHandler,
+  PostHandler,
+  ProjectHandler,
+  SiteContentHandler,
+} from "@libs/handlers";
+import { getSiteContent } from "@libs/utils";
 
-const [constants, recentExperiences, featuredProjects, highlightedPosts] = await Promise.all([
-  SiteContentHandler.getConstants(),
-  ExperienceHandler.getRecentExperiences(),
-  ProjectHandler.getFeaturedProjects(),
-  PostHandler.getHighlightedPosts(),
-])
+const [constants, recentExperiences, featuredProjects, highlightedPosts] =
+  await Promise.all([
+    SiteContentHandler.getConstants(),
+    ExperienceHandler.getRecentExperiences(),
+    ProjectHandler.getFeaturedProjects(),
+    PostHandler.getHighlightedPosts(),
+  ]);
 
-const description = getSiteContent(constants, 'home-description')
-const resumeUrl = getSiteContent(constants, 'resume-url', true).value
+const description = getSiteContent(constants, "home-description");
+const resumeUrl = getSiteContent(constants, "resume-url", true).value;
 ---
 
 <BaseLayout additionalClass="space-y-16">
   <HeroSection description={description} resumeUrl={resumeUrl} />
   <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
-    {recentExperiences && <RecentExperience recentExperiences={recentExperiences} />}
-    {featuredProjects && <FeaturedProject featuredProjects={featuredProjects} />}
+    {
+      recentExperiences && (
+        <RecentExperience recentExperiences={recentExperiences} />
+      )
+    }
+    {
+      featuredProjects && (
+        <FeaturedProject featuredProjects={featuredProjects} />
+      )
+    }
   </div>
-  {highlightedPosts && <HighlightedPosts highlightedPosts={highlightedPosts} />}
+  {highlightedPosts && <LatestPosts highlightedPosts={highlightedPosts} />}
 </BaseLayout>

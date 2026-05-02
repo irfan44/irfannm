@@ -1,28 +1,31 @@
 ---
-import AboutMe from '@components/about/AboutMe.astro'
-import SocialContact from '@components/about/SocialContact.astro'
-import Experience from '@components/experience/Experience.astro'
-import Section from '@components/layouts/Section.astro'
-import Resume from '@components/resume/Resume.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { ExperienceHandler } from '@libs/application/handlers/experience'
-import { SiteContentHandler } from '@libs/application/handlers/siteContent'
-import { getSiteContent } from '@libs/utils/siteContent'
+import AboutMe from "@components/domain/about/AboutMe.astro";
+import Resume from "@components/domain/about/Resume.astro";
+import SocialContact from "@components/domain/about/SocialContact.astro";
+import Experience from "@components/domain/experience/Experience.astro";
+import Heading from "@components/layouts/section/Heading.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { ExperienceHandler, SiteContentHandler } from "@libs/handlers";
+import { getSiteContent } from "@libs/utils";
 
 const [constants, experiences] = await Promise.all([
   SiteContentHandler.getConstants(),
   ExperienceHandler.getExperiences(),
-])
+]);
 
-const aboutMeSource = getSiteContent(constants, 'about-me-text')
-const resumeUrl = getSiteContent(constants, 'resume-url', true)
+const aboutMeSource = getSiteContent(constants, "about-me-text");
+const resumeUrl = getSiteContent(constants, "resume-url", true);
 ---
 
-<BaseLayout title="About" description="Get to know me better" currentPath="/about">
-  <Section title="About" isHeader additionalClass="mx-auto max-w-3xl space-y-12">
-      {aboutMeSource && <AboutMe aboutMeSource={aboutMeSource} />}
-      {experiences && <Experience experiences={experiences} />}
-      {resumeUrl && <Resume resumeUrl={resumeUrl.value} updatedAt={resumeUrl.updatedAt} />}
+<BaseLayout title="About" description="Get to know me better">
+  <Heading title="About" additionalClass="mx-auto max-w-3xl space-y-12">
+    {aboutMeSource && <AboutMe aboutMeSource={aboutMeSource} />}
+    {experiences && <Experience experiences={experiences} />}
+    {
+      resumeUrl && (
+        <Resume resumeUrl={resumeUrl.value} updatedAt={resumeUrl.updatedAt} />
+      )
+    }
     <SocialContact />
-  </Section>
+  </Heading>
 </BaseLayout>

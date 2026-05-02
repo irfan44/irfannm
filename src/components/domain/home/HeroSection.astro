@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+
+import OpenSocials from "@components/shared/cta/OpenSocials.astro";
+import ResumeButton from "@components/shared/cta/ResumeButton.astro";
+
+interface Props {
+  description: string;
+  resumeUrl: string;
+}
+
+const { description, resumeUrl } = Astro.props;
+---
+
+<div class="mb-12 flex flex-col items-center py-6 md:flex-row">
+  <div class="space-y-6 md:w-1/2">
+    <div>
+      <h1>Hi,</h1>
+      <h1>
+        I&apos;m
+        <span
+          class="bg-hero-badge-bg border-hero-badge-border dark:border-hero-badge-border-dark dark:bg-hero-badge-bg-dark rounded-lg border pr-1 pl-2"
+        >
+          Irfan!
+        </span>
+        <span
+          class="ml-2 inline-block transition-opacity duration-300"
+          aria-hidden="true"
+          data-hero-emoji
+        >
+          👋
+        </span>
+      </h1>
+    </div>
+    <p>{description}</p>
+    <ResumeButton resumeUrl={resumeUrl} />
+    <div class="pt-8"><OpenSocials type="icon" /></div>
+  </div>
+  <div class="flex justify-center md:w-1/2">
+    <Image
+      class="h-100"
+      src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person"
+      alt="Hero"
+      height="400"
+      width="320"
+      loading="eager"
+    />
+  </div>
+</div>
+
+<script is:inline>
+  const heroEmoji = document.querySelector("[data-hero-emoji]");
+  const emojis = ["👋", "😸", "🧑‍💻"];
+
+  if (heroEmoji) {
+    let emojiIndex = 0;
+
+    setInterval(() => {
+      heroEmoji.classList.add("opacity-0");
+
+      window.setTimeout(() => {
+        emojiIndex = (emojiIndex + 1) % emojis.length;
+        heroEmoji.textContent = emojis[emojiIndex];
+        heroEmoji.classList.remove("opacity-0");
+      }, 180);
+    }, 2200);
+  }
+</script>

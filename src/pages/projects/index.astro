@@ -1,28 +1,28 @@
 ---
-import Section from '@components/layouts/Section.astro'
-import ProjectCategoryList from '@components/project/ProjectCategoryList.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
-import { ProjectHandler } from '@libs/application/handlers/project'
+import CategorizedProject from "@components/domain/project/list/CategorizedProject.astro";
+import Heading from "@components/layouts/section/Heading.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { ProjectHandler } from "@libs/handlers/project";
 
-const projects = await ProjectHandler.getProjects()
+const projects = await ProjectHandler.getProjects();
 
-const workProjects = projects ? projects.filter((value) => value.projectType === 'Work') : []
+const workProjects = projects
+  ? projects.filter((value) => value.projectType === "Work")
+  : [];
 const personalProjects = projects
-  ? projects.filter((value) => value.projectType === 'Personal')
-  : []
+  ? projects.filter((value) => value.projectType === "Personal")
+  : [];
 ---
 
-<BaseLayout
-  title="Projects"
-  description="Irfan Nurghiffari Muhajir's projects"
-  currentPath="/projects"
->
-  <Section
+<BaseLayout title="Projects" description="Irfan Nurghiffari Muhajir's projects">
+  <Heading
     title="Projects"
     description="Various projects that I have worked on."
-    isHeader
     additionalClass="space-y-12"
   >
-    <ProjectCategoryList workProjects={workProjects} personalProjects={personalProjects} />
-  </Section>
+    <CategorizedProject
+      workProjects={workProjects}
+      personalProjects={personalProjects}
+    />
+  </Heading>
 </BaseLayout>

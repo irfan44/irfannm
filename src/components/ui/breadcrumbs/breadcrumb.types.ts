@@ -1,6 +1,6 @@
 export interface BreadcrumbItem {
-  title: string
-  path: string
+  title: string;
+  path: string;
 }
 
-export type BreadcrumbItems = BreadcrumbItem[]
+export type BreadcrumbItems = BreadcrumbItem[];

@@ -1,20 +1,19 @@
 ---
-// biome-ignore assist/source/organizeImports: Ignore sorting for single type import
-import type { TabsItems } from './tabs.types'
+import type { TabsItems } from "./tabs.types";
 
 interface Props {
-  tabs: TabsItems
-  defaultTab?: string
-  additionalClass?: string
+  tabs: TabsItems;
+  defaultTab?: string;
+  additionalClass?: string;
 }
 
-const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
+const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
 ---
 
 <div data-tabs>
   <div class={additionalClass}>
     <div
-      class="flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-secondary p-1 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+      class="bg-tabs-bg border-tabs-border dark:border-tabs-border-dark dark:bg-tabs-bg-dark flex w-fit items-center gap-2 rounded-full border p-1 text-sm"
       role="tablist"
     >
       {
@@ -23,12 +22,15 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
             return (
               <a
                 class:list={[
-                  'flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-center transition-all duration-200',
+                  "flex items-center justify-center rounded-full px-3 py-1 text-center whitespace-nowrap transition-all duration-200",
                   {
-                    'bg-white font-bold dark:bg-neutral-900': tab.id === defaultTab,
-                    'bg-transparent font-normal': tab.id !== defaultTab,
+                    "dark:bg-tabs-active-bg-dark bg-tabs-active-bg text-tabs-text dark:text-tabs-text-dark font-bold":
+                      tab.id === defaultTab,
+                    "text-tabs-text dark:text-tabs-text-dark bg-transparent font-normal":
+                      tab.id !== defaultTab,
                   },
                 ]}
+                id={`tab-${tab.id}`}
                 role="tab"
                 aria-selected={tab.id === defaultTab}
                 aria-controls={`panel-${tab.id}`}
@@ -37,17 +39,20 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
               >
                 {tab.label}
               </a>
-            )
+            );
           }
           return (
             <button
               class:list={[
-                'flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-center transition-all duration-200',
+                "flex items-center justify-center rounded-full px-3 py-1 text-center whitespace-nowrap transition-all duration-200",
                 {
-                  'bg-white font-bold dark:bg-neutral-900': tab.id === defaultTab,
-                  'bg-transparent font-normal': tab.id !== defaultTab,
+                  "dark:bg-tabs-active-bg-dark bg-tabs-active-bg text-tabs-text dark:text-tabs-text-dark font-bold":
+                    tab.id === defaultTab,
+                  "text-tabs-text dark:text-tabs-text-dark bg-transparent font-normal":
+                    tab.id !== defaultTab,
                 },
               ]}
+              id={`tab-${tab.id}`}
               role="tab"
               aria-selected={tab.id === defaultTab}
               aria-controls={`panel-${tab.id}`}
@@ -56,56 +61,54 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = '' } = Astro.props
             >
               {tab.label}
             </button>
-          )
+          );
         })
       }
     </div>
   </div>
-  <div class="mt-4">
-    <slot />
-  </div>
+  <div class="mt-4"><slot /></div>
 </div>
 
 <script>
   function switchTab(tabId: string, tabsContainer: HTMLElement) {
-    const buttons = tabsContainer.querySelectorAll('[role="tab"]')
-    const panels = tabsContainer.querySelectorAll('[role="tabpanel"]')
+    const buttons = tabsContainer.querySelectorAll('[role="tab"]');
+    const panels = tabsContainer.querySelectorAll('[role="tabpanel"]');
 
     buttons.forEach((btn) => {
-      const isActive = btn.getAttribute('data-tab') === tabId
-      btn.setAttribute('aria-selected', isActive.toString())
-      btn.classList.toggle('font-bold', isActive)
-      btn.classList.toggle('dark:bg-neutral-900', isActive)
-      btn.classList.toggle('bg-white', isActive)
-      btn.classList.toggle('font-normal', !isActive)
-      btn.classList.toggle('bg-transparent', !isActive)
-    })
+      const isActive = btn.getAttribute("data-tab") === tabId;
+      btn.setAttribute("aria-selected", isActive.toString());
+      btn.classList.toggle("font-bold", isActive);
+      btn.classList.toggle("dark:bg-tabs-active-bg-dark", isActive);
+      btn.classList.toggle("bg-tabs-active-bg", isActive);
+      btn.classList.toggle("font-normal", !isActive);
+      btn.classList.toggle("bg-transparent", !isActive);
+    });
 
     panels.forEach((panel) => {
-      const isPanelActive = panel.id === `panel-${tabId}`
-      panel.classList.toggle('hidden', !isPanelActive)
-      panel.classList.toggle('block', isPanelActive)
-    })
+      const isPanelActive = panel.id === `panel-${tabId}`;
+      panel.classList.toggle("hidden", !isPanelActive);
+      panel.classList.toggle("block", isPanelActive);
+    });
   }
 
   function initTabs() {
-    const tabsContainers = document.querySelectorAll('[data-tabs]')
+    const tabsContainers = document.querySelectorAll("[data-tabs]");
 
     tabsContainers.forEach((container) => {
-      const buttons = container.querySelectorAll('[role="tab"]')
+      const buttons = container.querySelectorAll('[role="tab"]');
 
       buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const tabId = button.getAttribute('data-tab')
+        button.addEventListener("click", () => {
+          const tabId = button.getAttribute("data-tab");
           if (tabId) {
-            switchTab(tabId, container as HTMLElement)
+            switchTab(tabId, container as HTMLElement);
           }
-        })
-      })
-    })
+        });
+      });
+    });
   }
 
-  initTabs()
+  initTabs();
 
-  document.addEventListener('astro:page-load', initTabs)
+  document.addEventListener("astro:page-load", initTabs);
 </script>

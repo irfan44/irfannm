@@ -1,0 +1,32 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+
+import type { Experience } from "@libs/business/entity";
+
+interface Props {
+  experiences: Experience[];
+  withResponsibility?: boolean;
+}
+
+const { experiences, withResponsibility = false } = Astro.props;
+---
+
+<div class="space-y-6">
+  {
+    experiences.map((experience, index) => {
+      const isFirst = index == 0;
+
+      return (
+        <div>
+          {withResponsibility && !isFirst && (
+            <hr class="border-experience-divider dark:border-experience-divider-dark mb-6 border" />
+          )}
+          <ExperienceCard
+            withResponsibility={withResponsibility}
+            experience={experience}
+          />
+        </div>
+      );
+    })
+  }
+</div>

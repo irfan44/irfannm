@@ -1,0 +1,21 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+import ReadMore from "@components/shared/cta/ReadMore.astro";
+
+import ProjectList from "./base/ProjectList.astro";
+
+import type { Projects } from "@libs/business/entity";
+
+interface Props {
+  featuredProjects: Projects;
+}
+
+const { featuredProjects } = Astro.props;
+---
+
+<Section title="Featured Project">
+  <div class="mb-6 space-y-4">
+    <ProjectList projects={featuredProjects} isFeatured />
+  </div>
+  <ReadMore url="/projects">View all projects</ReadMore>
+</Section>

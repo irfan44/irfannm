@@ -1,8 +1,8 @@
 ---
-import ButtonLink from '@components/ui/links/ButtonLink.astro'
-import BaseLayout from '@layouts/BaseLayout.astro'
+import { Image } from "astro:assets";
 
-import { Image } from 'astro:assets'
+import ButtonLink from "@components/ui/links/ButtonLink.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
@@ -14,7 +14,7 @@ import { Image } from 'astro:assets'
   <p>Page Not Found</p>
   <ButtonLink title="Back to Home" href="/">Back to Home</ButtonLink>
   <Image
-    class="h-[400px]"
+    class="h-100"
     src="https://res.cloudinary.com/dflb9qqcu/image/upload/f_auto,q_auto/v1/irfannm/person-sad"
     alt="Not Found"
     height="400"

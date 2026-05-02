@@ -1,0 +1,16 @@
+---
+import ExperienceList from "./ExperienceList.astro";
+
+import type { Experiences } from "@libs/business/entity";
+
+interface Props {
+  experiences: Experiences;
+}
+
+const { experiences } = Astro.props;
+---
+
+<div id="experience">
+  <h2 class="mb-6">Working Experience</h2>
+  <ExperienceList withResponsibility experiences={experiences} />
+</div>

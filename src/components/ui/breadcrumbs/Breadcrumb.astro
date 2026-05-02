@@ -1,33 +1,34 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from "@twodft/astro-icon/components";
 
-import type { BreadcrumbItems } from './breadcrumb.types'
+import type { BreadcrumbItems } from "./breadcrumb.types";
 
 interface Props {
-  items: BreadcrumbItems
-  additionalClass?: string
+  items: BreadcrumbItems;
+  additionalClass?: string;
 }
 
-const { items, additionalClass = '' } = Astro.props
+const { items, additionalClass = "" } = Astro.props;
 ---
 
 <div
   class:list={[
-    'flex w-fit items-center space-x-2 text-neutral-900 dark:text-gray-200',
+    "text-breadcrumb-text dark:text-breadcrumb-text-dark flex w-fit items-center space-x-2",
     additionalClass,
   ]}
 >
   {
-    items &&
-      items.map((item, index) => {
-        return (
-          <Fragment>
-            <a class="hover:underline" href={item.path}>
-              {item.title}
-            </a>
-            {index + 1 !== items.length && <Icon name="chevron-right" class="mx-1 text-sm" />}
-          </Fragment>
-        )
-      })
+    items?.map((item, index) => {
+      return (
+        <Fragment>
+          <a class="hover:underline" href={item.path}>
+            {item.title}
+          </a>
+          {index + 1 !== items.length && (
+            <Icon name="chevron-right" class="text-sm" />
+          )}
+        </Fragment>
+      );
+    })
   }
 </div>
