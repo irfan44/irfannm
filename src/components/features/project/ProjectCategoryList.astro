@@ -1,9 +1,10 @@
 ---
 import TabPanel from "@components/ui/tabs/TabPanel.astro";
 import Tabs from "@components/ui/tabs/Tabs.astro";
-import type { Projects } from "@libs/business/entity";
 
 import ProjectList from "./ProjectList.astro";
+
+import type { Projects } from "@libs/business/entity";
 
 interface Props {
   workProjects: Projects;
@@ -22,7 +23,5 @@ const tabs = [
   <TabPanel id="personal" active>
     <ProjectList projects={personalProjects} />
   </TabPanel>
-  <TabPanel id="work">
-    <ProjectList projects={workProjects} />
-  </TabPanel>
+  <TabPanel id="work"><ProjectList projects={workProjects} /></TabPanel>
 </Tabs>

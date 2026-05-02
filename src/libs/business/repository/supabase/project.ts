@@ -1,7 +1,7 @@
-import type { ProjectModel, ProjectsModel } from "@libs/business/entity";
+import { createServerClient } from "./client/supabase";
 
 import type { Tables } from "./client/database.types";
-import { createServerClient } from "./client/supabase";
+import type { ProjectModel, ProjectsModel } from "@libs/business/entity";
 
 export class ProjectSupabaseRepository {
   static async getProjects(): Promise<ProjectsModel | undefined> {

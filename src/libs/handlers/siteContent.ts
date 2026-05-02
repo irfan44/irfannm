@@ -1,5 +1,6 @@
-import type { SiteContent, SiteContents } from "@libs/business/entity";
 import { SiteContentUseCase } from "@libs/business/usecase";
+
+import type { SiteContent, SiteContents } from "@libs/business/entity";
 
 export class SiteContentHandler {
   static async getConstants(): Promise<SiteContents | undefined> {

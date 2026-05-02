@@ -19,8 +19,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "biome format --write .",
-    "lint": "biome check --write .",
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
     "check": "astro check"
   },
   "dependencies": {
@@ -34,10 +34,13 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "3.7.2",
-    "@biomejs/biome": "2.4.13",
     "@fontsource-variable/lexend-deca": "5.2.10",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "4.2.4",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "4.2.4",
     "vite": "7",
     "wrangler": "4.85.0"

@@ -4,36 +4,35 @@ import { Icon } from "@twodft/astro-icon/components";
 
 <button
   id="back-to-top"
-  class="fixed bottom-4 right-4 hidden h-11 w-11 rounded-full border border-neutral-200 bg-white p-3 hover:bg-secondary dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800/75 lg:bottom-5 lg:right-5"
+  class="hover:bg-secondary fixed right-4 bottom-4 hidden h-11 w-11 rounded-full border border-neutral-200 bg-white p-3 lg:right-5 lg:bottom-5 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800/75"
+  type="button"
 >
-  <span class="flex">
-    <Icon name="chevron-up" class="mx-auto text-sm" />
-  </span>
+  <span class="flex"><Icon name="chevron-up" class="mx-auto text-sm" /></span>
 </button>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const backToTop = document.getElementById('back-to-top')
+  document.addEventListener("DOMContentLoaded", () => {
+    const backToTop = document.getElementById("back-to-top");
 
     if (window.scrollY > 100) {
-      backToTop?.classList.remove('hidden')
+      backToTop?.classList.remove("hidden");
     } else {
-      backToTop?.classList.add('hidden')
+      backToTop?.classList.add("hidden");
     }
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
-        backToTop?.classList.remove('hidden')
+        backToTop?.classList.remove("hidden");
       } else {
-        backToTop?.classList.add('hidden')
+        backToTop?.classList.add("hidden");
       }
-    })
+    });
 
-    backToTop?.addEventListener('click', () => {
+    backToTop?.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth',
-      })
-    })
-  })
+        behavior: "smooth",
+      });
+    });
+  });
 </script>

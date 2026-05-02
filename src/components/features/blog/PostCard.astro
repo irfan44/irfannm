@@ -1,9 +1,9 @@
 ---
+import { Icon } from "@twodft/astro-icon/components";
+import { Image } from "astro:assets";
+
 import Card from "@components/ui/cards/Card.astro";
 import { convertDate } from "@libs/utils";
-import { Icon } from "@twodft/astro-icon/components";
-
-import { Image } from "astro:assets";
 
 interface Props {
   title: string;
@@ -45,14 +45,14 @@ const convertedDate = convertDate(date, true);
   </Card>
 </a>
 <script is:inline define:vars={{ slug }}>
-  const postCard = document.getElementById(`post-card-${slug}`)
-  const postCardTitle = document.getElementById(`post-card-title-${slug}`)
+  const postCard = document.getElementById(`post-card-${slug}`);
+  const postCardTitle = document.getElementById(`post-card-title-${slug}`);
 
-  postCard.addEventListener('pointerenter', () => {
-    postCardTitle.style.textDecoration = 'underline'
-  })
+  postCard.addEventListener("pointerenter", () => {
+    postCardTitle.style.textDecoration = "underline";
+  });
 
-  postCard.addEventListener('pointerleave', () => {
-    postCardTitle.style.textDecoration = 'none'
-  })
+  postCard.addEventListener("pointerleave", () => {
+    postCardTitle.style.textDecoration = "none";
+  });
 </script>

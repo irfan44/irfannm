@@ -1,22 +1,21 @@
 ---
+import { Icon } from "@twodft/astro-icon/components";
+
 import ContactButton from "@components/cta/ContactButton.astro";
 import NavMenuList from "@components/layouts/NavMenuList.astro";
 import Logo from "@components/shared/Logo.astro";
 import SocialMedia from "@components/shared/SocialMedia.astro";
-import { Icon } from "@twodft/astro-icon/components";
 ---
 
 <footer class="container mx-auto px-5 md:px-16 lg:px-32">
   <div
-    class="mb-8 mt-32 flex rounded-2xl border border-neutral-200 bg-secondary p-12 dark:border-neutral-700 dark:bg-neutral-800"
+    class="bg-secondary mt-32 mb-8 flex rounded-2xl border border-neutral-200 p-12 dark:border-neutral-700 dark:bg-neutral-800"
   >
     <div class="mx-auto flex-1 text-center md:mx-0 md:text-left">
       <ul class="flex list-none flex-col space-y-1 md:hidden">
         <NavMenuList />
       </ul>
-      <div class="mb-4 mt-4 md:mt-0 md:pr-8">
-          <Logo />
-      </div>
+      <div class="mt-4 mb-4 md:mt-0 md:pr-8"><Logo /></div>
       <div class="mb-8 flex justify-center space-x-4 md:justify-start">
         <SocialMedia type="icon" />
       </div>

@@ -1,10 +1,10 @@
+import { createServerClient } from "./client/supabase";
+
+import type { Tables } from "./client/database.types";
 import type {
   SiteContentModel,
   SiteContentsModel,
 } from "@libs/business/entity";
-
-import type { Tables } from "./client/database.types";
-import { createServerClient } from "./client/supabase";
 
 export class SiteContentSupabaseRepository {
   static async getConstants(): Promise<SiteContentsModel> {

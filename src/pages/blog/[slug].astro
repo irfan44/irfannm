@@ -1,13 +1,15 @@
 ---
+import { Picture } from "astro:assets";
+
 import PostList from "@components/features/blog/PostList.astro";
 import RenderMarkdown from "@components/shared/RenderMarkdown.astro";
-import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
+import ArticleLayout from "@layouts/ArticleLayout.astro";
 import DetailLayout from "@layouts/DetailLayout.astro";
-import type { Post, Posts } from "@libs/business/entity";
 import { PostHandler } from "@libs/handlers";
 import { convertDate } from "@libs/utils";
 
-import { Picture } from "astro:assets";
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
+import type { Post, Posts } from "@libs/business/entity";
 
 interface Props {
   slug: string;
@@ -34,7 +36,7 @@ const otherPosts =
 
 const breadcrumbItems: BreadcrumbItems = [
   { title: "Home", path: "/" },
-  { title: "Blog", path: `/blog` },
+  { title: "Blog", path: "/blog" },
 ];
 
 const convertedDate = convertDate(post.date, true);
@@ -46,32 +48,28 @@ const convertedDate = convertDate(post.date, true);
   ogImage={post.coverImage}
   breadcrumbItems={breadcrumbItems}
 >
-  <article
-    class="prose prose-headings:text-black text-neutral-800 dark:prose-headings:text-white dark:prose-invert md:prose-lg dark:text-gray-200"
-  >
-    <h1 class="mb-4 text-center md:text-left md:text-5xl md:leading-none">
-      {post.title}
-    </h1>
-    <div class="mb-8 flex justify-center space-x-2 md:justify-start">
-      <span class="font-bold">{post.category}</span>
-      <span>|</span>
-      <span>{convertedDate}</span>
-    </div>
-    <div class="mb-8 md:mb-16">
-      <figure>
-        <Picture
-          class="rounded-2xl object-cover"
-          src={post.coverImage}
-          alt={`Cover for ${post.title}`}
-          height="390"
-          width="711"
-          loading="eager"
-        />
-        <figcaption>{post.coverCaption}</figcaption>
-      </figure>
-    </div>
+  <h1 class="mb-4 text-center md:text-left md:text-5xl md:leading-none">
+    {post.title}
+  </h1>
+  <div class="mb-8 text-center md:text-start">
+    <strong>{post.category}</strong> | {convertedDate}
+  </div>
+  <div class="mb-8">
+    <figure>
+      <Picture
+        class="mb-6 rounded-2xl object-cover"
+        src={post.coverImage}
+        alt={`Cover for ${post.title}`}
+        height="390"
+        width="711"
+        loading="eager"
+      />
+      <figcaption>{post.coverCaption}</figcaption>
+    </figure>
+  </div>
+  <ArticleLayout>
     <RenderMarkdown markdownSource={post.content} />
-  </article>
+  </ArticleLayout>
   {
     otherPosts.length > 0 && (
       <div slot="otherDetail">

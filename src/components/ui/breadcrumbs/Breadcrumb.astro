@@ -13,21 +13,22 @@ const { items, additionalClass = "" } = Astro.props;
 
 <div
   class:list={[
-    'flex w-fit items-center space-x-2 text-neutral-900 dark:text-gray-200',
+    "flex w-fit items-center space-x-2 text-neutral-900 dark:text-gray-200",
     additionalClass,
   ]}
 >
   {
-    items &&
-      items.map((item, index) => {
-        return (
-          <Fragment>
-            <a class="hover:underline" href={item.path}>
-              {item.title}
-            </a>
-            {index + 1 !== items.length && <Icon name="chevron-right" class="mx-1 text-sm" />}
-          </Fragment>
-        )
-      })
+    items?.map((item, index) => {
+      return (
+        <Fragment>
+          <a class="hover:underline" href={item.path}>
+            {item.title}
+          </a>
+          {index + 1 !== items.length && (
+            <Icon name="chevron-right" class="text-sm" />
+          )}
+        </Fragment>
+      );
+    })
   }
 </div>

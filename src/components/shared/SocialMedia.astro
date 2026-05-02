@@ -1,7 +1,8 @@
 ---
+import { Icon } from "@twodft/astro-icon/components";
+
 import ExternalLink from "@components/ui/links/ExternalLink.astro";
 import { SOCIALS } from "@libs/constants";
-import { Icon } from "@twodft/astro-icon/components";
 
 interface Props {
   type: "icon" | "list";
@@ -11,32 +12,40 @@ const { type } = Astro.props;
 ---
 
 {
-  type === 'icon' && (
+  type === "icon" && (
     <ul class="flex space-x-4">
       {SOCIALS.map((social) => {
         return (
           <li class="text-2xl text-black dark:text-white">
-            <ExternalLink title={social.name} href={social.link} withIcon={false}>
+            <ExternalLink
+              title={social.name}
+              href={social.link}
+              withIcon={false}
+            >
               <Icon name={social.icon} />
             </ExternalLink>
           </li>
-        )
+        );
       })}
     </ul>
   )
 }
 
 {
-  type === 'list' && (
+  type === "list" && (
     <ul class="ml-4 list-disc space-y-1">
       {SOCIALS.map((social) => {
         return (
           <li>
-            <ExternalLink additionalClass="w-fit underline" title={social.name} href={social.link}>
+            <ExternalLink
+              additionalClass="w-fit underline"
+              title={social.name}
+              href={social.link}
+            >
               <span>{social.name}</span>
             </ExternalLink>
           </li>
-        )
+        );
       })}
     </ul>
   )

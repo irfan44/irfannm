@@ -1,11 +1,11 @@
+import { createServerClient } from "./client/supabase";
+
 import type {
   BlogCategoryModel,
   CategorizedPostsModel,
   PostModel,
   PostsModel,
 } from "@libs/business/entity";
-
-import { createServerClient } from "./client/supabase";
 
 type PostCategoryRow = {
   name: string;

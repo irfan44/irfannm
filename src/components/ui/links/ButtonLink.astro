@@ -18,11 +18,13 @@ const hasIcon = Astro.slots.has("icon");
     title={title}
     href={href}
   >
-    {hasIcon && (
-      <span class="mr-2">
-        <slot name="icon" />
-      </span>
-    )}
+    {
+      hasIcon && (
+        <span class="mr-2">
+          <slot name="icon" />
+        </span>
+      )
+    }
     <slot />
   </a>
 </div>

@@ -35,34 +35,47 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
 
-    <Meta title={title} description={description} ogImage={ogImage} currentPath={currentPath} />
+    <Meta
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      currentPath={currentPath}
+    />
 
     <style is:global>
       @font-face {
-        font-family: 'Lexend Deca Variable';
+        font-family: "Lexend Deca Variable";
         font-style: normal;
         font-display: swap;
         font-weight: 100 900;
-        src: url(@fontsource-variable/lexend-deca/files/lexend-deca-latin-wght-normal.woff2) format('woff2-variations');
-        unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+        src: url("@fontsource-variable/lexend-deca/files/lexend-deca-latin-wght-normal.woff2")
+          format("woff2-variations");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
       }
     </style>
 
     <script is:inline>
       if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        document.documentElement.classList.add('dark')
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove("dark");
       }
     </script>
   </head>
   <body class="scroll-smooth antialiased">
     <Navbar />
     <main
-      class:list={['container mx-auto mt-16 min-h-screen px-5 md:px-16 lg:px-32', additionalClass]}
+      class:list={[
+        "container mx-auto mt-16 min-h-screen px-5 md:px-16 lg:px-32",
+        additionalClass,
+      ]}
     >
       <slot />
     </main>

@@ -1,0 +1,30 @@
+{
+  "plugins": [
+    "prettier-plugin-astro",
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@assets/(.*)$",
+    "^@components/(.*)$",
+    "^@layouts/(.*)$",
+    "^@libs/(.*)$",
+    "^@styles/(.*)$",
+    "",
+    "^[.]",
+    "",
+    "<TYPES>"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx"],
+  "importOrderTypeScriptVersion": "5.0.0",
+  "overrides": [
+    {
+      "files": "**/*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}

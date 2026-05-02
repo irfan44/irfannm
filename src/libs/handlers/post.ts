@@ -1,5 +1,6 @@
-import type { CategorizedPosts, Post, Posts } from "@libs/business/entity";
 import { PostUseCase } from "@libs/business/usecase";
+
+import type { CategorizedPosts, Post, Posts } from "@libs/business/entity";
 
 export class PostHandler {
   static async getPosts(): Promise<Posts | undefined> {

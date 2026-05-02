@@ -2,6 +2,7 @@
 import ProjectList from "@components/features/project/ProjectList.astro";
 import Section from "@components/layouts/Section.astro";
 import ReadMore from "@components/shared/ReadMore.astro";
+
 import type { Projects } from "@libs/business/entity";
 
 interface Props {
@@ -12,7 +13,7 @@ const { featuredProjects } = Astro.props;
 ---
 
 <Section title="Featured Project">
-  <div class="space-y-4 mb-6">
+  <div class="mb-6 space-y-4">
     <ProjectList projects={featuredProjects} isFeatured />
   </div>
   <ReadMore url="/projects">View all projects</ReadMore>

@@ -1,7 +1,8 @@
 ---
+import { Icon } from "@twodft/astro-icon/components";
+
 import Card from "@components/ui/cards/Card.astro";
 import Chip from "@components/ui/chips/Chip.astro";
-import { Icon } from "@twodft/astro-icon/components";
 
 interface Props {
   name: string;
@@ -23,21 +24,23 @@ const { name, slug, excerpt, techStack } = Astro.props;
     <div class="mt-4 flex flex-wrap gap-2">
       {
         techStack.map((stack) => {
-          return <Chip>{stack}</Chip>
+          return <Chip>{stack}</Chip>;
         })
       }
     </div>
   </Card>
 </a>
 <script is:inline define:vars={{ slug }}>
-  const projectCard = document.getElementById(`project-card-${slug}`)
-  const projectCardTitle = document.getElementById(`project-card-title-${slug}`)
+  const projectCard = document.getElementById(`project-card-${slug}`);
+  const projectCardTitle = document.getElementById(
+    `project-card-title-${slug}`,
+  );
 
-  projectCard.addEventListener('pointerenter', () => {
-    projectCardTitle.style.textDecoration = 'underline'
-  })
+  projectCard.addEventListener("pointerenter", () => {
+    projectCardTitle.style.textDecoration = "underline";
+  });
 
-  projectCard.addEventListener('pointerleave', () => {
-    projectCardTitle.style.textDecoration = 'none'
-  })
+  projectCard.addEventListener("pointerleave", () => {
+    projectCardTitle.style.textDecoration = "none";
+  });
 </script>

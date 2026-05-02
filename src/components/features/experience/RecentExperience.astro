@@ -2,6 +2,7 @@
 import ExperienceList from "@components/features/experience/ExperienceList.astro";
 import Section from "@components/layouts/Section.astro";
 import ReadMore from "@components/shared/ReadMore.astro";
+
 import type { Experiences } from "@libs/business/entity";
 
 interface Props {
@@ -12,8 +13,6 @@ const { recentExperiences } = Astro.props;
 ---
 
 <Section title="Working Experience">
-  <div class="mb-6">
-    <ExperienceList experiences={recentExperiences} />
-  </div>
+  <div class="mb-6"><ExperienceList experiences={recentExperiences} /></div>
   <ReadMore url="/about#experience">View more</ReadMore>
 </Section>

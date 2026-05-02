@@ -1,5 +1,6 @@
-import type { Project, Projects } from "@libs/business/entity";
 import { ProjectUseCase } from "@libs/business/usecase";
+
+import type { Project, Projects } from "@libs/business/entity";
 
 export class ProjectHandler {
   static async getProjects(): Promise<Projects | undefined> {

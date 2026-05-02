@@ -4,9 +4,10 @@ let id = Math.random();
 
 <button
   id={`theme-switcher-${id}`}
-  class="relative inline-flex h-8 w-16 items-center rounded-full border border-neutral-200 bg-secondary dark:border-neutral-700 dark:bg-neutral-800"
+  class="bg-secondary relative inline-flex h-8 w-16 items-center rounded-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800"
   role="switch"
   aria-checked="false"
+  type="button"
 >
   <span class="sr-only">Toggle theme</span>
   <span
@@ -22,15 +23,31 @@ let id = Math.random();
     <span class="dark:hidden">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="12" r="5.754" fill="#FFCE31"></circle>
-        <circle cx="3.09" cy="6.855" r="1.711" transform="rotate(-60 3.09 6.855)" fill="#FFCE31"
-        ></circle>
-        <circle cx="3.09" cy="17.144" r="1.711" transform="rotate(-120 3.09 17.144)" fill="#FFCE31"
-        ></circle>
+        <circle
+          cx="3.09"
+          cy="6.855"
+          r="1.711"
+          transform="rotate(-60 3.09 6.855)"
+          fill="#FFCE31"></circle>
+        <circle
+          cx="3.09"
+          cy="17.144"
+          r="1.711"
+          transform="rotate(-120 3.09 17.144)"
+          fill="#FFCE31"></circle>
         <circle cx="12" cy="22.288" r="1.711" fill="#FFCE31"></circle>
-        <circle cx="20.91" cy="17.144" r="1.711" transform="rotate(-60 20.91 17.144)" fill="#FFCE31"
-        ></circle>
-        <circle cx="20.91" cy="6.855" r="1.711" transform="rotate(-120 20.91 6.855)" fill="#FFCE31"
-        ></circle>
+        <circle
+          cx="20.91"
+          cy="17.144"
+          r="1.711"
+          transform="rotate(-60 20.91 17.144)"
+          fill="#FFCE31"></circle>
+        <circle
+          cx="20.91"
+          cy="6.855"
+          r="1.711"
+          transform="rotate(-120 20.91 6.855)"
+          fill="#FFCE31"></circle>
         <circle cx="12" cy="1.711" r="1.711" fill="#FFCE31"></circle>
       </svg>
     </span>
@@ -38,26 +55,27 @@ let id = Math.random();
 </button>
 
 <script is:inline define:vars={{ id }}>
-  const themeSwitcher = document.getElementById(`theme-switcher-${id}`)
+  const themeSwitcher = document.getElementById(`theme-switcher-${id}`);
 
   if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
-    themeSwitcher.setAttribute('aria-checked', 'true')
+    themeSwitcher.setAttribute("aria-checked", "true");
   } else {
-    themeSwitcher.setAttribute('aria-checked', 'false')
+    themeSwitcher.setAttribute("aria-checked", "false");
   }
 
-  themeSwitcher.addEventListener('click', () => {
-    if (localStorage.theme === 'dark') {
-      localStorage.theme = 'light'
-      document.documentElement.classList.remove('dark')
-      themeSwitcher.setAttribute('aria-checked', 'false')
+  themeSwitcher.addEventListener("click", () => {
+    if (localStorage.theme === "dark") {
+      localStorage.theme = "light";
+      document.documentElement.classList.remove("dark");
+      themeSwitcher.setAttribute("aria-checked", "false");
     } else {
-      localStorage.theme = 'dark'
-      document.documentElement.classList.add('dark')
-      themeSwitcher.setAttribute('aria-checked', 'true')
+      localStorage.theme = "dark";
+      document.documentElement.classList.add("dark");
+      themeSwitcher.setAttribute("aria-checked", "true");
     }
-  })
+  });
 </script>

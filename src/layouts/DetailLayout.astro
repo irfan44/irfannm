@@ -1,8 +1,9 @@
 ---
 import Breadcrumb from "@components/ui/breadcrumbs/Breadcrumb.astro";
-import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 
 import BaseLayout from "./BaseLayout.astro";
+
+import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 
 interface Props {
   title: string;
@@ -27,7 +28,5 @@ const { title, excerpt, ogImage, breadcrumbItems, additionalClass } =
     <Breadcrumb items={breadcrumbItems} additionalClass="mb-2" />
     <slot />
   </section>
-  <section class="mb-32">
-    <slot name="otherDetail" />
-  </section>
+  <section class="mb-32"><slot name="otherDetail" /></section>
 </BaseLayout>

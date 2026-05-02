@@ -1,7 +1,7 @@
 ---
-import RenderMarkdown from "@components/shared/RenderMarkdown.astro";
-
 import { Image } from "astro:assets";
+
+import RenderMarkdown from "@components/shared/RenderMarkdown.astro";
 
 interface Props {
   aboutMeSource: string;
@@ -20,6 +20,4 @@ const { aboutMeSource } = Astro.props;
     loading="eager"
   />
 </div>
-<div class="space-y-6">
-  <RenderMarkdown markdownSource={aboutMeSource} />
-</div>
+<div class="space-y-6"><RenderMarkdown markdownSource={aboutMeSource} /></div>

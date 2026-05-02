@@ -1,7 +1,7 @@
-import type { ExperienceModel, ExperiencesModel } from "@libs/business/entity";
+import { createServerClient } from "./client/supabase";
 
 import type { Tables } from "./client/database.types";
-import { createServerClient } from "./client/supabase";
+import type { ExperienceModel, ExperiencesModel } from "@libs/business/entity";
 
 export class ExperienceSupabaseRepository {
   static async getExperiences(): Promise<ExperiencesModel | undefined> {

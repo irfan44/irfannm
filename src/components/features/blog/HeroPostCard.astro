@@ -1,8 +1,8 @@
 ---
-import { convertDate } from "@libs/utils";
 import { Icon } from "@twodft/astro-icon/components";
-
 import { Image } from "astro:assets";
+
+import { convertDate } from "@libs/utils";
 
 interface Props {
   title: string;
@@ -34,7 +34,10 @@ const convertedDate = convertDate(date, true);
     />
   </div>
   <div class="mt-8 space-y-4 lg:mt-0 lg:w-1/2 lg:px-8">
-    <h3 id={`hero-post-card-title-${slug}`} class="text-2xl font-bold lg:text-4xl">
+    <h3
+      id={`hero-post-card-title-${slug}`}
+      class="text-2xl font-bold lg:text-4xl"
+    >
       {title}
     </h3>
     <div class="flex space-x-2 text-sm">
@@ -49,14 +52,14 @@ const convertedDate = convertDate(date, true);
   </div>
 </a>
 <script is:inline define:vars={{ slug }}>
-  const postCard = document.getElementById(`hero-post-card-${slug}`)
-  const readText = document.getElementById(`hero-post-card-title-${slug}`)
+  const postCard = document.getElementById(`hero-post-card-${slug}`);
+  const readText = document.getElementById(`hero-post-card-title-${slug}`);
 
-  postCard.addEventListener('pointerenter', () => {
-    readText.style.textDecoration = 'underline'
-  })
+  postCard.addEventListener("pointerenter", () => {
+    readText.style.textDecoration = "underline";
+  });
 
-  postCard.addEventListener('pointerleave', () => {
-    readText.style.textDecoration = 'none'
-  })
+  postCard.addEventListener("pointerleave", () => {
+    readText.style.textDecoration = "none";
+  });
 </script>

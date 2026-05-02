@@ -1,7 +1,7 @@
 ---
-import type { Experience } from "@libs/business/entity";
-
 import ExperienceCard from "./ExperienceCard.astro";
+
+import type { Experience } from "@libs/business/entity";
 
 interface Props {
   experiences: Experience[];
@@ -19,9 +19,12 @@ const { experiences, withResponsibility = false } = Astro.props;
           {withResponsibility && (
             <hr class="mb-6 border border-neutral-300 dark:border-neutral-500" />
           )}
-          <ExperienceCard withResponsibility={withResponsibility} experience={experience} />
+          <ExperienceCard
+            withResponsibility={withResponsibility}
+            experience={experience}
+          />
         </div>
-      )
+      );
     })
   }
 </div>
