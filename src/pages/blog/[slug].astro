@@ -1,12 +1,10 @@
 ---
-import { Picture } from "astro:assets";
-
-import PostList from "@components/features/blog/PostList.astro";
+import BlogHeader from "@components/domain/blog/detail/BlogHeader.astro";
+import OtherPost from "@components/domain/blog/detail/OtherPost.astro";
 import RenderMarkdown from "@components/shared/RenderMarkdown.astro";
-import ArticleLayout from "@layouts/ArticleLayout.astro";
 import DetailLayout from "@layouts/DetailLayout.astro";
+import ProseLayout from "@layouts/ProseLayout.astro";
 import { PostHandler } from "@libs/handlers";
-import { convertDate } from "@libs/utils";
 
 import type { BreadcrumbItems } from "@components/ui/breadcrumbs/breadcrumb.types";
 import type { Post, Posts } from "@libs/business/entity";
@@ -31,15 +29,12 @@ const { slug } = Astro.params;
 const post = await PostHandler.getPost(slug);
 if (!post) throw Astro.redirect("/404");
 
-const otherPosts =
-  (await PostHandler.getOtherPosts(post.categorySlug, slug)) ?? [];
+const otherPosts = await PostHandler.getOtherPosts(post.categorySlug, slug);
 
 const breadcrumbItems: BreadcrumbItems = [
   { title: "Home", path: "/" },
   { title: "Blog", path: "/blog" },
 ];
-
-const convertedDate = convertDate(post.date, true);
 ---
 
 <DetailLayout
@@ -48,33 +43,14 @@ const convertedDate = convertDate(post.date, true);
   ogImage={post.coverImage}
   breadcrumbItems={breadcrumbItems}
 >
-  <h1 class="mb-4 text-center md:text-left md:text-5xl md:leading-none">
-    {post.title}
-  </h1>
-  <div class="mb-8 text-center md:text-start">
-    <strong>{post.category}</strong> | {convertedDate}
-  </div>
-  <div class="mb-8">
-    <figure>
-      <Picture
-        class="mb-6 rounded-2xl object-cover"
-        src={post.coverImage}
-        alt={`Cover for ${post.title}`}
-        height="390"
-        width="711"
-        loading="eager"
-      />
-      <figcaption>{post.coverCaption}</figcaption>
-    </figure>
-  </div>
-  <ArticleLayout>
+  <BlogHeader post={post} />
+  <ProseLayout>
     <RenderMarkdown markdownSource={post.content} />
-  </ArticleLayout>
+  </ProseLayout>
   {
-    otherPosts.length > 0 && (
+    otherPosts && (
       <div slot="otherDetail">
-        <h2 class="mb-8">More from {post.category}</h2>
-        <PostList posts={otherPosts} />
+        <OtherPost post={post} otherPosts={otherPosts} />
       </div>
     )
   }

@@ -13,10 +13,12 @@ const { experiences, withResponsibility = false } = Astro.props;
 
 <div class="space-y-6">
   {
-    experiences.map((experience) => {
+    experiences.map((experience, index) => {
+      const isFirst = index == 0;
+
       return (
         <div>
-          {withResponsibility && (
+          {withResponsibility && !isFirst && (
             <hr class="mb-6 border border-neutral-300 dark:border-neutral-500" />
           )}
           <ExperienceCard

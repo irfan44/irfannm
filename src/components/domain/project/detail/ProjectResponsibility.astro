@@ -1,0 +1,21 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+
+import type { Project } from "@libs/business/entity";
+
+interface Props {
+  responsibilities: Project["responsibilities"];
+}
+
+const { responsibilities } = Astro.props;
+---
+
+<Section isSmall title="What I do">
+  <ul class="ml-5 list-disc">
+    {
+      responsibilities?.map((value) => {
+        return <li class="wrap-break-word">{value}</li>;
+      })
+    }
+  </ul>
+</Section>

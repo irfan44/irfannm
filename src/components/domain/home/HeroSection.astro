@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
-import ResumeButton from "@components/cta/ResumeButton.astro";
-import SocialMedia from "@components/shared/SocialMedia.astro";
+import OpenSocials from "@components/shared/cta/OpenSocials.astro";
+import ResumeButton from "@components/shared/cta/ResumeButton.astro";
 
 interface Props {
   description: string;
@@ -27,7 +27,7 @@ const { description, resumeUrl } = Astro.props;
     </div>
     <p>{description}</p>
     <ResumeButton resumeUrl={resumeUrl} />
-    <div class="pt-8"><SocialMedia type="icon" /></div>
+    <div class="pt-8"><OpenSocials type="icon" /></div>
   </div>
   <div class="flex justify-center md:w-1/2">
     <Image

@@ -1,0 +1,18 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+
+import PostList from "../list/base/PostList.astro";
+
+import type { Post, Posts } from "@libs/business/entity";
+
+interface Props {
+  post: Post;
+  otherPosts: Posts;
+}
+
+const { post, otherPosts } = Astro.props;
+---
+
+<Section title={`More from ${post.category}`}>
+  <PostList posts={otherPosts} />
+</Section>

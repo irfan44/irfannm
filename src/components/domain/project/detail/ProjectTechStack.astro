@@ -1,0 +1,22 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+import Chip from "@components/ui/chips/Chip.astro";
+
+import type { Project } from "@libs/business/entity";
+
+interface Props {
+  techStack: Project["techStack"];
+}
+
+const { techStack } = Astro.props;
+---
+
+<Section isSmall title="Tech Stack">
+  <div class="flex flex-wrap gap-2">
+    {
+      techStack.map((stack) => {
+        return <Chip additionalClass="dark:!bg-neutral-800">{stack}</Chip>;
+      })
+    }
+  </div>
+</Section>

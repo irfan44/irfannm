@@ -1,0 +1,15 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+
+import type { Project } from "@libs/business/entity";
+
+interface Props {
+  role: Project["role"];
+}
+
+const { role } = Astro.props;
+---
+
+<Section isSmall title="Role">
+  <p>{role}</p>
+</Section>

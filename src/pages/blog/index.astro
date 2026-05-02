@@ -1,7 +1,7 @@
 ---
-import BlogCategoryList from "@components/features/blog/BlogCategoryList.astro";
-import HeroPost from "@components/features/blog/HeroPostCard.astro";
-import Section from "@components/layouts/Section.astro";
+import CategorizedPost from "@components/domain/blog/list/CategorizedPost.astro";
+import HeroPost from "@components/domain/blog/list/HeroPost.astro";
+import Heading from "@components/layouts/section/Heading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { PostHandler } from "@libs/handlers";
 
@@ -11,32 +11,16 @@ const heroPost = categorizedPosts ? categorizedPosts[0].posts[0] : null;
 ---
 
 <BaseLayout title="Blog" description="Irfan Nurghiffari Muhajir's blog posts">
-  <Section
+  <Heading
     title="Blog"
     description="Place where you can read my writing. I mainly write about tech, finance, and investment stuff."
-    isHeader
     additionalClass="space-y-12"
   >
-    {
-      heroPost && (
-        <Section title="Featured">
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-            category={heroPost.category}
-          />
-        </Section>
-      )
-    }
+    {heroPost && <HeroPost post={heroPost} />}
     {
       categorizedPosts && (
-        <Section title="Posts">
-          <BlogCategoryList categorizedPosts={categorizedPosts} />
-        </Section>
+        <CategorizedPost categorizedPosts={categorizedPosts} />
       )
     }
-  </Section>
+  </Heading>
 </BaseLayout>

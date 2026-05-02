@@ -1,0 +1,15 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+
+import type { Project } from "@libs/business/entity";
+
+interface Props {
+  overview: Project["overview"];
+}
+
+const { overview } = Astro.props;
+---
+
+<Section isSmall title="Overview">
+  <p class="wrap-break-word">{overview}</p>
+</Section>

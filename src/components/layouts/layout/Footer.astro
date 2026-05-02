@@ -1,10 +1,10 @@
 ---
 import { Icon } from "@twodft/astro-icon/components";
 
-import ContactButton from "@components/cta/ContactButton.astro";
-import NavMenuList from "@components/layouts/NavMenuList.astro";
+import NavMenuList from "@components/layouts/navMenu/NavMenuList.astro";
+import ContactButton from "@components/shared/cta/ContactButton.astro";
+import OpenSocials from "@components/shared/cta/OpenSocials.astro";
 import Logo from "@components/shared/Logo.astro";
-import SocialMedia from "@components/shared/SocialMedia.astro";
 ---
 
 <footer class="container mx-auto px-5 md:px-16 lg:px-32">
@@ -17,7 +17,7 @@ import SocialMedia from "@components/shared/SocialMedia.astro";
       </ul>
       <div class="mt-4 mb-4 md:mt-0 md:pr-8"><Logo /></div>
       <div class="mb-8 flex justify-center space-x-4 md:justify-start">
-        <SocialMedia type="icon" />
+        <OpenSocials type="icon" />
       </div>
       <div class="mb-4 flex justify-center md:justify-start">
         <ContactButton />

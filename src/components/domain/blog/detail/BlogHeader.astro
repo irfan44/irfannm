@@ -1,0 +1,35 @@
+---
+import { Picture } from "astro:assets";
+
+import { convertDate } from "@libs/utils";
+
+import type { Post } from "@libs/business/entity";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+
+const convertedDate = convertDate(post.date, true);
+---
+
+<h1 class="mb-4 text-center md:text-left md:text-5xl md:leading-none">
+  {post.title}
+</h1>
+<p class="mb-8 text-center md:text-start">
+  <strong>{post.category}</strong> | {convertedDate}
+</p>
+<div class="mb-8">
+  <figure>
+    <Picture
+      class="mb-6 rounded-2xl object-cover"
+      src={post.coverImage}
+      alt={`Cover for ${post.title}`}
+      height="390"
+      width="711"
+      loading="eager"
+    />
+    <figcaption>{post.coverCaption}</figcaption>
+  </figure>
+</div>

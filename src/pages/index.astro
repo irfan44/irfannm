@@ -1,8 +1,8 @@
 ---
-import HighlightedPosts from "@components/features/blog/HighlightedPosts.astro";
-import RecentExperience from "@components/features/experience/RecentExperience.astro";
-import HeroSection from "@components/features/home/HeroSection.astro";
-import FeaturedProject from "@components/features/project/FeaturedProject.astro";
+import LatestPosts from "@components/domain/blog/list/LatestPosts.astro";
+import RecentExperience from "@components/domain/experience/RecentExperience.astro";
+import HeroSection from "@components/domain/home/HeroSection.astro";
+import FeaturedProject from "@components/domain/project/list/FeaturedProject.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
   ExperienceHandler,
@@ -38,5 +38,5 @@ const resumeUrl = getSiteContent(constants, "resume-url", true).value;
       )
     }
   </div>
-  {highlightedPosts && <HighlightedPosts highlightedPosts={highlightedPosts} />}
+  {highlightedPosts && <LatestPosts highlightedPosts={highlightedPosts} />}
 </BaseLayout>

@@ -1,0 +1,17 @@
+---
+import Section from "@components/layouts/section/Section.astro";
+
+import BlogCategoryList from "./base/BlogCategoryList.astro";
+
+import type { CategorizedPosts } from "@libs/business/entity";
+
+interface Props {
+  categorizedPosts: CategorizedPosts;
+}
+
+const { categorizedPosts } = Astro.props;
+---
+
+<Section title="Posts">
+  <BlogCategoryList categorizedPosts={categorizedPosts} />
+</Section>

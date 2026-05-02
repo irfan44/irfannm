@@ -29,6 +29,7 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
                     "bg-transparent font-normal": tab.id !== defaultTab,
                   },
                 ]}
+                id={`tab-${tab.id}`}
                 role="tab"
                 aria-selected={tab.id === defaultTab}
                 aria-controls={`panel-${tab.id}`}
@@ -49,6 +50,7 @@ const { tabs, defaultTab = tabs[0]?.id, additionalClass = "" } = Astro.props;
                   "bg-transparent font-normal": tab.id !== defaultTab,
                 },
               ]}
+              id={`tab-${tab.id}`}
               role="tab"
               aria-selected={tab.id === defaultTab}
               aria-controls={`panel-${tab.id}`}

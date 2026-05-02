@@ -2,21 +2,21 @@
 interface Props {
   title: string;
   description?: string;
-  isHeader?: boolean;
   additionalClass?: string;
+  isSmall?: boolean;
 }
 
 const {
   title,
   description = "",
-  isHeader = false,
   additionalClass = "",
+  isSmall = false,
 } = Astro.props;
 ---
 
 <section class={additionalClass}>
   <div>
-    {isHeader ? <h1 class="mb-6">{title}</h1> : <h2 class="mb-6">{title}</h2>}
+    <h2 class={isSmall ? "mb-4" : " mb-6"}>{title}</h2>
     {description && <p>{description}</p>}
   </div>
   <slot />

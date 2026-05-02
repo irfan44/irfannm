@@ -15,6 +15,8 @@ interface Props {
 
 const { title, excerpt, ogImage, breadcrumbItems, additionalClass } =
   Astro.props;
+
+const hasOtherDetail = Astro.slots.has("otherDetail");
 ---
 
 <BaseLayout
@@ -24,9 +26,15 @@ const { title, excerpt, ogImage, breadcrumbItems, additionalClass } =
   currentPath={Astro.url.pathname}
   additionalClass={additionalClass}
 >
-  <section class="mx-auto mb-24 max-w-3xl">
+  <div class="mx-auto mb-24 max-w-3xl">
     <Breadcrumb items={breadcrumbItems} additionalClass="mb-2" />
     <slot />
-  </section>
-  <section class="mb-32"><slot name="otherDetail" /></section>
+  </div>
+  {
+    hasOtherDetail && (
+      <div class="mb-32">
+        <slot name="otherDetail" />
+      </div>
+    )
+  }
 </BaseLayout>

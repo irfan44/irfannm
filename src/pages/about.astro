@@ -1,9 +1,9 @@
 ---
-import AboutMe from "@components/features/about/AboutMe.astro";
-import Resume from "@components/features/about/Resume.astro";
-import SocialContact from "@components/features/about/SocialContact.astro";
-import Experience from "@components/features/experience/Experience.astro";
-import Section from "@components/layouts/Section.astro";
+import AboutMe from "@components/domain/about/AboutMe.astro";
+import Resume from "@components/domain/about/Resume.astro";
+import SocialContact from "@components/domain/about/SocialContact.astro";
+import Experience from "@components/domain/experience/Experience.astro";
+import Heading from "@components/layouts/section/Heading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { ExperienceHandler, SiteContentHandler } from "@libs/handlers";
 import { getSiteContent } from "@libs/utils";
@@ -18,11 +18,7 @@ const resumeUrl = getSiteContent(constants, "resume-url", true);
 ---
 
 <BaseLayout title="About" description="Get to know me better">
-  <Section
-    title="About"
-    isHeader
-    additionalClass="mx-auto max-w-3xl space-y-12"
-  >
+  <Heading title="About" additionalClass="mx-auto max-w-3xl space-y-12">
     {aboutMeSource && <AboutMe aboutMeSource={aboutMeSource} />}
     {experiences && <Experience experiences={experiences} />}
     {
@@ -31,5 +27,5 @@ const resumeUrl = getSiteContent(constants, "resume-url", true);
       )
     }
     <SocialContact />
-  </Section>
+  </Heading>
 </BaseLayout>
