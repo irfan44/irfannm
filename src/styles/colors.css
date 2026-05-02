@@ -44,6 +44,8 @@
   /* Chip surface */
   --color-chip-bg: #1c1d1f;
   --color-chip-bg-dark: #171717;
+  --color-chip-border: #e5e5e5;
+  --color-chip-border-dark: #404040;
   --color-chip-text: #ffffff;
   --color-chip-text-dark: #ffffff;
 
