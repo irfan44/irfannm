@@ -19,10 +19,17 @@ const { description, resumeUrl } = Astro.props;
       <h1>
         I&apos;m
         <span
-          class="bg-hero-badge-bg border-hero-badge-border dark:border-hero-badge-border-dark dark:bg-hero-badge-bg-dark rounded-lg border px-2"
+          class="bg-hero-badge-bg border-hero-badge-border dark:border-hero-badge-border-dark dark:bg-hero-badge-bg-dark rounded-lg border pr-1 pl-2"
         >
           Irfan!
-        </span> 👋
+        </span>
+        <span
+          class="ml-2 inline-block transition-opacity duration-300"
+          aria-hidden="true"
+          data-hero-emoji
+        >
+          👋
+        </span>
       </h1>
     </div>
     <p>{description}</p>
@@ -40,3 +47,22 @@ const { description, resumeUrl } = Astro.props;
     />
   </div>
 </div>
+
+<script is:inline>
+  const heroEmoji = document.querySelector("[data-hero-emoji]");
+  const emojis = ["👋", "😸", "🧑‍💻"];
+
+  if (heroEmoji) {
+    let emojiIndex = 0;
+
+    setInterval(() => {
+      heroEmoji.classList.add("opacity-0");
+
+      window.setTimeout(() => {
+        emojiIndex = (emojiIndex + 1) % emojis.length;
+        heroEmoji.textContent = emojis[emojiIndex];
+        heroEmoji.classList.remove("opacity-0");
+      }, 180);
+    }, 2200);
+  }
+</script>
