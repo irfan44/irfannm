@@ -1,0 +1,124 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "label": "Footer.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/layout/Footer.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "components",
+      "label": "@twodft/astro-icon/components",
+      "file_type": "code",
+      "source_file": "@twodft/astro-icon/components",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenulist_astro",
+      "label": "@components/layouts/navMenu/NavMenuList.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/navMenu/NavMenuList.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_contactbutton_astro",
+      "label": "@components/shared/cta/ContactButton.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/ContactButton.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "label": "@components/shared/cta/OpenSocials.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/OpenSocials.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_logo_astro",
+      "label": "@components/shared/Logo.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/Logo.astro",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenulist_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_contactbutton_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_logo_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "components",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenulist_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_contactbutton_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_logo_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/layout/Footer.astro"
+    }
+  ],
+  "raw_calls": []
+}

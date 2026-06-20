@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "label": "OpenSocials.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/OpenSocials.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "components",
+      "label": "@twodft/astro-icon/components",
+      "file_type": "code",
+      "source_file": "@twodft/astro-icon/components",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "label": "@components/ui/links/ExternalLink.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/links/ExternalLink.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants",
+      "label": "@libs/constants",
+      "file_type": "code",
+      "source_file": "src/libs/constants",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/OpenSocials.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/OpenSocials.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "target": "constants_index_socials",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/OpenSocials.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "target": "components",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/OpenSocials.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/OpenSocials.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/OpenSocials.astro"
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "label": "DetailLayout.astro",
+      "file_type": "code",
+      "source_file": "src/layouts/DetailLayout.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "layouts_detaillayout_hasotherdetail",
+      "label": "hasOtherDetail",
+      "file_type": "code",
+      "source_file": "src/layouts/DetailLayout.astro",
+      "source_location": "L19"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_breadcrumbs_breadcrumb_astro",
+      "label": "@components/ui/breadcrumbs/Breadcrumb.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/breadcrumbs/Breadcrumb.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "label": "./BaseLayout.astro",
+      "file_type": "code",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_breadcrumbs_breadcrumb_types",
+      "label": "@components/ui/breadcrumbs/breadcrumb.types",
+      "file_type": "code",
+      "source_file": "src/components/ui/breadcrumbs/breadcrumb.types",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_breadcrumbs_breadcrumb_types_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "breadcrumbs_breadcrumb_types_breadcrumbitems",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "layouts_detaillayout_hasotherdetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_breadcrumbs_breadcrumb_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_detaillayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_breadcrumbs_breadcrumb_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/DetailLayout.astro"
+    }
+  ],
+  "raw_calls": []
+}

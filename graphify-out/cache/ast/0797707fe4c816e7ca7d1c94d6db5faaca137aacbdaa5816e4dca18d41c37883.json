@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_logo_astro",
+      "label": "Logo.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/Logo.astro",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_buttonlink_astro",
+      "label": "ButtonLink.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/links/ButtonLink.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "links_buttonlink_hasicon",
+      "label": "hasIcon",
+      "file_type": "code",
+      "source_file": "src/components/ui/links/ButtonLink.astro",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_buttonlink_astro",
+      "target": "links_buttonlink_hasicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/links/ButtonLink.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

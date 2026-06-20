@@ -1,0 +1,126 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "label": "PostCard.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "base_postcard_converteddate",
+      "label": "convertedDate",
+      "file_type": "code",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L19"
+    },
+    {
+      "id": "components",
+      "label": "@twodft/astro-icon/components",
+      "file_type": "code",
+      "source_file": "@twodft/astro-icon/components",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "astro_assets",
+      "label": "astro:assets",
+      "file_type": "code",
+      "source_file": "astro:assets",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_cards_card_astro",
+      "label": "@components/ui/cards/Card.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/cards/Card.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "label": "@libs/utils",
+      "file_type": "code",
+      "source_file": "src/libs/utils",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "astro_assets",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_cards_card_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "utils_index_convertdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "base_postcard_converteddate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "components",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "astro_assets",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_cards_card_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postcard_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/list/base/PostCard.astro"
+    }
+  ],
+  "raw_calls": []
+}

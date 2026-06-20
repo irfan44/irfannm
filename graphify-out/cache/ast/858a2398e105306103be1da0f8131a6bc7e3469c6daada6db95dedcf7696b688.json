@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "label": "OtherPost.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_section_astro",
+      "label": "@components/layouts/section/Section.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/section/Section.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postlist_astro",
+      "label": "../list/base/PostList.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/blog/list/base/PostList.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity",
+      "label": "@libs/business/entity",
+      "file_type": "code",
+      "source_file": "src/libs/business/entity",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postlist_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "entity_index_post",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "entity_index_posts",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_section_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_list_base_postlist_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_blog_detail_otherpost_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/blog/detail/OtherPost.astro"
+    }
+  ],
+  "raw_calls": []
+}

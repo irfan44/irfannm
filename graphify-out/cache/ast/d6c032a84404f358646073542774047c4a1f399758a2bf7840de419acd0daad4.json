@@ -1,0 +1,124 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "label": "BaseLayout.astro",
+      "file_type": "code",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "label": "@components/layouts/layout/Footer.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/layout/Footer.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_meta_astro",
+      "label": "@components/layouts/layout/Meta.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/layout/Meta.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_navbar_astro",
+      "label": "@components/layouts/layout/Navbar.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/layout/Navbar.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_backtotop_astro",
+      "label": "@components/shared/cta/BackToTop.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/BackToTop.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_styles_index_css",
+      "label": "@styles/index.css",
+      "file_type": "code",
+      "source_file": "src/styles/index.css",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_meta_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_navbar_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_backtotop_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_styles_index_css",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_footer_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_meta_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_layout_navbar_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_backtotop_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_styles_index_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/layouts/BaseLayout.astro"
+    }
+  ],
+  "raw_calls": []
+}

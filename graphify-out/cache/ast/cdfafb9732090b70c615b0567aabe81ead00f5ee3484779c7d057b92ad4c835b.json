@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_resumebutton_astro",
+      "label": "ResumeButton.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/ResumeButton.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_buttonlink_astro",
+      "label": "@components/ui/links/ButtonLink.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/links/ButtonLink.astro",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_resumebutton_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_buttonlink_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/ResumeButton.astro"
+    }
+  ],
+  "raw_calls": []
+}

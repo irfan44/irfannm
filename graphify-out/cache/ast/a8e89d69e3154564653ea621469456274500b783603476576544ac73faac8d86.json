@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "label": "ProjectTechStack.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_section_astro",
+      "label": "@components/layouts/section/Section.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/section/Section.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_chips_chip_astro",
+      "label": "@components/ui/chips/Chip.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/chips/Chip.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity",
+      "label": "@libs/business/entity",
+      "file_type": "code",
+      "source_file": "src/libs/business/entity",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_chips_chip_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "target": "entity_index_project",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_section_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_chips_chip_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projecttechstack_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectTechStack.astro"
+    }
+  ],
+  "raw_calls": []
+}

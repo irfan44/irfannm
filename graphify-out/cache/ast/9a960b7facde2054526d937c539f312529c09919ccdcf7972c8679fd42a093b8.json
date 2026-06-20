@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_section_astro",
+      "label": "Section.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/section/Section.astro",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

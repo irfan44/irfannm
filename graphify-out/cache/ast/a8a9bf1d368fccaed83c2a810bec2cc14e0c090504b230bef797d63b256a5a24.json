@@ -1,0 +1,59 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_astro",
+      "label": "Tabs.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/tabs/Tabs.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "tabs_tabs_inittabs",
+      "label": "initTabs()",
+      "file_type": "code",
+      "source_file": "src/components/ui/tabs/Tabs.astro",
+      "source_location": "L94"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_types",
+      "label": "./tabs.types",
+      "file_type": "code",
+      "source_file": "src/components/ui/tabs/tabs.types",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_astro",
+      "target": "tabs_tabs_inittabs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/tabs/Tabs.astro",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/tabs/Tabs.astro"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "tabs_tabs_inittabs",
+      "callee": "querySelectorAll",
+      "is_member_call": true,
+      "source_file": "/Users/irfannmuhajir/Documents/Projects/personal-projects/irfannm/src/components/ui/tabs/Tabs.astro",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "tabs_tabs_inittabs",
+      "callee": "forEach",
+      "is_member_call": true,
+      "source_file": "/Users/irfannmuhajir/Documents/Projects/personal-projects/irfannm/src/components/ui/tabs/Tabs.astro",
+      "source_location": "L97"
+    }
+  ]
+}

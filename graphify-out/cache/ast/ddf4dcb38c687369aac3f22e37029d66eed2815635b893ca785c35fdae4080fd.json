@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_rendermarkdown_astro",
+      "label": "RenderMarkdown.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/RenderMarkdown.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "label": "@libs/utils",
+      "file_type": "code",
+      "source_file": "src/libs/utils",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_rendermarkdown_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/RenderMarkdown.astro"
+    }
+  ],
+  "raw_calls": []
+}

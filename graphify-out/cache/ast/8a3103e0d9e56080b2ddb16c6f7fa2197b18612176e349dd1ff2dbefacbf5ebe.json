@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "label": "Resume.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/about/Resume.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "about_resume_updatedate",
+      "label": "updateDate",
+      "file_type": "code",
+      "source_file": "src/components/domain/about/Resume.astro",
+      "source_location": "L12"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "label": "@components/ui/links/ExternalLink.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/links/ExternalLink.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "label": "@libs/utils",
+      "file_type": "code",
+      "source_file": "src/libs/utils",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/about/Resume.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "target": "utils_index_convertdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/about/Resume.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "target": "about_resume_updatedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/about/Resume.astro",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/about/Resume.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/about/Resume.astro"
+    }
+  ],
+  "raw_calls": []
+}

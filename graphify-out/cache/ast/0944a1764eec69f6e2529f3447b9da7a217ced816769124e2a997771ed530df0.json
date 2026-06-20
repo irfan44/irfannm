@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_home_herosection_astro",
+      "label": "HeroSection.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/home/HeroSection.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "astro_assets",
+      "label": "astro:assets",
+      "file_type": "code",
+      "source_file": "astro:assets",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "label": "@components/shared/cta/OpenSocials.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/OpenSocials.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_resumebutton_astro",
+      "label": "@components/shared/cta/ResumeButton.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/ResumeButton.astro",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_home_herosection_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/home/HeroSection.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_home_herosection_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_resumebutton_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/home/HeroSection.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_home_herosection_astro",
+      "target": "astro_assets",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/home/HeroSection.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_home_herosection_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_opensocials_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/home/HeroSection.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_home_herosection_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_resumebutton_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/home/HeroSection.astro"
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenutab_astro",
+      "label": "NavMenuTab.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "navmenu_navmenutab_tabs",
+      "label": "tabs",
+      "file_type": "code",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro",
+      "source_location": "L7"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_astro",
+      "label": "@components/ui/tabs/Tabs.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/tabs/Tabs.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants",
+      "label": "@libs/constants",
+      "file_type": "code",
+      "source_file": "src/libs/constants",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenutab_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenutab_astro",
+      "target": "constants_index_nav_menus",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenutab_astro",
+      "target": "navmenu_navmenutab_tabs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenutab_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_tabs_tabs_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenutab_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/navMenu/NavMenuTab.astro"
+    }
+  ],
+  "raw_calls": []
+}

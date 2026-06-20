@@ -1,0 +1,337 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_tsconfig_json",
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "irfannm_tsconfig_extends",
+      "label": "extends",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "irfannm_tsconfig_include",
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "irfannm_tsconfig_exclude",
+      "label": "exclude",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "irfannm_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "irfannm_tsconfig_compileroptions_types",
+      "label": "types",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "irfannm_tsconfig_compileroptions_paths",
+      "label": "paths",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "irfannm_tsconfig_paths_assets",
+      "label": "@assets/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "irfannm_tsconfig_paths_components",
+      "label": "@components/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "irfannm_tsconfig_paths_layouts",
+      "label": "@layouts/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "irfannm_tsconfig_paths_libs",
+      "label": "@libs/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "irfannm_tsconfig_paths_styles",
+      "label": "@styles/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "irfannm_tsconfig_compileroptions_jsx",
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "irfannm_tsconfig_compileroptions_jsximportsource",
+      "label": "jsxImportSource",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "irfannm_tsconfig_compileroptions_verbatimmodulesyntax",
+      "label": "verbatimModuleSyntax",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_tsconfig_json",
+      "target": "irfannm_tsconfig_extends",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_tsconfig_json",
+      "target": "ref_astro_tsconfigs_strict",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_tsconfig_json",
+      "target": "irfannm_tsconfig_include",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_include",
+      "target": "ref_astro_types_d_ts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_include",
+      "target": "ref",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_tsconfig_json",
+      "target": "irfannm_tsconfig_exclude",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_exclude",
+      "target": "ref_dist",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_tsconfig_json",
+      "target": "irfannm_tsconfig_compileroptions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions",
+      "target": "irfannm_tsconfig_compileroptions_types",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions_types",
+      "target": "ref_bun",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions",
+      "target": "irfannm_tsconfig_compileroptions_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions_paths",
+      "target": "irfannm_tsconfig_paths_assets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_paths_assets",
+      "target": "ref_src_assets",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions_paths",
+      "target": "irfannm_tsconfig_paths_components",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_paths_components",
+      "target": "ref_src_components",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions_paths",
+      "target": "irfannm_tsconfig_paths_layouts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_paths_layouts",
+      "target": "ref_src_layouts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions_paths",
+      "target": "irfannm_tsconfig_paths_libs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_paths_libs",
+      "target": "ref_src_libs",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions_paths",
+      "target": "irfannm_tsconfig_paths_styles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_paths_styles",
+      "target": "ref_src_styles",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions",
+      "target": "irfannm_tsconfig_compileroptions_jsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions",
+      "target": "irfannm_tsconfig_compileroptions_jsximportsource",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_tsconfig_compileroptions",
+      "target": "irfannm_tsconfig_compileroptions_verbatimmodulesyntax",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L16",
+      "weight": 1.0
+    }
+  ]
+}

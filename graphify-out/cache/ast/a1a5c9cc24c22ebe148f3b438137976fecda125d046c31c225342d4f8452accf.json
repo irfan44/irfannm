@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenulist_astro",
+      "label": "NavMenuList.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/navMenu/NavMenuList.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants",
+      "label": "@libs/constants",
+      "file_type": "code",
+      "source_file": "src/libs/constants",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_navmenu_navmenulist_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_constants",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layouts/navMenu/NavMenuList.astro"
+    }
+  ],
+  "raw_calls": []
+}

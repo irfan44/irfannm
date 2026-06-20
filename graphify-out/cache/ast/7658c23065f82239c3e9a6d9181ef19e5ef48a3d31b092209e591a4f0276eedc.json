@@ -1,0 +1,258 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "label": "about.astro",
+      "file_type": "code",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "pages_about_aboutmesource",
+      "label": "aboutMeSource",
+      "file_type": "code",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L16"
+    },
+    {
+      "id": "pages_about_resumeurl",
+      "label": "resumeUrl",
+      "file_type": "code",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L17"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_aboutme_astro",
+      "label": "@components/domain/about/AboutMe.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/about/AboutMe.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "label": "@components/domain/about/Resume.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/about/Resume.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_socialcontact_astro",
+      "label": "@components/domain/about/SocialContact.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/about/SocialContact.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_experience_experience_astro",
+      "label": "@components/domain/experience/Experience.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/experience/Experience.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_heading_astro",
+      "label": "@components/layouts/section/Heading.astro",
+      "file_type": "code",
+      "source_file": "src/components/layouts/section/Heading.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "label": "@layouts/BaseLayout.astro",
+      "file_type": "code",
+      "source_file": "src/layouts/BaseLayout.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_handlers",
+      "label": "@libs/handlers",
+      "file_type": "code",
+      "source_file": "src/libs/handlers",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "label": "@libs/utils",
+      "file_type": "code",
+      "source_file": "src/libs/utils",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_socialcontact_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_experience_experience_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_heading_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_handlers_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "handlers_index_experiencehandler",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "handlers_index_sitecontenthandler",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "utils_index_getsitecontent",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "pages_about_aboutmesource",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "pages_about_resumeurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_aboutme_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_resume_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_about_socialcontact_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_experience_experience_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_layouts_section_heading_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_baselayout_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_handlers",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_pages_about_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/about.astro"
+    }
+  ],
+  "raw_calls": []
+}

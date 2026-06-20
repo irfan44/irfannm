@@ -1,0 +1,175 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "irfannm_readme_irfannm_dev",
+      "label": "irfannm.dev",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "irfannm_readme_tech_stack",
+      "label": "Tech Stack",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "irfannm_readme_pages",
+      "label": "Pages",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "irfannm_readme_content_source",
+      "label": "Content Source",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "irfannm_readme_project_structure",
+      "label": "Project Structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "irfannm_readme_local_setup",
+      "label": "Local Setup",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L52"
+    },
+    {
+      "id": "irfannm_readme_available_commands",
+      "label": "Available Commands",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "irfannm_readme_environment_variables",
+      "label": "Environment Variables",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L72"
+    },
+    {
+      "id": "irfannm_readme_deployment_notes",
+      "label": "Deployment Notes",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "irfannm_readme_implementation_notes",
+      "label": "Implementation Notes",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L84"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_readme_md",
+      "target": "irfannm_readme_irfannm_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_tech_stack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_pages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_content_source",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_project_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_local_setup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_available_commands",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_environment_variables",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_deployment_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_readme_irfannm_dev",
+      "target": "irfannm_readme_implementation_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -1,0 +1,176 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "label": "ProjectHeader.astro",
+      "file_type": "code",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "detail_projectheader_startingdate",
+      "label": "startingDate",
+      "file_type": "code",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L19"
+    },
+    {
+      "id": "detail_projectheader_hasprojectlinks",
+      "label": "hasProjectLinks",
+      "file_type": "code",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L21"
+    },
+    {
+      "id": "components",
+      "label": "@twodft/astro-icon/components",
+      "file_type": "code",
+      "source_file": "@twodft/astro-icon/components",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "astro_assets",
+      "label": "astro:assets",
+      "file_type": "code",
+      "source_file": "astro:assets",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "label": "@components/ui/links/ExternalLink.astro",
+      "file_type": "code",
+      "source_file": "src/components/ui/links/ExternalLink.astro",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "label": "@libs/utils",
+      "file_type": "code",
+      "source_file": "src/libs/utils",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity",
+      "label": "@libs/business/entity",
+      "file_type": "code",
+      "source_file": "src/libs/business/entity",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "astro_assets",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "utils_index_convertdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity_index_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "entity_index_project",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "detail_projectheader_startingdate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "detail_projectheader_hasprojectlinks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "components",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "astro_assets",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_ui_links_externallink_astro",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_utils",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_domain_project_detail_projectheader_astro",
+      "target": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_libs_business_entity",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/domain/project/detail/ProjectHeader.astro"
+    }
+  ],
+  "raw_calls": []
+}

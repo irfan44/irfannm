@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_backtotop_astro",
+      "label": "BackToTop.astro",
+      "file_type": "code",
+      "source_file": "src/components/shared/cta/BackToTop.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "components",
+      "label": "@twodft/astro-icon/components",
+      "file_type": "code",
+      "source_file": "@twodft/astro-icon/components",
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_components_shared_cta_backtotop_astro",
+      "target": "components",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/cta/BackToTop.astro"
+    }
+  ],
+  "raw_calls": []
+}

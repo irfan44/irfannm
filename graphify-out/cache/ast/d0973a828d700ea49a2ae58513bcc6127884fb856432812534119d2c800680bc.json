@@ -1,0 +1,223 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_prettierrc_json",
+      "label": ".prettierrc.json",
+      "file_type": "code",
+      "source_file": ".prettierrc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "irfannm_prettierrc_plugins",
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": ".prettierrc.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "irfannm_prettierrc_importorder",
+      "label": "importOrder",
+      "file_type": "code",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "irfannm_prettierrc_importorderparserplugins",
+      "label": "importOrderParserPlugins",
+      "file_type": "code",
+      "source_file": ".prettierrc.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "irfannm_prettierrc_importordertypescriptversion",
+      "label": "importOrderTypeScriptVersion",
+      "file_type": "code",
+      "source_file": ".prettierrc.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "irfannm_prettierrc_overrides",
+      "label": "overrides",
+      "file_type": "code",
+      "source_file": ".prettierrc.json",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_prettierrc_json",
+      "target": "irfannm_prettierrc_plugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_prettierrc_plugins",
+      "target": "ref_prettier_plugin_astro",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_plugins",
+      "target": "ref_ianvs_prettier_plugin_sort_imports",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_plugins",
+      "target": "ref_prettier_plugin_tailwindcss",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_prettierrc_json",
+      "target": "irfannm_prettierrc_importorder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_third_party_modules",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_assets",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_components",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_layouts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_libs",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_styles",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorder",
+      "target": "ref_types",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_prettierrc_json",
+      "target": "irfannm_prettierrc_importorderparserplugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "irfannm_prettierrc_importorderparserplugins",
+      "target": "ref_typescript",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "irfannm_prettierrc_importorderparserplugins",
+      "target": "ref_jsx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_prettierrc_json",
+      "target": "irfannm_prettierrc_importordertypescriptversion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_prettierrc_json",
+      "target": "irfannm_prettierrc_overrides",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".prettierrc.json",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ]
+}

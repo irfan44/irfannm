@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "users_irfannmuhajir_documents_projects_personal_projects_irfannm_src_layouts_proselayout_astro",
+      "label": "ProseLayout.astro",
+      "file_type": "code",
+      "source_file": "src/layouts/ProseLayout.astro",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}
